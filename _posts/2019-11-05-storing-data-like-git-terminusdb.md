@@ -3,7 +3,7 @@ layout: post
 title: "Storing data like git — TerminusDB"
 date: 2019-11-05
 description:
-image: https://miro.medium.com/max/8000/1*23WsqANJv5IS4ar-LGU2sw.jpeg
+cover_image: https://miro.medium.com/max/8000/1*23WsqANJv5IS4ar-LGU2sw.jpeg
 author: Cheuk Ting Ho
 tags:
   - Git
@@ -13,7 +13,7 @@ tags:
   - AI Tools
 
 ---
-TLast week I have been to a meetup where a team of software developers from Dublin talks about their newest invention — [TerminusDB](https://terminusdb.com/), a graph database that stores data like git. My reaction was like, what? Imagine all the cool things you can do with git: time travel, branching and forking etc, you can do them with your data.
+Last week I have been to a meetup where a team of software developers from Dublin talks about their newest invention — [TerminusDB](https://terminusdb.com/), a graph database that stores data like git. My reaction was like, what? Imagine all the cool things you can do with git: time travel, branching and forking etc, you can do them with your data.
 
 What’s more, TerminusDB is a graph database, meaning all data are stored in nodes and edges, makes it easy to extract relations between your data without all the hideous joins in relational SQL database.
 

@@ -3,7 +3,7 @@ layout: post
 title: "Graph Fundamentals — Part 3: Graph Schema Languages"
 date: 2019-10-03
 description:
-image: https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg
+cover_image: https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg
 author: Kevin Feeney
 tags:
   - Graph Database

@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB — the database for data people."
 date: 2019-10-01
 description:
-image: https://miro.medium.com/max/4800/1*ZP8Lovt4_JBBBTNxv16xdg.jpeg
+cover_image: https://miro.medium.com/max/4800/1*ZP8Lovt4_JBBBTNxv16xdg.jpeg
 author: Luke Feeney
 tags:
   - Model
