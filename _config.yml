@@ -1,44 +1,51 @@
 # Site/SEO settings
-email: okay@samesies.io
+email:
 baseurl: ""
 permalink: /:year/:month/:day/:title/
-google_analytics: 
+google_analytics:
 
-name: Thomas Vaeth
-title: The Barber Theme
+name: TerminusDB
+title: TerminusDB Blog - News and Tutorials
 description: >
-  Barber is a blog theme for Jekyll built by Thomas Vaeth for Samesies using HTML, Sass, and JavaScript.
-url: http://barber.samesies.io
-twitter_username: thomasvaeth
-default_img: /assets/images/seo.jpg
+  News and tutorials of TerminusDB.
+url: https://terminusdb.github.io/terminusdb-blog/
+twitter_username: TerminusDB
+default_img: /assets/images/cowduck_sitting_logo.jpg
 social:
   - name: twitter
-    url: https://twitter.com/thomasvaeth
-  - name: instagram
-    url: https://www.instagram.com/thomas.vaeth/
-  - name: linkedin
-    url: https://www.linkedin.com/in/thomasvaeth/
+    url: https://twitter.com/TerminusDB
   - name: github
-    url: https://github.com/samesies
-  - name: codepen
-    url: https://codepen.io/thomasvaeth/
+    url: https://github.com/terminusdb
+  - name: slack
+    url: http://bit.ly/terminusdb-slack
+  - name: youtube
+    url: https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA
 
 # Contact settings
-contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/s/HkIo0nMb7
+contact_img:
+formcarry:
 
 # Disqus settings
-disqus: test-apkdzgmqhj
+disqus:
 
 # MailChimp settings
-mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
-mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+mailchimp_action:
+mailchimp_input:
 
 # Author settings
 author:
-  - name: Thomas Vaeth
-    bio: Thomas Vaeth was born in New York, raised in Pennsylvania, and transplanted in Washington. He was a Web Developer at Urban Influence, but now he's a Software Engineer at Getty Images.
-    url: http://thomasvaeth.com
+  - name: Luke Feeney
+    bio: Building the database of the future.
+    url: https://github.com/luke-feeney
+  - name: Kevin Feeney
+    bio: Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd
+    url: https://github.com/kevinchekovfeeney
+  - name: Cheuk Ting Ho
+    bio: Developer Advocate for TerminusDB. Data Scientist. Organizer of London Python Sprints and AI Club for Gender Minorities. Tech Speaker. Master of LT EuroPython.
+    url: https://cheuk.dev
+  - name: Gavin Mendel Gleason
+    bio: A software engineer interested in improving the best practices of the software development community through the use of logic, mathematics and formal methods.
+    url: https://github.com/GavinMendelGleason
 
 # Pagination settings
 pagination:
@@ -57,9 +64,9 @@ autopages:
   collections:
     enabled: false
   tags:
-    layouts: 
+    layouts:
       - 'tag.html'
-    title: 'The Barber Theme'
+    title: 'TerminusDB Blog'
     permalink: '/tag/:tag'
     slugify:
       mode: raw
