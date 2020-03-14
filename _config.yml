@@ -72,8 +72,16 @@ autopages:
       mode: raw
       cased: true
 
-# Build settings
 markdown: kramdown
+highlighter: rouge
+
+# Markdown Processors
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+# Build settings
 plugins:
   - jekyll-paginate-v2
   - jekyll-sitemap

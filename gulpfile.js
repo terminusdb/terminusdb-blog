@@ -10,6 +10,7 @@ const source = require('vinyl-source-stream');
 const stylelint = require('gulp-stylelint');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-zip');
+var touch = require('gulp-touch-cmd');
 
 function lintStyles() {
   return gulp.src([
@@ -68,6 +69,7 @@ function dist() {
   ])
     .pipe(zip('barber-jekyll.zip'))
     .pipe(gulp.dest('../'))
+    .pipe(touch());
 }
 
 function watch() {
