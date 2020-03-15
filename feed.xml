@@ -6,9 +6,412 @@
 </description>
     <link>https://terminusdb.github.io/terminusdb-blog/</link>
     <atom:link href="https://terminusdb.github.io/terminusdb-blog//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Mar 2020 20:20:43 +0000</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2020 20:20:43 +0000</lastBuildDate>
+    <pubDate>Sun, 15 Mar 2020 00:13:20 +0000</pubDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:13:20 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>TerminusDB Discussions</title>
+        <description>&lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt;
+
+&lt;p&gt;We are a moderately distributed team and we have plenty of opportunity for detailed technical discussion (indexing strategy anyone?) so we thought that it’d be a good idea to start a less formal weekly exchange. One member of the team leads the discussion and the rest contribute with questions &amp;amp; comments.&lt;/p&gt;
+
+&lt;p&gt;Over the year and a bit since we started the tradition, we’ve had everything from the innards of JavaScript to Crypto Kitties to Theories of Developer Relations to Cloud Architecture to the Dialectics of Software Development (a personal favorite — I must post the slides).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1602/1*AiOAyqAcjMq5qd8fBUdw2w.png&quot; alt=&quot;The right superstructure is important&quot; /&gt;
+The right superstructure is important&lt;/p&gt;
+
+&lt;p&gt;We’ve also had nuclear power, the political economy of open source software, values vs virtues and Terry Davis (TempleOS is something else — I’d encourage all to check it out).&lt;/p&gt;
+
+&lt;p&gt;Really whatever was of special interest to the person assigned that day. I looked back through the chat and realize that I have suggested ‘Practical Maoism for the Workplace’ twice and nobody has taken up my lead.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1308/1*qa5C7ZG-4mvCH5KKJaUiLg.png&quot; alt=&quot;The system's features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&quot; /&gt;
+The system’s features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&lt;/p&gt;
+
+&lt;p&gt;The tradition has grown to be an important part of every TerminusDB week. If we continue to grow the core group, I’m not sure how we’ll scale — 1 week in 30 might be a little infrequent. We can cross that bridge when we get there.&lt;/p&gt;
+
+&lt;p&gt;So anyway, we really value these discussions and thought the the broader Terminus Community might also enjoy. We’ve recorded the latest discussion, which took place yesterday, and uploaded it to our YouTube channel.&lt;/p&gt;
+
+&lt;p&gt;This week we were led by our BDFL Gavin in a discussion of ‘Regular Expressions - Theory and Practice’. It covers a bunch of interesting aspects including Chomsky’s Hierarchy, Büchi automata, grammars and much more.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mbtpAyn0n0o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I apologize for the sound quality issues — we’ll work on a setup that captures the various contributors in high fidelity. At least you can hear the main presentation. Only one instance of adult language — less than normal I’d say — so be warned.&lt;/p&gt;
+
+&lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/28/terminusdb-discussions/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/28/terminusdb-discussions/</guid>
+        
+        <category>Database</category>
+        
+        <category>Development</category>
+        
+        <category>Programming</category>
+        
+        <category>Maoism</category>
+        
+        <category>Dialectics</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Loading your local files in TerminusDB</title>
+        <description>&lt;p&gt;We have got lot’s of feedback since we have posted our tutorial — &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt;. One of the most common questions is how to load a local CSV in the hard drive into your TerminusDB running in a local docker container. So here is how to do it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If your container is running stop it with:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./terminus-container stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Extra tip: you may want to run &lt;code class=&quot;highlighter-rouge&quot;&gt;./terminus-container rm-config&lt;/code&gt; now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUS_LOCAL&lt;/code&gt; environment variable to the path to the parent directory of your csv:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=/home/me/somewhere
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;for Windows users:&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=c:/Users/you/somewhere
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;Go to Docker Desktop Settings and make sure that the Drive (i.e. ‘C’) your file on is enabled in Shared Drives&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2474/1*YYgIRufPKRw724nIuWRHzw.png&quot; alt=&quot;Windows setup&quot; /&gt;
+Make sure the ‘C’ is clicked and ‘Apply’&lt;/p&gt;
+
+&lt;p&gt;then start your container again:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./terminus-container run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;now, &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUS_LOCAL&lt;/code&gt; will be mounted as &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/local_files&lt;/code&gt;
+so, in your WOQL query, you can use:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.file(/app/local_files/myfilename.csv)&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;.remote()&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hope it helps with lot’s of you who want to load csv locally.
+Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&quot;&gt;Dmytri Kleiner&lt;/a&gt; for figuring it out!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/21/loading-your-local-files-in-terminusdb/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/21/loading-your-local-files-in-terminusdb/</guid>
+        
+        <category>Data Science</category>
+        
+        <category>Database</category>
+        
+        <category>Data</category>
+        
+        <category>Developer</category>
+        
+        <category>Tools</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Design a Query Language Client for Pythonistas and Data Scientists</title>
+        <description>&lt;p&gt;Having an effective yet user-friendly query language is one of the most important aspects of successful database technology. Here at TerminusDB, we aim to provide a good experience to our users whose main language is Python. Enter WOQLpy — a Query Language Client for Pythonistas and Data Scientists.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-woqlpy&quot;&gt;What is WOQLpy?&lt;/h2&gt;
+
+&lt;p&gt;WOQLpy comes with the Terminus Python Client which you can install with pip:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install terminus-client-python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Example usage:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;woqlclient.woqlClient&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;woql&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;woqlclient&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;server_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://localhost:6363&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;root&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dbId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pybike&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;woql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WOQLClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;                       &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createDatabase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dbId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bicycle Graph&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;station&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doctype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Bike Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                                             &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doctype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;start_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Start Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;end_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;End Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           
+&lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;woql_and&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;station&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;journey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           
+&lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The complete script can be found in GitHub.&lt;/p&gt;
+
+&lt;p&gt;As you see, the python client can execute a query created with WOQLpy. It is because WOQLpy lets you build WOQL — the original query language in JSON-LD format with methods in WOQLQuery object and send it to TerminusDB through the Python client. Without WOQLpy, queries need to be written in JSON-LD, for example, the same query above will be:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;when&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdf:type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;owl:Class&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:subClassOf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tcs:Document&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bike Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:end_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdf:type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;owl:ObjectProperty&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:end_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:range&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:end_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:start_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdf:type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;owl:ObjectProperty&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:start_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:range&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:start_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdf:type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;owl:Class&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:subClassOf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tcs:Document&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Journey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:start_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Start Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;add_quad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scm:end_station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rdfs:label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;End Station&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;db:schema&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;challenges-in-design&quot;&gt;Challenges in design&lt;/h2&gt;
+
+&lt;p&gt;It’s nice to have WOQLpy, but there are some challenges in adopting WOQL in Python. For example, you may notice that there is a method in the example called &lt;code class=&quot;highlighter-rouge&quot;&gt;woql_and&lt;/code&gt;, in WOQL, there are operations that are the same as the Python keywords, to name a few: and, or, not, as, from. In this case, we added the &lt;code class=&quot;highlighter-rouge&quot;&gt;woql_&lt;/code&gt; prefix to make it valid in Python.&lt;/p&gt;
+
+&lt;p&gt;Another challenge is, as many of the methods we allow provide for more that one way of input, for example, with &lt;code class=&quot;highlighter-rouge&quot;&gt;.label&lt;/code&gt; we allow users to input just a string “Journey” or a dictionary {“@value”: “Journey”, “@language”: “en”}, we have to do lots of checking in handling different user inputs. But it is totally worth it as we believe it will give a better usage.&lt;/p&gt;
+
+&lt;h2 id=&quot;make-it-better-for-data-scientist&quot;&gt;Make it better for Data Scientist&lt;/h2&gt;
+
+&lt;p&gt;We are still at the beginning of our journey to make TerminusDB super useful for data scientists. One of the features that we have in mind to implement is to make our &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;cool graph visualization&lt;/a&gt; embedded in Jupyter notebook. Right now it is possible to be embedded to websites thanks to our Javascript client. We should be able to do that same to Jupyter notebook for Python client.&lt;/p&gt;
+
+&lt;p&gt;Also, we think it would be nice to have a direct io with pandas data frame instead of passing it with csvs.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;TerminusDB is open-source, we would like to invite you to try it out and give us feedback and ideas. Please feel free to join the slack channel and chat with the team: &lt;a href=&quot;http://bit.ly/terminusdb-slack&quot;&gt;http://bit.ly/terminusdb-slack&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
+        
+        <category>Database</category>
+        
+        <category>Open Source</category>
+        
+        <category>Data Science</category>
+        
+        <category>Query Language</category>
+        
+        <category>Python</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>TerminusDB 1.1 — The Big Babushka</title>
+        <description>&lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt;
+
+&lt;h2 id=&quot;terminus-store&quot;&gt;Terminus-store&lt;/h2&gt;
+
+&lt;p&gt;The major development is our new storage backend, terminus-store. With the introduction of the new store, TerminusDB takes a radical departure from traditional database architectures. Our approach has three parts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We have a graph database with strong schema to retain simplicity and generality&lt;/li&gt;
+  &lt;li&gt;The graph is implemented using succinct immutable data structures which enable more sparing use of main memory resources.&lt;/li&gt;
+  &lt;li&gt;We adopt a delta encoding approach to updates (‘like git, but for data’) which provides the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel facilitating CI/CD approaches on data.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This final point is crucial — with TerminusDB we can now use advanced CI/CD workflows in data operations. The large impact of git on the software development world can now be envisioned in the world of data. This is made possible by synergies between an immutable layered approach and the succinct data structure approach that we’ve used for encoding. The DevOps revolution becomes the DataOps revolution.&lt;/p&gt;
+
+&lt;p&gt;Just as with DevOps, DataOps means a focus on collaboration, automation and integration. There is a requirement to bridge what is today a chasm between huge reams of unstructured data on the one hand, and analysts looking for access to simple, clean, structured data on the other. DataOps is that bridge.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB is a practical tool for enabling branch, merge, rollback, and the various automated and manual testing regimes which they facilitate on a transactional database management system while providing sophisticated query support&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1194/1*ADSnYco_5vlMbLT7eiT2Rw.png&quot; alt=&quot;showing how TerminusDB transections&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The new TerminusDB store is implemented in Rust. It is low level, memory safe, has no run time and is C compatible. We think Rust will be the language of the 2020s and we are delighted to be Rustaceans!&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;a href=&quot;https://github.com/terminusdb/terminus-server/blob/dev/docs/whitepaper/terminusdb.pdf&quot;&gt;TerminusDB Technical Paper&lt;/a&gt; that goes into this in more detail for those interested.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1678/1*S9ho_dXwojark-UnLrRSeQ.png&quot; alt=&quot;White Paper&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;woql&quot;&gt;WOQL&lt;/h2&gt;
+
+&lt;p&gt;The Web Object Query Language — or WOQL — has developed considerably since our first release:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extended WOQL to greater functionality for string and arithmetic processing&lt;/li&gt;
+  &lt;li&gt;Better date handling in WOQL&lt;/li&gt;
+  &lt;li&gt;Improved type casting in WOQL&lt;/li&gt;
+  &lt;li&gt;Improvements to query processing speed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The growing maturity of WOQL provides a strong platform to import, clean and query complex data. WOQL remains the best graph query language available today.&lt;/p&gt;
+
+&lt;p&gt;WOQL itself is specified as a JSON document format. All transmission of data uses the canonical JSON format, but this is generally annoying to write, hence WOQL.js is the preferred means by which human users can write queries manually. In developing WOQL we wanted to make querying graph data easy to learn, understand, and use, but also build on the power and functionality of other standard data access languages. As we can see from the TerminusDB tutorials, WOQL is a highly composable and flexible graph query language. Graphs are very generically applicable to a much wider range of data than table structured data. Ultimately, the flexibility of graphs with well specified schema, will show their value.&lt;/p&gt;
+
+&lt;h2 id=&quot;terminus--console&quot;&gt;Terminus — Console&lt;/h2&gt;
+
+&lt;p&gt;The new Console significantly builds on the simple JavaScript client application that released with 1.0.&lt;/p&gt;
+
+&lt;p&gt;In the query interface, you can now switch between WOQL.js and JSON. You can also add new queries to the original query — as inspired by the Jupyter Notebook functionality you know and love.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3474/1*uScpmhNCu0UwUR30Y_RGAA.png&quot; alt=&quot;TerminusDB console&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have run your query, we have a view interface to easily change the view on the output&lt;/p&gt;
+
+&lt;p&gt;Throughout the console you now have the ability to toggle between table and graph view. On the query page, on the document page and on the schema page, you can see as a graph. This is super helpful when you are trying to see what’s in a complex schema, or trying to derive insight from a query.&lt;/p&gt;
+
+&lt;p&gt;The new Console gives user a quality interface for managing and querying TerminusDB. It ships with TerminusDB.&lt;/p&gt;
+
+&lt;h2 id=&quot;python-client&quot;&gt;Python Client&lt;/h2&gt;
+
+&lt;p&gt;With the release of the TerminusDB python client, python users can query data and interact with TerminusDB through the API and WOQL.py. We will continue to work to make TerminusDB more accessible for the python community (firstly, by improving our documentation!). TerminusDB is the database for data people, and there are no people that are more data than Pythonistas!&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-next&quot;&gt;What’s Next&lt;/h2&gt;
+
+&lt;p&gt;We are working hard on our collaboration and DataOps features. They should be available by the end of February 2020.&lt;/p&gt;
+
+&lt;p&gt;We’ll be pushing out documentation as fast as we can. There is lots of new stuff available, including a couple of tutorials, but it is never enough!&lt;/p&gt;
+
+&lt;p&gt;Remember we are open source (GPLv3) now and forever.&lt;/p&gt;
+
+&lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/16/terminusdb-1-1-the-big-babushka/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
+        
+        <category>Developer Tools</category>
+        
+        <category>Data</category>
+        
+        <category>Database</category>
+        
+        <category>Python</category>
+        
+        <category>Rust</category>
+        
+        
+      </item>
     
       <item>
         <title>Are you supporting the right politician?</title>
