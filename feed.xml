@@ -6,9 +6,365 @@
 </description>
     <link>https://terminusdb.github.io/terminusdb-blog/</link>
     <atom:link href="https://terminusdb.github.io/terminusdb-blog//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Mar 2020 00:13:20 +0000</pubDate>
-    <lastBuildDate>Sun, 15 Mar 2020 00:13:20 +0000</lastBuildDate>
+    <pubDate>Sun, 15 Mar 2020 22:30:14 +0000</pubDate>
+    <lastBuildDate>Sun, 15 Mar 2020 22:30:14 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Why Graph Will Win</title>
+        <description>&lt;p&gt;I recently published a warts-and-all 4 part introduction (covering &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Graph Schemas&lt;/a&gt; and &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Linked Data&lt;/a&gt;). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).&lt;/p&gt;
+
+&lt;p&gt;It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they &lt;em&gt;will&lt;/em&gt; find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s. Once bitten twice shy.&lt;/p&gt;
+
+&lt;p&gt;However, if you were to assume that I’m a critic of graph databases, you would be very wrong. I’ve spent most of the last decade building graph database management systems because to me it’s incredibly obvious that in the long run graph is going to win and here’s why.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The point of all databases is to provide as accurate a representation of some aspect of external reality as possible.&lt;/p&gt;
+
+&lt;p&gt;The fundamental advantage of graph databases is that they model the world as things that have properties and relationships with other things.&lt;/p&gt;
+
+&lt;p&gt;This is closer to the way that humans perceive the world — mapping between whatever aspect of external reality you are interested in and the data model is an order of magnitude easier than with relational databases. Everything is pre-joined — you don’t have to disassemble objects into normalised tables and reassemble them with joins.&lt;/p&gt;
+
+&lt;p&gt;And because creating and curating large and complex datasets is very difficult, very expensive and potentially very lucrative, the reduction in technical complexity in creating and interpreting the graph data model is irresistible. The knowledge graphs that companies like Google and Facebook have accumulated are demonstrably commercially powerful and it is unlikely that such complex and rich datasets would have been possible without graph.&lt;/p&gt;
+
+&lt;p&gt;Humans have an evolutionarily pragmatic view of the world. We perceive the world as things that move through space and time. These things have properties which may change over time. They also have relationships with other things which may also change over time.&lt;/p&gt;
+
+&lt;p&gt;The model is simple but there are a great many different types of things — from stones, to mirrors to politicians and honeybees. To make sense of these things and their properties, we organise them into types and organise these types into a ‘tree-of-life’ or more broadly a ‘tree-of-things’ —taxonomies of types of things that share certain properties and relationships with other types of things.&lt;/p&gt;
+
+&lt;p&gt;Whether you are building a database to record the known universe or logging network security incidents, the model that you actually want to record is always a bunch of objects, categorised with a type-taxonomy, with properties and relationships with other objects, some of which change over time. That’s what you always want to record, because that’s how you perceive the world. Any indirection between perceived world and recorded model creates extra complexity at every step of processing. And in the world of complex systems, combinatorial explosion of complexity is the one true enemy. Reducing the complexity in each and every data operation is irresistible in the long run — you can focus on other things rather than the mappings between the aspects of the real world that you want to model and their stored representations.&lt;/p&gt;
+
+&lt;p&gt;In this respect, even the simplest graph database such as Neo4j — which models the world as a bunch of JSON documents, some of which may contain pointers to other JSON documents, is much better than even the fanciest RDBMS. Granted there is no taxonomy or schema, and support for temporality is basic, but it’s easy to produce a much more naturalistic model of the world than will ever be possible if you have to break the things up into relations. Of course it is possible to automate this mapping by delegating the problem to code (for example by using ORMs or system meta-models) but this is a short-term fix that blows up as size and complexity increase. Code has unbounded complexity and is largely opaque to automated analysis —its contribution to combinatorial explosion becomes overwhelming at scale. All systems which are built upon ORMs evolve into ORM maintenance systems.&lt;/p&gt;
+
+&lt;p&gt;The diagram below shows how different database technologies rank in terms of their data-modelling power — the extent to which they allow you to create naturalistic models of the world. To briefly explain the categories:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png&quot; alt=&quot;comparing databases&quot; /&gt;
+Databases ranked by data modelling power with leading open source examples of each type (in database land, if you are not open source, you have no long term future )&lt;/p&gt;
+
+&lt;h2 id=&quot;key-value-stores-and-wide-column-stores&quot;&gt;Key Value Stores and Wide Column Stores&lt;/h2&gt;
+
+&lt;p&gt;These databases exist primarily to provide computer programs with somewhere to save the variables that they use — they lack data-modelling features beyond basic datatypes. There is nothing wrong with this — computer programs need databases too. It is also, of course, possible to assemble complex data-models from these atomic units within programs, but this very quickly runs into the combinatorial explosion problem — almost everything is described in code leading to unbridled complexity growth.&lt;/p&gt;
+
+&lt;h2 id=&quot;document-stores&quot;&gt;Document Stores&lt;/h2&gt;
+
+&lt;p&gt;Document stores typically store data as a set of JSON documents —objects with tree-structures. The big feature of these databases over relational is that these documents are suitable for creating naturalistic models of things, with the tree structure expressing a containment (or has-a) relationship type. However, they are severely crippled because of poor support for modelling relationships — document relations are often expressed through embedding duplicates of other documents — a horrible, awful, solution which massively increases complexity over time.&lt;/p&gt;
+
+&lt;h2 id=&quot;relational-databases&quot;&gt;Relational Databases&lt;/h2&gt;
+
+&lt;p&gt;Relational databases are all about relations — tables that can be joined together to formed new relations. Foreign keys are used to express schematic relationships between tables. These relationships are untyped and semantically meaningless integers or strings are commonly used as keys. As a result relational databases are fairly impoverished in terms of their abilities to capture real world relationships — we can’t distinguish between containment (has-a) and other types of relationships so we can’t actually turn these relations back into objects without information that is external to the system — mostly in glue code or ORMs. Furthermore, translating to and from these relations and real world objects is rather intricate and leads to a very complex data model even for relatively simple aspects of the real world.&lt;/p&gt;
+
+&lt;h2 id=&quot;property-graphs&quot;&gt;Property Graphs&lt;/h2&gt;
+
+&lt;p&gt;Property graphs are basically document stores with a dash of relations added in that is to say, they are just a bunch of JSONs with some properties acting as special links to other JSONs (the in and out properties of edges). Even though they are quite primitive, they still have the most important features needed to create naturalistic models of the real world — things (nodes) with properties and relationships (edges).&lt;/p&gt;
+
+&lt;h2 id=&quot;rdf-graphs&quot;&gt;RDF Graphs&lt;/h2&gt;
+
+&lt;p&gt;RDF graphs have all of the features of the database models to the left, the thing that they really bring to the party is the concept of object types — via the &lt;em&gt;rdf:type&lt;/em&gt; predicate — and not just simple datatypes.&lt;/p&gt;
+
+&lt;h2 id=&quot;owl-graphs&quot;&gt;OWL Graphs&lt;/h2&gt;
+
+&lt;p&gt;Graph databases that use the Web Ontology Language (OWL) to describe their data model are by far the most powerful in terms of data modelling capabilities, although OWL must be used with care as it can easily lead to an incomprehensibly complex data model (and in practice we need to choose a computable fragment of the language). Nevertheless, the really important aspects can be boiled down to 3 simple predicates that enable relationships between object types to be defined — &lt;em&gt;rdfs:domain&lt;/em&gt; and &lt;em&gt;rdfs:range&lt;/em&gt; support strongly typed relationships between objects, not just simple relationships, while &lt;em&gt;rdfs:subClassOf&lt;/em&gt; supports type inheritance — and hence proper taxonomies — these combine to provide a fully featured type system, the holy grail of data modelling.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</guid>
+        
+        <category>OWL</category>
+        
+        <category>Graph Database</category>
+        
+        <category>RDF</category>
+        
+        <category>Database</category>
+        
+        <category>Data Modeling</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Stuffing all of Human History into a Single Knowledge Graph</title>
+        <description>&lt;p&gt;The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.&lt;/p&gt;
+
+&lt;h2 id=&quot;seshat-global-history-databank&quot;&gt;Seshat: Global History Databank&lt;/h2&gt;
+
+&lt;p&gt;Named after the Egyptian goddess of wisdom, knowledge, and writing, &lt;a href=&quot;http://seshatdatabank.info/&quot;&gt;Seshat&lt;/a&gt;, the Global History Databank aims to bring together the most current and comprehensive body of knowledge about human history in one place.&lt;/p&gt;
+
+&lt;p&gt;Researchers divided the world into a series of Natural Geographic Areas and collected datasets describing all of the specific historical societies or polities that had existed in those areas. By storing the data in a systematic way, different hypotheses about the rise and fall of large-scale societies across the globe and human history can be tested.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://seshatdatabank.info/&quot;&gt;http://seshatdatabank.info/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some facts about the data:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Academic collaboration seeking to create datasets describing every human society since 10,000BCE&lt;/li&gt;
+  &lt;li&gt;Major publications in 2018–19 in Nature and PNAS on the evolution of social complexity and religion based on a high-quality RDF DB&lt;/li&gt;
+  &lt;li&gt;Sprawling collection of datasets covering 1000s of variables, mostly human entered and error-prone, with a wide variety of formats and schemata&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In 2018, the Seshat researchers have released several public datasets — they can be found here. Now, the challenge is, finding a proper tool that can store the databank in a semantic way that let the researchers query, analyse and collaborate with the data.&lt;/p&gt;
+
+&lt;h2 id=&quot;terminusdb-the-git-like-graph-database&quot;&gt;TerminusDB: the Git-like Graph Database&lt;/h2&gt;
+
+&lt;p&gt;Named after the Roman God of boundaries, TerminusDB is an open-source database that provides structured, semantically meaningful data for rapid delivery of data-driven applications.&lt;/p&gt;
+
+&lt;p&gt;With TerminusDB’s unified OWL model, a semantic schema can be created to capture all the complex aspects of the Seshat historical data model. Then we can write queries to ingest data to build an integrated knowledge graph. Based on an immutable append-only MVCC in-memory triple-store implemented in a custom rust storage library directed by a Prolog logic engine, it is efficient, safe and allows git like operations — push, pull, clone, merge and branch. With these advantages, multi-mastered cloud databases can be used to build automated pipelines for low-cost data publishing and distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://terminusdb.com/&quot;&gt;https://terminusdb.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;All these can be achieved easily with WOQL, the Web Object Query Language. It is a powerful language for querying the structure of Terminus Data, it can also be used to construct the schema and load data into the data graph. WOQL is also available in JavaScript client (WOQL.js) and Python client (WOQL.py) which allows programmatic operation of data and smooth integration of analytic and machine learning pipeline and applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2596/1*Zgpez75_owkbzLoCpCsi0w.png&quot; alt=&quot;A portion of Seshat’s Knowledge Graph showing the evolutionary graph of historical societies&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We used WOQL to ingest all of the Seshat data into a great big knowledge graph and then generate graphs showing the evolution of hundreds of different properties of historical societies as they changed over time. The above graph shows all of the global historical timelines in Seshat, with each node representing a polity and the edges showing the ‘successor’ polity, the colour of the nodes represents the presence (green) or absence (red) of professional soldiers in each society. Stay tuned as we will soon be publishing a detailed tutorial showing you how you can build your own knowledge graph using TerminusDB and the Seshat dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;Design a Query Language Client for Pythonistas and Data Scientists&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to know more, follow our publication to get the news about our talks, tutorials and community events.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
+        
+        <category>Database</category>
+        
+        <category>Dataops</category>
+        
+        <category>Knowledge Graph</category>
+        
+        <category>Open Source</category>
+        
+        <category>Data Pipeline</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Graph Fundamentals — Part 4: Linked Data</title>
+        <description>&lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;By the mid 2000s, it was clear that the vision of the semantic web, as set out by Tim Berners Lee in 2001, despite a huge amount of initial hype and investment, remained largely unrealized. The basic idea — that a network of machine readable, semantically rich documents would form a ‘semantic web’ much like the world wide web of documents, was proving much more difficult than had been anticipated. This prompted the emergence of the concept of ‘linked data’, again promoted by Tim Berners Lee, and laid out in two documents published in 2006 and 2009.&lt;/p&gt;
+
+&lt;p&gt;Linked data was, in essence, an attempt to reduce the idea of the semantic web down to a small number of simple principles, which were meant to capture the core of the semantic web without being overly prescriptive over the details.&lt;/p&gt;
+
+&lt;p&gt;The 4 basic principles were:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use URIs for things&lt;/li&gt;
+  &lt;li&gt;Use HTTP URIs&lt;/li&gt;
+  &lt;li&gt;Make these HTTP URIs dereferencable, returning useful information about the thing referred to&lt;/li&gt;
+  &lt;li&gt;Include links to other URIs to allow discovery of more things.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We can supplement these 4 principles with a fifth, which was originally defined as a ‘best practice’ but which effectively became a core principle:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;“People should use terms from well-known RDF vocabularies such as FOAF, SIOC, SKOS, DOAP, vCard, Dublin Core to make it easier for client applications to process Linked Data”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These 5 points effectively defined linked data movement and remain at the heart of current semantic web research. 1 and 4 are encapsulated within RDF (linked data was not defined to mean only RDF but, in practice, RDF is almost always used by people publishing linked data), they were just restating the basic design ideas of the semantic web with a less prescriptive approach. The second principle just recognised that, in practice, people only ever really used HTTP URLs — by 2006, HTTP had become the dominant mechanism for communicating with remote servers, as it remains today — so this was very sensible. So far so good.&lt;/p&gt;
+
+&lt;p&gt;The 3rd principle was also restating a concept that had been implicit in RDF and the semantic web — the idea that if you submit a HTTP GET to any of the URLs used in linked data, you should get useful information about the thing that is being referred to. So, for example, if you have a triple:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;prefix ex &amp;lt;http://my.url/&amp;gt;
+ex:jane ex:likes ex:chocalate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And you open http://my.url/jane in your browser, the server should return some useful information about jane, while if you open http://my.url/likes , you should get useful information about the ‘likes’ concept. This principle means that linked data can be ‘self-documenting’ — because each concept used has documentation that can be found at the given URL, giving us a simple and well-known mechanism for knowing where to find the documentation of stuff.&lt;/p&gt;
+
+&lt;p&gt;However, the big problem is that this principle is too weak — it does not dictate what the useful information is, what it should contain or what services it should support. It should really contain a machine-readable definition of the term, not just unspecified useful information. Without that stipulation, we can’t really automate much — we don’t know what type of information will be found at any given URL, or even what format it will be in. A human has to look at it to interpret it.&lt;/p&gt;
+
+&lt;p&gt;Then when we come to the fifth and final principle — the reuse of popular vocabulary terms — things really get messy. The motivation for this principle is clear, everybody was creating their own ontologies with their own classes and properties, reinventing the wheel again and again rather than reusing existing ontologies. Surely, it would be better if people reused the same terms rather than reinventing their own.&lt;/p&gt;
+
+&lt;p&gt;However, the big problem is that the well-known ontologies and vocabularies such as foaf and dublin-core that have been reused, cannot really be used as libraries in such a manner. They lack precise and correct definitions and they are full of errors and mutual inconsistencies [1] and they themselves use terms from other ontologies — creating huge and unwieldy dependency trees. If, for example, we want to use the foaf ontology as a library, we need to also include several dozen dependant libraries, some of which no longer exist. So, the linked data approach, in fact, just uses these terms as untyped tags — there is no clear and usable definition of what any of these terms actually mean — people just bung in whatever they want — creating a situation where there are effectively no reliable semantics to any of these terms.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png&quot; alt=&quot;The dependency tree of the open annotations ontology — typical of a linked data vocabulary&quot; /&gt;
+The dependency tree of the open annotations ontology — typical of a linked data vocabulary&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://lod-cloud.net/&quot;&gt;Linked Open Data Cloud&lt;/a&gt; is the great achievement of the linked data movement — it shows a vast array of interconnected datasets, incorporating many of the most important and well known resources on the internet such as wikipedia. Unfortunately, however, on closer examination, it is far less impressive and useful than it might appear — due to the lack of well-defined common semantics across these datasets, the links are little more than links — they cannot be automatically interpreted by computers.&lt;/p&gt;
+
+&lt;p&gt;What’s worse, where semantic terms are used, they are very often used erroneously. For example, it is commonplace to use the term &lt;em&gt;owl:sameAs&lt;/em&gt; to create links between instances in different datasets that are about the same real world thing and likewise it is common to use the term &lt;em&gt;owl:equivalentClass&lt;/em&gt; to refer to classes that refer to the same real world thing. In these cases, while the terms are well-defined, their defined meanings are quite different to how they are actually used — they assert that the classes or instances are logically the same thing and can be unified. If we follow the correct interpretation, the consequence is that everything blows up because they are almost never in fact logically equivalent.&lt;/p&gt;
+
+&lt;p&gt;This is not to say that such links are useless —it is manifestly useful to a human engaged in a data-integration task to know which data-structures are about the same real-world thing - but that falls far short of the vision of the semantic web — it is supposed to be a web of knowledge for machines, not humans.&lt;/p&gt;
+
+&lt;p&gt;The fundamentally decentralised conception of linked data carries further challenges. It take resources to create, curate and maintain high quality datasets and if we don’t continue to feed a dataset with resources, entropy quickly takes over. If we want to build an application that relies upon a third party linked dataset, we are relying upon whoever publishes that dataset to continue to feed it with resources — this is a risky bet in general and particularly risky when we are dealing with academic research in which almost all resources are focused on novelty and almost none on infrastructure and maintenance. For example, the wordnet linked dataset has been extensively used in commercial applications, but the dataset maintainers at the University of Southampton have long since run out of resources to maintain it [2]. The semantic web — as illustrated in the diagram above — is predictably littered with abandoned ontologies and datasets. Simply continuing to build linked datasets without considering the resourcing problem is building on foundations of sand.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In summary, the linked data movement as it exists suffers from several critical problems which continue to prevent adoption outside of academic research. Firstly, the specifications are too weak to enable automatic processing by machines in any meaningful way. Secondly, it creates dependencies on third parties without any sustainable economic model. Even in a perfect world without free-riders, there are many situations in which a third party might be getting much more value from a dataset than the dataset maintainer who bears the cost.&lt;/p&gt;
+
+&lt;p&gt;If we actually want to make linked data and the semantic web work the first thing that we need to do is to radically reduce the ambition of the movement. Firstly, we should only create links between datasets that have well defined, sound and mutually compatible machine-readable semantics. Secondly, we should resource the maintenance of high-quality datasets as a public service, rather than leave them subject to the novelty-loving whims of academic research.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;[1] Linked Data Schema: Fixing unsound foundations. K. Feeney, G. Mendel Gleason, R. Brennan, Semantic Web, vol. 9, no. 1, pp. 53-75, 2018&lt;/p&gt;
+
+&lt;p&gt;[2] https://lod-cloud.net/dataset/rkb-explorer-wordnet&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
+        
+        <category>Graph Database</category>
+        
+        <category>Database</category>
+        
+        <category>Linked Data</category>
+        
+        <category>Rdf</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>TerminusDB @ PyLadies Dublin</title>
+        <description>&lt;p&gt;Hello Terminators!&lt;/p&gt;
+
+&lt;p&gt;A first — for me at least — attending PyLadies, Dublin!&lt;/p&gt;
+
+&lt;p&gt;PyLadies helps more women become active participants and leaders in the Python open-source community. PyLadies Dublin also provides a friendly support network for women and a bridge to the larger Python world. Anyone with an interest in Python is encouraged to participate. You can see more &lt;a href=&quot;https://www.meetup.com/PyLadiesDublin/&quot;&gt;here&lt;/a&gt; — we really enjoyed, so I’d encourage people to attend.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB Developer Advocate Extraordinaire, Cheuk, spoke at the PyLadies event earlier this week. There were about 40 PyLadies in the audience and a sprinkling of interloping PyMen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg&quot; alt=&quot;PyLadiesDublin meetup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The event took place in the Dublin office of Qualtrics, which has a full replica of an Irish pub. Another good reason to attend!&lt;/p&gt;
+
+&lt;p&gt;Cheuk used TerminusDB to ask if we are supporting the correct politician. She used data from the Dublin City Council. It is a fascinating use case, and relevant in Ireland as we have just had an inconclusive election (and might have another in the not too distant future). There is a run through of the demo &lt;a href=&quot;/2020/01/15/are-you-supporting-the-right-politician/&quot;&gt;over here&lt;/a&gt; — give it a try.&lt;/p&gt;
+
+&lt;p&gt;The full video of the excellent presentation is here:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3XKJ9_bplUY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;TerminusDB is open source now and forever so it is perfect for the Python community. We are rolling out ever more features for Pythonistas — check out our &lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;python query client&lt;/a&gt;! And watch this space for exciting news.&lt;/p&gt;
+
+&lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminusdb-pyladies-dublin/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminusdb-pyladies-dublin/</guid>
+        
+        <category>Python</category>
+        
+        <category>Database</category>
+        
+        <category>Data</category>
+        
+        <category>Data Science</category>
+        
+        <category>Politics</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Terminalia — Our Day</title>
+        <description>&lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB is named after the Roman God of boundaries, Terminus — all databases need good boundaries — and Terminalia is his festival.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg&quot; alt=&quot;We want the finest wines available to humanity!&quot; /&gt;
+We want the finest wines available to humanity!&lt;/p&gt;
+
+&lt;p&gt;Terminus is an old Roman god — probably introduced by Romulus after the founding of the city. There is a famous story told of the last king of Rome, Tarquin (so disliked &amp;amp; proud that he was overthrown and the Republic declared) — he wanted to reshape Rome as an imperial capital and engaged in a large scale building programme. As part of his works, he set about reconstructing the Temple of Jupiter on the Capitol Hill. Tarquin thought that constructing a massive temple over the remains of a holy site consecrated by Romulus would cement his place as a great King of Rome. To facilitate the reconstruction, the older shrines to various gods had to be removed; however, when they attempted to move the shrine of Terminus, it would not budge. Terminus was the immovable rock of the Capitol. Even Jupiter, the king of the gods, had to kneel to Terminus.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/terminusdb/terminusdb-whats-in-a-name-27b8be6b0794&quot;&gt;More on Terminus and TerminusDB’s name.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Terminus’ slogan &lt;em&gt;‘Concedo Nulli’&lt;/em&gt; — concede to nobody — remains at the heart of the TerminusDB project. We continue to walk through walls to get the features out the door. We will not yield.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3792/0*QpWPQjM2KyznDjeD.jpg&quot; alt=&quot;statue of Terminus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Terminalia is the official holiday for TerminusDB. As it’s on a Sunday this year, we celebrate tonight. As Ovid dictates, we will allow the pagan spirits to flow. We will pour lamb’s blood on the statue of Terminus and offer him suckling pigs and wine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2600/0*u1Y5gT-CQ3_Fx6bz.jpg&quot; alt=&quot;painting of Terminalia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;“When night has passed, let the god be celebrated With customary honour, who separates the fields with his sign. Terminus, whether a stone or a stump buried in the earth, You have been a god since ancient times. You are crowned from either side by two landowners, Who bring two garlands and two cakes in offering. An altar’s made: here the farmer’s wife herself Brings coals from the warm hearth on a broken pot. The old man cuts wood and piles the logs with skill, And works at setting branches in the solid earth. Then he nurses the first flames with dry bark, While a boy stands by and holds the wide basket. When he’s thrown grain three times into the fire The little daughter offers the sliced honeycombs. Others carry wine: part of each is offered to the flames: The crowd, dressed in white, watch silently. Terminus, at the boundary, is sprinkled with lamb’s blood, And doesn’t grumble when a sucking pig is granted him. Neighbours gather sincerely, and hold a feast, And sing your praises, sacred Terminus: ‘You set bounds to peoples, cities, great kingdoms: Without you every field would be disputed. You curry no favour: you aren’t bribed with gold, Guarding the land entrusted to you in good faith. If you’d once marked the bounds of Thyrean lands, Three hundred men would not have died, Nor Othryades’ name be seen on the pile of weapons. O how he made his fatherland bleed! What happened when the new Capitol was built? The whole throng of gods yielded to Jupiter and made room: But as the ancients tell, Terminus remained in the shrine Where he was found, and shares the temple with great Jupiter. Even now there’s a small hole in the temple roof, So he can see nothing above him but stars. Since then, Terminus, you’ve not been free to wander: Stay there, in the place where you’ve been put, And yield not an inch to your neighbour’s prayers, Lest you seem to set men above Jupiter: And whether they beat you with rakes, or ploughshares, Call out: “This is your field, and that is his!”’ There’s a track that takes people to the Laurentine fields, The kingdom once sought by Aeneas, the Trojan leader: The sixth milestone from the City, there, bears witness To the sacrifice of a sheep’s entrails to you, Terminus. The lands of other races have fixed boundaries: The extent of the City of Rome and the world is one.” — Ovid, Fasti II&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.irishtimes.com/opinion/the-other-marching-season-terminalia-the-roman-festival-of-boundaries-1.3803276&quot;&gt;Terminalia and Terminus also sneak into Irish place names and traditional events&lt;/a&gt; (link to a great Irish Times article on the subject)&lt;/p&gt;
+
+&lt;p&gt;Terminators around the world are encouraged to celebrate this momentous day. Wear white, sacrifice a lamb, let the spirit of pre-Republican Rome flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2000/0*P0qHv01fUcd8XSMU.jpg&quot; alt=&quot;modern festival&quot; /&gt;
+Get out there, Terminators&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminalia-our-day/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminalia-our-day/</guid>
+        
+        <category>Terminusdb</category>
+        
+        <category>Rome</category>
+        
+        <category>Database</category>
+        
+        <category>Party</category>
+        
+        <category>Do It Yourself</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>TerminusDB community arrived in London</title>
+        <description>&lt;p&gt;We had our first meetup in London last Tuesday at the beautiful Microsoft Reactor located in the centre of the city! Members of the TerminusDB team from Dublin and Berlin came to visit the community. Of course, there were pizzas and lots of beers!&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We have lots of nice beer at Microsoft Reactor Meetup space, come have some. &lt;a href=&quot;https://t.co/tUsgF5GZCw&quot;&gt;pic.twitter.com/tUsgF5GZCw&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dmytri Kleiner (@dmytri) &lt;a href=&quot;https://twitter.com/dmytri/status/1227295076218482688?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;We got so much love for our swags! London Terminators participated and won our e-coffee mugs that made out of bamboo. I hope they will bring them in when buying their morning dose of coffee in their favourite coffee shops. Also, we gave out lots of our Cowduck stickers and T-shirts. Cowduck is winning the heart of Terminators!&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Loving the logo and looking forward to learning more &lt;a href=&quot;https://twitter.com/hashtag/TerminusDB?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#TerminusDB&lt;/a&gt; !!!! &lt;a href=&quot;https://t.co/JWKlERYLuU&quot;&gt;pic.twitter.com/JWKlERYLuU&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ed Outhwaite (@allyrdatarb2us) &lt;a href=&quot;https://twitter.com/allyrdatarb2us/status/1227307800419864578?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Luke, our Commercial Lead, gave a warm welcome to all the Terminators. He told a story about the origin of Cowduck and announced a competition that you don’t wanna miss (£100 Amazon gift coupon, swags and speaking opportunities!) Make sure you enter before 17th March 2020 (St. Patrick’s Day!).&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;It is COMPETITION time! 🥳🥳🥳&lt;br /&gt;&lt;br /&gt;Use UK Parliament Data with TerminusDB to do something interesting and win prizes! &lt;br /&gt;&lt;br /&gt;Details:&lt;a href=&quot;https://t.co/SEnsncy4Jj&quot;&gt;https://t.co/SEnsncy4Jj&lt;/a&gt;&lt;/p&gt;&amp;mdash; TerminusDB (@TerminusDB) &lt;a href=&quot;https://twitter.com/TerminusDB/status/1227592043486158850?ref_src=twsrc%5Etfw&quot;&gt;February 12, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Our BDFL (benevolent dictator for life) Gavin Mendel-Gleason gave a talk about the internals of TerminusDB. It covers a lot of the design that explains why TerminusDB can store data like git and do it in an efficient way. Our Terminators are very interested and asked a lot of questions. Slides can be found here.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;und&quot; dir=&quot;ltr&quot;&gt;We ♥️ &lt;a href=&quot;https://twitter.com/hashtag/London?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#London&lt;/a&gt; &lt;a href=&quot;https://t.co/6rnJYCW1CL&quot;&gt;pic.twitter.com/6rnJYCW1CL&lt;/a&gt;&lt;/p&gt;&amp;mdash; TerminusDB (@TerminusDB) &lt;a href=&quot;https://twitter.com/TerminusDB/status/1227311804512161794?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;After a short break, we continued with a short workshop in creating a knowledge graph with bike hire data. It was a great success as most of our Terminators has created a graph with no problems! Terminators are smart! In case you missed it or if you want to revisit the tutorial, we have a step by step guide here in &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;this blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Pretty detailed live workshop for &lt;a href=&quot;https://twitter.com/TerminusDB?ref_src=twsrc%5Etfw&quot;&gt;@TerminusDB&lt;/a&gt; and get to meet all the core devs &lt;a href=&quot;https://t.co/JhwY3eDsJs&quot;&gt;pic.twitter.com/JhwY3eDsJs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Steven Lee (@kynrai) &lt;a href=&quot;https://twitter.com/kynrai/status/1227327544044773382?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In case you missed it, we have the recordings available:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/_XnnJJ5AlP0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kkaRYBZqeCM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;A big thank you for Microsoft Reactor for hosting us! We would love to be back to London very soon to meet you all and provide more interesting and educational talks and workshops! To catch news and updates of the community, visit &lt;a href=&quot;https://community.terminusdb.com/&quot;&gt;https://community.terminusdb.com/&lt;/a&gt;. Don’t forget to join the &lt;a href=&quot;http://bit.ly/terminusdb-slack&quot;&gt;Slack channel&lt;/a&gt; to keep in touch!&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/Swag?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Swag&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/TerminusDB?ref_src=twsrc%5Etfw&quot;&gt;@TerminusDB&lt;/a&gt;&lt;br /&gt;Check it out &lt;a href=&quot;https://t.co/yFCOgn4C16&quot;&gt;https://t.co/yFCOgn4C16&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dipal Thakker 💬 (@Dipal) &lt;a href=&quot;https://twitter.com/Dipal/status/1227307932834029569?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/13/terminusdb-community-arrived-in-london/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/13/terminusdb-community-arrived-in-london/</guid>
+        
+        <category>Database</category>
+        
+        <category>Meetup</category>
+        
+        <category>Tech Education</category>
+        
+        <category>Open Source</category>
+        
+        <category>Knowledge Graph</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB Discussions</title>
