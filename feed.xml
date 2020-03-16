@@ -4,10 +4,10 @@
     <title>TerminusDB Blog - News and Tutorials</title>
     <description>News and tutorials of TerminusDB.
 </description>
-    <link>https://terminusdb.github.io/terminusdb-blog/</link>
-    <atom:link href="https://terminusdb.github.io/terminusdb-blog//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Mar 2020 12:59:41 +0000</pubDate>
-    <lastBuildDate>Mon, 16 Mar 2020 12:59:41 +0000</lastBuildDate>
+    <link>http://blog.terminusdb.com/</link>
+    <atom:link href="http://blog.terminusdb.com//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 16 Mar 2020 17:45:05 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 17:45:05 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -70,8 +70,8 @@ Databases ranked by data modelling power with leading open source examples of ea
 &lt;p&gt;So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</guid>
+        <link>http://blog.terminusdb.com//2020/03/02/why-graph-will-win/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/03/02/why-graph-will-win/</guid>
         
         <category>OWL</category>
         
@@ -127,8 +127,8 @@ Databases ranked by data modelling power with leading open source examples of ea
 &lt;p&gt;If you want to know more, follow our publication to get the news about our talks, tutorials and community events.&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
+        <link>http://blog.terminusdb.com//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
         
         <category>Database</category>
         
@@ -208,8 +208,8 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;[2] https://lod-cloud.net/dataset/rkb-explorer-wordnet&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
+        <link>http://blog.terminusdb.com//2020/02/25/graph-fundamentals-part-4-linked-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
         
         <category>Graph Database</category>
         
@@ -247,8 +247,8 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminusdb-pyladies-dublin/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminusdb-pyladies-dublin/</guid>
+        <link>http://blog.terminusdb.com//2020/02/21/terminusdb-pyladies-dublin/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/02/21/terminusdb-pyladies-dublin/</guid>
         
         <category>Python</category>
         
@@ -294,8 +294,8 @@ We want the finest wines available to humanity!&lt;/p&gt;
 Get out there, Terminators&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminalia-our-day/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/21/terminalia-our-day/</guid>
+        <link>http://blog.terminusdb.com//2020/02/21/terminalia-our-day/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/02/21/terminalia-our-day/</guid>
         
         <category>Terminusdb</category>
         
@@ -350,8 +350,8 @@ Get out there, Terminators&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/13/terminusdb-community-arrived-in-london/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/13/terminusdb-community-arrived-in-london/</guid>
+        <link>http://blog.terminusdb.com//2020/02/13/terminusdb-community-arrived-in-london/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/02/13/terminusdb-community-arrived-in-london/</guid>
         
         <category>Database</category>
         
@@ -397,8 +397,8 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
 &lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/28/terminusdb-discussions/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/28/terminusdb-discussions/</guid>
+        <link>http://blog.terminusdb.com//2020/01/28/terminusdb-discussions/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/28/terminusdb-discussions/</guid>
         
         <category>Database</category>
         
@@ -456,8 +456,8 @@ so, in your WOQL query, you can use:
 Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&quot;&gt;Dmytri Kleiner&lt;/a&gt; for figuring it out!&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/21/loading-your-local-files-in-terminusdb/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/21/loading-your-local-files-in-terminusdb/</guid>
+        <link>http://blog.terminusdb.com//2020/01/21/loading-your-local-files-in-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/21/loading-your-local-files-in-terminusdb/</guid>
         
         <category>Data Science</category>
         
@@ -665,8 +665,8 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
 &lt;p&gt;TerminusDB is open-source, we would like to invite you to try it out and give us feedback and ideas. Please feel free to join the slack channel and chat with the team: &lt;a href=&quot;http://bit.ly/terminusdb-slack&quot;&gt;http://bit.ly/terminusdb-slack&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
+        <link>http://blog.terminusdb.com//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
         
         <category>Database</category>
         
@@ -753,8 +753,8 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
 &lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/16/terminusdb-1-1-the-big-babushka/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
+        <link>http://blog.terminusdb.com//2020/01/16/terminusdb-1-1-the-big-babushka/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
         
         <category>Developer Tools</category>
         
@@ -1106,8 +1106,8 @@ Make a new WOQL query as follow:&lt;/p&gt;
 &lt;p&gt;Feel free to use any open data to do the same analysis — we’d love to see the results. In fact, TerminusDB is running a competition on UK political data. &lt;a href=&quot;https://twitter.com/TerminusDB/status/1214829778387296256&quot;&gt;Check it out over on twitter&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/15/are-you-supporting-the-right-politician/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/15/are-you-supporting-the-right-politician/</guid>
+        <link>http://blog.terminusdb.com//2020/01/15/are-you-supporting-the-right-politician/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/15/are-you-supporting-the-right-politician/</guid>
         
         <category>Data Science</category>
         
@@ -1500,8 +1500,8 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;Well done — you are now a level 1 Terminator!&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
+        <link>http://blog.terminusdb.com//2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
         <category>Database</category>
         
@@ -1549,8 +1549,8 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;We see a world full of opportunity, but can’t grasp it all. We call on startups, researchers, NGOs, government workers, factory operatives, hipsters, dreamers… anybody who thinks they can use data effectively to make the world a better place. TerminusDB is open source — released under the GPL v3 license — so there is no cost in using the database. We can offer you guidance, advice and encouragement. We believe that TerminusDB can offer value in a whole bunch of areas, and we want to help you realize that value. Join the data-centric revolution.&lt;/p&gt;
 </description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
+        <link>http://blog.terminusdb.com//2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
         
         <category>Database</category>
         
@@ -1621,8 +1621,8 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;Community forum: &lt;a href=&quot;https://community.terminusdb.com/&quot;&gt;https://community.terminusdb.com/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/11/05/storing-data-like-git-terminusdb/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/11/05/storing-data-like-git-terminusdb/</guid>
+        <link>http://blog.terminusdb.com//2019/11/05/storing-data-like-git-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/11/05/storing-data-like-git-terminusdb/</guid>
         
         <category>Git</category>
         
@@ -1674,8 +1674,8 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;And this is only the tip of the iceberg — there have been many more incoherent standards and initiatives that have come out of the W3C’s standards bodies — almost all of which have launched like lead balloons into a world that cares not a jot. Nevertheless, it is important to recognise that, hidden in all the nonsense, there are some exceptionally good ideas — triples, URL identifiers and OWL itself are all tremendously good ideas in essence and nothing else out there comes close. It is a sad testament to the suffocating nature of design by standards committee which has consumed countless hours of many thousands of smart and genuine researchers, that ultimately the entire community ended up getting it’s ass kicked by a bunch of Swedish hackers with a bunch of json blobs — the Neo4j property graph guys have had a greater impact upon the real world than the whole academic edifice of semantic web research.&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
+        <link>http://blog.terminusdb.com//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
         
         <category>Graph Database</category>
         
@@ -1707,8 +1707,8 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
+        <link>http://blog.terminusdb.com//2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
         
         <category>Model</category>
         
@@ -1770,8 +1770,8 @@ Hence, despite their importance in the early days of graph databases, property g
 &lt;p&gt;This is the second part of a four-article series on graph fundamentals. The &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;first article in the series covered RDF&lt;/a&gt;, the other major variant of graph databases around today, while the third and next part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
+        <link>http://blog.terminusdb.com//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
         
         <category>Graph</category>
         
@@ -1908,8 +1908,8 @@ ex:likes ex:john.
 &lt;p&gt;The second part of this series on graph fundamentals covers Labelled Property Graphs, the second major variant of graph databases today, while the third part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/09/20/graph-fundamentals-part-1-rdf/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/09/20/graph-fundamentals-part-1-rdf/</guid>
+        <link>http://blog.terminusdb.com//2019/09/20/graph-fundamentals-part-1-rdf/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/09/20/graph-fundamentals-part-1-rdf/</guid>
         
         <category>Semantic Web</category>
         
@@ -2008,8 +2008,8 @@ TerminusDB contributors will be posting on this blog over the coming weeks and m
 &lt;p&gt;Join the data-centric revolution!&lt;/p&gt;
 </description>
         <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/08/21/terminusdb-whats-in-a-name/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/08/21/terminusdb-whats-in-a-name/</guid>
+        <link>http://blog.terminusdb.com//2019/08/21/terminusdb-whats-in-a-name/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/08/21/terminusdb-whats-in-a-name/</guid>
         
         <category>Machine Learning</category>
         
@@ -2111,8 +2111,8 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
 &lt;p&gt;You can check out the lastest Mavis source here: &lt;a href=&quot;https://github.com/GavinMendelGleason/mavis&quot;&gt;https://github.com/GavinMendelGleason/mavis&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
+        <link>http://blog.terminusdb.com//2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
         
         <category>Type Theory</category>
         
@@ -2185,8 +2185,8 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
 &lt;p&gt;Acknowledgments to Douglas R. Miles, who helped me sort out module manipulation issues.&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
+        <link>http://blog.terminusdb.com//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
         
         <category>Type Theory</category>
         
@@ -2315,8 +2315,8 @@ q :-
 &lt;p&gt;Second, the addition of dynamic checks at boundaries is absolutely fantastic, and precisely the right way to ease a language like prolog into using static typing disciplines. However, when should we apply these type checks? This leads us to the question of mode checking. We will look at dynamic type checking and dynamic mode checking in the next article on mavis.&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.github.io/terminusdb-blog//2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
-        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
+        <link>http://blog.terminusdb.com//2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com//2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
         
         <category>Type Theory</category>
         
