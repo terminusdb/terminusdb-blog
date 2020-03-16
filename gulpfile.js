@@ -32,6 +32,7 @@ function styles() {
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./assets/css'));
+    .pipe(touch());
 }
 
 function lint() {
@@ -58,6 +59,7 @@ function scripts() {
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./assets/js'));
+    .pipe(touch());
 }
 
 function dist() {
