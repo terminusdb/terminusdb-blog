@@ -8,7 +8,7 @@ name: TerminusDB
 title: TerminusDB Blog - News and Tutorials
 description: >
   News and tutorials of TerminusDB.
-url: https://terminusdb.github.io/terminusdb-blog/
+url: http://blog.terminusdb.com
 twitter_username: TerminusDB
 default_img: /assets/images/cowduck_sitting_logo.jpg
 social:
