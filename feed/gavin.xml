@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TerminusDB Blog - News and Tutorials</title>
+    <description>News and tutorials of TerminusDB.
+</description>
+    <link>https://terminusdb.github.io/terminusdb-blog/</link>
+    <atom:link href="https://terminusdb.github.io/terminusdb-blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 16 Mar 2020 12:59:41 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 12:59:41 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <item>
+        <title>Type and mode checking in prolog (part 2): mavis</title>
+        <description>&lt;p&gt;As we discussed in &lt;a href=&quot;/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;Part 1&lt;/a&gt; of this short series on types in prolog, prolog has a rather graceful but silent method of reacting to a certain bugs. The exploitation of non-determinism can be extremely handy for searching spaces, but sometimes we just didn’t mean what we wrote, and instead of silent failure we would like to see an error.&lt;/p&gt;
+
+&lt;p&gt;One way around this problem which we presented in Part 1 was to use Hindley-Milner type (HM) checking to statically discover where we have variables which have a different type than we expect.&lt;/p&gt;
+
+&lt;p&gt;We’re going to take a different tack in this article and use dynamic type and mode checking with mavis. HM is great, but it wasn’t really written for prolog but for functional languages, and so doesn’t take any account of modes. It can also be a bit restrictive and heavy weight when modifying already existing code. We could of course dial it up, by introducing dependent types, but we’re not going to go there in this series (though how cool would this be?!).&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;https://github.com/GavinMendelGleason/mavis&quot;&gt;Mavis&lt;/a&gt; we get to specify both modes and quite complex types in a gradual fashion, adding them as necessary. The downside is that type checking happens only at run-time and is not statically checked. Unfortunately this means we only catch bugs during testing or deployment, but at least we catch them!&lt;/p&gt;
+
+&lt;p&gt;I’ve used both techniques in production code and find them both useful, but currently Mavis is more fully featured and more flexible and so I’ve done most development with it.&lt;/p&gt;
+
+&lt;p&gt;What is a mode? Prolog is a language of predicates, and we can think of any given substitution of variables as being either true or false at a predicate. But often times what we are actually doing when programming in prolog is taking what we know about some bound variables, in order to find other ones which would also satisfy the predicate. And very often we mean a predicate to only search for bindings given some set of already instantiated variables.&lt;/p&gt;
+
+&lt;p&gt;Take for instance the following programme:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * zip(+A:list(any),+B:list(any),-C:list(any)) is det.
+ * zip(-A:list(any),-B:list(any),+C:list(any)) is det.
+ *
+ * Zip two lists into a list of pairs (or unzip, in the other two
+ * modes)
+ */&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RestA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RestB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RestA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RestB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],[],[]).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The benefit of this declaration is obvious from the results of querying for the following goal:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Unhandled&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We have effectively stopped zip from silently failing in the event of passing nonsense arguments. But what do all of these complicated mode descriptions mean?&lt;/p&gt;
+
+&lt;p&gt;There are two mode-lines given for the above programme. We use a preceding ‘+’ to denote required arguments and ‘-’ to denote supplied arguments. If an argument is required (‘+’), it must be bound at the time the predicate is called. If it is supplied (‘-’), it can be bound or not, but we will guarantee that we supply a binding if it is unbound.&lt;/p&gt;
+
+&lt;p&gt;In fact binding time status is a bit more complicated than this. It’s quite possible to have a ‘skeleton’ which has unbound variables inside of a defined term. For instance, you can obtain such a skeleton of a list with the goal:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;_6186&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_6192&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_6198&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Is this &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;? Mavis interprets it as bound if it is compatible with the type declaration. To require a completely defined input you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;++&lt;/code&gt;. In the future we want to include more specific user-defined designations modeling ourselves after those given in Mercury.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/inner-image-03.png&quot; alt=&quot;Mercury Diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The final part of the mode describes the amount of determinism that the predicate is expected to have. Zip above is considered to be ‘det’ which means in all the modes that are described, and subject to its inputs being well typed, it will return precisely one substitution. The different determinism qualifiers are listed in the mavis documentation as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;failure: 0 solutions&lt;/li&gt;
+  &lt;li&gt;semidet: 0 or 1 solution&lt;/li&gt;
+  &lt;li&gt;det: 1 solution&lt;/li&gt;
+  &lt;li&gt;multi: more than one solution&lt;/li&gt;
+  &lt;li&gt;nondet: Any number of solutions including 0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are &lt;em&gt;allowable&lt;/em&gt; modes which are &lt;em&gt;covered&lt;/em&gt; by the above given modes to make things a little more confusing. For instance, I can call zip with the following two different goals, both of which are accepted as legitimate and do not yield errors.&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the first case we supplied all of the arguments. This is more informative than any of the modes given, and consequently causes the determinsm to be &lt;em&gt;demoted&lt;/em&gt;. We shift from being ‘det’ to being ‘semidet’. This demotion is taken care of for us automatically by mavis.
+We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied the appropriate mode line above. This is the main reason we might want to specify multiple mode lines.&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mavis is really useful for finding bugs in production code during testing. I’ve recovered a large number of confusions, especially in the case of errors in my own thinking regards the determinism of various predicates. This can in turn have huge impacts on performance, since uncontrolled and unintended non-determinism can have surprisingly large impacts on speed.&lt;/p&gt;
+
+&lt;p&gt;There are however a number of things I’m unhappy with and I would like to see improved. I’ll list them out here as a sort of wish-list for mavis in the future.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There should be a good deal more that is done statically. Many of the mode and type declarations give plenty of information to yield compile time errors.&lt;/li&gt;
+  &lt;li&gt;With a bit more declarative work we could even reordered queries automatically to produce much more desirable outcomes for specific modes — and in some cases we could even improve the termination behaviour!&lt;/li&gt;
+  &lt;li&gt;The types should at least give us the flexibility of Hindley-Milner type declarations with free type variables which can be used repeatedly. This would give us a much more pleasing and specific type for ‘zip’.&lt;/li&gt;
+  &lt;li&gt;Someday in the not too distant future it would be nice to see dependent types making their way in. For the dynamic case, as we currently have with mavis, this shouldn’t even be too terribly hard to implement in a hacky sort of way!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can check out the lastest Mavis source here: &lt;a href=&quot;https://github.com/GavinMendelGleason/mavis&quot;&gt;https://github.com/GavinMendelGleason/mavis&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
+        
+        <category>Type Theory</category>
+        
+        <category>Prolog</category>
+        
+        <category>Determinism</category>
+        
+        
+      </item>
+    
+    
+    
+      <item>
+        <title>Prolog meta-interpretation for syntax checking</title>
+        <description>&lt;p&gt;Prolog is a fantastic toolkit for developing Domain Specific Languages (DSLs). Lexing and parsing are a breeze with the use of Declarative Clause Grammars (DCGs), and writing a interpreter or compiler is an essentially rule-based transformation problem anyhow.&lt;/p&gt;
+
+&lt;p&gt;But before we set about interpreting or compiling an expression, we need to know that a term, represented as an abstract syntax tree (AST) is well formed.&lt;/p&gt;
+
+&lt;p&gt;Writing a predicate which admits only those terms which conform to a given syntax is likewise very convenient in prolog. For instance, if we wanted to write down a predicate that checks the well-formedness of integer bearing lists, we might write it as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;isa_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we undertake to use this predicate, we can certainly tell if a (already ground) list is well-formed. However, if it is &lt;em&gt;not&lt;/em&gt; well formed, we are not given an enormous amount of feedback. We are instead entreated to the singularly uninformative result:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;?-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Well, we know it’s not an integer list, and given that we have an incredibly simple syntax, we can spot right away with the naked eye, the problem with the term. However, if the term is large, and the syntax is complex, returning false will not necessarily enlighten us to the source of the problem.&lt;/p&gt;
+
+&lt;p&gt;In the past I’ve dealt with this problem by writing relatively complicated syntax checkers, which throw errors when terms are known to be ill-formed, or keep track of failures to report to the top level.&lt;/p&gt;
+
+&lt;p&gt;This unfortunately defeats the clear expressive rule based qualities of the above code which neatly captures what we mean when we say that we have a list of integers. It both complicates the code, and increases the probability that you’ll not even express the intended conditions in the predicate.&lt;/p&gt;
+
+&lt;h2 id=&quot;enter-the-metainterpreter&quot;&gt;Enter the metainterpreter&lt;/h2&gt;
+
+&lt;p&gt;This is where metainterpretation comes to the rescue. Metainterpretation is a strategy for implementing custom interpretation of terms in prolog, using the fact that prolog is &lt;a href=&quot;https://en.wikipedia.org/wiki/Homoiconicity&quot;&gt;homoiconic&lt;/a&gt; and we can easily appropriate functionality from the host system. For an overview of metainterpretation, it’s worth reading &lt;a href=&quot;https://www.metalevel.at/markus.jpg&quot;&gt;Markus Triska’s&lt;/a&gt; examples here, or looking at the relevant section in &lt;a href=&quot;https://mitpress.mit.edu/books/art-prolog-second-edition&quot;&gt;The Art of Prolog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Instead of writing a new predicate, we can reuse our predicate coupled with a metainterpreter which assumes a number of things about the predicate in question. We demand that the predicate be deterministic, i.e. it succeed in assigning the term to our accepted class in precisely one way. This is similar to the constraint that most type systems use to simplify checking and inference. We also demand that it draw from a relatively small number of primitive predicates and avoid cuts or other impurities.&lt;/p&gt;
+
+&lt;p&gt;You can look at the code here: &lt;a href=&quot;https://github.com/GavinMendelGleason/typo&quot;&gt;https://github.com/GavinMendelGleason/typo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Our metainterpreter will then execute the predicate, bit by bit, and return none in the event that there is no &lt;strong&gt;error&lt;/strong&gt;, and &lt;strong&gt;just&lt;/strong&gt;(Error) in the case that something has gone wrong. The Error will carry with it all the information about &lt;em&gt;all&lt;/em&gt; failed approaches to accepting the term. With this in hand, we can either look at the full failure tree, or we can use the quite effective heuristic, that the deepest failure is likely to be the one that almost succeeded. We can do this by calling &lt;strong&gt;deepest&lt;/strong&gt;/2 to give us back the longest error stack. We can then print this stack with &lt;strong&gt;write_stack&lt;/strong&gt;/1.&lt;/p&gt;
+
+&lt;p&gt;So what happens when we try our initial example with our metainterpreter?&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;-?&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;metainterpret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;   &lt;span class=&quot;nv&quot;&gt;ME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;just&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;deepest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;ss&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;an&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;integer&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Left&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;conjuct&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;successful&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;clause&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;predicate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;conjuct&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;successful&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;clause&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;predicate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;conjuct&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;successful&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;clause&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;predicate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Instead of false, we’ve found the most likely cause of failure, and the entire path up the syntax tree which resulted in the cascading failure!&lt;/p&gt;
+
+&lt;p&gt;Of course the reporting can be done differently, and the heuristic might vary with different uses, but I’ve found this an effective way of describing what has gone wrong. I’ve even found a bug in production code which was exposed when applying the metainterpreter as it tracked down an inadvertent non-determinism!&lt;/p&gt;
+
+&lt;p&gt;The take-away lesson for me was that sometimes its better to write a simple metainterpreter than it is to complicate your code. DSLs in prolog are easy to write and you can even write DSLs to help you write your DSLs.&lt;/p&gt;
+
+&lt;p&gt;Sometimes meta is betta!&lt;/p&gt;
+
+&lt;p&gt;Acknowledgments to Douglas R. Miles, who helped me sort out module manipulation issues.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
+        
+        <category>Type Theory</category>
+        
+        <category>Prolog</category>
+        
+        <category>Functional Programming</category>
+        
+        <category>Logic Programming</category>
+        
+        
+      </item>
+    
+    
+    
+      <item>
+        <title>Type and mode checking in prolog (part 1): type_check</title>
+        <description>&lt;p&gt;When it comes to languages for rule processing, prolog has them all beat. It has so many exciting features that make it incredibly flexible, among them:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;backtracking: we can try several strategies to solve a problem, and roll back if one doesn’t work. This also give us generators and testors using the same framework, enabling guess and check approaches to algorithms.&lt;/li&gt;
+  &lt;li&gt;homoiconicity: which enables incredible metalogical madness including term and goal expansion and simplifying the writing of meta-interpreters.&lt;/li&gt;
+  &lt;li&gt;DCGs (Declarative Clause Grammars): regexps are great, but when your language isn’t regular, DCGs give us one of the nicest ways to parse input around.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Yet when trying to write large software packages in anger for industrial purposes, there are some unfortunate warts that tend to plague this otherwise beautiful language. I’ve compiled a fairly long mental list, but right now I want to talk about two of these awkward elements and what to do about them.&lt;/p&gt;
+
+&lt;p&gt;When you write a predicate in prolog, you can often make a very efficient choice between clauses in the predicate by carefully choosing terms which enable us to discriminate between the clauses we would like to “fire”.&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we invoke &lt;strong&gt;p(term_a)&lt;/strong&gt; we are graciously treated to the expected printout. And perhaps even better we, with a prolog such as swipl, we don’t even end up with any remaining choice-points due to the indexing of the argument, making our choice efficient as well.&lt;/p&gt;
+
+&lt;p&gt;However, in large scale projects, it can happen that we call &lt;strong&gt;p&lt;/strong&gt;/1 with something quite unexpected, perhaps with term_c, due either to a typo, or a thought-o. Prolog’s method of dealing with this is to silently fail — and since failure in prolog is a normal course of events, the result can lead to irritating bug-searches which take quite a while to narrow the problem to its source.&lt;/p&gt;
+
+&lt;p&gt;Of course what we want for &lt;strong&gt;p&lt;/strong&gt;/1 is to correctly type it. That is, we want to be able to add some additional information to p about the domain of its arguments such that we can dynamically, or even better, statically, determine that they are not of the required variety.&lt;/p&gt;
+
+&lt;h2 id=&quot;hindley-milner-and-type_check&quot;&gt;Hindley Milner and type_check&lt;/h2&gt;
+
+&lt;p&gt;Enter &lt;a href=&quot;https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system&quot;&gt;Hindley-Milner&lt;/a&gt; (HM), a type system which allows us to write down just the sort of thing we’re concerned about when we call &lt;strong&gt;p&lt;/strong&gt;/1. HM has a great number of advantages, allowing both inference of types in many cases, and the ability to write down our types in a nice algebraic fashion. It also includes many extensions which might be convenient in the case of prolog.&lt;/p&gt;
+
+&lt;p&gt;So how does HM work? Thanks to the work of Tom Schrijvers et al. we can try it out with the swipl package ‘&lt;a href=&quot;http://www.swi-prolog.org/pack/list?p=type_check&quot;&gt;type-check&lt;/a&gt;’. For our p above we can now write the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;use_module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;type_check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;---&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we add a type ‘term’ which is term_a, or (represented by the ‘;’) a term_b. We can now declare the arguments of our predicate p with a ‘pred’ declaration.&lt;/p&gt;
+
+&lt;p&gt;Now when we load our file, ‘type_check’ will attempt to find any type errors present in the code.&lt;/p&gt;
+
+&lt;p&gt;The first result of loading this file is the following message:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;% TYPE WARNING: call to unknown predicate `write(term_a)'&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%     Possible Fixes: - add type annotation `::' to call&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                     - replace with call to other predicate&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;'HERE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% TYPE WARNING: call to unknown predicate `write(term_b)'&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%     Possible Fixes: - add type annotation `::' to call&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                     - replace with call to other predicate&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;'HERE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Type checking for module `first_blog' done:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% found type errors in 0 out of 2 clauses.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Well-typed code can't go wrong!&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Essentially our type-checker is telling us that it doesn’t know anything about &lt;strong&gt;write&lt;/strong&gt;/1. Unfortunately the majority of standard ISO prolog is unknown to type-check. To really make it work properly for building software in the large we would need to add type annotations to our library. However, we have three different work-arounds provided by ‘type-check’.&lt;/p&gt;
+
+&lt;p&gt;The first two work-arounds I’ll demonstrate in tandem.&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&amp;lt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we add type &lt;em&gt;annotations&lt;/em&gt; to the code to inform the type checker that it can assume the type of the arguments of &lt;strong&gt;write&lt;/strong&gt;/1 to be of type ‘any’. Both of these annotations appear to achieve the same outcome, however the former adds an additional wrapper to the call, ensuring that the arguments are &lt;em&gt;actually&lt;/em&gt; of the appropriate type dynamically. The second is nothing more than a “trust-me” style hint to the type checker.&lt;/p&gt;
+
+&lt;p&gt;Similarly we can build up a database of trust-me style hints using the following syntax:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;trust_pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We can imagine how this could be extended to much of the standard library, for instance:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;trust_pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This establishes that any call with append is to be treated as though it takes a list of some unknown type, another list of that same unknown type, and returns an output list of that type.&lt;/p&gt;
+
+&lt;p&gt;Given we have used one of these methods to properly type our predicate p, we can look at what type_check reports when we utilise p wrongly.&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;use_module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;type_check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;---&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;pred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The predicate &lt;strong&gt;q&lt;/strong&gt;/0 is where we have inserted our buggy call. And indeed, type_check reports:&lt;/p&gt;
+
+&lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;TYPE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;expected&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;unknown_type' for term `term_c'&lt;/span&gt;
+            &lt;span class=&quot;ss&quot;&gt;inferred&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term'
+ in goal:
+   p(term_c)
+ in clause:
+q :-
+    '&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HERE&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;term_c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Well, type_check has shown us our error, and we can now correct our bug at compile time rather than having to wait until we see the error in production.&lt;/p&gt;
+
+&lt;h2 id=&quot;typing-in-the-real-world&quot;&gt;Typing in the real world&lt;/h2&gt;
+
+&lt;p&gt;This is really great, but there are some caveats. The type_check library really needs to have a few kinks ironed out for it to work in industrial practice.&lt;/p&gt;
+
+&lt;p&gt;The first thing is that the full standard library needs to be given appropriate typing in a library, so that you don’t have to constantly run around typing everything. And in order to do this, type_check needs to be made module aware, which it currently is not. Module-awareness adds a good deal of complexity as well — how do we import types for instance?&lt;/p&gt;
+
+&lt;p&gt;Second, the addition of dynamic checks at boundaries is absolutely fantastic, and precisely the right way to ease a language like prolog into using static typing disciplines. However, when should we apply these type checks? This leads us to the question of mode checking. We will look at dynamic type checking and dynamic mode checking in the next article on mavis.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
+        
+        <category>Type Theory</category>
+        
+        <category>Prolog</category>
+        
+        
+      </item>
+    
+    
+  </channel>
+</rss>

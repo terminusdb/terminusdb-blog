@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TerminusDB Blog - News and Tutorials</title>
+    <description>News and tutorials of TerminusDB.
+</description>
+    <link>https://terminusdb.github.io/terminusdb-blog/</link>
+    <atom:link href="https://terminusdb.github.io/terminusdb-blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 16 Mar 2020 12:59:41 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 12:59:41 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+    
+      <item>
+        <title>Why Graph Will Win</title>
+        <description>&lt;p&gt;I recently published a warts-and-all 4 part introduction (covering &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Graph Schemas&lt;/a&gt; and &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Linked Data&lt;/a&gt;). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).&lt;/p&gt;
+
+&lt;p&gt;It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they &lt;em&gt;will&lt;/em&gt; find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s. Once bitten twice shy.&lt;/p&gt;
+
+&lt;p&gt;However, if you were to assume that I’m a critic of graph databases, you would be very wrong. I’ve spent most of the last decade building graph database management systems because to me it’s incredibly obvious that in the long run graph is going to win and here’s why.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The point of all databases is to provide as accurate a representation of some aspect of external reality as possible.&lt;/p&gt;
+
+&lt;p&gt;The fundamental advantage of graph databases is that they model the world as things that have properties and relationships with other things.&lt;/p&gt;
+
+&lt;p&gt;This is closer to the way that humans perceive the world — mapping between whatever aspect of external reality you are interested in and the data model is an order of magnitude easier than with relational databases. Everything is pre-joined — you don’t have to disassemble objects into normalised tables and reassemble them with joins.&lt;/p&gt;
+
+&lt;p&gt;And because creating and curating large and complex datasets is very difficult, very expensive and potentially very lucrative, the reduction in technical complexity in creating and interpreting the graph data model is irresistible. The knowledge graphs that companies like Google and Facebook have accumulated are demonstrably commercially powerful and it is unlikely that such complex and rich datasets would have been possible without graph.&lt;/p&gt;
+
+&lt;p&gt;Humans have an evolutionarily pragmatic view of the world. We perceive the world as things that move through space and time. These things have properties which may change over time. They also have relationships with other things which may also change over time.&lt;/p&gt;
+
+&lt;p&gt;The model is simple but there are a great many different types of things — from stones, to mirrors to politicians and honeybees. To make sense of these things and their properties, we organise them into types and organise these types into a ‘tree-of-life’ or more broadly a ‘tree-of-things’ —taxonomies of types of things that share certain properties and relationships with other types of things.&lt;/p&gt;
+
+&lt;p&gt;Whether you are building a database to record the known universe or logging network security incidents, the model that you actually want to record is always a bunch of objects, categorised with a type-taxonomy, with properties and relationships with other objects, some of which change over time. That’s what you always want to record, because that’s how you perceive the world. Any indirection between perceived world and recorded model creates extra complexity at every step of processing. And in the world of complex systems, combinatorial explosion of complexity is the one true enemy. Reducing the complexity in each and every data operation is irresistible in the long run — you can focus on other things rather than the mappings between the aspects of the real world that you want to model and their stored representations.&lt;/p&gt;
+
+&lt;p&gt;In this respect, even the simplest graph database such as Neo4j — which models the world as a bunch of JSON documents, some of which may contain pointers to other JSON documents, is much better than even the fanciest RDBMS. Granted there is no taxonomy or schema, and support for temporality is basic, but it’s easy to produce a much more naturalistic model of the world than will ever be possible if you have to break the things up into relations. Of course it is possible to automate this mapping by delegating the problem to code (for example by using ORMs or system meta-models) but this is a short-term fix that blows up as size and complexity increase. Code has unbounded complexity and is largely opaque to automated analysis —its contribution to combinatorial explosion becomes overwhelming at scale. All systems which are built upon ORMs evolve into ORM maintenance systems.&lt;/p&gt;
+
+&lt;p&gt;The diagram below shows how different database technologies rank in terms of their data-modelling power — the extent to which they allow you to create naturalistic models of the world. To briefly explain the categories:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png&quot; alt=&quot;comparing databases&quot; /&gt;
+Databases ranked by data modelling power with leading open source examples of each type (in database land, if you are not open source, you have no long term future )&lt;/p&gt;
+
+&lt;h2 id=&quot;key-value-stores-and-wide-column-stores&quot;&gt;Key Value Stores and Wide Column Stores&lt;/h2&gt;
+
+&lt;p&gt;These databases exist primarily to provide computer programs with somewhere to save the variables that they use — they lack data-modelling features beyond basic datatypes. There is nothing wrong with this — computer programs need databases too. It is also, of course, possible to assemble complex data-models from these atomic units within programs, but this very quickly runs into the combinatorial explosion problem — almost everything is described in code leading to unbridled complexity growth.&lt;/p&gt;
+
+&lt;h2 id=&quot;document-stores&quot;&gt;Document Stores&lt;/h2&gt;
+
+&lt;p&gt;Document stores typically store data as a set of JSON documents —objects with tree-structures. The big feature of these databases over relational is that these documents are suitable for creating naturalistic models of things, with the tree structure expressing a containment (or has-a) relationship type. However, they are severely crippled because of poor support for modelling relationships — document relations are often expressed through embedding duplicates of other documents — a horrible, awful, solution which massively increases complexity over time.&lt;/p&gt;
+
+&lt;h2 id=&quot;relational-databases&quot;&gt;Relational Databases&lt;/h2&gt;
+
+&lt;p&gt;Relational databases are all about relations — tables that can be joined together to formed new relations. Foreign keys are used to express schematic relationships between tables. These relationships are untyped and semantically meaningless integers or strings are commonly used as keys. As a result relational databases are fairly impoverished in terms of their abilities to capture real world relationships — we can’t distinguish between containment (has-a) and other types of relationships so we can’t actually turn these relations back into objects without information that is external to the system — mostly in glue code or ORMs. Furthermore, translating to and from these relations and real world objects is rather intricate and leads to a very complex data model even for relatively simple aspects of the real world.&lt;/p&gt;
+
+&lt;h2 id=&quot;property-graphs&quot;&gt;Property Graphs&lt;/h2&gt;
+
+&lt;p&gt;Property graphs are basically document stores with a dash of relations added in that is to say, they are just a bunch of JSONs with some properties acting as special links to other JSONs (the in and out properties of edges). Even though they are quite primitive, they still have the most important features needed to create naturalistic models of the real world — things (nodes) with properties and relationships (edges).&lt;/p&gt;
+
+&lt;h2 id=&quot;rdf-graphs&quot;&gt;RDF Graphs&lt;/h2&gt;
+
+&lt;p&gt;RDF graphs have all of the features of the database models to the left, the thing that they really bring to the party is the concept of object types — via the &lt;em&gt;rdf:type&lt;/em&gt; predicate — and not just simple datatypes.&lt;/p&gt;
+
+&lt;h2 id=&quot;owl-graphs&quot;&gt;OWL Graphs&lt;/h2&gt;
+
+&lt;p&gt;Graph databases that use the Web Ontology Language (OWL) to describe their data model are by far the most powerful in terms of data modelling capabilities, although OWL must be used with care as it can easily lead to an incomprehensibly complex data model (and in practice we need to choose a computable fragment of the language). Nevertheless, the really important aspects can be boiled down to 3 simple predicates that enable relationships between object types to be defined — &lt;em&gt;rdfs:domain&lt;/em&gt; and &lt;em&gt;rdfs:range&lt;/em&gt; support strongly typed relationships between objects, not just simple relationships, while &lt;em&gt;rdfs:subClassOf&lt;/em&gt; supports type inheritance — and hence proper taxonomies — these combine to provide a fully featured type system, the holy grail of data modelling.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/03/02/why-graph-will-win/</guid>
+        
+        <category>OWL</category>
+        
+        <category>Graph Database</category>
+        
+        <category>RDF</category>
+        
+        <category>Database</category>
+        
+        <category>Data Modeling</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+      <item>
+        <title>Graph Fundamentals — Part 4: Linked Data</title>
+        <description>&lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;By the mid 2000s, it was clear that the vision of the semantic web, as set out by Tim Berners Lee in 2001, despite a huge amount of initial hype and investment, remained largely unrealized. The basic idea — that a network of machine readable, semantically rich documents would form a ‘semantic web’ much like the world wide web of documents, was proving much more difficult than had been anticipated. This prompted the emergence of the concept of ‘linked data’, again promoted by Tim Berners Lee, and laid out in two documents published in 2006 and 2009.&lt;/p&gt;
+
+&lt;p&gt;Linked data was, in essence, an attempt to reduce the idea of the semantic web down to a small number of simple principles, which were meant to capture the core of the semantic web without being overly prescriptive over the details.&lt;/p&gt;
+
+&lt;p&gt;The 4 basic principles were:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use URIs for things&lt;/li&gt;
+  &lt;li&gt;Use HTTP URIs&lt;/li&gt;
+  &lt;li&gt;Make these HTTP URIs dereferencable, returning useful information about the thing referred to&lt;/li&gt;
+  &lt;li&gt;Include links to other URIs to allow discovery of more things.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We can supplement these 4 principles with a fifth, which was originally defined as a ‘best practice’ but which effectively became a core principle:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;“People should use terms from well-known RDF vocabularies such as FOAF, SIOC, SKOS, DOAP, vCard, Dublin Core to make it easier for client applications to process Linked Data”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These 5 points effectively defined linked data movement and remain at the heart of current semantic web research. 1 and 4 are encapsulated within RDF (linked data was not defined to mean only RDF but, in practice, RDF is almost always used by people publishing linked data), they were just restating the basic design ideas of the semantic web with a less prescriptive approach. The second principle just recognised that, in practice, people only ever really used HTTP URLs — by 2006, HTTP had become the dominant mechanism for communicating with remote servers, as it remains today — so this was very sensible. So far so good.&lt;/p&gt;
+
+&lt;p&gt;The 3rd principle was also restating a concept that had been implicit in RDF and the semantic web — the idea that if you submit a HTTP GET to any of the URLs used in linked data, you should get useful information about the thing that is being referred to. So, for example, if you have a triple:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;prefix ex &amp;lt;http://my.url/&amp;gt;
+ex:jane ex:likes ex:chocalate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And you open http://my.url/jane in your browser, the server should return some useful information about jane, while if you open http://my.url/likes , you should get useful information about the ‘likes’ concept. This principle means that linked data can be ‘self-documenting’ — because each concept used has documentation that can be found at the given URL, giving us a simple and well-known mechanism for knowing where to find the documentation of stuff.&lt;/p&gt;
+
+&lt;p&gt;However, the big problem is that this principle is too weak — it does not dictate what the useful information is, what it should contain or what services it should support. It should really contain a machine-readable definition of the term, not just unspecified useful information. Without that stipulation, we can’t really automate much — we don’t know what type of information will be found at any given URL, or even what format it will be in. A human has to look at it to interpret it.&lt;/p&gt;
+
+&lt;p&gt;Then when we come to the fifth and final principle — the reuse of popular vocabulary terms — things really get messy. The motivation for this principle is clear, everybody was creating their own ontologies with their own classes and properties, reinventing the wheel again and again rather than reusing existing ontologies. Surely, it would be better if people reused the same terms rather than reinventing their own.&lt;/p&gt;
+
+&lt;p&gt;However, the big problem is that the well-known ontologies and vocabularies such as foaf and dublin-core that have been reused, cannot really be used as libraries in such a manner. They lack precise and correct definitions and they are full of errors and mutual inconsistencies [1] and they themselves use terms from other ontologies — creating huge and unwieldy dependency trees. If, for example, we want to use the foaf ontology as a library, we need to also include several dozen dependant libraries, some of which no longer exist. So, the linked data approach, in fact, just uses these terms as untyped tags — there is no clear and usable definition of what any of these terms actually mean — people just bung in whatever they want — creating a situation where there are effectively no reliable semantics to any of these terms.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png&quot; alt=&quot;The dependency tree of the open annotations ontology — typical of a linked data vocabulary&quot; /&gt;
+The dependency tree of the open annotations ontology — typical of a linked data vocabulary&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://lod-cloud.net/&quot;&gt;Linked Open Data Cloud&lt;/a&gt; is the great achievement of the linked data movement — it shows a vast array of interconnected datasets, incorporating many of the most important and well known resources on the internet such as wikipedia. Unfortunately, however, on closer examination, it is far less impressive and useful than it might appear — due to the lack of well-defined common semantics across these datasets, the links are little more than links — they cannot be automatically interpreted by computers.&lt;/p&gt;
+
+&lt;p&gt;What’s worse, where semantic terms are used, they are very often used erroneously. For example, it is commonplace to use the term &lt;em&gt;owl:sameAs&lt;/em&gt; to create links between instances in different datasets that are about the same real world thing and likewise it is common to use the term &lt;em&gt;owl:equivalentClass&lt;/em&gt; to refer to classes that refer to the same real world thing. In these cases, while the terms are well-defined, their defined meanings are quite different to how they are actually used — they assert that the classes or instances are logically the same thing and can be unified. If we follow the correct interpretation, the consequence is that everything blows up because they are almost never in fact logically equivalent.&lt;/p&gt;
+
+&lt;p&gt;This is not to say that such links are useless —it is manifestly useful to a human engaged in a data-integration task to know which data-structures are about the same real-world thing - but that falls far short of the vision of the semantic web — it is supposed to be a web of knowledge for machines, not humans.&lt;/p&gt;
+
+&lt;p&gt;The fundamentally decentralised conception of linked data carries further challenges. It take resources to create, curate and maintain high quality datasets and if we don’t continue to feed a dataset with resources, entropy quickly takes over. If we want to build an application that relies upon a third party linked dataset, we are relying upon whoever publishes that dataset to continue to feed it with resources — this is a risky bet in general and particularly risky when we are dealing with academic research in which almost all resources are focused on novelty and almost none on infrastructure and maintenance. For example, the wordnet linked dataset has been extensively used in commercial applications, but the dataset maintainers at the University of Southampton have long since run out of resources to maintain it [2]. The semantic web — as illustrated in the diagram above — is predictably littered with abandoned ontologies and datasets. Simply continuing to build linked datasets without considering the resourcing problem is building on foundations of sand.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In summary, the linked data movement as it exists suffers from several critical problems which continue to prevent adoption outside of academic research. Firstly, the specifications are too weak to enable automatic processing by machines in any meaningful way. Secondly, it creates dependencies on third parties without any sustainable economic model. Even in a perfect world without free-riders, there are many situations in which a third party might be getting much more value from a dataset than the dataset maintainer who bears the cost.&lt;/p&gt;
+
+&lt;p&gt;If we actually want to make linked data and the semantic web work the first thing that we need to do is to radically reduce the ambition of the movement. Firstly, we should only create links between datasets that have well defined, sound and mutually compatible machine-readable semantics. Secondly, we should resource the maintenance of high-quality datasets as a public service, rather than leave them subject to the novelty-loving whims of academic research.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;[1] Linked Data Schema: Fixing unsound foundations. K. Feeney, G. Mendel Gleason, R. Brennan, Semantic Web, vol. 9, no. 1, pp. 53-75, 2018&lt;/p&gt;
+
+&lt;p&gt;[2] https://lod-cloud.net/dataset/rkb-explorer-wordnet&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
+        
+        <category>Graph Database</category>
+        
+        <category>Database</category>
+        
+        <category>Linked Data</category>
+        
+        <category>Rdf</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <item>
+        <title>Graph Fundamentals — Part 3: Graph Schema Languages</title>
+        <description>&lt;p&gt;This is the third part of a four part series of a warts-and-all descriptions of graph database technologies —the first two covered the two fundamental flavors: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt; &amp;amp; &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Labelled Property Graphs&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The third part of this series will cover the features and attempts to support the definition of schemata — rules defining the shape of the graph. Almost all of this work has been confined to the world of RDF — property graphs, by contrast, with their pragmatic focus on simplicity, took the approach of delegating the schema to code rather than imposing it in the data layer, only supporting primitive, low-level constraints on the basic node-edge structure.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, a somewhat bewildering series of standards and extensions have been built on top of RDF, mostly standardized by the W3C standards committee. This is where things get both really brilliant and ridiculously absurd. Shortly after publishing the RDF standard, the focus of researchers and standards bodies moved onto the problem of defining a schema to constrain and structure RDF graphs. This led to the publication of &lt;a href=&quot;https://www.w3.org/2001/sw/wiki/RDFS&quot;&gt;RDFS — the RDF Schema language&lt;/a&gt; in 2001. RDFS provided a variety of mechanisms for defining meta-data about graphs — most significantly, a concept of a class (rdfs:Class), a subclass (rdfs:subClassOf) and a mechanism for defining the types of the nodes on each end of a triple (rdfs:domain and rdfs:range).&lt;/p&gt;
+
+&lt;p&gt;These were important and much needed concepts — class hierarchies and typed properties are by far the most useful and important mechanisms for defining the structure of a graph — they are the cake, everything else is icing. They allow us to specify, for example, that an edge called “married_to” should join a person node with another person node and not, a giraffe, for example.&lt;/p&gt;
+
+&lt;p&gt;However, although the standard included all the most important concepts, once again, their definitions turned out to be completely wrong — their specified semantics didn’t actually allow them to be used to define typed properties and the things that they did allow people to specify turned out to be things that nobody wanted to specify. They simply died out, but not before causing a great deal of frustration and pain among those who tried to use them, under the assumption that the standards body wouldn’t produce something that just didn’t work. The only predicates that they defined that were ever really used as defined were the simplest ones rdfs:label and rdfs:comment, because they were both useful and were so simple and obvious that it was not possible to screw up their definitions.&lt;/p&gt;
+
+&lt;p&gt;Then, a couple of years after RDFS was released, the W3C released another language for describing RDF graphs, but this one was entirely a different proposition — while the earlier efforts had been driven by web-engineers, this time some of the world’s foremost formal logicians were the driving force - people such as Ian Horrocks and Peter Patel-Schneider. &lt;a href=&quot;https://www.w3.org/OWL/&quot;&gt;OWL — the Web Ontology Language&lt;/a&gt; — was the outcome and it went far, far beyond its predecessors in terms of formal correctness and expressiveness. Not only did it include the fundamentals — class hierarchies and typed properties, but it supported set-theoretic operations — intersection, unions, disjoint classes — with a firm basis in first order logic — not enough to describe everything you might want to describe about a graph, but many times more than anything else that has existed before or since.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg&quot; alt=&quot;An OWL&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The trouble was, however, that along with the beautiful elegant logic, the academics brought their impracticality with them and they brought it into the standards committee sausage factory — the language was effectively defined by a standardisation body — the worst possible example of design by committee. The logicians involved have compiled some reasonably scathingly amusing descriptions of the process and their personal anecdotes are often hilarious — where political arguments about removing the “OR” operator as a means of simplifying the language were debated by people who clearly did not understand what they were arguing about.&lt;/p&gt;
+
+&lt;p&gt;In any case, from a language design point of view, the results were horrific. For example, while recognizing that &lt;em&gt;rdfs:domain&lt;/em&gt; and &lt;em&gt;rdfs:range&lt;/em&gt; had been mis-defined, the committee decided to retain both predicates intact in OWL but to change their definitions — in order to appease vendors who had already produced RDFS implementations. This meant that, rather than doing the sensible thing and defining new &lt;em&gt;owl:subClassOf owl:domain owl:range&lt;/em&gt; predicates, the OWL language makes everybody include the rdfs namespace (and it’s ridiculously terrible and impossible to remember URL), in every Owl document so that they can use &lt;em&gt;rdfs:subClassOf&lt;/em&gt;, &lt;em&gt;rdfs:domain&lt;/em&gt; and &lt;em&gt;rdfs:range&lt;/em&gt; even though these predicates have completely different definitions within OWL — I’m still amazed that this one wasn’t laughed out the door.&lt;/p&gt;
+
+&lt;p&gt;A variety of other measures were included to appease existing vendors — various subsets of the language organized along misconceived classes of computational complexity which went on to confuse students eternally, because they made no sense in terms of mathematical computational complexity. None of this was made at all clear, of course, it was presented as a sensible and logical structure and still, to this day, almost nobody realizes just how ridiculous these decisions were — these are complex documents handed down by the gods and any incomprehension is due to the reader not getting it. Even though the language had a nice terse representation — the Manchester syntax — this was immediately sidelined in favor of an arcane, awkward and verbose RDF representation.&lt;/p&gt;
+
+&lt;p&gt;However, while the design by standards committee sausage factory produced a language design that was about as terrible as anybody could have managed if they were trying, these were mainly just syntactic issues which could be overlooked. What really killed OWL was the impracticality and idealism of the academics. They wanted a language that was capable of usefully describing an ‘open world’ — situations where any particular reasoning agent did not have a complete view of the facts — the idea being that such a regime was necessary for talking about the great new inter-linked world wide web, where information might be scattered to the four corners, and just because any individual agent did not know about a fact, it could not be assumed that it was not out there somewhere in the vast expanse of the digital world wide web.&lt;/p&gt;
+
+&lt;p&gt;Open world reasoning such as this is a very interesting and commendable — and sometimes highly useful — field. However, if I have a RDF graph of my own and I want to control and reason about its contents and structure in isolation from whatever else is out there, this is a decidedly closed world problem. It turns out that it is essentially impossible to do this through open world reasoning. If my database refers to a record that does not exist in my database (i.e a breach of referential integrity) then it does not matter whatever else exists in the world, that reference is wrong and I want to know about it. I most especially do not want my reasoning engine to decide that this record could exist somewhere else in the world — if it is not in my database it does not exist and I know this. If I cannot manage my own database and make sure that it is not full of errors, then it does not matter what else exists in the world because my house is built on a pile of mud. I can’t even control what’s in my own bloody database that I control entirely, who am I kidding that I can start reasoning about the universe beyond.&lt;/p&gt;
+
+&lt;p&gt;What’s worse, there is absolutely no good reason not to include support for a closed world interpretation in OWL — you don’t even have to change a single piece of the language. You can just introduce a much simpler and more intuitive and much easier to implement interpretation. And closed world reasoning does not preclude open world reasoning — they are easy to use together because all databases that conform to an OWL ontology through a closed world interpretation are, by definition guaranteed to also conform to that same ontology under an open world interpretation.&lt;/p&gt;
+
+&lt;p&gt;Eventually this glaring omission was addressed but it took more than a decade for the SHACL standard to emerge — a constraint language for RDF graphs. Unfortunately, by then the logicians had abandoned ship while the sausage factory remained — the standard that came out was once again full of logical inconsistencies and impractical and wrong design decisions. Meanwhile the semantic web community powered along in academia regardless, building castles in the sky — full of projects that aimed to build global federated semantic infrastructure which inevitably failed completely due to the fact that the bricks were made of paper.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2400/0*PsI8Kgud7OuiF__y.png&quot; alt=&quot;The W3Cs semantic web stack — confusing much? How about when you learn that it’s not anything remotely like a stack and several of the pieces do not exist.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And this is only the tip of the iceberg — there have been many more incoherent standards and initiatives that have come out of the W3C’s standards bodies — almost all of which have launched like lead balloons into a world that cares not a jot. Nevertheless, it is important to recognise that, hidden in all the nonsense, there are some exceptionally good ideas — triples, URL identifiers and OWL itself are all tremendously good ideas in essence and nothing else out there comes close. It is a sad testament to the suffocating nature of design by standards committee which has consumed countless hours of many thousands of smart and genuine researchers, that ultimately the entire community ended up getting it’s ass kicked by a bunch of Swedish hackers with a bunch of json blobs — the Neo4j property graph guys have had a greater impact upon the real world than the whole academic edifice of semantic web research.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
+        
+        <category>Graph Database</category>
+        
+        <category>Database</category>
+        
+        <category>Semanticweb</category>
+        
+        <category>Rdf</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+      <item>
+        <title>Graph Fundamentals — Part 2: Labelled Property Graphs</title>
+        <description>&lt;p&gt;This is the second part of a four part series on the fundamental technologies underlying graph databases — &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;the first covered RDF&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The second major variant of graph databases is known as a property graph or labeled property graph (LPG). Property graphs are much simpler than RDF — they consist of a set of nodes and a set of edges, with each node and edge being a essentially a ‘struct’ — a simple data structure consisting of keys and values (which in some cases may themselves be structs). Nowadays JSON is the standard way of encoding these structs — each node and edge is a JSON document, with edges having special keys which indicate that the value represents a pointer to a node.
+Whereas RDF uses URLs as identifiers for properties and entities, property graphs use simple strings — purely local identifiers. And while RDF uses the triple as the atom of data, property graphs do not — they are simply collections of arbitrary data-structures, some of which can point at other structures. A third major difference is that RDF is intimately associated with the semantic web. There are many layers that have been built on top to provide descriptions of the semantics of the entities described in RDF graphs. Property graphs, on the other hand, do not attempt to be self-describing at all; the meaning and interpretation of the structures is left up to the consumer of the data. They are just keys and values and, with the exception of edge links and a few other special keys, you can interpret them however you want.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE (a { name: 'Andy', title: 'Developer' })
+CREATE (b { name: 'Bob', title: 'Manager' })
+MATCH (a),(b)
+WHERE a.name = 'Andy' AND b.name = 'Bob'
+CREATE (b)-[r:MANAGES]-&amp;gt;(a)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;An example of creating two nodes and an edge in Cipher, Neo4J’s self-rolled graph query and definition language. In the absence of universal identifiers, the nodes that were created have to be matched by a property value before the edge can be created.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;To somebody coming from a semantic web background, property graphs seem like a very impoverished alternative indeed. I remember when I first came across Neo4j — the most popular property graph database on the market today — in the mid-2000s, being completely puzzled as to why anybody would want such a thing. &lt;em&gt;“It’s just a bunch of random structs pointing at one another — as if you took a program written in C and removed all the code leaving only the naked data structures and saved them to disk naked, without any meaningful typing or schema or any help in interpreting or constraining them.”&lt;/em&gt; And indeed, this perspective remains common among RDF aficionados — almost all of whom were, until recently, ensconced in academia and trained in semantics and distinctly look down on the relatively primitive nature of property graphs. This comes out most sharply in graph database conferences where one can almost taste the resentment that the property graph people feel towards the condescending RDF academic snobs who look down on them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“It’s just a bunch of random structs pointing at one another — as if you took a program written in C and removed all the code leaving only the naked data structures and saved them to disk naked, without any meaningful typing or schema or any help in interpreting or constraining them.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, the property graph people persevered and while RDF and the semantic web might have the weight of academia and international standards bodies behind them, they have generally failed to make any significant impact upon the real world — while Neo4j and its host of modern imitators are by far the most popular type of graph database in the world and there are some very good reasons for this.&lt;/p&gt;
+
+&lt;p&gt;Firstly, the similarity to programming language data structures is no coincidence. Neo4j started out as a library for the Java programming language (hence the 4j) that enabled them to create and store graph-like data-structures — this makes sense because Java as a language is particularly badly suited to modelling graph-like data-structures. By contrast, the semantic web community built the Jena framework in Java as it was meant to be — and ended up with a monstrosity of verbose class hierarchies. Stripped down data structures with pointers between them is a much, much better way of modelling graphs. Secondly, by ignoring all the fancy semantic stuff, the property graph people were not distracted by the outpouring of confusing, broken and misconceived standards that the W3C and academic semantics community produced.&lt;/p&gt;
+
+&lt;p&gt;The property graph people, to their credit, took a pragmatic approach and focused on making a database that ordinary humans could understand. Furthermore, while the RDF community was always much more focused on semantics — with the graph structure being almost an implementation detail, a consequence of building everything on triples — property graphs were always fundamentally focused on the graph as the best abstraction for modelling the world. And as important use-cases emerged which used graph algorithms (fraud, page-rank, recommender systems) they were much better positioned to take advantage. RDF has a pure graph structure at a low-level but is often a confusing mess at a high level, while property graphs are the opposite — nodes represent things that are close to things in the world, edges represent relationships between things — all very intuitive, who cares that at a low level it is a primitive mess?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3840/1*FAK8MU1sYf6yrVpVmNQDzA.png&quot; alt=&quot;An example of a labelled property graph and an equivalent RDF graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One consequence of this difference is that, when it comes to property graphs, it is relatively straightforward to add meta-data to edges — they are just structs after all and you can add whatever you like to the JSON blob representing an edge. This provides a straightforward way of adding qualifiers to edges — representing time, space or any other qualifier you want — to represent relationships with weights and lifespans, for example. In RDF, by contrast, edges of triples cannot have properties — it is relatively trivial to build more complex data-structures in RDF which represent qualified edges — but there are umpteen different ways of doing so and coming up with a standard way of doing so is not of particular interest to the semantic web academic community, who are much more focused on expressiveness and inference than such solved trivia.&lt;/p&gt;
+
+&lt;p&gt;So, property graphs provide a relatively simple mechanism that is easily understood by coders for modelling real world things and qualified relationships between them as against a bewildering blizzard of complex concepts that any new entrant to RDF land must endure. Over time, they also developed, in an evolutionary way, a query language called Cypher that is reasonably intuitive for coders — including some cute ways of representing graph edges:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(a)-[relationship]-&amp;gt;(b)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;From the perspective of a formal query language, it is a mess — with structures that break compositionality for no good reason, and it remains a good 70 years behind the frontier of formal graph logic. Nevertheless, what they provide remains better, in practice, than anything the semantic web community ever came up with.
+However, when dealing with very large graphs — billions of nodes and edges has become the norm today— their early pragmatism comes back to bite them with a vengeance. When graphs get really big and complicated, without a formal mathematical-logical basis for reasoning about graph traversals, leaving it all up to the individual query writer falls to pieces — the heat death of the universe lies around every corner.
+Furthermore, as graph databases move from being toys for enthusiastic coders into serious enterprise tools, constraints and schemata become very much more important — who the hell wants to maintain the structure of a billion node mission-critical enterprise knowledge graph without any support from the computer? And why would you do so — applying constraints and rules to data structures is exactly what computers are good at— with decades of formal logic research to draw on. The cost of early pragmatism becomes a nightmare in the present because it is invariably impossible to engineer such fundamental aspects back into the core of the system. Furthermore, as systems become every bigger and more inter-connected, jettisoning URLs in favor of local identifier becomes an ever more serious impediment — throwing away universal, uniform, dereferenceable identifiers in the age of the web looks less and less wise. The cost of stitching together systems of local identifies in every new case adds up to many many times more trouble than it would have taken to just adopt URLs as universal identifiers initially.
+Hence, despite their importance in the early days of graph databases, property graphs will likely fade out as knowledge graphs become adopted by enterprises and incorporated into their infrastructure — a well defined schema is not an optional in this — already they have been discarded by the best and most advanced new graph database providers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This is the second part of a four-article series on graph fundamentals. The &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;first article in the series covered RDF&lt;/a&gt;, the other major variant of graph databases around today, while the third and next part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
+        
+        <category>Graph</category>
+        
+        <category>Graph Database</category>
+        
+        <category>Database</category>
+        
+        
+      </item>
+    
+    
+    
+      <item>
+        <title>Graph Fundamentals — Part 1: RDF</title>
+        <description>&lt;p&gt;Graph databases are on the rise, but amid all the hype it can be hard to understand the differences under the hood. This is the first article in a four part series describing the fundamental technologies that graph databases use under the hood. Unlike most articles that you will come across, this is neither marketing nor is it a tutorial — it’s a warts and all description of their strengths and weaknesses — stuff I have learned over 20 years of pain and suffering, in the hope that I can help somebody else out there to avoid having to learn these lessons the hard way.&lt;/p&gt;
+
+&lt;p&gt;There are two major variants of graph databases in the wild — RDF graphs (aka triple-stores) and Labelled Property Graphs. In this, the first article in the series, I’ll describe RDF (Resource Description Framework), its strengths and weaknesses and where it came from. In subsequent articles, I’ll describe labelled property graphs and some of the the standards and technologies that have been built on top of them.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;RDF is a child of the web, formulated back in the 1990s, by Tim Bray at Netscape as a meta-data schema for describing things. The basic idea is simple, RDF files consist of a set of logical assertions of the form subject, predicate, object — known as a triple:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;subject -&amp;gt; predicate -&amp;gt; object
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Each triple expresses a specific fact about a subject:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mary -&amp;gt; likes -&amp;gt; john
+mary -&amp;gt; is    -&amp;gt; human
+john -&amp;gt; likes -&amp;gt; jane
+jane -&amp;gt; likes -&amp;gt; chocolate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When joined together a set of triples forms a graph consisting of nodes and edges — it really is as simple as that.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png&quot; alt=&quot;Knowledge Graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Triples can be combined to represent a knowledge graph which computers can interpret and reason about. When joined together, they form a natural graph, where the predicates (the middle part of the triple) are interpreted as edges and the subjects and objects are the nodes.&lt;/p&gt;
+
+&lt;p&gt;So far so good. In fact, &lt;strong&gt;triples are the ideal atom of information&lt;/strong&gt; — 3 degrees of freedom in our basic atomic expressions is sufficient for a self-describing system, 3 has the highest information density of any integer. We can build up a set of triples that describes anything describable. Binary relations, on the other hand, which are the basis of tables and traditional databases, can never be self-describing: they will always need some logic external to the system to interpret them — &lt;strong&gt;2 degrees of freedom is insufficient&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The triple as &lt;strong&gt;logical assertion&lt;/strong&gt; is also a tremendously good idea — one consequence is that we don’t have to care about duplicate triples — if we tell the computer that Mary likes John a million times, it is the same as telling it once — a true fact is no more nor less true if we say it 1000 times or 1 time.&lt;/p&gt;
+
+&lt;p&gt;But RDF defined a lot more than just the basic idea of subject-predicate-object logical assertion triples. It also defined a naming convention where both the subject and predicate of each triple had to be expressed as a URL. The object of each triple could either be expressed as a URL or as a literal such as a number “6” or string “hat”. So our triples need to be of the form:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://my.url/john  -&amp;gt;  http://my.url/likes  -&amp;gt;  http://my.url/jane
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The basic idea being that if we load the URL of any subject, predicate or object, we will find the definition of the node or edge in question at that URL. So, if we load &lt;em&gt;http://my.url/likes&lt;/em&gt; into our browser, we find the definition of the &lt;em&gt;likes&lt;/em&gt; predicate. This design decision has both costs and benefits.&lt;/p&gt;
+
+&lt;p&gt;The cost is immediate — URLs are much longer than the variable names used in programming language and they are hard to remember. This slows down programming as we can’t just use simple strings as usual, we have to refer to thing by their full URL. RDF tried to mitigate this cost by introducing the idea of namespace prefixes. That is to say, we can define: &lt;em&gt;prefix ex = http://my.url/&lt;/em&gt; and then we can refer to john as &lt;em&gt;ex:&lt;/em&gt;john rather than the full URL &lt;em&gt;http://my.url/&lt;/em&gt;john.&lt;/p&gt;
+
+&lt;p&gt;From a programming point of view, these namespace prefixes certainly make it much easier to use RDF, but there is still considerable cost over traditional simple variable names — we have to remember which prefixes are available, which entities and predicates belong to which namespace, and type several extra characters for every variable.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Programming is an art form in which productivity is dependent on reducing the number of things that we have to remember at each step,&lt;/strong&gt; because we are concentrating on a big picture problem and need to focus all our concentration there rather than on the details of the lines of code. Speed of typing is also of paramount importance because we are almost always in a hurry and the faster we go, the less chance there is that we will forget something important along the way. From that point of view, using URLs as variable names, even with prefixes, is a massive cost to programming speed.&lt;/p&gt;
+
+&lt;p&gt;The benefits, on the other hand, are seen in the medium and long term. There is an old computer science joke:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;there are only 2 hard things in computer science: naming things, cache coherence and off-by-one errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a good joke because it is true — naming things and cache coherence really are the hardest things to get right — while off-by-one errors are just extremely common errors that novices make in loop control.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RDF helps significantly to address both of the hard problems&lt;/strong&gt; — by forcing coders to think about how they name things and by using an identifier that is uniformly and universally addressable, the problem of namespace clashes (people using the same name to talk about different thing) is greatly reduced. What’s more, by linking an entity to its definition, it also greatly helps the cache coherence problem — everything has an authoritative address at which the latest definition is available.&lt;/p&gt;
+
+&lt;p&gt;From an overall systems perspective, the extra programmer pain is tremendously worth it — if we know how something is named, we can always look it up and see what it is. By contrast, when we are dealing with traditional databases, the names used have no meaning outside the context of the local database — tables, rows and columns all have simple variable names which mean nothing except within the particular database in which they live, and there is no way of looking up the meaning of these tables and columns because it is opaque — embedded in external program code.&lt;/p&gt;
+
+&lt;p&gt;So, up to this point, it’s all positive — the use of logical subject-predicate-object triples as URL -&amp;gt; URL -&amp;gt; URL is actually a very good starting point for building data-structures. They allow us to describe anything we want in a way that is universally and uniformly named, addressable, retrievable and self-describing. The extra pain in having to use URLs instead of simple variable names is, in the long run, very much worth it.&lt;/p&gt;
+
+&lt;p&gt;RDF, however, is much more than just the basic triple form. It also defines a set of reusable predicates. The most important one of these is &lt;strong&gt;rdf:type&lt;/strong&gt; — which allows us to define our entities as having a particular type:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ex:mary -&amp;gt; rdf:type -&amp;gt; ex:human
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This triple defines john as being of type ‘human’. This provides us with the basis for constructing a formal logic in which we can reason about the properties of things based on their types — if we know john is a human and not, for example, a rock, we can probably infer things about him without knowing them directly.&lt;/p&gt;
+
+&lt;p&gt;Formal logics are very powerful indeed because they can be interpreted by computers to provide us with a number of useful services — logical consistency, constraint checking, theorem proving, and so on. And they help tremendously in the battle against complexity — the computer can tell us when we are wrong.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem-with-rdf&quot;&gt;The Problem With RDF&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately, however, that is where the good stuff ends. &lt;strong&gt;Almost every other design decision that went into the RDF specification was disastrously wrong.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The first point is rather minor — RDF supports ‘blank nodes’, that is to say nodes that are not identified by a URL but instead by a local identifier (given a pseudo prefix like “_:name”). This is supposed to represent the situation where we want to say “some entity whose name I do not know” — to capture for example assertions such as “there is a man in the car”. As we don’t know the identity of the man, we use a blank node rather than a URL to represent him.&lt;/p&gt;
+
+&lt;p&gt;This was simply a mistake — it confuses the identity of the real world thing with the identity of the data structure that represents it. It introduces an element into the data structure that is not universally addressable and thus cannot be linked to outside its definition for no good reason. Just because we don’t know the identify of the thing, does not and should not mean we cannot address the structure describing the unknown thing.&lt;/p&gt;
+
+&lt;p&gt;What’s worse, RDF tools generally interpret blank nodes in such a way that their identifiers can be changed at will, meaning that it is hard to mitigate the problem in practice. Still, tool stupidity notwithstanding, such a poor design choice can be mitigated at the cost of some effort — for example by using a convention whereby blank nodes within a document can be addressed as a sub-path of the URL of the document that contains them. This at least allows them to be accessed through the same mechanism as all other nodes are.&lt;/p&gt;
+
+&lt;p&gt;The second major design flaw relates to the semantics that were published to govern the interpretation of triples and their types. To cut a long and technical story short, what they defined was — in a technical sense — nonsense. Logic, in a formal sense, is like probability: seemingly simple to the uninitiated but in fact horrendously difficult and full of counter-intuitive results and many traps for the naïve.&lt;/p&gt;
+
+&lt;p&gt;It is &lt;strong&gt;very easy&lt;/strong&gt; to construct a logical system that is incoherent or inconsistent — where the rules tell us that a given fact is both true and false. The most famous example is known as Russell’s paradox — the set of all sets that do not contain themselves — a paradoxical definition since this set must both contain itself and not contain itself. The basic rule of a logic is that &lt;strong&gt;if it is legal to express such paradoxes, then the logic is inconsistent&lt;/strong&gt; — we can’t rely on assertions defined in the logic.&lt;/p&gt;
+
+&lt;p&gt;RDF included explicit support for making statements about statements — what they called higher order statements — without putting in place any rules that prevented the construction of inconsistent knowledge bases. To put it simply, these semantics were completely wrong (or impredicative). In fact, RDF also included a broad suite of containers, distributive predicates and various other elements — in each case they were similarly wrong.&lt;/p&gt;
+
+&lt;p&gt;In 1999, RDF 1.0 was made a standard by the web’s governing body, the W3C, and was enthusiastically promoted as the core of the future semantic web, despite the fact that it effectively described a nonsense system. How did this happen?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“ The web is the domain of engineers, not logicians. With the rise of the commercial software industry in the 1970s and 1980s, computer science based on formal logic was largely abandoned. Instead we got software engineering, based on turning programmers into money in as short a space of time as possible.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To tell the truth, this wasn’t surprising — the web is the domain of engineers, not logicians. With the rise of the commercial software industry in the 1980s, computer science based on formal logic was largely abandoned. Instead we got software engineering, based on turning programmers into money in as short a space of time as possible.&lt;/p&gt;
+
+&lt;p&gt;Almost nobody in the IT industry understands anything about formal computational logic nowadays save a few eccentric researchers labouring away in their labs on obscure topics completely ignored by industry. As a result, when it comes to things such as schema languages, constraint logics and so on, &lt;strong&gt;the industry’s most distinguished bodies repeatedly publish international standards that are just nonsense.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In any case, the logical inconsistency of the RDF standard was only a minor factor in its failure to gain widespread adoption. A much worse mistake concerned the serialisation format that was chosen to express RDF textually: RDF/XML. Back in 1999, XML was relatively new and fashionable, so it was a natural choice, but the way in which RDF had to be shoehorned into XML created a horrifically confusing and ugly monster. In modern RDF circles, a format known as turtle is used to serialise triples as text. It is reasonably simple to interpret and concise to construct:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@prefix rdf: &amp;lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;gt;.
+@prefix ex: &amp;lt;http://my.url/&amp;gt;.
+ex:mary a ex:human;
+ex:likes ex:john.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In RDF/XML this is constructed as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:ex=&quot;http://my.url/&quot;&amp;gt;
+    &amp;lt;rdf:Description rdf:about=”ex:mary”&amp;gt;
+          &amp;lt;rdf:type rdf:resource=&quot;ex:human&quot;/&amp;gt;
+          &amp;lt;ex:likes rdf:resource=”ex:john”/&amp;gt;
+    &amp;lt;/rdf:Desciption&amp;gt;
+&amp;lt;/rdf:RDF&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Back in 1999 when the RDF and RDF/XML standards were published, the social web was just taking off and a simple technology called RSS (really simple syndication) was at its core. RSS 0.91 was a very simple and popular meta-data format which allowed bloggers to easily share their updates with third party sites, enabling people to see when their favourite site had published updates, so that they didn’t have to check manually.&lt;/p&gt;
+
+&lt;p&gt;Probably the greatest mistake ever made by the W3C was imposing RDF/XML as the new standard for RSS — RSS 1.0. There was a very quick revolution of bloggers who found the new standard vastly increased the complexity of sharing updates, without giving anything extra in return. Bloggers generally stuck to the old non-RDF 0.91 version — the ideological wars that this created effectively turned the world of web-developers against RDF — a blow that RDF and the W3C have never really recovered from.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conclusion-there-is-hope&quot;&gt;Conclusion: There Is Hope&lt;/h2&gt;
+
+&lt;p&gt;Despite the terrible mistakes made in the definition of the RDF specification, at its very core, &lt;strong&gt;RDF remains by far and away the most advanced and sophisticated mechanism available for describing things in a computer interpretable way.&lt;/strong&gt; And the standard did not remain static — the W3C issued a series of new standards that refined and extended the original RDF and built several other standards on top of it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The second part of this series on graph fundamentals covers Labelled Property Graphs, the second major variant of graph databases today, while the third part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+        <link>https://terminusdb.github.io/terminusdb-blog//2019/09/20/graph-fundamentals-part-1-rdf/</link>
+        <guid isPermaLink="true">https://terminusdb.github.io/terminusdb-blog//2019/09/20/graph-fundamentals-part-1-rdf/</guid>
+        
+        <category>Semantic Web</category>
+        
+        <category>RDF</category>
+        
+        <category>Graph</category>
+        
+        <category>Graph Database</category>
+        
+        <category>W3C</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>
