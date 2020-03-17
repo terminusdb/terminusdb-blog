@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html" version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TerminusDB Blog - News and Tutorials</title>
     <description>News and tutorials of TerminusDB.
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Mar 2020 17:02:31 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2020 17:02:31 +0000</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 23:00:40 +0000</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 23:00:40 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>
-          <![CDATA[
-            Why Graph Will Win
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png" width="1270"></p>&lt;p&gt;I recently published a warts-and-all 4 part introduction (covering &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Graph Schemas&lt;/a&gt; and &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Linked Data&lt;/a&gt;). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).&lt;/p&gt;
+        <title>Why Graph Will Win</title>
+        <author>Kevin Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png" width="1270"></p>&lt;p&gt;I recently published a warts-and-all 4 part introduction (covering &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Graph Schemas&lt;/a&gt; and &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Linked Data&lt;/a&gt;). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).&lt;/p&gt;
 
 &lt;p&gt;It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they &lt;em&gt;will&lt;/em&gt; find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s. Once bitten twice shy.&lt;/p&gt;
 
@@ -74,48 +69,28 @@ Databases ranked by data modelling power with leading open source examples of ea
 &lt;hr /&gt;
 
 &lt;p&gt;So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</guid>
         
-        <category>
-          <![CDATA[ OWL ]]>
-        </category>
+        <category>OWL</category>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ RDF ]]>
-        </category>
+        <category>RDF</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data Modeling ]]>
-        </category>
+        <category>Data Modeling</category>
         
         
-        <dc:creator>
-          <![CDATA[ Kevin Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Stuffing all of Human History into a Single Knowledge Graph
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png" width="1270"></p>&lt;p&gt;The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.&lt;/p&gt;
+        <title>Stuffing all of Human History into a Single Knowledge Graph</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png" width="1270"></p>&lt;p&gt;The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.&lt;/p&gt;
 
 &lt;h2 id=&quot;seshat-global-history-databank&quot;&gt;Seshat: Global History Databank&lt;/h2&gt;
 
@@ -152,48 +127,28 @@ Databases ranked by data modelling power with leading open source examples of ea
 &lt;p&gt;&lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;Design a Query Language Client for Pythonistas and Data Scientists&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you want to know more, follow our publication to get the news about our talks, tutorials and community events.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Dataops ]]>
-        </category>
+        <category>Dataops</category>
         
-        <category>
-          <![CDATA[ Knowledge Graph ]]>
-        </category>
+        <category>Knowledge Graph</category>
         
-        <category>
-          <![CDATA[ Open Source ]]>
-        </category>
+        <category>Open Source</category>
         
-        <category>
-          <![CDATA[ Data Pipeline ]]>
-        </category>
+        <category>Data Pipeline</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Graph Fundamentals — Part 4: Linked Data
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png" width="1270"></p>&lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt;
+        <title>Graph Fundamentals — Part 4: Linked Data</title>
+        <author>Kevin Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png" width="1270"></p>&lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -254,44 +209,26 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;[1] Linked Data Schema: Fixing unsound foundations. K. Feeney, G. Mendel Gleason, R. Brennan, Semantic Web, vol. 9, no. 1, pp. 53-75, 2018&lt;/p&gt;
 
 &lt;p&gt;[2] https://lod-cloud.net/dataset/rkb-explorer-wordnet&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Linked Data ]]>
-        </category>
+        <category>Linked Data</category>
         
-        <category>
-          <![CDATA[ Rdf ]]>
-        </category>
+        <category>Rdf</category>
         
         
-        <dc:creator>
-          <![CDATA[ Kevin Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB @ PyLadies Dublin
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg" width="1270"></p>&lt;p&gt;Hello Terminators!&lt;/p&gt;
+        <title>TerminusDB @ PyLadies Dublin</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg" width="1270"></p>&lt;p&gt;Hello Terminators!&lt;/p&gt;
 
 &lt;p&gt;A first — for me at least — attending PyLadies, Dublin!&lt;/p&gt;
 
@@ -312,48 +249,28 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;TerminusDB is open source now and forever so it is perfect for the Python community. We are rolling out ever more features for Pythonistas — check out our &lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;python query client&lt;/a&gt;! And watch this space for exciting news.&lt;/p&gt;
 
 &lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</guid>
         
-        <category>
-          <![CDATA[ Python ]]>
-        </category>
+        <category>Python</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Data Science ]]>
-        </category>
+        <category>Data Science</category>
         
-        <category>
-          <![CDATA[ Politics ]]>
-        </category>
+        <category>Politics</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Terminalia — Our Day
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg" width="1270"></p>&lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt;
+        <title>Terminalia — Our Day</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg" width="1270"></p>&lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt;
 
 &lt;p&gt;TerminusDB is named after the Roman God of boundaries, Terminus — all databases need good boundaries — and Terminalia is his festival.&lt;/p&gt;
 
@@ -380,48 +297,28 @@ We want the finest wines available to humanity!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2000/0*P0qHv01fUcd8XSMU.jpg&quot; alt=&quot;modern festival&quot; /&gt;
 Get out there, Terminators&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</guid>
         
-        <category>
-          <![CDATA[ Terminusdb ]]>
-        </category>
+        <category>Terminusdb</category>
         
-        <category>
-          <![CDATA[ Rome ]]>
-        </category>
+        <category>Rome</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Party ]]>
-        </category>
+        <category>Party</category>
         
-        <category>
-          <![CDATA[ Do It Yourself ]]>
-        </category>
+        <category>Do It Yourself</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB community arrived in London
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/4096/1*EzEM1bN4cljnckggA_gjzw.jpeg" width="1270"></p>&lt;p&gt;We had our first meetup in London last Tuesday at the beautiful Microsoft Reactor located in the centre of the city! Members of the TerminusDB team from Dublin and Berlin came to visit the community. Of course, there were pizzas and lots of beers!&lt;/p&gt;
+        <title>TerminusDB community arrived in London</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="https://miro.medium.com/max/4096/1*EzEM1bN4cljnckggA_gjzw.jpeg" width="1270"></p>&lt;p&gt;We had our first meetup in London last Tuesday at the beautiful Microsoft Reactor located in the centre of the city! Members of the TerminusDB team from Dublin and Berlin came to visit the community. Of course, there were pizzas and lots of beers!&lt;/p&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We have lots of nice beer at Microsoft Reactor Meetup space, come have some. &lt;a href=&quot;https://t.co/tUsgF5GZCw&quot;&gt;pic.twitter.com/tUsgF5GZCw&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dmytri Kleiner (@dmytri) &lt;a href=&quot;https://twitter.com/dmytri/status/1227295076218482688?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -457,48 +354,28 @@ Get out there, Terminators&lt;/p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/Swag?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Swag&lt;/a&gt; from &lt;a href=&quot;https://twitter.com/TerminusDB?ref_src=twsrc%5Etfw&quot;&gt;@TerminusDB&lt;/a&gt;&lt;br /&gt;Check it out &lt;a href=&quot;https://t.co/yFCOgn4C16&quot;&gt;https://t.co/yFCOgn4C16&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dipal Thakker 💬 (@Dipal) &lt;a href=&quot;https://twitter.com/Dipal/status/1227307932834029569?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
-
-            ]]>
-        </description>
+</description>
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Meetup ]]>
-        </category>
+        <category>Meetup</category>
         
-        <category>
-          <![CDATA[ Tech Education ]]>
-        </category>
+        <category>Tech Education</category>
         
-        <category>
-          <![CDATA[ Open Source ]]>
-        </category>
+        <category>Open Source</category>
         
-        <category>
-          <![CDATA[ Knowledge Graph ]]>
-        </category>
+        <category>Knowledge Graph</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB Discussions
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2040/1*MLXi8J5vwHQheBcEo5T-EA.png" width="1270"></p>&lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt;
+        <title>TerminusDB Discussions</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/2040/1*MLXi8J5vwHQheBcEo5T-EA.png" width="1270"></p>&lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt;
 
 &lt;p&gt;We are a moderately distributed team and we have plenty of opportunity for detailed technical discussion (indexing strategy anyone?) so we thought that it’d be a good idea to start a less formal weekly exchange. One member of the team leads the discussion and the rest contribute with questions &amp;amp; comments.&lt;/p&gt;
 
@@ -525,48 +402,28 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
 &lt;p&gt;I apologize for the sound quality issues — we’ll work on a setup that captures the various contributors in high fidelity. At least you can hear the main presentation. Only one instance of adult language — less than normal I’d say — so be warned.&lt;/p&gt;
 
 &lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Development ]]>
-        </category>
+        <category>Development</category>
         
-        <category>
-          <![CDATA[ Programming ]]>
-        </category>
+        <category>Programming</category>
         
-        <category>
-          <![CDATA[ Maoism ]]>
-        </category>
+        <category>Maoism</category>
         
-        <category>
-          <![CDATA[ Dialectics ]]>
-        </category>
+        <category>Dialectics</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Loading your local files in TerminusDB
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/cowduck_banner.jpeg" width="1270"></p>&lt;p&gt;We have got lot’s of feedback since we have posted our tutorial — &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt;. One of the most common questions is how to load a local CSV in the hard drive into your TerminusDB running in a local docker container. So here is how to do it.&lt;/p&gt;
+        <title>Loading your local files in TerminusDB</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="/assets/images/cowduck_banner.jpeg" width="1270"></p>&lt;p&gt;We have got lot’s of feedback since we have posted our tutorial — &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt;. One of the most common questions is how to load a local CSV in the hard drive into your TerminusDB running in a local docker container. So here is how to do it.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -605,48 +462,28 @@ so, in your WOQL query, you can use:
 
 &lt;p&gt;Hope it helps with lot’s of you who want to load csv locally.
 Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&quot;&gt;Dmytri Kleiner&lt;/a&gt; for figuring it out!&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/</guid>
         
-        <category>
-          <![CDATA[ Data Science ]]>
-        </category>
+        <category>Data Science</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Developer ]]>
-        </category>
+        <category>Developer</category>
         
-        <category>
-          <![CDATA[ Tools ]]>
-        </category>
+        <category>Tools</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Design a Query Language Client for Pythonistas and Data Scientists
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/cowduck_sitting_logo.png" width="1270"></p>&lt;p&gt;Having an effective yet user-friendly query language is one of the most important aspects of successful database technology. Here at TerminusDB, we aim to provide a good experience to our users whose main language is Python. Enter WOQLpy — a Query Language Client for Pythonistas and Data Scientists.&lt;/p&gt;
+        <title>Design a Query Language Client for Pythonistas and Data Scientists</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="/assets/images/cowduck_sitting_logo.png" width="1270"></p>&lt;p&gt;Having an effective yet user-friendly query language is one of the most important aspects of successful database technology. Here at TerminusDB, we aim to provide a good experience to our users whose main language is Python. Enter WOQLpy — a Query Language Client for Pythonistas and Data Scientists.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-woqlpy&quot;&gt;What is WOQLpy?&lt;/h2&gt;
 
@@ -835,48 +672,28 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
 &lt;hr /&gt;
 
 &lt;p&gt;TerminusDB is open-source, we would like to invite you to try it out and give us feedback and ideas. Please feel free to join the slack channel and chat with the team: &lt;a href=&quot;http://bit.ly/terminusdb-slack&quot;&gt;http://bit.ly/terminusdb-slack&lt;/a&gt;&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Open Source ]]>
-        </category>
+        <category>Open Source</category>
         
-        <category>
-          <![CDATA[ Data Science ]]>
-        </category>
+        <category>Data Science</category>
         
-        <category>
-          <![CDATA[ Query Language ]]>
-        </category>
+        <category>Query Language</category>
         
-        <category>
-          <![CDATA[ Python ]]>
-        </category>
+        <category>Python</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB 1.1 — The Big Babushka
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2820/1*y6pmHcjylW-YGQFbtlXicw.png" width="1270"></p>&lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt;
+        <title>TerminusDB 1.1 — The Big Babushka</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/2820/1*y6pmHcjylW-YGQFbtlXicw.png" width="1270"></p>&lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt;
 
 &lt;h2 id=&quot;terminus-store&quot;&gt;Terminus-store&lt;/h2&gt;
 
@@ -944,48 +761,28 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
 &lt;p&gt;Remember we are open source (GPLv3) now and forever.&lt;/p&gt;
 
 &lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
         
-        <category>
-          <![CDATA[ Developer Tools ]]>
-        </category>
+        <category>Developer Tools</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Python ]]>
-        </category>
+        <category>Python</category>
         
-        <category>
-          <![CDATA[ Rust ]]>
-        </category>
+        <category>Rust</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Are you supporting the right politician?
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/7618/1*00M5JbvyMgh3MRz7uQf-kw.jpeg" width="1270"></p>&lt;h2 id=&quot;terminusdb-graph-visualisation-of-dublin-council-voting-data&quot;&gt;TerminusDB graph visualisation of Dublin Council voting data&lt;/h2&gt;
+        <title>Are you supporting the right politician?</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="https://miro.medium.com/max/7618/1*00M5JbvyMgh3MRz7uQf-kw.jpeg" width="1270"></p>&lt;h2 id=&quot;terminusdb-graph-visualisation-of-dublin-council-voting-data&quot;&gt;TerminusDB graph visualisation of Dublin Council voting data&lt;/h2&gt;
 
 &lt;p&gt;Do you ever check to see the actual voting record of your preferred politician before you vote? Or, do you just vote for them because of their party affiliation? Do you think your local representative speaks for you on the issues that you care about?&lt;/p&gt;
 
@@ -1318,48 +1115,28 @@ Make a new WOQL query as follow:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Feel free to use any open data to do the same analysis — we’d love to see the results. In fact, TerminusDB is running a competition on UK political data. &lt;a href=&quot;https://twitter.com/TerminusDB/status/1214829778387296256&quot;&gt;Check it out over on twitter&lt;/a&gt;.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/15/are-you-supporting-the-right-politician/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/15/are-you-supporting-the-right-politician/</guid>
         
-        <category>
-          <![CDATA[ Data Science ]]>
-        </category>
+        <category>Data Science</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Graph ]]>
-        </category>
+        <category>Graph</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data Visualization ]]>
-        </category>
+        <category>Data Visualization</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            My First TerminusDB Graph Visualisation — Bike Share Data
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg" width="1270"></p>&lt;p&gt;In this tutorial, we will start using TerminusDB and its query client — WOQL.js — to quickly build a database and a schema; import and organise data; create a visualisation; and plug it in to your website.&lt;/p&gt;
+        <title>My First TerminusDB Graph Visualisation — Bike Share Data</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg" width="1270"></p>&lt;p&gt;In this tutorial, we will start using TerminusDB and its query client — WOQL.js — to quickly build a database and a schema; import and organise data; create a visualisation; and plug it in to your website.&lt;/p&gt;
 
 &lt;p&gt;We’re assuming you already have TerminusDB installed, but if you haven’t go to our &lt;a href=&quot;https://github.com/terminusdb/terminus-quickstart&quot;&gt;quick start installation guide&lt;/a&gt;. It’s very easy to get started.&lt;/p&gt;
 
@@ -1733,44 +1510,26 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;You can experiment with the query to find different things in the data, and the view to show it in different ways — for example, how would you find the routes covered by a specific bike?&lt;/p&gt;
 
 &lt;p&gt;Well done — you are now a level 1 Terminator!&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Graph ]]>
-        </category>
+        <category>Graph</category>
         
-        <category>
-          <![CDATA[ Visualization ]]>
-        </category>
+        <category>Visualization</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Join the Data-Centric Revolution (we can help!)
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/2514/0*BqfeLvqCEA1CeDZN.png" width="1270"></p>&lt;p&gt;If you have had the &lt;strong&gt;pleasure&lt;/strong&gt; of attending a TerminusDB presentation, you might have heard something like this:&lt;/p&gt;
+        <title>Join the Data-Centric Revolution (we can help!)</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/2514/0*BqfeLvqCEA1CeDZN.png" width="1270"></p>&lt;p&gt;If you have had the &lt;strong&gt;pleasure&lt;/strong&gt; of attending a TerminusDB presentation, you might have heard something like this:&lt;/p&gt;
 
 &lt;p&gt;‘Unified, well-designed &amp;amp; refined data will be the jet fuel of future business’&lt;/p&gt;
 
@@ -1801,44 +1560,26 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;Graph is the coming data model. The world will change, but some people haven’t seen it yet, so there is an opportunity. Unfortunately if you miss the data boat — it is difficult to catch up. The AI arms race is a zero sum game — those that use the data will win. We really, really want that to be the good guys.&lt;/p&gt;
 
 &lt;p&gt;We see a world full of opportunity, but can’t grasp it all. We call on startups, researchers, NGOs, government workers, factory operatives, hipsters, dreamers… anybody who thinks they can use data effectively to make the world a better place. TerminusDB is open source — released under the GPL v3 license — so there is no cost in using the database. We can offer you guidance, advice and encouragement. We believe that TerminusDB can offer value in a whole bunch of areas, and we want to help you realize that value. Join the data-centric revolution.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Graph ]]>
-        </category>
+        <category>Graph</category>
         
-        <category>
-          <![CDATA[ Terminusdb ]]>
-        </category>
+        <category>Terminusdb</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Storing data like git — TerminusDB
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/8000/1*23WsqANJv5IS4ar-LGU2sw.jpeg" width="1270"></p>&lt;p&gt;Last week I have been to a meetup where a team of software developers from Dublin talks about their newest invention — &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;, a graph database that stores data like git. My reaction was like, what? Imagine all the cool things you can do with git: time travel, branching and forking etc, you can do them with your data.&lt;/p&gt;
+        <title>Storing data like git — TerminusDB</title>
+        <author>Cheuk Ting Ho</author>
+        <description><p><img src="https://miro.medium.com/max/8000/1*23WsqANJv5IS4ar-LGU2sw.jpeg" width="1270"></p>&lt;p&gt;Last week I have been to a meetup where a team of software developers from Dublin talks about their newest invention — &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;, a graph database that stores data like git. My reaction was like, what? Imagine all the cool things you can do with git: time travel, branching and forking etc, you can do them with your data.&lt;/p&gt;
 
 &lt;p&gt;What’s more, TerminusDB is a graph database, meaning all data are stored in nodes and edges, makes it easy to extract relations between your data without all the hideous joins in relational SQL database.&lt;/p&gt;
 
@@ -1892,48 +1633,28 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;TerminusDB: &lt;a href=&quot;https://terminusdb.com&quot;&gt;https://terminusdb.com&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Community forum: &lt;a href=&quot;https://community.terminusdb.com/&quot;&gt;https://community.terminusdb.com/&lt;/a&gt;&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/11/05/storing-data-like-git-terminusdb/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/11/05/storing-data-like-git-terminusdb/</guid>
         
-        <category>
-          <![CDATA[ Git ]]>
-        </category>
+        <category>Git</category>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ New Techonology ]]>
-        </category>
+        <category>New Techonology</category>
         
-        <category>
-          <![CDATA[ AI Tools ]]>
-        </category>
+        <category>AI Tools</category>
         
         
-        <dc:creator>
-          <![CDATA[ Cheuk Ting Ho ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Graph Fundamentals — Part 3: Graph Schema Languages
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg" width="1270"></p>&lt;p&gt;This is the third part of a four part series of a warts-and-all descriptions of graph database technologies —the first two covered the two fundamental flavors: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt; &amp;amp; &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Labelled Property Graphs&lt;/a&gt;&lt;/p&gt;
+        <title>Graph Fundamentals — Part 3: Graph Schema Languages</title>
+        <author>Kevin Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg" width="1270"></p>&lt;p&gt;This is the third part of a four part series of a warts-and-all descriptions of graph database technologies —the first two covered the two fundamental flavors: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt; &amp;amp; &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Labelled Property Graphs&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1966,44 +1687,26 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2400/0*PsI8Kgud7OuiF__y.png&quot; alt=&quot;The W3Cs semantic web stack — confusing much? How about when you learn that it’s not anything remotely like a stack and several of the pieces do not exist.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And this is only the tip of the iceberg — there have been many more incoherent standards and initiatives that have come out of the W3C’s standards bodies — almost all of which have launched like lead balloons into a world that cares not a jot. Nevertheless, it is important to recognise that, hidden in all the nonsense, there are some exceptionally good ideas — triples, URL identifiers and OWL itself are all tremendously good ideas in essence and nothing else out there comes close. It is a sad testament to the suffocating nature of design by standards committee which has consumed countless hours of many thousands of smart and genuine researchers, that ultimately the entire community ended up getting it’s ass kicked by a bunch of Swedish hackers with a bunch of json blobs — the Neo4j property graph guys have had a greater impact upon the real world than the whole academic edifice of semantic web research.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Semanticweb ]]>
-        </category>
+        <category>Semanticweb</category>
         
-        <category>
-          <![CDATA[ Rdf ]]>
-        </category>
+        <category>Rdf</category>
         
         
-        <dc:creator>
-          <![CDATA[ Kevin Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB — the database for data people.
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/4800/1*ZP8Lovt4_JBBBTNxv16xdg.jpeg" width="1270"></p>&lt;p&gt;TerminusDB is open source now and forever. We are releasing with the GPL V3 licence.&lt;/p&gt;
+        <title>TerminusDB — the database for data people.</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/4800/1*ZP8Lovt4_JBBBTNxv16xdg.jpeg" width="1270"></p>&lt;p&gt;TerminusDB is open source now and forever. We are releasing with the GPL V3 licence.&lt;/p&gt;
 
 &lt;p&gt;The development of Terminus has been a nine-year labour of love, devotion, frustration and pain. You can imagine how delighted we are to release TerminusDB to the world.&lt;/p&gt;
 
@@ -2018,44 +1721,26 @@ There’s so much potential in this genius design. I am already thinking about h
 &lt;p&gt;(We live for GitHub stars, so please go and star Terminus: &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;https://github.com/terminusdb/terminus-server&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
         
-        <category>
-          <![CDATA[ Model ]]>
-        </category>
+        <category>Model</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Graph Fundamentals — Part 2: Labelled Property Graphs
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/3840/1*FAK8MU1sYf6yrVpVmNQDzA.png" width="1270"></p>&lt;p&gt;This is the second part of a four part series on the fundamental technologies underlying graph databases — &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;the first covered RDF&lt;/a&gt;&lt;/p&gt;
+        <title>Graph Fundamentals — Part 2: Labelled Property Graphs</title>
+        <author>Kevin Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/3840/1*FAK8MU1sYf6yrVpVmNQDzA.png" width="1270"></p>&lt;p&gt;This is the second part of a four part series on the fundamental technologies underlying graph databases — &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;the first covered RDF&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -2100,40 +1785,24 @@ Hence, despite their importance in the early days of graph databases, property g
 &lt;hr /&gt;
 
 &lt;p&gt;This is the second part of a four-article series on graph fundamentals. The &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;first article in the series covered RDF&lt;/a&gt;, the other major variant of graph databases around today, while the third and next part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
         
-        <category>
-          <![CDATA[ Graph ]]>
-        </category>
+        <category>Graph</category>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
         
-        <dc:creator>
-          <![CDATA[ Kevin Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Graph Fundamentals — Part 1: RDF
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png" width="1270"></p>&lt;p&gt;Graph databases are on the rise, but amid all the hype it can be hard to understand the differences under the hood. This is the first article in a four part series describing the fundamental technologies that graph databases use under the hood. Unlike most articles that you will come across, this is neither marketing nor is it a tutorial — it’s a warts and all description of their strengths and weaknesses — stuff I have learned over 20 years of pain and suffering, in the hope that I can help somebody else out there to avoid having to learn these lessons the hard way.&lt;/p&gt;
+        <title>Graph Fundamentals — Part 1: RDF</title>
+        <author>Kevin Feeney</author>
+        <description><p><img src="https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png" width="1270"></p>&lt;p&gt;Graph databases are on the rise, but amid all the hype it can be hard to understand the differences under the hood. This is the first article in a four part series describing the fundamental technologies that graph databases use under the hood. Unlike most articles that you will come across, this is neither marketing nor is it a tutorial — it’s a warts and all description of their strengths and weaknesses — stuff I have learned over 20 years of pain and suffering, in the hope that I can help somebody else out there to avoid having to learn these lessons the hard way.&lt;/p&gt;
 
 &lt;p&gt;There are two major variants of graph databases in the wild — RDF graphs (aka triple-stores) and Labelled Property Graphs. In this, the first article in the series, I’ll describe RDF (Resource Description Framework), its strengths and weaknesses and where it came from. In subsequent articles, I’ll describe labelled property graphs and some of the the standards and technologies that have been built on top of them.&lt;/p&gt;
 
@@ -2255,48 +1924,28 @@ ex:likes ex:john.
 &lt;hr /&gt;
 
 &lt;p&gt;The second part of this series on graph fundamentals covers Labelled Property Graphs, the second major variant of graph databases today, while the third part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</guid>
         
-        <category>
-          <![CDATA[ Semantic Web ]]>
-        </category>
+        <category>Semantic Web</category>
         
-        <category>
-          <![CDATA[ RDF ]]>
-        </category>
+        <category>RDF</category>
         
-        <category>
-          <![CDATA[ Graph ]]>
-        </category>
+        <category>Graph</category>
         
-        <category>
-          <![CDATA[ Graph Database ]]>
-        </category>
+        <category>Graph Database</category>
         
-        <category>
-          <![CDATA[ W3C ]]>
-        </category>
+        <category>W3C</category>
         
         
-        <dc:creator>
-          <![CDATA[ Kevin Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            TerminusDB — what’s in a name?
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/terminusdb_logo.png" width="1270"></p>&lt;p&gt;TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.&lt;/p&gt;
+        <title>TerminusDB — what’s in a name?</title>
+        <author>Luke Feeney</author>
+        <description><p><img src="/assets/images/terminusdb_logo.png" width="1270"></p>&lt;p&gt;TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 
@@ -2376,48 +2025,28 @@ TerminusDB contributors will be posting on this blog over the coming weeks and m
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/400/1*_xTYaO0GlB_pyVCzb1AMJg.jpeg&quot; alt=&quot;we can do it&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Join the data-centric revolution!&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</guid>
         
-        <category>
-          <![CDATA[ Machine Learning ]]>
-        </category>
+        <category>Machine Learning</category>
         
-        <category>
-          <![CDATA[ Terminus ]]>
-        </category>
+        <category>Terminus</category>
         
-        <category>
-          <![CDATA[ Database ]]>
-        </category>
+        <category>Database</category>
         
-        <category>
-          <![CDATA[ Data ]]>
-        </category>
+        <category>Data</category>
         
-        <category>
-          <![CDATA[ Development ]]>
-        </category>
+        <category>Development</category>
         
         
-        <dc:creator>
-          <![CDATA[ Luke Feeney ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Type and mode checking in prolog (part 2): mavis
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/cover-image-03.jpeg" width="1270"></p>&lt;p&gt;As we discussed in &lt;a href=&quot;/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;Part 1&lt;/a&gt; of this short series on types in prolog, prolog has a rather graceful but silent method of reacting to a certain bugs. The exploitation of non-determinism can be extremely handy for searching spaces, but sometimes we just didn’t mean what we wrote, and instead of silent failure we would like to see an error.&lt;/p&gt;
+        <title>Type and mode checking in prolog (part 2): mavis</title>
+        <author>Gavin Mendel Gleason</author>
+        <description><p><img src="/assets/images/cover-image-03.jpeg" width="1270"></p>&lt;p&gt;As we discussed in &lt;a href=&quot;/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;Part 1&lt;/a&gt; of this short series on types in prolog, prolog has a rather graceful but silent method of reacting to a certain bugs. The exploitation of non-determinism can be extremely handy for searching spaces, but sometimes we just didn’t mean what we wrote, and instead of silent failure we would like to see an error.&lt;/p&gt;
 
 &lt;p&gt;One way around this problem which we presented in Part 1 was to use Hindley-Milner type (HM) checking to statically discover where we have variables which have a different type than we expect.&lt;/p&gt;
 
@@ -2500,40 +2129,24 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
 &lt;/ul&gt;
 
 &lt;p&gt;You can check out the lastest Mavis source here: &lt;a href=&quot;https://github.com/GavinMendelGleason/mavis&quot;&gt;https://github.com/GavinMendelGleason/mavis&lt;/a&gt;&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
         
-        <category>
-          <![CDATA[ Type Theory ]]>
-        </category>
+        <category>Type Theory</category>
         
-        <category>
-          <![CDATA[ Prolog ]]>
-        </category>
+        <category>Prolog</category>
         
-        <category>
-          <![CDATA[ Determinism ]]>
-        </category>
+        <category>Determinism</category>
         
         
-        <dc:creator>
-          <![CDATA[ Gavin Mendel Gleason ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Prolog meta-interpretation for syntax checking
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/cover-image-02.png" width="1270"></p>&lt;p&gt;Prolog is a fantastic toolkit for developing Domain Specific Languages (DSLs). Lexing and parsing are a breeze with the use of Declarative Clause Grammars (DCGs), and writing a interpreter or compiler is an essentially rule-based transformation problem anyhow.&lt;/p&gt;
+        <title>Prolog meta-interpretation for syntax checking</title>
+        <author>Gavin Mendel Gleason</author>
+        <description><p><img src="/assets/images/cover-image-02.png" width="1270"></p>&lt;p&gt;Prolog is a fantastic toolkit for developing Domain Specific Languages (DSLs). Lexing and parsing are a breeze with the use of Declarative Clause Grammars (DCGs), and writing a interpreter or compiler is an essentially rule-based transformation problem anyhow.&lt;/p&gt;
 
 &lt;p&gt;But before we set about interpreting or compiling an expression, we need to know that a term, represented as an abstract syntax tree (AST) is well formed.&lt;/p&gt;
 
@@ -2591,44 +2204,26 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
 &lt;p&gt;Sometimes meta is betta!&lt;/p&gt;
 
 &lt;p&gt;Acknowledgments to Douglas R. Miles, who helped me sort out module manipulation issues.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
         
-        <category>
-          <![CDATA[ Type Theory ]]>
-        </category>
+        <category>Type Theory</category>
         
-        <category>
-          <![CDATA[ Prolog ]]>
-        </category>
+        <category>Prolog</category>
         
-        <category>
-          <![CDATA[ Functional Programming ]]>
-        </category>
+        <category>Functional Programming</category>
         
-        <category>
-          <![CDATA[ Logic Programming ]]>
-        </category>
+        <category>Logic Programming</category>
         
         
-        <dc:creator>
-          <![CDATA[ Gavin Mendel Gleason ]]>
-        </dc:creator>
       </item>
     
       <item>
-        <title>
-          <![CDATA[
-            Type and mode checking in prolog (part 1): type_check
-          ]]>
-        </title>
-        <description>
-            <![CDATA[
-            <p><img src="/assets/images/cover-image-01.png" width="1270"></p>&lt;p&gt;When it comes to languages for rule processing, prolog has them all beat. It has so many exciting features that make it incredibly flexible, among them:&lt;/p&gt;
+        <title>Type and mode checking in prolog (part 1): type_check</title>
+        <author>Gavin Mendel Gleason</author>
+        <description><p><img src="/assets/images/cover-image-01.png" width="1270"></p>&lt;p&gt;When it comes to languages for rule processing, prolog has them all beat. It has so many exciting features that make it incredibly flexible, among them:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;backtracking: we can try several strategies to solve a problem, and roll back if one doesn’t work. This also give us generators and testors using the same framework, enabling guess and check approaches to algorithms.&lt;/li&gt;
@@ -2740,25 +2335,16 @@ q :-
 &lt;p&gt;The first thing is that the full standard library needs to be given appropriate typing in a library, so that you don’t have to constantly run around typing everything. And in order to do this, type_check needs to be made module aware, which it currently is not. Module-awareness adds a good deal of complexity as well — how do we import types for instance?&lt;/p&gt;
 
 &lt;p&gt;Second, the addition of dynamic checks at boundaries is absolutely fantastic, and precisely the right way to ease a language like prolog into using static typing disciplines. However, when should we apply these type checks? This leads us to the question of mode checking. We will look at dynamic type checking and dynamic mode checking in the next article on mavis.&lt;/p&gt;
-
-            ]]>
-        </description>
+</description>
         <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
         
-        <category>
-          <![CDATA[ Type Theory ]]>
-        </category>
+        <category>Type Theory</category>
         
-        <category>
-          <![CDATA[ Prolog ]]>
-        </category>
+        <category>Prolog</category>
         
         
-        <dc:creator>
-          <![CDATA[ Gavin Mendel Gleason ]]>
-        </dc:creator>
       </item>
     
   </channel>
