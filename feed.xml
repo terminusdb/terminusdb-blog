@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Mar 2020 15:41:23 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2020 15:41:23 +0000</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 15:53:12 +0000</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 15:53:12 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -91,7 +91,7 @@ Databases ranked by data modelling power with leading open source examples of ea
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Kevin Feeney
         </dc:creator>
       </item>
     
@@ -157,7 +157,7 @@ Databases ranked by data modelling power with leading open source examples of ea
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -245,7 +245,7 @@ The dependency tree of the open annotations ontology — typical of a linked dat
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Kevin Feeney
         </dc:creator>
       </item>
     
@@ -295,7 +295,7 @@ The dependency tree of the open annotations ontology — typical of a linked dat
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -351,7 +351,7 @@ Get out there, Terminators&lt;/p&gt;
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -416,7 +416,7 @@ Get out there, Terminators&lt;/p&gt;
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -472,7 +472,7 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -540,7 +540,7 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -758,7 +758,7 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -855,7 +855,7 @@ Thanks &lt;a href=&quot;https://twitter.com/dmytri/status/1219391128287555586&qu
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -1217,7 +1217,7 @@ Make a new WOQL query as follow:&lt;/p&gt;
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -1618,7 +1618,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -1676,7 +1676,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -1759,7 +1759,7 @@ There’s so much potential in this genius design. I am already thinking about h
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Cheuk Ting Ho
         </dc:creator>
       </item>
     
@@ -1819,7 +1819,7 @@ There’s so much potential in this genius design. I am already thinking about h
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Kevin Feeney
         </dc:creator>
       </item>
     
@@ -1861,7 +1861,7 @@ There’s so much potential in this genius design. I am already thinking about h
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -1931,7 +1931,7 @@ Hence, despite their importance in the early days of graph databases, property g
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Kevin Feeney
         </dc:creator>
       </item>
     
@@ -2082,7 +2082,7 @@ ex:likes ex:john.
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Kevin Feeney
         </dc:creator>
       </item>
     
@@ -2191,7 +2191,7 @@ TerminusDB contributors will be posting on this blog over the coming weeks and m
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Luke Feeney
         </dc:creator>
       </item>
     
@@ -2299,7 +2299,7 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Gavin Mendel Gleason
         </dc:creator>
       </item>
     
@@ -2384,7 +2384,7 @@ We can also run the query &lt;em&gt;backwards&lt;/em&gt;, since we have supplied
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Gavin Mendel Gleason
         </dc:creator>
       </item>
     
@@ -2519,7 +2519,7 @@ q :-
         
         
         <dc:creator>
-        <![CDATA[   ]]>
+        Gavin Mendel Gleason
         </dc:creator>
       </item>
     
