@@ -6,9 +6,13 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Mar 2020 16:45:08 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2020 16:45:08 +0000</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 16:53:13 +0000</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 16:53:13 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    <webMaster>
+    <![CDATA[ yourfriends@medium.com ]]>
+    </webMaster>
+    <atom:link href="http://medium.superfeedr.com" rel="hub"/>
     
       <item>
         <title>
