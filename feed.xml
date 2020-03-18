@@ -18,7 +18,10 @@ layout: null
         {% capture cover %}
         {% if post.image %}<p><img src="{{ post.image | xml_escape }}" width="1270"></p>{% endif %}{% if post.cover_image %}<p><img src="{{ post.cover_image | xml_escape }}" width="1270"></p>{% endif %}
         {% endcapture %}
-        <description>{{ cover | xml_escape}}{{ post.content | xml_escape }}</description>
+        {% capture continue %}
+        <p><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">...Continue reading in our blog.</a></p>
+        {% endcapture %}
+        <description>{{ cover | xml_escape}}{{ post.content | xml_escape | truncatewords: 150 }}{{ continue | xml_escape}}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
