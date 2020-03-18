@@ -30,6 +30,10 @@ We also have lots of beer and pizza. Our members always love Cowduck and our env
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The worlds best Database <a href="https://twitter.com/hashtag/terminusDB?src=hash&amp;ref_src=twsrc%5Etfw">#terminusDB</a> is joining the fight against against single use plastic! 👏 <a href="https://t.co/adFvyeGydC">pic.twitter.com/adFvyeGydC</a></p>&mdash; Eoin Dowling (@metapredicate) <a href="https://twitter.com/metapredicate/status/1235650563561476096?ref_src=twsrc%5Etfw">March 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+In case you missed out meetup, here is a video for you:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kRFNucZ97f8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## What's next?
 
 Unfortunately, due to COVID-19 and public safety, we may not have physical meetups in Dublin and London for a while. **Good news** is, we will have more Webinar which you can join wherever you are! Stay tuned at our [meetup pages](https://www.meetup.com/pro/terminusdb-community/), [event page](https://events.terminusdb.com/) and [twitter](https://twitter.com/TerminusDB).
