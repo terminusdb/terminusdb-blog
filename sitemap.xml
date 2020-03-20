@@ -93,6 +93,10 @@
 <lastmod>2020-03-18T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/2020/03/20/deploy-heroku/</loc>
+<lastmod>2020-03-20T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/404</loc>
 </url>
 <url>
@@ -241,5 +245,11 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/tag/data-modeling/</loc>
+</url>
+<url>
+<loc>http://blog.terminusdb.com/tag/cloud/</loc>
+</url>
+<url>
+<loc>http://blog.terminusdb.com/tag/deploy/</loc>
 </url>
 </urlset>

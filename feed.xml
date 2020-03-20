@@ -6,9 +6,36 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Mar 2020 23:58:44 +0000</pubDate>
-    <lastBuildDate>Thu, 19 Mar 2020 23:58:44 +0000</lastBuildDate>
+    <pubDate>Fri, 20 Mar 2020 00:09:08 +0000</pubDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:09:08 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>One Click Deploy TerminusDB to Cloud</title>
+        <author>Cheuk Ting Ho</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;Many people didn’t know that you can deploy TerminusDB easily on cloud. To demonstrate, we have set up &lt;a href=&quot;https://github.com/terminusdb/terminus-heroku&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/images/terminus-heroku.png&quot; alt=&quot;GitHub repo: terminusdb/terminus-heroku&quot; /&gt;&lt;/p&gt; &lt;p&gt;There is a button, which automatically pushes TerminusDB on a Heroku dyno. All you need to do is to fill in an app name and log in.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/images/heroku-login.png&quot; alt=&quot;Log in to Heroku&quot; /&gt;&lt;/p&gt; &lt;p&gt;However, this repo is meant to be used for people to experiment, try out TerminusDB or for following tutorials. It’s NOT meant for production which you may want more stable cloud cluster set up which let you preserve your data store. (We have productional TerminudDB on cloud for our internal projects).&lt;/p&gt; &lt;p&gt;So here you go, we made it easy for you to play around with TerminusDB and do some graph visualisation and analysis. Which tutorials do you want to try out?&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/20/deploy-heroku/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/2020/03/20/deploy-heroku/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/20/deploy-heroku/</guid>
+        
+        <category>Database</category>
+        
+        <category>Dataops</category>
+        
+        <category>Cloud</category>
+        
+        <category>Open Source</category>
+        
+        <category>Deploy</category>
+        
+        
+      </item>
     
       <item>
         <title>Our DataOps Meetup at Dublin</title>
