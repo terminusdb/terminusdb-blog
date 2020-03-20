@@ -59,7 +59,7 @@ You should see a result that looks like the screen below:
 
 ![CSV Preview Result Screen](https://miro.medium.com/max/4910/1*ylh1o-If4F5AMQTSZq1bQQ.png)
 
-This query reads data directly from the CSV — `remote` specifies the location of the CSV and `get` specifies how the columns in the CSV should be loaded into WOQL variables. The `get` takes 2 lists as parameters: the 1st is the title of the column in the CSV, while the 2nd is the name of a variable that we can use to refer to the data in that column in other parts of the query. In technical terms we are binding the variables, for example `v:Start_Station` is bound to the data in the column with the header “Start Station” (WOQL variables always start with v: and can’t contain spaces).
+This query reads data directly from the CSV — `remote` specifies the location of the CSV and `get` specifies how the columns in the CSV should be loaded into WOQL variables. The `get` takes 2 lists as parameters: the 1st is the title of the column in the CSV, while the 2nd is the name of a variable that we can use to refer to the data in that column in other parts of the query. In technical terms we are binding the variables, for example `v:Start_Station` is bound to the data in the column with the header "Start Station” (WOQL variables always start with v: and can’t contain spaces).
 
 This query allows us to preview the data without importing it, but if we want to really analyse, we need to import it into our TerminusDB database. The first step is to create a schema to govern the structure of the data that we will store.
 
@@ -360,22 +360,22 @@ Then, finally, we can use the library to load the query and view above and injec
 function showView(client){
     const WOQL = TerminusClient.WOQL;
     const View = TerminusClient.View;
-    let woql = WOQL.select(“v:Start”,“v:S_Lab”,“v:End”,“v:E_Lab”)
+    let woql = WOQL.select("v:Start”,"v:S_Lab”,"v:End”,"v:E_Lab”)
     .and(
-        WOQL.triple(“v:Journey”, “type”, “scm:Journey”),
-        WOQL.triple(“v:Journey”, “start_station”, “v:Start”),
-        WOQL.opt().triple(“v:Start”, “label”, “v:S_Lab”),
-        WOQL.triple(“v:Journey”, “end_station”, “v:End”),
-        WOQL.opt().triple(“v:End”, “label”, “v:E_Lab”),
-        WOQL.triple(“v:Journey”, “journey_bicycle”, “v:Bike”)
+        WOQL.triple("v:Journey”, "type”, "scm:Journey”),
+        WOQL.triple("v:Journey”, "start_station”, "v:Start”),
+        WOQL.opt().triple("v:Start”, "label”, "v:S_Lab”),
+        WOQL.triple("v:Journey”, "end_station”, "v:End”),
+        WOQL.opt().triple("v:End”, "label”, "v:E_Lab”),
+        WOQL.triple("v:Journey”, "journey_bicycle”, "v:Bike”)
     );
     let view = View.graph();
-    view.node(“S_Lab”, “E_Lab”).hidden(true)
-    view.node(“End”).icon({color: [255,0,0], unicode: “\uf84a”})
-        .text(“v:E_Lab”).size(25).charge(-10)
-    view.node(“Start”).icon({color: [255,0,0], unicode: “\uf84a”})
-        .text(“v:S_Lab”).size(25).collisionRadius(10)
-    view.edge(“Start”, “End”).weight(100)
+    view.node("S_Lab”, "E_Lab”).hidden(true)
+    view.node("End”).icon({color: [255,0,0], unicode: "\uf84a”})
+        .text("v:E_Lab”).size(25).charge(-10)
+    view.node("Start”).icon({color: [255,0,0], unicode: "\uf84a”})
+        .text("v:S_Lab”).size(25).collisionRadius(10)
+    view.edge("Start”, "End”).weight(100)
     let tv = new TerminusDashboard.TerminusViewer(client);
     const res = tv.getResult(woql, view);
     document.getElementById(‘target’).appendChild(res.getAsDOM());

@@ -28,15 +28,19 @@ Example usage:
 ```python
 import woqlclient.woqlClient as woql
 from woqlclient import WOQLQuery
+
 server_url = "http://localhost:6363"
 key = "root"
 dbId = "pybike"
-client = woql.WOQLClient()                       client.connect(server_url, key)
+client = woql.WOQLClient()
+client.connect(server_url, key)
 client.createDatabase(dbId, "Bicycle Graph")
-station = WOQLQuery().doctype("Station").label("Bike Station")                                                                             journey = WOQLQuery().doctype("Journey")                           journey = journey.label("Journey")
+station = WOQLQuery().doctype("Station").label("Bike Station")
+journey = WOQLQuery().doctype("Journey")
+journey = journey.label("Journey")
 journey = journey.property("start_station", "Station").label("Start Station")
-journey = journey.property("end_station", "Station").label("End Station")                           
-schema = WOQLQuery().when(True).woql_and(station, journey)                           
+journey = journey.property("end_station", "Station").label("End Station")
+schema = WOQLQuery().when(True).woql_and(station, journey)
 schema.execute(client)
 ```
 
