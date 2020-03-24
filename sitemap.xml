@@ -65,6 +65,10 @@
 <lastmod>2020-01-28T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</loc>
+<lastmod>2020-01-30T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/</loc>
 <lastmod>2020-02-13T00:00:00+00:00</lastmod>
 </url>
@@ -209,6 +213,9 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/tag/dialectics/</loc>
+</url>
+<url>
+<loc>http://blog.terminusdb.com/tag/tutorial/</loc>
 </url>
 <url>
 <loc>http://blog.terminusdb.com/tag/meetup/</loc>

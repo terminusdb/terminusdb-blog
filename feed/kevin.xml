@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 15:17:57 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 15:17:57 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 15:44:57 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 15:44:57 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -173,6 +173,8 @@ The dependency tree of the open annotations ontology — typical of a linked dat
         
         
       </item>
+    
+    
     
     
     

@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 15:17:57 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 15:17:57 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 15:44:57 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 15:44:57 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -220,6 +220,31 @@
         <category>Open Source</category>
         
         <category>Knowledge Graph</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Loading data in turtle RDF format to TerminusDB</title>
+        <author>Cheuk Ting Ho</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/6000/1*gE52jP9sN0JGx1ONoWcdqQ.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;TerminusDB loves RDF! If you have not noticed already, Terminus uses the W3C’s OWL language to define the schema of its databases and OWL is normally encoded as RDFs.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;Loading data in turtle RDF format to TerminusDB is elegant and simple. I assume you have already read our beginner’s tutorial — &lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt; and have been started using &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;. Now you want to load some data in turtle RDF format instead of the csvs like the tutorial.&lt;/p&gt; &lt;p&gt;Just as a revision, when loading the csvs in the tutorial, we use:&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;csv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WOQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WOQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Start station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;v:Start_Station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;End station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;v:End_Station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Start date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</guid>
+        
+        <category>Rdf</category>
+        
+        <category>Graph</category>
+        
+        <category>Database</category>
+        
+        <category>Tutorial</category>
         
         
       </item>
