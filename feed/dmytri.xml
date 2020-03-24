@@ -6,9 +6,204 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 23:37:46 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 23:37:46 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 23:43:31 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 23:43:31 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+    
+      <item>
+        <title>Relucantly Remote, and loving it</title>
+        <description>&lt;p&gt;I have to admit, most of my career I’ve treated remote collaboration as a
+necessary evil.&lt;/p&gt;
+
+&lt;p&gt;I’m a big fan of colocation. I love sticky notes, magic charts and colourful
+tape. I love walls so much whenever I see pictures hanging on them I’m like,
+why are they wasting good wall space for those useless pictures? I love pair
+and mob programming. I love highly engaged, participant centered workshops. I
+love retrospectives, and I do elaborate ones featuring lots of pair and group
+conversation, arts and crafts, and role playing.&lt;/p&gt;
+
+&lt;p&gt;For years I’ve lived this way, preaching customer and partner interaction,
+NIHITO, user observation, face to face collaboration and working together
+shoulder to shoulder.&lt;/p&gt;
+
+&lt;p&gt;Then, the first shoe dropped, I joined an early stage startup building the
+knowledge collaboration database of the future, TerminusDB.&lt;/p&gt;
+
+&lt;p&gt;Suddenly, I had a distributed team, half of the engineers are in Utrecht, half
+of the engineers, along with the business team are in Dublin, a developer
+relations person in London, and me in Berlin.&lt;/p&gt;
+
+&lt;p&gt;So, I started making everyone fly around, we had workshops and colocated work
+in the Netherlands, and in Ireland, we started to develop our flow of design
+and delivery practices.&lt;/p&gt;
+
+&lt;p&gt;The idea was that we would do design and planning in person, on walls with
+stickies and stuff, then convert these to digital representations and do
+delivery work back home, but try to divide systems such that related work could
+be done by workcenters which are mostly colocated. So, core database
+development in Utrecht and web platform work in Dublin.&lt;/p&gt;
+
+&lt;p&gt;This meant our CTO would basically commute from Dublin to Utrecht, and our
+DevRel person would basically commute from London to Dublin, and I would also
+be traveling continuously. But hey, that’s been more or less what I’ve been
+used to for basically forever, and this is the framework that I’ve been
+recommending to teams for a long time.&lt;/p&gt;
+
+&lt;p&gt;We chose Trello as our online kanban, and where already using Slack and Github,
+plus Google Apps and Zoom. So, we were somewhat remote already, but not really.&lt;/p&gt;
+
+&lt;p&gt;Realizing that it would be cool if we could find ways to do some of the design
+and planning work online, as there would never be enough time to do all of it
+in person, I started investigating online collaboration tools, and having
+conversations with colleagues about best tools and practices.&lt;/p&gt;
+
+&lt;p&gt;Then, the other shoe dropped. A worldwide pandemic. Everyone is working from
+home. Travel is not an option, and our customers can not be visited.&lt;/p&gt;
+
+&lt;p&gt;Now what?&lt;/p&gt;
+
+&lt;p&gt;Day one we left our physical offices in Dublin and Utrecht, and moved into our
+new virtual office: Discord.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://discordapp.com&quot;&gt;Discord&lt;/a&gt; is a platform for gamers to play online games
+together, it provides text chat channels, like Slack, but also voice channels
+which are like meeting rooms that people can have voice meetings in.&lt;/p&gt;
+
+&lt;p&gt;The ability to have different channels for teams as well as for company
+meetings, and the ability to quickly see that people are in a given voice
+channel, provides for a much more ad-hoc experience, you can see when and where
+people are meeting, drop in and say hi, or notice meetings are happening when
+maybe you didn’t notice in your calendar.&lt;/p&gt;
+
+&lt;p&gt;This feels much more like an office experience than scheduled video
+conferences, and allows for more casual interactions with less friction in
+jumping on voice chats. It’s not quite colocation, but it’s not a bad
+facsimile.&lt;/p&gt;
+
+&lt;p&gt;Discord also allows a user to go live and share their screen, this was designed
+for streaming the game you are playing so that others can watch you play. It
+also works well for pair and mob programming and presentations.&lt;/p&gt;
+
+&lt;p&gt;If anything, moving to Discord has  actually increased  the time we spend
+paring and mobbing. Something we’re very happy about, not to mention the
+reduced air miles.&lt;/p&gt;
+
+&lt;p&gt;We are writing more code with greater quality, spending less money, emitting
+less carbon, and abiding by needed social distancing practices during the
+pandemic. Other than perhaps worsening the teams personal hygiene and
+fashionability, this has been a real improvement, and a practice we will
+continue even when the pandemic is behind us.&lt;/p&gt;
+
+&lt;p&gt;So far so good, however, pairing and mobbing and presentations are great for
+the delivery portion of our workflow, but there is still the question of design
+and planning. While I had begun my investigations in earnest, now we’re all in.
+It’s go remote or go home! No wait.  It’s stay home or no go! Go live or die
+trying? Something like that.&lt;/p&gt;
+
+&lt;p&gt;The question is how do I facilitate agile design and planning practices when I
+can’t see everyone, when I can’t get them to write sticky notes, and I don’t
+have a wall to stick them on.&lt;/p&gt;
+
+&lt;p&gt;So far, I’ve not really been a big fan of any of the online tools I’ve tried.
+They are either too fiddly, requiring the mouse ninja skills of a master
+Photoshop jockey, or too limited, implementing a very rigid version of popular
+practices and not allowing you to paint outside the lines or vary the practice
+when the situation calls for it. They make it hard or impossible to combine
+practices or invent new ones, as I am wont to do. Or, the system is so
+complicate, that finding a setting or feature is  like needing to explore 17
+levels of a 70s style text adventure, without being eaten by a Grue, only not
+nearly as fun.&lt;/p&gt;
+
+&lt;p&gt;Good luck facilitating an online session when you need to start with an hour
+long introduction to the tools, and let’s put aside the issues of ill-fitting
+pricing models for now.&lt;/p&gt;
+
+&lt;p&gt;In the end, after trying every tool available online and putting myself at risk
+of repetitive strain injury just from the amount of “Hi, I’m Bill from Customer
+Success” emails I will need to unsubscribe from , some hope is emerging.&lt;/p&gt;
+
+&lt;p&gt;With Discord as our virtual office, and with everybody getting used to voice
+channels as opposed to video conferences, this leaves our eyes free to focus on
+real time collaboration tools instead of video. While screen sharing and video
+are very useful tools, for working sessions like planning and design workshops
+they are better avoided.&lt;/p&gt;
+
+&lt;p&gt;Instead of video or screen sharing,  real time collaboration tools allow
+everyone to work together at the same time within the collaboration app, so
+nobody is sharing their screen, everyone is using the same software at the same
+time and seeing the same state.&lt;/p&gt;
+
+&lt;p&gt;The first tool we added was &lt;a href=&quot;https://lucidmeetings.com&quot;&gt;Lucid Meetings&lt;/a&gt;. Lucid
+is not a conferencing tool, we use Discord voice channels to talk during
+meetings.&lt;/p&gt;
+
+&lt;p&gt;Lucid is a real time meeting tool that allows you to create an agenda, and step
+through it together with everyone at the same time. During the meeting,
+everyone sees the current agenda item being discussed.&lt;/p&gt;
+
+&lt;p&gt;This is super important if you will also be use other tools during the meeting,
+as you can provide links and instructions in the agenda. One of the biggest
+challenges is keeping a group of remote people in sync.  A real time agenda
+tool like Lucid is really helpful for this.&lt;/p&gt;
+
+&lt;p&gt;Lucid also has a chat interface, allows everyone to write notes, add action
+items and other records, which are not only emailed to everyone after the
+meeting, but also kept in lucid and available for review at future meetings.&lt;/p&gt;
+
+&lt;p&gt;There is also a speaker queue, document attachments and other features required
+for  facilitating meetings and recording outcomes. Lucid is built by meeting
+experts, includes templates and facilitator guides for common meeting types,
+and has a friendly and very helpful community.&lt;/p&gt;
+
+&lt;p&gt;So, now that I can plan the session and keep everyone on the same page, the
+next, and trickiest bit is visual collaboration, how do I replace creating
+simple canvases with tape and sticky notes? Although honorable mention goes to
+&lt;a href=&quot;https://metroretro.io&quot;&gt;MetroRetro&lt;/a&gt; and &lt;a href=&quot;https://miro.com&quot;&gt;Miro&lt;/a&gt;, both very
+cool tools, our team chose &lt;a href=&quot;https://mural.co&quot;&gt;Mural&lt;/a&gt;. Not sure why all these
+tools start with an M. Maybe it’s like a secret coded message of some kind.&lt;/p&gt;
+
+&lt;p&gt;Mural is a real time visual collaboration tool that allows people to draw on a
+canvas at the same time, add sticky notes, shapes and pictures. What sets it
+apart are it’s “Facilitator Superpowers.”&lt;/p&gt;
+
+&lt;p&gt;Facilitators can build outlines, that define parts of a canvas or steps in a
+practice, and then “summon” participants so that they are all looking at the
+same part of the canvas at the same time, and hide and reveal portions of the
+canvas as required to advance the practice. It also has plenty of popular
+templates and frameworks for popular practices, but makes it easy to combine
+them and make your own templates. It also has a timer, and a voting feature.&lt;/p&gt;
+
+&lt;p&gt;I’ve successfully created templates for my own practices with it and used them
+to run remote meetings.&lt;/p&gt;
+
+&lt;p&gt;So, while our journey into remote design and planning practices is just
+beginning, and many challenges remain, Discord, Lucid Meetings and Mural give
+us a pretty solid base to build on.&lt;/p&gt;
+
+&lt;p&gt;But, OK, I confess “loving it” was an exaggeration, I still miss working face
+to face, but we’re coping and even when the pandemic is over, I’m sure that
+remote work and the practices we are developing will remain a key part of our
+way of working.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/2020/03/24/reluctantly-remote/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/24/reluctantly-remote/</guid>
+        
+        <category>Remote</category>
+        
+        <category>Agile</category>
+        
+        <category>Team Work</category>
+        
+        <category>Collaboration</category>
+        
+        <category>Real Time</category>
+        
+        
+      </item>
+    
     
     
     
