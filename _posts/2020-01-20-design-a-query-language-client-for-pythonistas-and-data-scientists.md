@@ -44,7 +44,7 @@ schema = WOQLQuery().when(True).woql_and(station, journey)
 schema.execute(client)
 ```
 
-The complete script can be found in GitHub.
+The complete script can be found in [GitHub](https://github.com/terminusdb/terminus-tutorials/tree/master/bike-tutorial/python).
 
 As you see, the python client can execute a query created with WOQLpy. It is because WOQLpy lets you build WOQL — the original query language in JSON-LD format with methods in WOQLQuery object and send it to TerminusDB through the Python client. Without WOQLpy, queries need to be written in JSON-LD, for example, the same query above will be:
 
