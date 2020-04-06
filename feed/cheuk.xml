@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Apr 2020 14:15:49 +0000</pubDate>
-    <lastBuildDate>Mon, 06 Apr 2020 14:15:49 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 15:21:17 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 15:21:17 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -15,7 +15,7 @@
         <title>Write up of our Webinar - DataOps 101</title>
         <description>&lt;p&gt;Last week we had out Webinar about DataOps. I ask my colleague - Dmytri Kleiner, Director Of Services at TerminusDB some questions about DataOps (mostly questions that myself and many of you have in mind).&lt;/p&gt;
 
-&lt;p&gt;You can access to all our webinar as podcast here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including this interview with Dmytri and a previous one with the founders of TerminusDB.&lt;/p&gt;
+&lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including this interview with Dmytri and a previous one with the founders of TerminusDB.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -51,7 +51,7 @@
 
 &lt;p&gt;Just like Devops, the goals of Dataops is to eliminating silos and to create cross-functional teams and have full ownership of their tasks and all the capabilities of what they need to do. A successful Dataops team is like a successful Devops team. They are allowed to do what they need to do: have the ability to write software, create infrastructure, as well as to manage data. They got the right mandate and authority to do what they need to do. They are empowered to do what they need to do. And they have all the capacities to do what they need to do.&lt;/p&gt;
 
-&lt;h2 id=&quot;what-roles-does-dataops-plays-in-remote-working&quot;&gt;What roles does Dataops plays in remote working?&lt;/h2&gt;
+&lt;h2 id=&quot;what-roles-does-dataops-play-in-remote-working&quot;&gt;What roles does Dataops play in remote working?&lt;/h2&gt;
 
 &lt;p&gt;We are building new tools for remote work, they involved data, as well as software, involving Dataops into Devops, would be a good idea as lots of the software engineering works are involved with data. Data are commonly poorly managed. Data can be treated like software, and doing so will require new tools and lots of new practices.&lt;/p&gt;
 

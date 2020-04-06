@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Apr 2020 14:15:49 +0000</pubDate>
-    <lastBuildDate>Mon, 06 Apr 2020 14:15:49 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 15:21:17 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 15:21:17 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -17,7 +17,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cover-of-webninar-dataops101.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;Last week we had out Webinar about DataOps. I ask my colleague - Dmytri Kleiner, Director Of Services at TerminusDB some questions about DataOps (mostly questions that myself and many of you have in mind).&lt;/p&gt; &lt;p&gt;You can access to all our webinar as podcast here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including this interview with Dmytri and a previous one with the founders of TerminusDB.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;what-is-dataops-whats-the-difference-between-devops-and-dataops&quot;&gt;What is Dataops? What’s the difference between Devops and Dataops?&lt;/h2&gt; &lt;p&gt;First, we have to know what is Devops. Developers and operations were once totally separate - there was a wall between and this caused difficulties as they couldn’t understand what was there and what the implications. It took too long and too difficult to get into production. Integration and delivery were painful things.&lt;/p&gt; &lt;p&gt;Then there come new inventions, in the developer community Git and GitHub became popular. While in the ops world, cloud computing became prominent....
+        &lt;p&gt;Last week we had out Webinar about DataOps. I ask my colleague - Dmytri Kleiner, Director Of Services at TerminusDB some questions about DataOps (mostly questions that myself and many of you have in mind).&lt;/p&gt; &lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including this interview with Dmytri and a previous one with the founders of TerminusDB.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;what-is-dataops-whats-the-difference-between-devops-and-dataops&quot;&gt;What is Dataops? What’s the difference between Devops and Dataops?&lt;/h2&gt; &lt;p&gt;First, we have to know what is Devops. Developers and operations were once totally separate - there was a wall between and this caused difficulties as they couldn’t understand what was there and what the implications. It took too long and too difficult to get into production. Integration and delivery were painful things.&lt;/p&gt; &lt;p&gt;Then there come new inventions, in the developer community Git and GitHub became popular. While in the ops world, cloud computing became prominent....
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/03/dataops-101/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
