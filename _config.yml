@@ -2,7 +2,7 @@
 email:
 baseurl: ""
 permalink: /:year/:month/:day/:title/
-google_analytics:
+google_analytics: UA-151888980-1
 
 name: TerminusDB
 title: TerminusDB Blog - News and Tutorials
