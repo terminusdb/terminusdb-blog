@@ -16,7 +16,10 @@
 
 <script src="{{ '/assets/js/app.min.js' | prepend: site.baseurl }}"></script>
 
+{% if site.google_analytics %}
+
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
 <script>
 window.cookieconsent.initialise({
   "palette": {
@@ -30,8 +33,42 @@ window.cookieconsent.initialise({
     }
   },
   "theme": "classic",
+  "type": "opt-in",
   "content": {
     "href": "https://terminusdb.com/cookies.html"
+  },
+
+  onInitialise: function (status) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    enableCookies()
   }
+  if (type == 'opt-out' && !didConsent) {
+    disableCookies()
+  }
+  },
+
+  onStatusChange: function(status, chosenBefore) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (type == 'opt-in' && didConsent) {
+      enableCookies()
+    }
+    if (type == 'opt-out' && !didConsent) {
+      disableCookies()
+    }
+  },
+
+  onRevokeChoice: function() {
+    var type = this.options.type;
+    if (type == 'opt-in') {
+      disableCookies()
+    }
+    if (type == 'opt-out') {
+      enableCookies()
+    }
+  },
 });
 </script>
+{% endif %}
