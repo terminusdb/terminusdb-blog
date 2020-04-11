@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: terminusdb/terminusdb-blog # Path to your GitHub repository
+  branch: src # Branch to update (optional; defaults to master)
+media_folder: 'assets/uploads'
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          displayFields: [display_name],
+          searchFields: [display_name],
+          valueField: 'name',
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["database"],
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "config"
+    label: "Config"
+    editor:
+      preview: false
+    files:
+      - name: "author_profiles"
+        label: "Author Profiles"
+        file: '_data/authors.yml'
+        fields:
+          - label: "Authors"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: 'Short Name', name: 'name', widget: 'string' }
+              - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
+              - { label: 'Bio', name: 'bio', widget: 'string' }
+              - { label: 'Website', name: 'url', widget: 'string' }
