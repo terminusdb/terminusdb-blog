@@ -32,24 +32,6 @@ disqus:
 mailchimp_action:
 mailchimp_input:
 
-# Author settings
-author:
-  - name: Luke Feeney
-    bio: Building the database of the future.
-    url: https://github.com/luke-feeney
-  - name: Kevin Feeney
-    bio: Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd
-    url: https://github.com/kevinchekovfeeney
-  - name: Cheuk Ting Ho
-    bio: Developer Advocate for TerminusDB. Data Scientist. Organizer of London Python Sprints and AI Club for Gender Minorities. Tech Speaker. Master of LT EuroPython.
-    url: https://cheuk.dev
-  - name: Gavin Mendel Gleason
-    bio: A software engineer interested in improving the best practices of the software development community through the use of logic, mathematics and formal methods.
-    url: https://github.com/GavinMendelGleason
-  - name: Dmytri Kleiner
-    bio: Venture Communist.
-    url: https://twitter.com/dmytri
-
 # Pagination settings
 pagination:
   enabled: true

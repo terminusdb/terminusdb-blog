@@ -48,7 +48,7 @@ layout: default
       <div class="section-padding">
         <div class="grid-small">
           {% for author in page.author %}
-            {% assign authorDetails = site.author | where: "name", author %}
+            {% assign authorDetails = site.data.authors | where: "name", author %}
             {% if forloop.first == true %}
               <span class="post__author">Posted by
             {% else %}
