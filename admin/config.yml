@@ -19,11 +19,13 @@ collections:
       - {
           label: 'Author',
           name: 'author',
-          widget: 'relation',
-          collection: 'authors',
-          displayFields: [display_name],
-          searchFields: [display_name],
-          valueField: 'name',
+          widget: 'ncw-file-relation',
+          collection: 'config',
+          file: "author_profiles",
+          target_field: "items",
+          id_field: 'name',
+          display_fields: 'display_name',
+          multiple: false ,
         }
       - {
           label: "Tags",
