@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2020 21:43:45 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2020 21:43:45 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 21:50:27 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 21:50:27 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -25,7 +25,7 @@
 
 &lt;h1 id=&quot;i-hope-it-works&quot;&gt;I hope it works&lt;/h1&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Watch Webinar on &lt;/code&gt;&lt;a href=&quot;https://www.twitch.tv/terminusdb/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Twitch&lt;/code&gt;&lt;/a&gt;``&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[`Watch Webinar`](https://www.twitch.tv/terminusdb/)&lt;/code&gt;&lt;/p&gt;
 
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/13/testing/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
