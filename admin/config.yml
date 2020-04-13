@@ -20,10 +20,10 @@ collections:
           label: 'Author',
           name: 'items',
           widget: 'relation',
-          collection: 'authors',
-          displayFields: [display_name],
-          searchFields: [display_name],
-          valueField: 'name',
+          collection: 'config',
+          displayFields: [author_profiles.items.display_name],
+          searchFields: [author_profiles.items.display_name],
+          valueField: 'author_profiles.items.name',
         }
       - {
           label: "Tags",
