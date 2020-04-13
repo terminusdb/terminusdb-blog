@@ -18,12 +18,12 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - {
           label: 'Author',
-          name: 'items',
+          name: 'author',
           widget: 'relation',
-          collection: 'config',
-          displayFields: [author_profiles.items.display_name],
-          searchFields: [author_profiles.items.display_name],
-          valueField: 'author_profiles.items.name',
+          collection: 'items',
+          displayFields: [display_name],
+          searchFields: [display_name],
+          valueField: 'name',
         }
       - {
           label: "Tags",
