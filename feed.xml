@@ -6,9 +6,37 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2020 21:28:37 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2020 21:28:37 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 21:43:45 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 21:43:45 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Testing</title>
+        <author>[{&quot;value&quot;=&gt;&quot;cheuk&quot;, &quot;label&quot;=&gt;&quot;Cheuk Ting Ho&quot;}]</author>
+        
+        
+        <description>
+        
+        &lt;p&gt;This is a testing post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sorry&lt;/strong&gt; gonna test if it works&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/terminusdb-channer-art.png&quot; alt=&quot;Channel art for TerminusDB on Twitch&quot; title=&quot;Channel art for TerminusDB on Twitch&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;i-hope-it-works&quot;&gt;I hope it works&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Watch Webinar on &lt;/code&gt;&lt;a href=&quot;https://www.twitch.tv/terminusdb/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Twitch&lt;/code&gt;&lt;/a&gt;``&lt;/p&gt;
+
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/13/testing/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 13 Apr 2020 21:38:50 +0000</pubDate>
+        <link>http://blog.terminusdb.com/2020/04/13/testing/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/13/testing/</guid>
+        
+        <category>testing</category>
+        
+        
+      </item>
     
       <item>
         <title>Write up of our Webinar - DataOps 101</title>
