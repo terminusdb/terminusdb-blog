@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Apr 2020 23:32:35 +0000</pubDate>
-    <lastBuildDate>Wed, 15 Apr 2020 23:32:35 +0000</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2020 23:33:36 +0000</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2020 23:33:36 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -16,7 +16,7 @@
         
         
         <description>
-        
+        &lt;p&gt;&lt;img src=&quot;/assets/uploads/terminusdb-black-mascot-1-.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;!--StartFragment--&gt; &lt;p&gt;&lt;img src=&quot;/assets/uploads/terminusdb-black-mascot-1-.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;TerminusDB is an open source (GPLv3) full featured in-memory graph database management system with a rich query language: WOQL (the Web Object Query Language).&lt;/p&gt; &lt;p&gt;TerminusDB originated in Trinity College Dublin in Ireland in 2015 when we started working on the information architecture for ‘Seshat: the Global Historical Databank’, an ambitious project to store lots of information about every society in human history. We needed a solution that could enable collaboration among a highly distributed team on a shared database whose primary function was the curation of high-quality datasets with a very rich structure, storing information about everything from religious practices to geographic extent.&lt;/p&gt; &lt;p&gt;The historical databank was a very challenging data storage problem. While the scale of data was not particularly large, the complexity was very high. First there were a large number of different types of facts that needed to be stored. Information about...
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/14/terminusdb-a-technical-history/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
@@ -35,8 +35,6 @@
         <category>dataops</category>
         
         <category>knowledge collaboration</category>
-        
-        <category></category>
         
         
       </item>
