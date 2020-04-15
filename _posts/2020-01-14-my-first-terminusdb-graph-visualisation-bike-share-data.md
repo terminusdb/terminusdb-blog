@@ -274,7 +274,7 @@ Now we have the data in our graph❗️ And we can start querying ( 💪🏼).
 
 If you have more than one CSV that you want to load in programmatically, you can so easily with a script and our API. You can find both Javascript and Python scripts that cover and extend this tutorial at: [https://github.com/terminusdb/terminus-tutorials/tree/master/bike-tutorial](https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/index.html)
 
-> Extra: Check out how to [Load your local files in TerminusDB](http://loading%20your%20local%20files%20in%20terminusdb/)
+> Extra: Check out how to [Load your local files in TerminusDB](http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/)
 
 ----------------------------
 
