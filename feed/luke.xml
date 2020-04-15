@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Apr 2020 20:49:59 +0000</pubDate>
-    <lastBuildDate>Tue, 14 Apr 2020 20:49:59 +0000</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2020 23:32:35 +0000</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2020 23:32:35 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -533,7 +533,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;If you have more than one CSV that you want to load in programmatically, you can so easily with a script and our API. You can find both Javascript and Python scripts that cover and extend this tutorial at: &lt;a href=&quot;https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/index.html&quot;&gt;https://github.com/terminusdb/terminus-tutorials/tree/master/bike-tutorial&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Extra: Check out how to &lt;a href=&quot;http://loading%20your%20local%20files%20in%20terminusdb/&quot;&gt;Load your local files in TerminusDB&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Extra: Check out how to &lt;a href=&quot;http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/&quot;&gt;Load your local files in TerminusDB&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
