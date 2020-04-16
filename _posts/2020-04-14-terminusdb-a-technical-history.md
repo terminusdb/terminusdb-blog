@@ -17,8 +17,6 @@ tags:
 ---
 <!--StartFragment-->
 
-![](/assets/uploads/terminusdb-black-mascot-1-.png)
-
 TerminusDB is an open source (GPLv3) full featured in-memory graph database management system with a rich query language: WOQL (the Web Object Query Language).
 
 TerminusDB originated in Trinity College Dublin in Ireland in 2015 when we started working on the information architecture for ‘Seshat: the Global Historical Databank’, an ambitious project to store lots of information about every society in human history. We needed a solution that could enable collaboration among a highly distributed team on a shared database whose primary function was the curation of high-quality datasets with a very rich structure, storing information about everything from religious practices to geographic extent.
