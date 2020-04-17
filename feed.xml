@@ -6,9 +6,32 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Apr 2020 01:17:29 +0000</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2020 01:17:29 +0000</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2020 10:16:50 +0000</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2020 10:16:50 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Write up of our Webinar - TerminusDB Internals</title>
+        <author>Cheuk Ting Ho</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb-webinar-termunisdb-internals.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;As enthusiastic Terminators, we all want to know how TerminusDB works. We want to know how with Prolog and Rust it works like magic: provide functions like git, allows rollback, branch and merge. Last week I asked our BDFL Gavin Mendel-Gleason – creator of TerminusDB, technical and no so technical questions about TemrinusDB internals.&lt;/p&gt; &lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including last week’s interview with Gavin, newest and previous episodes.&lt;/p&gt; &lt;p&gt;Here I highlighted some of the questions and answers.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;why-did-you-decide-to-build-terminusdb-building-a-fully-featured-db-is-hard-and-takes-ages&quot;&gt;Why did you decide to build TerminusDB? Building a fully featured DB is hard and takes ages?!?!&lt;/h2&gt; &lt;p&gt;Good question, and sometimes ask myself if it made sense.&lt;/p&gt; &lt;p&gt;We were working on Seshat Global History Databank, it was an ambitious project cause it consists of information about all historical societies, including a huge range of different factors about the polities that needed to...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/</guid>
+        
+        <category>Dataops</category>
+        
+        <category>Database</category>
+        
+        <category>Webinar</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB: A Technical History</title>
@@ -35,29 +58,6 @@
         <category>dataops</category>
         
         <category>knowledge collaboration</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Write up of our Webinar - TerminusDB Internals</title>
-        <author>Cheuk Ting Ho</author>
-        
-        
-        <description>
-        &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb-webinar-termunisdb-internals.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;As enthusiastic Terminators, we all want to know how TerminusDB works. We want to know how with Prolog and Rust it works like magic: provide functions like git, allows rollback, branch and merge. Last week I asked our BDFL Gavin Mendel-Gleason – creator of TerminusDB, technical and no so technical questions about TemrinusDB internals.&lt;/p&gt; &lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including last week’s interview with Gavin, newest and previous episodes.&lt;/p&gt; &lt;p&gt;Here I highlighted some of the questions and answers.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;why-did-you-decide-to-build-terminusdb-building-a-fully-featured-db-is-hard-and-takes-ages&quot;&gt;Why did you decide to build TerminusDB? Building a fully featured DB is hard and takes ages?!?!&lt;/h2&gt; &lt;p&gt;Good question, and sometimes ask myself if it made sense.&lt;/p&gt; &lt;p&gt;We were working on Seshat Global History Databank, it was an ambitious project cause it consists of information about all historical societies, including a huge range of different factors about the polities that needed to...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/03/webinar-terminusdb-internals/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
-        </description>
-        <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/04/03/webinar-terminusdb-internals/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/03/webinar-terminusdb-internals/</guid>
-        
-        <category>Dataops</category>
-        
-        <category>Database</category>
-        
-        <category>Webinar</category>
         
         
       </item>

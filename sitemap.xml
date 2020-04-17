@@ -109,12 +109,12 @@
 <lastmod>2020-04-03T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>http://blog.terminusdb.com/2020/04/03/webinar-terminusdb-internals/</loc>
-<lastmod>2020-04-03T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://blog.terminusdb.com/2020/04/14/terminusdb-a-technical-history/</loc>
 <lastmod>2020-04-14T20:44:15+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/</loc>
+<lastmod>2020-04-17T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>http://blog.terminusdb.com/404</loc>
@@ -304,6 +304,6 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/admin/</loc>
-<lastmod>2020-04-17T01:16:46+00:00</lastmod>
+<lastmod>2020-04-17T10:16:08+00:00</lastmod>
 </url>
 </urlset>
