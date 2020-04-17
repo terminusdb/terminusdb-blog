@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Write up of our Webinar - TerminusDB Internals"
-date: 2020-04-03
+date: 2020-04-17
 description:
 image: /assets/images/terminusdb-webinar-termunisdb-internals.png
 author: Cheuk Ting Ho
@@ -31,7 +31,7 @@ It is a strange choice. Initially, we started in Java with Linked Data libraries
 
 ## What's the biggest advantage of TerminusDB? What makes it stands out?
 
-Yeah, it is quite different from other databases. I would say it the holistic approach to data management. Because we have used a graph to represent things that allow for flexibility and you can use a large range of models. It uses a subset of OWL which provides a very rich modelling language - It allows you to model with inheritance. It's something that relational databases and management systems are lacking. It becomes problematic because they cannot derive a property form relational tables. Because we have a strong and flexible schema we can use our graph database as a document store - each document is described by the schema, so you can pull out from and update a JSON document in the database. In fact, it is all stored as a graph internally so it could be searched as a graph and give us the flexibility that is not commonly found in other databases. And because of the immutable storage system we also have the capacity to go back in time, query on former databases - you can time travel. That is another big advantage of immutable storage approach. 
+Yeah, it is quite different from other databases. I would say it the holistic approach to data management. Because we have used a graph to represent things that allow for flexibility and you can use a large range of models. It uses a subset of OWL which provides a very rich modelling language - It allows you to model with inheritance. It's something that relational databases and management systems are lacking. It becomes problematic because they cannot derive a property form relational tables. Because we have a strong and flexible schema we can use our graph database as a document store - each document is described by the schema, so you can pull out from and update a JSON document in the database. In fact, it is all stored as a graph internally so it could be searched as a graph and give us the flexibility that is not commonly found in other databases. And because of the immutable storage system we also have the capacity to go back in time, query on former databases - you can time travel. That is another big advantage of immutable storage approach.
 
 ---
 
