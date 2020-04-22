@@ -17,7 +17,7 @@ const InfiniteScroll = (() => {
         next: $('.posts__next'),
         class: 'js-posts-loading',
         currentPage: 1,
-        pathname: window.location.pathname.replace(/#(.*)$/g, '').replace('//g', '/'),
+        pathname: window.location.pathname.replace(/#(.*)$/g, '').replace('//g', '/') + '/',
         isLoading: false
       };
     },
