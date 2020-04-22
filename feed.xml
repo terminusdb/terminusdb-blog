@@ -4,10 +4,10 @@
     <title>TerminusDB Blog - News and Tutorials</title>
     <description>News and tutorials of TerminusDB.
 </description>
-    <link>http://blog.terminusdb.com</link>
-    <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 15:22:40 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 15:22:40 +0000</lastBuildDate>
+    <link>/bloghttp://blog.terminusdb.com</link>
+    <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 22 Apr 2020 15:46:50 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 15:46:50 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -18,11 +18,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb-webinar-termunisdb-internals.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;As enthusiastic Terminators, we all want to know how TerminusDB works. We want to know how with Prolog and Rust it works like magic: provide functions like git, allows rollback, branch and merge. Last week I asked our BDFL Gavin Mendel-Gleason – creator of TerminusDB, technical and no so technical questions about TemrinusDB internals.&lt;/p&gt; &lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including last week’s interview with Gavin, newest and previous episodes.&lt;/p&gt; &lt;p&gt;Here I highlighted some of the questions and answers.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;why-did-you-decide-to-build-terminusdb-building-a-fully-featured-db-is-hard-and-takes-ages&quot;&gt;Why did you decide to build TerminusDB? Building a fully featured DB is hard and takes ages?!?!&lt;/h2&gt; &lt;p&gt;Good question, and sometimes ask myself if it made sense.&lt;/p&gt; &lt;p&gt;We were working on Seshat Global History Databank, it was an ambitious project cause it consists of information about all historical societies, including a huge range of different factors about the polities that needed to...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/04/17/webinar-terminusdb-internals/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/17/webinar-terminusdb-internals/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/04/17/webinar-terminusdb-internals/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/04/17/webinar-terminusdb-internals/</guid>
         
         <category>Dataops</category>
         
@@ -41,11 +41,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/autumn-3937289_1920.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Most of your applications need to store data somewhere and probably relational databases like MySQL, PostgreSQL etc.. are the most commonly used for this purpose.&lt;/p&gt; &lt;p&gt;Passing from a relational database to TerminusDB requires some effort and a shift in your state of mind, but it can be done relatively fast. In this tutorial we’ll show you some parallels with how TerminusDB handles tasks compared to relational databases and the goals you can achieve with TerminusDB that are difficult to do with others databases.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Note: We are assuming you have knowledge of relational database concepts and you already know how to write a simple sql (Structured Query Language) statement.&lt;/em&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;the-dataset&quot;&gt;The Dataset&lt;/h2&gt; &lt;p&gt;In our examples we use the collection of data...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/16/from-RDBMS-databases-to-terminusDB/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/04/16/from-RDBMS-databases-to-terminusDB/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 16 Apr 2020 10:44:15 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/04/16/from-RDBMS-databases-to-terminusDB/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/16/from-RDBMS-databases-to-terminusDB/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/04/16/from-RDBMS-databases-to-terminusDB/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/04/16/from-RDBMS-databases-to-terminusDB/</guid>
         
         <category>graph</category>
         
@@ -68,11 +68,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/uploads/terminusdb-black-mascot-1-.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;!--StartFragment--&gt; &lt;p&gt;TerminusDB is an open source (GPLv3) full featured in-memory graph database management system with a rich query language: WOQL (the Web Object Query Language).&lt;/p&gt; &lt;p&gt;TerminusDB originated in Trinity College Dublin in Ireland in 2015 when we started working on the information architecture for ‘Seshat: the Global Historical Databank’, an ambitious project to store lots of information about every society in human history. We needed a solution that could enable collaboration among a highly distributed team on a shared database whose primary function was the curation of high-quality datasets with a very rich structure, storing information about everything from religious practices to geographic extent.&lt;/p&gt; &lt;p&gt;The historical databank was a very challenging data storage problem. While the scale of data was not particularly large, the complexity was very high. First there were a large number of different types of facts that needed to be stored. Information about populations, carrying capacity, religious...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/14/terminusdb-a-technical-history/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 14 Apr 2020 20:44:15 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/04/14/terminusdb-a-technical-history/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/14/terminusdb-a-technical-history/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/</guid>
         
         <category>database</category>
         
@@ -97,11 +97,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cover-of-webninar-dataops101.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Last week we had out Webinar about DataOps. I ask my colleague - Dmytri Kleiner, Director Of Services at TerminusDB some questions about DataOps (mostly questions that myself and many of you have in mind).&lt;/p&gt; &lt;p&gt;You can access to all our webinars as podcasts here: &lt;a href=&quot;https://podcast.terminusdb.com/&quot;&gt;https://podcast.terminusdb.com/&lt;/a&gt; including this interview with Dmytri and a previous one with the founders of TerminusDB.&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;what-is-dataops-whats-the-difference-between-devops-and-dataops&quot;&gt;What is Dataops? What’s the difference between Devops and Dataops?&lt;/h2&gt; &lt;p&gt;First, we have to know what is Devops. Developers and operations were once totally separate - there was a wall between and this caused difficulties as they couldn’t understand what was there and what the implications. It took too long and too difficult to get into production. Integration and delivery were painful things.&lt;/p&gt; &lt;p&gt;Then there come new inventions, in the developer community Git and GitHub became popular. While in the ops world, cloud computing became prominent....
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/03/dataops-101/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/04/03/dataops-101/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/04/03/dataops-101/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/04/03/dataops-101/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/04/03/dataops-101/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/04/03/dataops-101/</guid>
         
         <category>Dataops</category>
         
@@ -120,11 +120,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/remote-work.webp&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;I have to admit, most of my career I’ve treated remote collaboration as a necessary evil.&lt;/p&gt; &lt;p&gt;I’m a big fan of collocation. I love sticky notes, magic charts and colourful tape. I love walls so much whenever I see pictures hanging on them I’m like, why are they wasting good wall space for those useless pictures? I love pair and mob programming. I love highly engaged, participant centred workshops. I love retrospectives, and I do elaborate ones featuring lots of pair and group conversation, arts and crafts, and role playing.&lt;/p&gt; &lt;p&gt;For years I’ve lived this way, preaching customer and partner interaction, NIHITO, user observation, face to face collaboration and working together shoulder to shoulder.&lt;/p&gt; &lt;p&gt;Then, the first shoe dropped, I joined an early stage startup building the knowledge collaboration database of the future, TerminusDB.&lt;/p&gt; &lt;p&gt;Suddenly, I had a distributed team, half of the engineers are in Utrecht, half of the...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/24/reluctantly-remote/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/03/24/reluctantly-remote/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/03/24/reluctantly-remote/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/24/reluctantly-remote/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/03/24/reluctantly-remote/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/03/24/reluctantly-remote/</guid>
         
         <category>Remote</category>
         
@@ -147,11 +147,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Many people didn’t know that you can deploy TerminusDB easily on cloud. To demonstrate, we have set up &lt;a href=&quot;https://github.com/terminusdb/terminus-heroku&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/images/terminus-heroku.png&quot; alt=&quot;GitHub repo: terminusdb/terminus-heroku&quot; /&gt;&lt;/p&gt; &lt;p&gt;There is a button, which automatically pushes TerminusDB on a Heroku dyno. All you need to do is to fill in an app name and log in.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/images/heroku-login.png&quot; alt=&quot;Log in to Heroku&quot; /&gt;&lt;/p&gt; &lt;p&gt;However, this repo is meant to be used for people to experiment, try out TerminusDB or for following tutorials. It’s NOT meant for production which you may want more stable cloud cluster set up which let you preserve your data store. (We have productional TerminudDB on cloud for our internal projects).&lt;/p&gt; &lt;p&gt;So here you go, we made it easy for you to play around with TerminusDB and do some graph visualisation and analysis. Which tutorials do you want to try out?&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/20/deploy-heroku/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/03/20/deploy-heroku/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/03/20/deploy-heroku/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/20/deploy-heroku/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/03/20/deploy-heroku/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/03/20/deploy-heroku/</guid>
         
         <category>Database</category>
         
@@ -174,11 +174,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/Terminus_DB_050320_1.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Two weeks ago, we have our meetup at the Dogpatch Lab in Dublin. It was the last physical meetup before the COVID-19 semi-lockdown.&lt;/p&gt; &lt;h2 id=&quot;but-that-doesnt-stop-us&quot;&gt;But that doesn’t stop us!&lt;/h2&gt; &lt;p&gt;We had a great talk by Gavin, about the importance of DataOps and how to avoid the passing around csvs and renaming everything with the word “final”. Slides of the talk can be found on the &lt;a href=&quot;https://github.com/terminusdb/terminusdb-events/blob/master/dublin-meetup/dataops-1st-knowledge-graph/TerminusDB%20-%20The%20Dataops%20Revolution.pdf&quot;&gt;GitHub repo&lt;/a&gt;&lt;/p&gt; &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Totally agree that &lt;a href=&quot;https://twitter.com/hashtag/MachineLearning?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#MachineLearning&lt;/a&gt; needs &lt;a href=&quot;https://twitter.com/hashtag/Dataops?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Dataops&lt;/a&gt; &lt;a href=&quot;https://twitter.com/GavinMGleason?ref_src=twsrc%5Etfw&quot;&gt;@GavinMGleason&lt;/a&gt; &lt;a href=&quot;https://twitter.com/TerminusDB?ref_src=twsrc%5Etfw&quot;&gt;@TerminusDB&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Dublin?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Dublin&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Meetup&lt;/a&gt; &lt;a href=&quot;https://t.co/JQIhAugUvk&quot;&gt;pic.twitter.com/JQIhAugUvk&lt;/a&gt;&lt;/p&gt;&amp;mdash; Cheuk Ting Ho #StayTheFHome (@cheukting_ho) &lt;a href=&quot;https://twitter.com/cheukting_ho/status/1235646056412692481?ref_src=twsrc%5Etfw&quot;&gt;March 5, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; &lt;p&gt;Of cause, like our London meet up, we will give you a taste of TerminusDB with our first knowledge graph tutorial. People are paying attention and want to try it out. Slides can be found &lt;a href=&quot;https://slides.com/cheukting_ho/1st-graph-vis#/&quot;&gt;here&lt;/a&gt;, there’s also a &lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;blog post as a step by step...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/18/dataops-dublin-meetup/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/03/18/dataops-dublin-meetup/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/03/18/dataops-dublin-meetup/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/18/dataops-dublin-meetup/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/03/18/dataops-dublin-meetup/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/03/18/dataops-dublin-meetup/</guid>
         
         <category>Database</category>
         
@@ -201,11 +201,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;I recently published a warts-and-all 4 part introduction (covering &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Graph Schemas&lt;/a&gt; and &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Linked Data&lt;/a&gt;). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).&lt;/p&gt; &lt;p&gt;It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they &lt;em&gt;will&lt;/em&gt; find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s....
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/02/why-graph-will-win/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/03/02/why-graph-will-win/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/03/02/why-graph-will-win/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/03/02/why-graph-will-win/</guid>
         
         <category>OWL</category>
         
@@ -228,11 +228,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.&lt;/p&gt; &lt;h2 id=&quot;seshat-global-history-databank&quot;&gt;Seshat: Global History Databank&lt;/h2&gt; &lt;p&gt;Named after the Egyptian goddess of wisdom, knowledge, and writing, &lt;a href=&quot;http://seshatdatabank.info/&quot;&gt;Seshat&lt;/a&gt;, the Global History Databank aims to bring together the most current and comprehensive body of knowledge about human history in one place.&lt;/p&gt; &lt;p&gt;Researchers divided the world into a series of Natural Geographic Areas and collected datasets describing all of the specific historical societies or polities that had existed in those areas. By storing the data in a systematic way, different hypotheses about the rise and fall of large-scale societies across the globe and human history...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/</guid>
         
         <category>Database</category>
         
@@ -255,11 +255,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;By the mid 2000s, it was clear that the vision of the semantic web, as set out by Tim Berners Lee in 2001, despite a huge amount of initial hype and investment, remained largely unrealized. The basic idea — that a network of machine readable, semantically rich documents would form a ‘semantic web’ much like the world wide web of documents, was proving much more difficult than had been anticipated. This prompted the emergence of the concept of ‘linked data’, again promoted by Tim Berners Lee, and laid out in two documents published in 2006 and 2009.&lt;/p&gt; &lt;p&gt;Linked data was, in essence, an attempt to reduce the idea of the semantic web down to a small...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
         
         <category>Graph Database</category>
         
@@ -280,11 +280,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Hello Terminators!&lt;/p&gt; &lt;p&gt;A first — for me at least — attending PyLadies, Dublin!&lt;/p&gt; &lt;p&gt;PyLadies helps more women become active participants and leaders in the Python open-source community. PyLadies Dublin also provides a friendly support network for women and a bridge to the larger Python world. Anyone with an interest in Python is encouraged to participate. You can see more &lt;a href=&quot;https://www.meetup.com/PyLadiesDublin/&quot;&gt;here&lt;/a&gt; — we really enjoyed, so I’d encourage people to attend.&lt;/p&gt; &lt;p&gt;TerminusDB Developer Advocate Extraordinaire, Cheuk, spoke at the PyLadies event earlier this week. There were about 40 PyLadies in the audience and a sprinkling of interloping PyMen.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg&quot; alt=&quot;PyLadiesDublin meetup&quot; /&gt;&lt;/p&gt; &lt;p&gt;The event took place in the Dublin office of Qualtrics, which has a full replica of an Irish pub. Another good reason to attend!&lt;/p&gt; &lt;p&gt;Cheuk used TerminusDB to ask if we are supporting the correct politician. She used data from the Dublin City Council. It is a...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</guid>
         
         <category>Python</category>
         
@@ -307,11 +307,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt; &lt;p&gt;TerminusDB is named after the Roman God of boundaries, Terminus — all databases need good boundaries — and Terminalia is his festival.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg&quot; alt=&quot;We want the finest wines available to humanity!&quot; /&gt; We want the finest wines available to humanity!&lt;/p&gt; &lt;p&gt;Terminus is an old Roman god — probably introduced by Romulus after the founding of the city. There is a famous story told of the last king of Rome, Tarquin (so disliked &amp;amp; proud that he was overthrown and the Republic declared) — he wanted to reshape Rome as an imperial capital and engaged in a large scale building programme. As part of his works, he set about reconstructing the Temple of Jupiter on the Capitol Hill. Tarquin thought that constructing a massive temple...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/02/21/terminalia-our-day/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</guid>
         
         <category>Terminusdb</category>
         
@@ -334,11 +334,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/4096/1*EzEM1bN4cljnckggA_gjzw.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;We had our first meetup in London last Tuesday at the beautiful Microsoft Reactor located in the centre of the city! Members of the TerminusDB team from Dublin and Berlin came to visit the community. Of course, there were pizzas and lots of beers!&lt;/p&gt; &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We have lots of nice beer at Microsoft Reactor Meetup space, come have some. &lt;a href=&quot;https://t.co/tUsgF5GZCw&quot;&gt;pic.twitter.com/tUsgF5GZCw&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dmytri Kleiner (@dmytri) &lt;a href=&quot;https://twitter.com/dmytri/status/1227295076218482688?ref_src=twsrc%5Etfw&quot;&gt;February 11, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; &lt;p&gt;We got so much love for our swags! London Terminators participated and won our e-coffee mugs that made out of bamboo. I hope they will bring them in when buying their morning dose of coffee in their favourite coffee shops. Also, we gave out lots of our Cowduck stickers and T-shirts. Cowduck is winning the heart of Terminators!&lt;/p&gt; &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Loving the logo and looking forward to learning more &lt;a href=&quot;https://twitter.com/hashtag/TerminusDB?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#TerminusDB&lt;/a&gt; !!!! &lt;a href=&quot;https://t.co/JWKlERYLuU&quot;&gt;pic.twitter.com/JWKlERYLuU&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ed...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/02/13/terminusdb-community-arrived-in-london/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/13/terminusdb-community-arrived-in-london/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/02/13/terminusdb-community-arrived-in-london/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/13/terminusdb-community-arrived-in-london/</guid>
         
         <category>Database</category>
         
@@ -361,11 +361,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/6000/1*gE52jP9sN0JGx1ONoWcdqQ.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;TerminusDB loves RDF! If you have not noticed already, Terminus uses the W3C’s OWL language to define the schema of its databases and OWL is normally encoded as RDFs.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;Loading data in turtle RDF format to TerminusDB is elegant and simple. I assume you have already read our beginner’s tutorial — &lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt; and have been started using &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;. Now you want to load some data in turtle RDF format instead of the csvs like the tutorial.&lt;/p&gt; &lt;p&gt;Just as a revision, when loading the csvs in the tutorial, we use:&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;csv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WOQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WOQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Start station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;v:Start_Station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;End station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;v:End_Station&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Start date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/30/loading-data-in-turtle-rdf-format-to-terminusdb/</guid>
         
         <category>Rdf</category>
         
@@ -386,11 +386,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2040/1*MLXi8J5vwHQheBcEo5T-EA.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt; &lt;p&gt;We are a moderately distributed team and we have plenty of opportunity for detailed technical discussion (indexing strategy anyone?) so we thought that it’d be a good idea to start a less formal weekly exchange. One member of the team leads the discussion and the rest contribute with questions &amp;amp; comments.&lt;/p&gt; &lt;p&gt;Over the year and a bit since we started the tradition, we’ve had everything from the innards of JavaScript to Crypto Kitties to Theories of Developer Relations to Cloud Architecture to the Dialectics of Software Development (a personal favorite — I must post the slides).&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1602/1*AiOAyqAcjMq5qd8fBUdw2w.png&quot; alt=&quot;The right superstructure is important&quot; /&gt; The right superstructure is important&lt;/p&gt; &lt;p&gt;We’ve...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</guid>
         
         <category>Database</category>
         
@@ -413,11 +413,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cowduck_banner.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;We have got lot’s of feedback since we have posted our tutorial — &lt;a href=&quot;https://medium.com/terminusdb/my-first-terminusdb-graph-visualisation-bike-share-data-39c59a1ab86a?source=friends_link&amp;amp;sk=2f877df5dcb2f00b9e4e85d5088f015e&quot;&gt;My First TerminusDB Graph Visualisation&lt;/a&gt;. One of the most common questions is how to load a local CSV in the hard drive into your TerminusDB running in a local docker container. So here is how to do it.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;If your container is running stop it with:&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./terminus-container stop &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;blockquote&gt; &lt;p&gt;Extra tip: you may want to run &lt;code class=&quot;highlighter-rouge&quot;&gt;./terminus-container rm-config&lt;/code&gt; now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUS_LOCAL&lt;/code&gt; environment variable to the path to the parent directory of your csv:&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=/home/me/somewhere &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;blockquote&gt; &lt;p&gt;for Windows users:&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=c:/Users/you/somewhere &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/div&gt; &lt;p&gt;Go to Docker Desktop Settings and make sure that...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/21/loading-your-local-files-in-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/21/loading-your-local-files-in-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/21/loading-your-local-files-in-terminusdb/</guid>
         
         <category>Data Science</category>
         
@@ -440,11 +440,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cowduck_sitting_logo.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Having an effective yet user-friendly query language is one of the most important aspects of successful database technology. Here at TerminusDB, we aim to provide a good experience to our users whose main language is Python. Enter WOQLpy — a Query Language Client for Pythonistas and Data Scientists.&lt;/p&gt; &lt;h2 id=&quot;what-is-woqlpy&quot;&gt;What is WOQLpy?&lt;/h2&gt; &lt;p&gt;WOQLpy comes with the Terminus Python Client which you can install with pip:&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install terminus-client-python &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Example usage:&lt;/p&gt; &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;woqlclient.woqlClient&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;woql&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;woqlclient&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;server_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://localhost:6363&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;root&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dbId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pybike&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;woql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WOQLClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createDatabase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dbId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bicycle Graph&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;station&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WOQLQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doctype&lt;/span&gt;&lt;span...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/</guid>
         
         <category>Database</category>
         
@@ -467,11 +467,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2820/1*y6pmHcjylW-YGQFbtlXicw.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt; &lt;h2 id=&quot;terminus-store&quot;&gt;Terminus-store&lt;/h2&gt; &lt;p&gt;The major development is our new storage backend, terminus-store. With the introduction of the new store, TerminusDB takes a radical departure from traditional database architectures. Our approach has three parts:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;We have a graph database with strong schema to retain simplicity and generality&lt;/li&gt; &lt;li&gt;The graph is implemented using succinct immutable data structures which enable more sparing...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
         
         <category>Developer Tools</category>
         
@@ -494,11 +494,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/7618/1*00M5JbvyMgh3MRz7uQf-kw.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;h2 id=&quot;terminusdb-graph-visualisation-of-dublin-council-voting-data&quot;&gt;TerminusDB graph visualisation of Dublin Council voting data&lt;/h2&gt; &lt;p&gt;Do you ever check to see the actual voting record of your preferred politician before you vote? Or, do you just vote for them because of their party affiliation? Do you think your local representative speaks for you on the issues that you care about?&lt;/p&gt; &lt;p&gt;Politics can be complicated, my friend, but data never lies. In this tutorial, we will use TerminusDB to show you how to analyse the voting behavior of politicians. For demonstration purposes we’ll use a dataset describing the voting records of Councillors in Dublin City Council, the birthplace of TerminusDB, retrieved from &lt;a href=&quot;https://counciltracker.ie/&quot;&gt;https://counciltracker.ie/&lt;/a&gt;, the cleaned data used in the tutorial can be &lt;a href=&quot;https://terminusdb.com/t/data/council/weighted_similarity.csv&quot;&gt;downloaded here&lt;/a&gt;. (Thanks &lt;a href=&quot;https://www.dublininquirer.com/&quot;&gt;Dublin Inquirer&lt;/a&gt; for the great work — have to keep the politicians on their toes)&lt;/p&gt; &lt;p&gt;We’ll use WOQL, the web object query language, a powerful and highly composable graph...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/15/are-you-supporting-the-right-politician/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/15/are-you-supporting-the-right-politician/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/15/are-you-supporting-the-right-politician/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/</guid>
         
         <category>Data Science</category>
         
@@ -521,11 +521,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;In this tutorial, we will start using TerminusDB and its query client — WOQL.js — to quickly build a database and a schema; import and organise data; create a visualisation; and plug it in to your website.&lt;/p&gt; &lt;p&gt;We’re assuming you already have TerminusDB installed, but if you haven’t go to our &lt;a href=&quot;https://github.com/terminusdb/terminus-quickstart&quot;&gt;quick start installation guide&lt;/a&gt;. It’s very easy to get started.&lt;/p&gt; &lt;p&gt;In this tutorial, we are going to import data from CSVs about bike journeys between stations in Washington D.C., USA, build a knowledge graph from the data, analyse and visualise it. The data is taken from Capital Bike Share (available here — thanks folks!) and the CSV data used this tutorial is available at &lt;a href=&quot;https://terminusdb.com/t/data/bike_tutorial.csv&quot;&gt;https://terminusdb.com/t/data/bike_tutorial.csv&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;lets-create-a-database&quot;&gt;Let’s Create a Database&lt;/h2&gt; &lt;p&gt;The first thing we need to do is to create a database for our graph. Open up the Terminus DB console ( default: http://localhost:6363/console )....
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
+        <link>http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
         <category>Database</category>
         
@@ -546,11 +546,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2514/0*BqfeLvqCEA1CeDZN.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;If you have had the &lt;strong&gt;pleasure&lt;/strong&gt; of attending a TerminusDB presentation, you might have heard something like this:&lt;/p&gt; &lt;p&gt;‘Unified, well-designed &amp;amp; refined data will be the jet fuel of future business’&lt;/p&gt; &lt;p&gt;Or this:&lt;/p&gt; &lt;p&gt;‘The value of AI will not be realized unless we feed enough relationship-rich data to machines’&lt;/p&gt; &lt;p&gt;We believe that the next generation of world-changing ideas will be powered by graphs. Graph databases, like TerminusDB, can do everything a relational database can do and then some. RDBMS are stable and feature rich with four decades of development under the belt; however, over time, DBMS will continue to drift towards graph. There will, of course, always be legacy systems hanging around doing useful stuff. We bump into plenty of pre-relational technology out here (especially MUMPS in the healthcare sector) and there are good reasons not to change things that work — ‘database migration’ sends shivers down the spines of...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/11/29/join-the-data-centric-revolution-we-can-help/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
         
         <category>Database</category>
         
@@ -571,11 +571,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/8000/1*23WsqANJv5IS4ar-LGU2sw.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Last week I have been to a meetup where a team of software developers from Dublin talks about their newest invention — &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;, a graph database that stores data like git. My reaction was like, what? Imagine all the cool things you can do with git: time travel, branching and forking etc, you can do them with your data.&lt;/p&gt; &lt;p&gt;What’s more, TerminusDB is a graph database, meaning all data are stored in nodes and edges, makes it easy to extract relations between your data without all the hideous joins in relational SQL database.&lt;/p&gt; &lt;p&gt;In this article, let’s talk about the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;What is a graph&lt;/li&gt; &lt;li&gt;How git works&lt;/li&gt; &lt;li&gt;How TerminusDB works&lt;/li&gt; &lt;/ol&gt; &lt;h2 id=&quot;what-is-a-graph&quot;&gt;What is a graph?&lt;/h2&gt; &lt;p&gt;In mathematics, a graph is a structure amounting to a set of objects in which some pairs of the objects are in some sense “related”. The objects correspond to mathematical abstractions...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/11/05/storing-data-like-git-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/11/05/storing-data-like-git-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/11/05/storing-data-like-git-terminusdb/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/11/05/storing-data-like-git-terminusdb/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/11/05/storing-data-like-git-terminusdb/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/11/05/storing-data-like-git-terminusdb/</guid>
         
         <category>Git</category>
         
@@ -598,11 +598,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;This is the third part of a four part series of a warts-and-all descriptions of graph database technologies —the first two covered the two fundamental flavors: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;RDF&lt;/a&gt; &amp;amp; &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Labelled Property Graphs&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;The third part of this series will cover the features and attempts to support the definition of schemata — rules defining the shape of the graph. Almost all of this work has been confined to the world of RDF — property graphs, by contrast, with their pragmatic focus on simplicity, took the approach of delegating the schema to code rather than imposing it in the data layer, only supporting primitive, low-level constraints on the basic node-edge structure.&lt;/p&gt; &lt;p&gt;On the other hand, a somewhat bewildering series of standards and extensions have been built on top of RDF, mostly standardized by the W3C standards committee. This is where things get both really brilliant and ridiculously absurd. Shortly...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
         
         <category>Graph Database</category>
         
@@ -623,11 +623,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/4800/1*ZP8Lovt4_JBBBTNxv16xdg.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;TerminusDB is open source now and forever. We are releasing with the GPL V3 licence.&lt;/p&gt; &lt;p&gt;The development of Terminus has been a nine-year labour of love, devotion, frustration and pain. You can imagine how delighted we are to release TerminusDB to the world.&lt;/p&gt; &lt;p&gt;We have designed TerminusDB for the web age. We wanted to make something that greatly reduced the time and effort required to build any application that shares, manipulates or edits data. TerminusDB is a unified model database; it has the most desirable features of graph, semantic, document and time-series database alternatives. With WOQL, the model aware query language, Terminus allows you to query your data flexibly and quickly.&lt;/p&gt; &lt;p&gt;We hope that TerminusDB will make the life of anybody who cares about data — and particularly the long term value of well curated data — much easier.&lt;/p&gt; &lt;p&gt;The core team will be working on improving Terminus over the...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
         
         <category>Model</category>
         
@@ -648,11 +648,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3840/1*FAK8MU1sYf6yrVpVmNQDzA.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;This is the second part of a four part series on the fundamental technologies underlying graph databases — &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;the first covered RDF&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;The second major variant of graph databases is known as a property graph or labeled property graph (LPG). Property graphs are much simpler than RDF — they consist of a set of nodes and a set of edges, with each node and edge being a essentially a ‘struct’ — a simple data structure consisting of keys and values (which in some cases may themselves be structs). Nowadays JSON is the standard way of encoding these structs — each node and edge is a JSON document, with edges having special keys which indicate that the value represents a pointer to a node. Whereas RDF uses URLs as identifiers for properties and entities, property graphs use simple strings — purely local identifiers. And while RDF uses the...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
         
         <category>Graph</category>
         
@@ -671,11 +671,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Graph databases are on the rise, but amid all the hype it can be hard to understand the differences under the hood. This is the first article in a four part series describing the fundamental technologies that graph databases use under the hood. Unlike most articles that you will come across, this is neither marketing nor is it a tutorial — it’s a warts and all description of their strengths and weaknesses — stuff I have learned over 20 years of pain and suffering, in the hope that I can help somebody else out there to avoid having to learn these lessons the hard way.&lt;/p&gt; &lt;p&gt;There are two major variants of graph databases in the wild — RDF graphs (aka triple-stores) and Labelled Property Graphs. In this, the first article in the series, I’ll describe RDF (Resource Description Framework), its strengths and weaknesses and where it came from. In subsequent...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/</guid>
         
         <category>Semantic Web</category>
         
@@ -698,11 +698,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt; &lt;p&gt;The core development team is busy putting the pieces into place and we are all really excited about bringing TerminusDB to the world.&lt;/p&gt; &lt;p&gt;We’ll be pushing out plenty of content and documentation about the capabilities of the database over the coming weeks.&lt;/p&gt; &lt;p&gt;We have long dreamed of a future where databases learn by automatically extracting information both from existing networked data-sources and from their users to continuously improve the reliability and accuracy of the information they contain. We wanted to build a database that would be capable of automatically generating sophisticated curation and analysis tools to allow users to access and manage the data they contain and to feed the results of these analyses into real-time automated workflows...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/08/21/terminusdb-whats-in-a-name/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/08/21/terminusdb-whats-in-a-name/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/08/21/terminusdb-whats-in-a-name/</guid>
         
         <category>Machine Learning</category>
         
@@ -725,11 +725,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cover-image-03.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;As we discussed in &lt;a href=&quot;/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;Part 1&lt;/a&gt; of this short series on types in prolog, prolog has a rather graceful but silent method of reacting to a certain bugs. The exploitation of non-determinism can be extremely handy for searching spaces, but sometimes we just didn’t mean what we wrote, and instead of silent failure we would like to see an error.&lt;/p&gt; &lt;p&gt;One way around this problem which we presented in Part 1 was to use Hindley-Milner type (HM) checking to statically discover where we have variables which have a different type than we expect.&lt;/p&gt; &lt;p&gt;We’re going to take a different tack in this article and use dynamic type and mode checking with mavis. HM is great, but it wasn’t really written for prolog but for functional languages, and so doesn’t take any account of modes. It can also be a bit restrictive and heavy weight when modifying already existing code....
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/08/08/type-and-mode-checking-in-prolog-part-2/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/08/08/type-and-mode-checking-in-prolog-part-2/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/08/08/type-and-mode-checking-in-prolog-part-2/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/08/08/type-and-mode-checking-in-prolog-part-2/</guid>
         
         <category>Type Theory</category>
         
@@ -748,11 +748,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cover-image-02.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;Prolog is a fantastic toolkit for developing Domain Specific Languages (DSLs). Lexing and parsing are a breeze with the use of Declarative Clause Grammars (DCGs), and writing a interpreter or compiler is an essentially rule-based transformation problem anyhow.&lt;/p&gt; &lt;p&gt;But before we set about interpreting or compiling an expression, we need to know that a term, represented as an abstract syntax tree (AST) is well formed.&lt;/p&gt; &lt;p&gt;Writing a predicate which admits only those terms which conform to a given syntax is likewise very convenient in prolog. For instance, if we wanted to write down a predicate that checks the well-formedness of integer bearing lists, we might write it as follows:&lt;/p&gt; &lt;div class=&quot;language-prolog highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]).&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:-&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;isa_int_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;When we undertake to use this predicate, we can certainly tell if a (already...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/06/11/prolog-meta-interpretation-for-syntax-checking/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/06/11/prolog-meta-interpretation-for-syntax-checking/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/06/11/prolog-meta-interpretation-for-syntax-checking/</guid>
         
         <category>Type Theory</category>
         
@@ -773,11 +773,11 @@
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/cover-image-01.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;When it comes to languages for rule processing, prolog has them all beat. It has so many exciting features that make it incredibly flexible, among them:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;backtracking: we can try several strategies to solve a problem, and roll back if one doesn’t work. This also give us generators and testors using the same framework, enabling guess and check approaches to algorithms.&lt;/li&gt; &lt;li&gt;homoiconicity: which enables incredible metalogical madness including term and goal expansion and simplifying the writing of meta-interpreters.&lt;/li&gt; &lt;li&gt;DCGs (Declarative Clause Grammars): regexps are great, but when your language isn’t regular, DCGs give us one of the nicest ways to parse input around.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Yet when trying to write large software packages in anger for industrial purposes, there are some unfortunate warts that tend to plague this otherwise beautiful language. I’ve compiled a fairly long mental list, but right now I want to talk about two of these awkward...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2019/06/07/type-and-mode-checking-in-prolog-part-1/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
+        <link>http://blog.terminusdb.com/blog/2019/06/07/type-and-mode-checking-in-prolog-part-1/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2019/06/07/type-and-mode-checking-in-prolog-part-1/</guid>
         
         <category>Type Theory</category>
         
