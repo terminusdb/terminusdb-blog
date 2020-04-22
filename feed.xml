@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 12:08:22 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 12:08:22 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Apr 2020 13:34:35 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 13:34:35 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -40,7 +40,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/autumn-3937289_1920.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;Most of your applications need to store data somewhere and probably relational databases like MySQL, PostgreSQL etc.. are the most commonly used for this purpose.&lt;/p&gt; &lt;p&gt;Passing from a relational database to TerminusDB requires some effort and a shift in your state of mind, but it can be done relatively fast. In this tutorial we’ll show you some parallels with how TerminusDB handles tasks compared to relational databases and the goals you can achieve with TerminusDB that are difficult to do with others databases.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Note: We are assuming you have knowledge of relational database concepts and you already know how to write a simple sql (Structured Query Language) statement.&lt;/em&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;the-dataset&quot;&gt;The Dataset&lt;/h2&gt; &lt;p&gt;In our examples we use the collection of data...
+        &lt;p&gt;Most applications need to store data somewhere and relational databases like MySQL, PostgreSQL etc.. are the most commonly used for this purpose.&lt;/p&gt; &lt;p&gt;Passing from a relational database to TerminusDB requires some effort and a shift in your state of mind, but it can be done relatively fast. In this tutorial we’ll show you some parallels with how TerminusDB handles tasks compared to relational databases and the goals you can achieve with TerminusDB that are difficult to do with others databases.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Note: We are assuming you have knowledge of relational database concepts and you already know how to write a simple SQL (Structured Query Language) statement.&lt;/em&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h2 id=&quot;the-dataset&quot;&gt;The Dataset&lt;/h2&gt; &lt;p&gt;In our examples we use the collection of data about bike journeys...
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/2020/04/16/from-RDBMS-databases-to-terminusDB/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 16 Apr 2020 10:44:15 +0000</pubDate>
