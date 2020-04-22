@@ -4,10 +4,10 @@
     <title>TerminusDB Blog - News and Tutorials</title>
     <description>News and tutorials of TerminusDB.
 </description>
-    <link>bloghttps://terminusdb.com/blog</link>
-    <atom:link href="https://terminusdb.com/blogblog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 11:44:10 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 11:44:10 +0000</lastBuildDate>
+    <link>http://blog.terminusdb.com</link>
+    <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 22 Apr 2020 11:46:40 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 11:46:40 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -56,8 +56,8 @@
 &lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2020/02/21/terminusdb-pyladies-dublin/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2020/02/21/terminusdb-pyladies-dublin/</guid>
+        <link>http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminusdb-pyladies-dublin/</guid>
         
         <category>Python</category>
         
@@ -105,8 +105,8 @@ We want the finest wines available to humanity!&lt;/p&gt;
 Get out there, Terminators&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2020/02/21/terminalia-our-day/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2020/02/21/terminalia-our-day/</guid>
+        <link>http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/21/terminalia-our-day/</guid>
         
         <category>Terminusdb</category>
         
@@ -158,8 +158,8 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
 &lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2020/01/28/terminusdb-discussions/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2020/01/28/terminusdb-discussions/</guid>
+        <link>http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/28/terminusdb-discussions/</guid>
         
         <category>Database</category>
         
@@ -252,8 +252,8 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
 &lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
+        <link>http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
         
         <category>Developer Tools</category>
         
@@ -650,8 +650,8 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;Well done — you are now a level 1 Terminator!&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
+        <link>http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
         <category>Database</category>
         
@@ -701,8 +701,8 @@ The little x closes the view pane and the button opens it (both circled in red)&
 &lt;p&gt;We see a world full of opportunity, but can’t grasp it all. We call on startups, researchers, NGOs, government workers, factory operatives, hipsters, dreamers… anybody who thinks they can use data effectively to make the world a better place. TerminusDB is open source — released under the GPL v3 license — so there is no cost in using the database. We can offer you guidance, advice and encouragement. We believe that TerminusDB can offer value in a whole bunch of areas, and we want to help you realize that value. Join the data-centric revolution.&lt;/p&gt;
 </description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
+        <link>http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/11/29/join-the-data-centric-revolution-we-can-help/</guid>
         
         <category>Database</category>
         
@@ -737,11 +737,11 @@ The little x closes the view pane and the button opens it (both circled in red)&
 
 &lt;p&gt;(We live for GitHub stars, so please go and star Terminus: &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;https://github.com/terminusdb/terminus-server&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
+        <link>http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</guid>
         
         <category>Model</category>
         
@@ -764,7 +764,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
         <title>TerminusDB — what’s in a name?</title>
         <description>&lt;p&gt;TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The core development team is busy putting the pieces into place and we are all really excited about bringing TerminusDB to the world.&lt;/p&gt;
 
@@ -844,8 +844,8 @@ TerminusDB contributors will be posting on this blog over the coming weeks and m
 &lt;p&gt;Join the data-centric revolution!&lt;/p&gt;
 </description>
         <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-        <link>https://terminusdb.com/blogblog/2019/08/21/terminusdb-whats-in-a-name/</link>
-        <guid isPermaLink="true">https://terminusdb.com/blogblog/2019/08/21/terminusdb-whats-in-a-name/</guid>
+        <link>http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/08/21/terminusdb-whats-in-a-name/</guid>
         
         <category>Machine Learning</category>
         
