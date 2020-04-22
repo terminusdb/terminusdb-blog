@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 15:06:34 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 15:06:34 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Apr 2020 15:08:50 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 15:08:50 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -143,11 +143,11 @@
         <title>One Click Deploy TerminusDB to Cloud</title>
         <description>&lt;p&gt;Many people didn’t know that you can deploy TerminusDB easily on cloud. To demonstrate, we have set up &lt;a href=&quot;https://github.com/terminusdb/terminus-heroku&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/terminus-heroku.png&quot; alt=&quot;GitHub repo: terminusdb/terminus-heroku&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/terminus-heroku.png&quot; alt=&quot;GitHub repo: terminusdb/terminus-heroku&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There is a button, which automatically pushes TerminusDB on a Heroku dyno. All you need to do is to fill in an app name and log in.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/heroku-login.png&quot; alt=&quot;Log in to Heroku&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/heroku-login.png&quot; alt=&quot;Log in to Heroku&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;However, this repo is meant to be used for people to experiment, try out TerminusDB or for following tutorials. It’s NOT meant for production which you may want more stable cloud cluster set up which let you preserve your data store. (We have productional TerminudDB on cloud for our internal projects).&lt;/p&gt;
 

@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 15:06:34 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 15:06:34 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Apr 2020 15:08:50 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 15:08:50 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -737,7 +737,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
 
 &lt;p&gt;(We live for GitHub stars, so please go and star Terminus: &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;https://github.com/terminusdb/terminus-server&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
         <link>http://blog.terminusdb.com/2019/10/01/today-we-release-terminusdb-the-database-for-data-people/</link>
@@ -764,7 +764,7 @@ The little x closes the view pane and the button opens it (both circled in red)&
         <title>TerminusDB — what’s in a name?</title>
         <description>&lt;p&gt;TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/terminusdb_logo.png&quot; alt=&quot;TerminusDB logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The core development team is busy putting the pieces into place and we are all really excited about bringing TerminusDB to the world.&lt;/p&gt;
 

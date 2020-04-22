@@ -6,8 +6,8 @@
 </description>
     <link>http://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 15:06:34 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 15:06:34 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Apr 2020 15:08:50 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 15:08:50 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -110,7 +110,7 @@
 
 &lt;p&gt;Is this &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;? Mavis interprets it as bound if it is compatible with the type declaration. To require a completely defined input you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;++&lt;/code&gt;. In the future we want to include more specific user-defined designations modeling ourselves after those given in Mercury.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/inner-image-03.png&quot; alt=&quot;Mercury Diagram&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/inner-image-03.png&quot; alt=&quot;Mercury Diagram&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The final part of the mode describes the amount of determinism that the predicate is expected to have. Zip above is considered to be ‘det’ which means in all the modes that are described, and subject to its inputs being well typed, it will return precisely one substitution. The different determinism qualifiers are listed in the mavis documentation as follows:&lt;/p&gt;
 
