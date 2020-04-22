@@ -1,1 +1,1 @@
-Sitemap: http://blog.terminusdb.com/sitemap.xml
+Sitemap: https://terminusdb.com/blog/blog/sitemap.xml
