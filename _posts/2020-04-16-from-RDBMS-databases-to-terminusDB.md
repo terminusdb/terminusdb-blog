@@ -3,7 +3,7 @@ layout: post
 title: "Form RDBMS databases to TerminusDB"
 date: 2020-04-16T10:44:15.289Z
 description:
-image: /assets/images/autumn-3937289_1920.jpg
+image: /blog/assets/images/autumn-3937289_1920.jpg
 author:
   - value: francesca
     label: Francesca Bitto
@@ -31,7 +31,7 @@ if you have never used TerminusDB before, this article includes everything you n
 
 In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA.
 
-![](/assets/images/bike_table.png)
+![](/blog/assets/images/bike_table.png)
 
 The CSV data used this tutorial is available at [https://terminusdb.com/t/data/bike_tutorial.csv](https://terminusdb.com/t/data/bike_tutorial.csv)
 
@@ -50,7 +50,7 @@ All our example are writing using woql.js a javascript layer that help you to co
 
 *A conceptual database schema is a description of a database structure, data types, and the constraints on the database.*
 
-We can consider a relational database as a collection, or a set of tables. For storing our dataset we need three tables: bikes, stations and journeys. [Here the complete schema](/assets/bike_journey.sql)
+We can consider a relational database as a collection, or a set of tables. For storing our dataset we need three tables: bikes, stations and journeys. [Here the complete schema](/blog/assets/bike_journey.sql)
 
 Each table consists of rows and columns, in very simple way the columns specify the type of data, where the rows contain the actual data itself and the tables are related to each other.
 

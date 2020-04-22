@@ -3,7 +3,7 @@ layout: post
 title: "Type and mode checking in prolog (part 2): mavis"
 date: 2019-08-08
 description:
-cover_image: /assets/images/cover-image-03.jpeg
+cover_image: /blog/assets/images/cover-image-03.jpeg
 author: Gavin Mendel Gleason
 tags:
   - Type Theory
@@ -57,7 +57,7 @@ L = [_6186, _6192, _6198].
 
 Is this `+`? Mavis interprets it as bound if it is compatible with the type declaration. To require a completely defined input you can use `++`. In the future we want to include more specific user-defined designations modeling ourselves after those given in Mercury.
 
-![Mercury Diagram](/assets/images/inner-image-03.png)
+![Mercury Diagram](/blog/assets/images/inner-image-03.png)
 
 The final part of the mode describes the amount of determinism that the predicate is expected to have. Zip above is considered to be ‘det’ which means in all the modes that are described, and subject to its inputs being well typed, it will return precisely one substitution. The different determinism qualifiers are listed in the mavis documentation as follows:
 

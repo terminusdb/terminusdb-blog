@@ -3,7 +3,7 @@ layout: post
 title: "Type and mode checking in prolog (part 1): type_check"
 date: 2019-06-07
 description:
-image: /assets/images/cover-image-01.png
+image: /blog/assets/images/cover-image-01.png
 author: Gavin Mendel Gleason
 tags:
   - Type Theory

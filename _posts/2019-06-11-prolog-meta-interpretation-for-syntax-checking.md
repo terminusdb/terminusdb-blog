@@ -3,7 +3,7 @@ layout: post
 title: "Prolog meta-interpretation for syntax checking"
 date: 2019-06-11
 description:
-image: /assets/images/cover-image-02.png
+image: /blog/assets/images/cover-image-02.png
 author: Gavin Mendel Gleason
 tags:
   - Type Theory

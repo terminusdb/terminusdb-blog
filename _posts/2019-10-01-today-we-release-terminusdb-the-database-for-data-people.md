@@ -26,4 +26,4 @@ Download at [terminusdb.com](http://www.terminusdb.com/)
 
 (We live for GitHub stars, so please go and star Terminus: [https://github.com/terminusdb/terminus-server](https://github.com/terminusdb/terminus-server))
 
-![TerminusDB logo](/assets/images/terminusdb_logo.png)
+![TerminusDB logo](/blog/assets/images/terminusdb_logo.png)

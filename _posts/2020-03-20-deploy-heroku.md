@@ -3,7 +3,7 @@ layout: post
 title: "One Click Deploy TerminusDB to Cloud"
 date: 2020-03-20
 description:
-cover_image: /assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg
+cover_image: /blog/assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg
 author: Cheuk Ting Ho
 tags:
   - Database
@@ -16,11 +16,11 @@ tags:
 
 Many people didn't know that you can deploy TerminusDB easily on cloud. To demonstrate, we have set up [this repo](https://github.com/terminusdb/terminus-heroku).
 
-![GitHub repo: terminusdb/terminus-heroku](/assets/images/terminus-heroku.png)
+![GitHub repo: terminusdb/terminus-heroku](/blog/assets/images/terminus-heroku.png)
 
 There is a button, which automatically pushes TerminusDB on a Heroku dyno. All you need to do is to fill in an app name and log in.
 
-![Log in to Heroku](/assets/images/heroku-login.png)
+![Log in to Heroku](/blog/assets/images/heroku-login.png)
 
 However, this repo is meant to be used for people to experiment, try out TerminusDB or for following tutorials. It's NOT meant for production which you may want more stable cloud cluster set up which let you preserve your data store. (We have productional TerminudDB on cloud for our internal projects).
 

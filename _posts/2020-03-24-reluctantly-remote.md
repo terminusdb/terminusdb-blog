@@ -3,7 +3,7 @@ layout: post
 title: "Reluctantly Remote, and loving it"
 date: 2020-03-24
 description: How I learnt to stop worrying and love remote work.
-cover_image: /assets/images/remote-work.webp
+cover_image: /blog/assets/images/remote-work.webp
 author: Dmytri Kleiner
 tags:
   - Remote

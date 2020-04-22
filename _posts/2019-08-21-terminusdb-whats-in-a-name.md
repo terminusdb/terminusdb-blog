@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB — what’s in a name?"
 date: 2019-08-21
 description:
-image: /assets/images/terminusdb_logo.png
+image: /blog/assets/images/terminusdb_logo.png
 author: Luke Feeney
 tags:
   - Machine Learning
@@ -15,7 +15,7 @@ tags:
 ---
 TerminusDB is an open source model driven graph database for knowledge graph representation designed specifically for the web-age. Our launch date is 1 October later this year.
 
-![TerminusDB logo](/assets/images/terminusdb_logo.png)
+![TerminusDB logo](/blog/assets/images/terminusdb_logo.png)
 
 The core development team is busy putting the pieces into place and we are all really excited about bringing TerminusDB to the world.
 

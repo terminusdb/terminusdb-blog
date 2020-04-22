@@ -3,7 +3,7 @@ layout: post
 title: "Our DataOps Meetup at Dublin"
 date: 2020-03-18
 description:
-cover_image: /assets/images/Terminus_DB_050320_1.jpg
+cover_image: /blog/assets/images/Terminus_DB_050320_1.jpg
 author: Cheuk Ting Ho
 tags:
   - Database

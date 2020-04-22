@@ -3,7 +3,7 @@ layout: post
 title: "Write up of our Webinar - TerminusDB Internals"
 date: 2020-04-17
 description:
-image: /assets/images/terminusdb-webinar-termunisdb-internals.png
+image: /blog/assets/images/terminusdb-webinar-termunisdb-internals.png
 author: Cheuk Ting Ho
 tags:
   - Dataops
