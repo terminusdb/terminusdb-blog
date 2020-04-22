@@ -4,10 +4,10 @@
     <title>TerminusDB Blog - News and Tutorials</title>
     <description>News and tutorials of TerminusDB.
 </description>
-    <link>bloghttp://blog.terminusdb.com</link>
-    <atom:link href="http://blog.terminusdb.comblog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Apr 2020 10:22:30 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Apr 2020 10:22:30 +0000</lastBuildDate>
+    <link>http://blog.terminusdb.com</link>
+    <atom:link href="http://blog.terminusdb.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 22 Apr 2020 10:26:44 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Apr 2020 10:26:44 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -85,8 +85,8 @@ Databases ranked by data modelling power with leading open source examples of ea
 &lt;p&gt;So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.comblog/2020/03/02/why-graph-will-win/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.comblog/2020/03/02/why-graph-will-win/</guid>
+        <link>http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/03/02/why-graph-will-win/</guid>
         
         <category>OWL</category>
         
@@ -170,8 +170,8 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;[2] https://lod-cloud.net/dataset/rkb-explorer-wordnet&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.comblog/2020/02/25/graph-fundamentals-part-4-linked-data/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.comblog/2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
+        <link>http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2020/02/25/graph-fundamentals-part-4-linked-data/</guid>
         
         <category>Graph Database</category>
         
@@ -247,8 +247,8 @@ The dependency tree of the open annotations ontology — typical of a linked dat
 &lt;p&gt;And this is only the tip of the iceberg — there have been many more incoherent standards and initiatives that have come out of the W3C’s standards bodies — almost all of which have launched like lead balloons into a world that cares not a jot. Nevertheless, it is important to recognise that, hidden in all the nonsense, there are some exceptionally good ideas — triples, URL identifiers and OWL itself are all tremendously good ideas in essence and nothing else out there comes close. It is a sad testament to the suffocating nature of design by standards committee which has consumed countless hours of many thousands of smart and genuine researchers, that ultimately the entire community ended up getting it’s ass kicked by a bunch of Swedish hackers with a bunch of json blobs — the Neo4j property graph guys have had a greater impact upon the real world than the whole academic edifice of semantic web research.&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.comblog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.comblog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
+        <link>http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/</guid>
         
         <category>Graph Database</category>
         
@@ -314,8 +314,8 @@ Hence, despite their importance in the early days of graph databases, property g
 &lt;p&gt;This is the second part of a four-article series on graph fundamentals. The &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;first article in the series covered RDF&lt;/a&gt;, the other major variant of graph databases around today, while the third and next part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.comblog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.comblog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
+        <link>http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/</guid>
         
         <category>Graph</category>
         
@@ -454,8 +454,8 @@ ex:likes ex:john.
 &lt;p&gt;The second part of this series on graph fundamentals covers Labelled Property Graphs, the second major variant of graph databases today, while the third part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.comblog/2019/09/20/graph-fundamentals-part-1-rdf/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.comblog/2019/09/20/graph-fundamentals-part-1-rdf/</guid>
+        <link>http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/2019/09/20/graph-fundamentals-part-1-rdf/</guid>
         
         <category>Semantic Web</category>
         
