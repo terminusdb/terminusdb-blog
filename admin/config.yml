@@ -4,6 +4,7 @@ backend:
   branch: src # Branch to update (optional; defaults to master)
   base_url: https://terminusdbblogauth.herokuapp.com
 media_folder: 'assets/uploads'
+public_folder: '/blog/assets/uploads'
 collections:
   - name: 'blog'
     label: 'Blog'
