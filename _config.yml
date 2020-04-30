@@ -52,7 +52,7 @@ autopages:
     layouts:
       - 'tag.html'
     title: 'TerminusDB Blog'
-    permalink: '/tag/:tag'
+    permalink: '/blog/tag/:tag'
     slugify:
       mode: raw
       cased: true
