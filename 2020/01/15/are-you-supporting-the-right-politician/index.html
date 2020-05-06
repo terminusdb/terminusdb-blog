@@ -1,4 +1,152 @@
-<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Are you supporting the right politician? | TerminusDB Blog - News and Tutorials</title><meta name="description" content="News and tutorials of TerminusDB. "><meta itemprop="name" content="TerminusDB"><meta itemprop="description" content="News and tutorials of TerminusDB. "><meta itemprop="image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg"><meta property="og:url" content="http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/"><meta property="og:type" content="website"><meta property="og:title" content="Are you supporting the right politician? | TerminusDB Blog - News and Tutorials"><meta property="og:site_name" content="TerminusDB Blog - News and Tutorials"><meta property="og:description" content="News and tutorials of TerminusDB. "><meta property="og:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg"><meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Are you supporting the right politician? | TerminusDB Blog - News and Tutorials"><meta name="twitter:site" content="TerminusDB Blog - News and Tutorials"><meta name="twitter:description" content="News and tutorials of TerminusDB. "><meta name="twitter:creator" content="@TerminusDB"><meta property="twitter:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg"><link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico"><link rel="stylesheet" href="/blog/assets/main.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml"><link rel="canonical" href="/blog/2020/01/15/are-you-supporting-the-right-politician/"> <script> function enableCookies() { console.log("Cookie enabled"); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-151888980-1'); // Hotjar Tracking Code for https://terminusdb.com/ (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1579667,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); } function disableCookies() { console.log("Cookie disabled"); var cookies = document.cookie.split("; "); for (var c = 0; c < cookies.length; c++) { var d = window.location.hostname.split("."); while (d.length > 0) { var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path='; var p = location.pathname.split('/'); document.cookie = cookieBase + '/'; while (p.length > 0) { document.cookie = cookieBase + p.join('/'); p.pop(); }; d.shift(); } } location.reload(); } </script></head><body id="are-you-supporting-the-right-politician" class="post-layout"><header class="header"> <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a><nav><ul class="header__list"><li><a href="/blog">Blog</a></li><li><a href="https://podcast.terminusdb.com/">Podcast</a></li><li><a href="https://community.terminusdb.com/">Community</a></li><li><a href="https://events.terminusdb.com/">Events</a></li><li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li></ul></nav></header><main class="💈"><div class="post"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry"><div class="post__header section-padding--double"><div class="grid-small"><h2 itemprop="name headline" class="p-name">Are you supporting the right politician?</h2><time class="post__date" datetime="2020-01-15T00:00:00+00:00" itemprop="datePublished">15 Jan 2020</time></div></div><div class="post__img u-photo"><div><figure class="absolute-bg" style="background-image: url('https://miro.medium.com/max/7618/1*00M5JbvyMgh3MRz7uQf-kw.jpeg');"></figure></div></div><div class="post__content section-padding"><div class="grid"><div id="markdown" itemprop="articleBody" class="e-content"><h2 id="terminusdb-graph-visualisation-of-dublin-council-voting-data">TerminusDB graph visualisation of Dublin Council voting data</h2><p>Do you ever check to see the actual voting record of your preferred politician before you vote? Or, do you just vote for them because of their party affiliation? Do you think your local representative speaks for you on the issues that you care about?</p><p>Politics can be complicated, my friend, but data never lies. In this tutorial, we will use TerminusDB to show you how to analyse the voting behavior of politicians. For demonstration purposes we’ll use a dataset describing the voting records of Councillors in Dublin City Council, the birthplace of TerminusDB, retrieved from <a href="https://counciltracker.ie/">https://counciltracker.ie/</a>, the cleaned data used in the tutorial can be <a href="https://terminusdb.com/t/data/council/weighted_similarity.csv">downloaded here</a>. (Thanks <a href="https://www.dublininquirer.com/">Dublin Inquirer</a> for the great work — have to keep the politicians on their toes)</p><p>We’ll use WOQL, the web object query language, a powerful and highly composable graph query language, throughout the tutorial.</p><p>(We’re assuming you already have TerminusDB installed, but if you haven’t go to our <a href="https://github.com/terminusdb/terminus-quickstart">quick start installation guide</a>. It’s very easy to get started.)</p><h2 id="create-a-database-and-a-schema">Create a Database and a Schema</h2><p>Create a Database in the +Create Database link on the left hand side of the terminus-console. You could call it <code class="highlighter-rouge">dublin_council</code></p><p><img src="https://miro.medium.com/max/3608/1*_40iXp2ntk6WD2ACNmm_nQ.png" alt="create database" /></p><p>Once it is created, go to the <code class="highlighter-rouge">Query</code> link on the left, and enter the following query:</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Are you supporting the right politician? | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="News and tutorials of TerminusDB.
+">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Are you supporting the right politician? | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="News and tutorials of TerminusDB.
+">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Are you supporting the right politician? | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="News and tutorials of TerminusDB.
+">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/01/15/are-you-supporting-the-right-politician/">
+
+
+  <script>
+
+    function enableCookies() {
+      console.log("Cookie enabled");
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-151888980-1');
+      // Hotjar Tracking Code for https://terminusdb.com/
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1579667,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    }
+
+    function disableCookies() {
+      console.log("Cookie disabled");
+      var cookies = document.cookie.split("; ");
+      for (var c = 0; c < cookies.length; c++) {
+          var d = window.location.hostname.split(".");
+          while (d.length > 0) {
+              var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+              var p = location.pathname.split('/');
+              document.cookie = cookieBase + '/';
+              while (p.length > 0) {
+                  document.cookie = cookieBase + p.join('/');
+                  p.pop();
+              };
+              d.shift();
+          }
+      }
+      location.reload();
+    }
+  </script>
+
+
+
+</head>
+<body id="are-you-supporting-the-right-politician" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Are you supporting the right politician?</h2>
+
+        <time class="post__date" datetime="2020-01-15T00:00:00+00:00" itemprop="datePublished">15 Jan 2020</time>
+      </div>
+    </div>
+
+    
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('https://miro.medium.com/max/7618/1*00M5JbvyMgh3MRz7uQf-kw.jpeg');"></figure>
+        </div>
+      </div>
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <h2 id="terminusdb-graph-visualisation-of-dublin-council-voting-data">TerminusDB graph visualisation of Dublin Council voting data</h2>
+
+<p>Do you ever check to see the actual voting record of your preferred politician before you vote? Or, do you just vote for them because of their party affiliation? Do you think your local representative speaks for you on the issues that you care about?</p>
+
+<p>Politics can be complicated, my friend, but data never lies. In this tutorial, we will use TerminusDB to show you how to analyse the voting behavior of politicians. For demonstration purposes we’ll use a dataset describing the voting records of Councillors in Dublin City Council, the birthplace of TerminusDB, retrieved from <a href="https://counciltracker.ie/">https://counciltracker.ie/</a>, the cleaned data used in the tutorial can be <a href="https://terminusdb.com/t/data/council/weighted_similarity.csv">downloaded here</a>. (Thanks <a href="https://www.dublininquirer.com/">Dublin Inquirer</a> for the great work — have to keep the politicians on their toes)</p>
+
+<p>We’ll use WOQL, the web object query language, a powerful and highly composable graph query language, throughout the tutorial.</p>
+
+<p>(We’re assuming you already have TerminusDB installed, but if you haven’t go to our <a href="https://github.com/terminusdb/terminus-quickstart">quick start installation guide</a>. It’s very easy to get started.)</p>
+
+<h2 id="create-a-database-and-a-schema">Create a Database and a Schema</h2>
+
+<p>Create a Database in the +Create Database link on the left hand side of the terminus-console. You could call it <code class="highlighter-rouge">dublin_council</code></p>
+
+<p><img src="https://miro.medium.com/max/3608/1*_40iXp2ntk6WD2ACNmm_nQ.png" alt="create database" /></p>
+
+<p>Once it is created, go to the <code class="highlighter-rouge">Query</code> link on the left, and enter the following query:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
         <span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Party</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Party</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">Political Party</span><span class="dl">"</span><span class="p">),</span>
@@ -14,7 +162,26 @@
             <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">similar_to</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Representative</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Similar To</span><span class="dl">"</span><span class="p">).</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
    <span class="p">);</span>
-</code></pre></div></div><p>and click <code class="highlighter-rouge">Submit</code></p><p>Have a quick check to make sure the schema is there. Click Schema in the left hand navigation bar and you should have:</p><p><img src="https://miro.medium.com/max/2758/1*9PE_cpKZDIMAX9Fz7OPjbw.png" alt="classes in a schema" /></p><p>And if you click the graph view button (circled in red), you should see:</p><p><img src="https://miro.medium.com/max/2772/1*-e_HmFelPXAW5FHn9QRJgg.png" alt="graph of classes in schema" /></p><p>In the query above, we created 3 <code class="highlighter-rouge">doctype</code>: <code class="highlighter-rouge">Party</code>, <code class="highlighter-rouge">Representative</code>, <code class="highlighter-rouge">Similarity</code>. Regarding the property, <code class="highlighter-rouge">Representative</code> is the member of 1 <code class="highlighter-rouge">Party</code>, <code class="highlighter-rouge">Similarity</code> will consist of a decimal number and linking up 2 <code class="highlighter-rouge">Representative</code>. We created the schema using <code class="highlighter-rouge">when()</code>.</p><h2 id="load-in-the-political-voting-data">Load in the Political Voting Data</h2><p>As always, we need <code class="highlighter-rouge">csv</code>, <code class="highlighter-rouge">wrangles</code> and <code class="highlighter-rouge">inserts</code> to load in the data. We’re going to use the query to import the data, clean it and match it. As you might have seen in other TerminusDB tutorials, WOQL is a highly composable language, you can combine queries arbitrarily using logical ANDs and ORs. Make a new WOQL query as follow:</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+</code></pre></div></div>
+
+<p>and click <code class="highlighter-rouge">Submit</code></p>
+
+<p>Have a quick check to make sure the schema is there. Click Schema in the left hand navigation bar and you should have:</p>
+
+<p><img src="https://miro.medium.com/max/2758/1*9PE_cpKZDIMAX9Fz7OPjbw.png" alt="classes in a schema" /></p>
+
+<p>And if you click the graph view button (circled in red), you should see:</p>
+
+<p><img src="https://miro.medium.com/max/2772/1*-e_HmFelPXAW5FHn9QRJgg.png" alt="graph of classes in schema" /></p>
+
+<p>In the query above, we created 3 <code class="highlighter-rouge">doctype</code>: <code class="highlighter-rouge">Party</code>, <code class="highlighter-rouge">Representative</code>, <code class="highlighter-rouge">Similarity</code>. Regarding the property, <code class="highlighter-rouge">Representative</code> is the member of 1 <code class="highlighter-rouge">Party</code>, <code class="highlighter-rouge">Similarity</code> will consist of a decimal number and linking up 2 <code class="highlighter-rouge">Representative</code>. We created the schema using <code class="highlighter-rouge">when()</code>.</p>
+
+<h2 id="load-in-the-political-voting-data">Load in the Political Voting Data</h2>
+
+<p>As always, we need <code class="highlighter-rouge">csv</code>, <code class="highlighter-rouge">wrangles</code> and <code class="highlighter-rouge">inserts</code> to load in the data. We’re going to use the query to import the data, clean it and match it. As you might have seen in other TerminusDB tutorials, WOQL is a highly composable language, you can combine queries arbitrarily using logical ANDs and ORs.
+Make a new WOQL query as follow:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
                 <span class="nx">WOQL</span><span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">councillor_a</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Rep_A</span><span class="dl">"</span><span class="p">)</span>
                 <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">councillor_b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Rep_B</span><span class="dl">"</span><span class="p">)</span>
                 <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">party_a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party_A</span><span class="dl">"</span><span class="p">)</span>
@@ -52,7 +219,47 @@
 
 <span class="kd">const</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="p">...</span><span class="nx">wrangles</span><span class="p">);</span>
 <span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">inserts</span><span class="p">);</span>
-</code></pre></div></div><p>and click <code class="highlighter-rouge">Submit</code></p><ol><li>In the csv we load in all the relevant columns of the csv and link them with a variable identified with v: using as()</li><li>In the wrangles we have to do data wrangling operations, idgen() for creating id for fields and typecast() to cast the Distance column in to a decimal objects as Similarity</li><li>Our inputs are now ready (created by csv and wrangles)</li><li>In the inserts, we actually slot the objects in, the variables created in the wrangles will be insert() with an id. We can also add label(), descriptions() and property()</li><li>Load the data using another when()</li></ol><p>With the data in TerminusDB, you can now click on the documents and explore. It should look like this:</p><p><img src="https://miro.medium.com/max/3502/1*sZD377lF0PbSoZ-P3ttQJw.png" alt="documents of the database" /></p><p>You can then click on a party to explore further — click on the Green Party for example and you can see their members:</p><p><img src="https://miro.medium.com/max/2782/1*J5uLs4-mVvuiOA7xtl6QFw.png" alt="members of Green party" /></p><p>Then click on Patrick Costello and you get his similarity scoring with the other members of the council:</p><p><img src="https://miro.medium.com/max/2812/1*86Xpjqr4HTCo4ViW36aT5g.png" alt="similarity of Patrick Costello" /></p><p>You can quickly see the similarities across the Councillors. Substituting products for people, it’s easy to see how a similar process could build a recommendation engine for e-commerce or another service. We’ll put those additional steps in the next TerminusDB tutorial.</p><p>Click on one of the others at random and you get this:</p><p><img src="https://miro.medium.com/max/2806/1*UaRyfHoX9i9S4A-0xRnE0A.png" alt="similarity between Patrick Costello and Rebecca Moynihan" /></p><p>That is a high similarity score (0.854) for Councillors from different parties (Rebecca Moynihan is in the Labour Party).</p><blockquote><p>Extra: Check out how to <a href="http://loading%20your%20local%20files%20in%20terminusdb/">Load your local files in TerminusDB</a></p></blockquote><h2 id="query-and-visualisation">Query and Visualisation</h2><p>Now with the schema and data in place, we can build some queries and visualise the outputs as a graph. First we have to create a query (of course):</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
+</code></pre></div></div>
+
+<p>and click <code class="highlighter-rouge">Submit</code></p>
+
+<ol>
+  <li>In the csv we load in all the relevant columns of the csv and link them with a variable identified with v: using as()</li>
+  <li>In the wrangles we have to do data wrangling operations, idgen() for creating id for fields and typecast() to cast the Distance column in to a decimal objects as Similarity</li>
+  <li>Our inputs are now ready (created by csv and wrangles)</li>
+  <li>In the inserts, we actually slot the objects in, the variables created in the wrangles will be insert() with an id. We can also add label(), descriptions() and property()</li>
+  <li>Load the data using another when()</li>
+</ol>
+
+<p>With the data in TerminusDB, you can now click on the documents and explore. It should look like this:</p>
+
+<p><img src="https://miro.medium.com/max/3502/1*sZD377lF0PbSoZ-P3ttQJw.png" alt="documents of the database" /></p>
+
+<p>You can then click on a party to explore further — click on the Green Party for example and you can see their members:</p>
+
+<p><img src="https://miro.medium.com/max/2782/1*J5uLs4-mVvuiOA7xtl6QFw.png" alt="members of Green party" /></p>
+
+<p>Then click on Patrick Costello and you get his similarity scoring with the other members of the council:</p>
+
+<p><img src="https://miro.medium.com/max/2812/1*86Xpjqr4HTCo4ViW36aT5g.png" alt="similarity of Patrick Costello" /></p>
+
+<p>You can quickly see the similarities across the Councillors. Substituting products for people, it’s easy to see how a similar process could build a recommendation engine for e-commerce or another service. We’ll put those additional steps in the next TerminusDB tutorial.</p>
+
+<p>Click on one of the others at random and you get this:</p>
+
+<p><img src="https://miro.medium.com/max/2806/1*UaRyfHoX9i9S4A-0xRnE0A.png" alt="similarity between Patrick Costello and Rebecca Moynihan" /></p>
+
+<p>That is a high similarity score (0.854) for Councillors from different parties (Rebecca Moynihan is in the Labour Party).</p>
+
+<blockquote>
+  <p>Extra: Check out how to <a href="http://loading%20your%20local%20files%20in%20terminusdb/">Load your local files in TerminusDB</a></p>
+</blockquote>
+
+<h2 id="query-and-visualisation">Query and Visualisation</h2>
+
+<p>Now with the schema and data in place, we can build some queries and visualise the outputs as a graph. First we have to create a query (of course):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Subject</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">similar_to</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Subject</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">similar_to</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Subject</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">similarity</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">),</span>
@@ -63,14 +270,60 @@
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">opt</span><span class="p">().</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Lab1</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">WOQL</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">)</span>
-</code></pre></div></div><p>and click <code class="highlighter-rouge">Submit</code></p><ol><li>We use <code class="highlighter-rouge">WOQL.limiti(1000).and</code> to limit the result set and shorten the query time (we’ll show the full scaled up results later)</li><li>This query only uses <code class="highlighter-rouge">triple()</code> not <code class="highlighter-rouge">quad()</code> we are only extracting data from a single database (including <code class="highlighter-rouge">quad()</code> allows you to specify which databases you want to extract data from)</li><li>Use <code class="highlighter-rouge">opt()</code> to ignore the missing objects (instead of returning an error)</li><li>Use <code class="highlighter-rouge">eval()</code> to execute arithmetic calculation (<code class="highlighter-rouge">divide()</code> and <code class="highlighter-rouge">exp()</code>) and store it to variable <code class="highlighter-rouge">Distance</code>, this variable is calculated from <code class="highlighter-rouge">Similarty</code>.</li></ol><p>You will now have results in a tabular form below the query:</p><p><img src="https://miro.medium.com/max/2734/1*0HeHCKMDGalsg0lnPaBB-w.png" alt="query result in a table" /></p><p>It is hard to make sense out of the result! But at least we see we have results from our query.</p><p>To make a graph visualisation, click on the graph button (the right most of the 3 at the top right of the table):</p><p><img src="https://miro.medium.com/max/1988/1*xF6c0AhuC7J6OwNDwbAEvQ.png" alt="a messy graph" /></p><p>Wow! What is this madness! As we have show everything from the query: every object, every property, label, description… things are a little too busy to make visual sense.</p><p>We need to customize the view of the graph. Click on the left most button of the 3 at the top right, you will see an extra input field for the view:</p><p><img src="https://miro.medium.com/max/3196/1*lN10ba9auHPi-0VAS7nlzg.png" alt="view pane" /></p><p>Replace everything with our customised view script:</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>and click <code class="highlighter-rouge">Submit</code></p>
+
+<ol>
+  <li>We use <code class="highlighter-rouge">WOQL.limiti(1000).and</code> to limit the result set and shorten the query time (we’ll show the full scaled up results later)</li>
+  <li>This query only uses <code class="highlighter-rouge">triple()</code> not <code class="highlighter-rouge">quad()</code> we are only extracting data from a single database (including <code class="highlighter-rouge">quad()</code> allows you to specify which databases you want to extract data from)</li>
+  <li>Use <code class="highlighter-rouge">opt()</code> to ignore the missing objects (instead of returning an error)</li>
+  <li>Use <code class="highlighter-rouge">eval()</code> to execute arithmetic calculation (<code class="highlighter-rouge">divide()</code> and <code class="highlighter-rouge">exp()</code>) and store it to variable <code class="highlighter-rouge">Distance</code>, this variable is calculated from <code class="highlighter-rouge">Similarty</code>.</li>
+</ol>
+
+<p>You will now have results in a tabular form below the query:</p>
+
+<p><img src="https://miro.medium.com/max/2734/1*0HeHCKMDGalsg0lnPaBB-w.png" alt="query result in a table" /></p>
+
+<p>It is hard to make sense out of the result! But at least we see we have results from our query.</p>
+
+<p>To make a graph visualisation, click on the graph button (the right most of the 3 at the top right of the table):</p>
+
+<p><img src="https://miro.medium.com/max/1988/1*xF6c0AhuC7J6OwNDwbAEvQ.png" alt="a messy graph" /></p>
+
+<p>Wow! What is this madness! As we have show everything from the query: every object, every property, label, description… things are a little too busy to make visual sense.</p>
+
+<p>We need to customize the view of the graph. Click on the left most button of the 3 at the top right, you will see an extra input field for the view:</p>
+
+<p><img src="https://miro.medium.com/max/3196/1*lN10ba9auHPi-0VAS7nlzg.png" alt="view pane" /></p>
+
+<p>Replace everything with our customised view script:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Subject</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Lab2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Lab1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">edge</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">distance</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">weight</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Lab1</span><span class="dl">"</span><span class="p">).</span><span class="nx">icon</span><span class="p">({</span> <span class="na">label</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Lab2</span><span class="dl">"</span><span class="p">).</span><span class="nx">icon</span><span class="p">({</span> <span class="na">label</span><span class="p">:</span> <span class="kc">true</span><span class="p">})</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">charge</span><span class="p">(</span><span class="o">-</span><span class="mi">999</span><span class="p">).</span><span class="nx">collisionRadius</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</code></pre></div></div><p>Click <code class="highlighter-rouge">Update view</code></p><ol><li>We hidden() some node()</li><li>Customize the edge() to have the distance() equal to the variable Distance and have a equal weight() of 0.04. It will also show the value of Distance when mouse on</li><li>Replace the icon() with the label() of Lab, which is the name of the politicians.</li><li>charge() and collisionRadius() makes the nodes have a natual seperation with each other (avoid clustering) for easier viewing.</li></ol><p>💥now we have a much nicer graph:</p><p><img src="https://miro.medium.com/max/1740/1*CAZV-VB2EKsmE1GMfBwigw.png" alt="nicer graph" /></p><p>But wait, are we missing something? Oh, the party of the politicians, let’s colour code the politicians to their party so we can make easy sense of the graph. Let’s edit the view again with this script:</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Click <code class="highlighter-rouge">Update view</code></p>
+
+<ol>
+  <li>We hidden() some node()</li>
+  <li>Customize the edge() to have the distance() equal to the variable Distance and have a equal weight() of 0.04. It will also show the value of Distance when mouse on</li>
+  <li>Replace the icon() with the label() of Lab, which is the name of the politicians.</li>
+  <li>charge() and collisionRadius() makes the nodes have a natual seperation with each other (avoid clustering) for easier viewing.</li>
+</ol>
+
+<p>💥now we have a much nicer graph:</p>
+
+<p><img src="https://miro.medium.com/max/1740/1*CAZV-VB2EKsmE1GMfBwigw.png" alt="nicer graph" /></p>
+
+<p>But wait, are we missing something? Oh, the party of the politicians, let’s colour code the politicians to their party so we can make easy sense of the graph. Let’s edit the view again with this script:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Subject</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Lab2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Lab1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Similarity</span><span class="dl">"</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">edge</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">distance</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Distance</span><span class="dl">"</span><span class="p">).</span><span class="nx">weight</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span>
@@ -97,7 +350,36 @@
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">v</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Party2</span><span class="dl">"</span><span class="p">).</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:PartyPeople%20Before%20Profit</span><span class="dl">"</span><span class="p">).</span><span class="nx">color</span><span class="p">([</span><span class="mi">225</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value</span><span class="dl">"</span><span class="p">).</span><span class="nx">v</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Party</span><span class="dl">"</span><span class="p">).</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:PartyWorkers'%20Party</span><span class="dl">"</span><span class="p">).</span><span class="nx">color</span><span class="p">([</span><span class="mi">225</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">225</span><span class="p">])</span>
 <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Value2</span><span class="dl">"</span><span class="p">).</span><span class="nx">v</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Party2</span><span class="dl">"</span><span class="p">).</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:PartyWorkers'%20Party</span><span class="dl">"</span><span class="p">).</span><span class="nx">color</span><span class="p">([</span><span class="mi">225</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">225</span><span class="p">])</span>
-</code></pre></div></div><p>Now the script is a bit long, but it is not complicated. For example, if the politician has <code class="highlighter-rouge">Party</code> equal to <code class="highlighter-rouge">PartyGreen Party</code> (%20 for white space), colour the node [225, 225, 125] which is light green (matching the colour code from the source website):</p><p><img src="https://miro.medium.com/max/2364/1*DUyqby2Oq7MrZjkPgnlrXw.png" alt="colour code of different parties from counciltracker.ie" /></p><p>The same also apply to <code class="highlighter-rouge">Lab2</code> and <code class="highlighter-rouge">Party2</code> (and they are just the parallel image of <code class="highlighter-rouge">Lab</code> and <code class="highlighter-rouge">Party</code>).</p><p>Now let’s try to see the whole picture by removing the <code class="highlighter-rouge">limit(1000</code>) from our query and click <code class="highlighter-rouge">submit</code>. (Warning: you need memory for handling the graphics and it might take a few seconds to load).</p><p><img src="https://miro.medium.com/max/1710/1*1tFXtXdoeOAMMxAYvVGt9A.png" alt="completed graph" /></p><p>There are some really interesting conclusions we can quickly draw from viewing the data in this way. Specifically, the data allows us to draw the following conclusions:</p><ul><li>Political parties do tend to vote in a reasonably homogeneous fashion (the distribution is not random, or anything close to it)</li><li>Sinn Fein enjoy the strongest disciplinary record in terms of council votes, with all Councillors clustered closely together</li><li>Fine Gael and Fianna Fail are heavily inter-mingled, to the extent that they could almost be considered a single party</li><li>The same could be said for the Green Party and Labour Party, who present as a single block in this analysis</li></ul><p>These results are interesting in and of themselves. But in addition, the visualisation of data in this way enables us to see a continuum across the political spectrum, and accurately place parties on that spectrum based on real data rather than perception or prejudice.</p><p>Lastly this data shows clearly the politics of any given independent just by looking which parties they are situated with. A few independents seem to occupy an equivalent status to Sinn Féin or Fianna Fáil-Fine Gael. A few hover around the Solidarity-People-Before Profit-Workers’ Party nexus. However, the voting positions of the Greens and Labour are not apparently so popular with the unaffiliated.</p><p>Now it is your turn. Change the parameters in the view script to play around and mix things up.</p><p>One more thing to do is to analyse different dataset. Here is some open data from the US Congress that you can play around, and a quick WOQL query to build the schema:</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
+</code></pre></div></div>
+
+<p>Now the script is a bit long, but it is not complicated. For example, if the politician has <code class="highlighter-rouge">Party</code> equal to <code class="highlighter-rouge">PartyGreen Party</code> (%20 for white space), colour the node [225, 225, 125] which is light green (matching the colour code from the source website):</p>
+
+<p><img src="https://miro.medium.com/max/2364/1*DUyqby2Oq7MrZjkPgnlrXw.png" alt="colour code of different parties from counciltracker.ie" /></p>
+
+<p>The same also apply to <code class="highlighter-rouge">Lab2</code> and <code class="highlighter-rouge">Party2</code> (and they are just the parallel image of <code class="highlighter-rouge">Lab</code> and <code class="highlighter-rouge">Party</code>).</p>
+
+<p>Now let’s try to see the whole picture by removing the <code class="highlighter-rouge">limit(1000</code>) from our query and click <code class="highlighter-rouge">submit</code>. (Warning: you need memory for handling the graphics and it might take a few seconds to load).</p>
+
+<p><img src="https://miro.medium.com/max/1710/1*1tFXtXdoeOAMMxAYvVGt9A.png" alt="completed graph" /></p>
+
+<p>There are some really interesting conclusions we can quickly draw from viewing the data in this way. Specifically, the data allows us to draw the following conclusions:</p>
+
+<ul>
+  <li>Political parties do tend to vote in a reasonably homogeneous fashion (the distribution is not random, or anything close to it)</li>
+  <li>Sinn Fein enjoy the strongest disciplinary record in terms of council votes, with all Councillors clustered closely together</li>
+  <li>Fine Gael and Fianna Fail are heavily inter-mingled, to the extent that they could almost be considered a single party</li>
+  <li>The same could be said for the Green Party and Labour Party, who present as a single block in this analysis</li>
+</ul>
+
+<p>These results are interesting in and of themselves. But in addition, the visualisation of data in this way enables us to see a continuum across the political spectrum, and accurately place parties on that spectrum based on real data rather than perception or prejudice.</p>
+
+<p>Lastly this data shows clearly the politics of any given independent just by looking which parties they are situated with. A few independents seem to occupy an equivalent status to Sinn Féin or Fianna Fáil-Fine Gael. A few hover around the Solidarity-People-Before Profit-Workers’ Party nexus. However, the voting positions of the Greens and Labour are not apparently so popular with the unaffiliated.</p>
+
+<p>Now it is your turn. Change the parameters in the view script to play around and mix things up.</p>
+
+<p>One more thing to do is to analyse different dataset. Here is some open data from the US Congress that you can play around, and a quick WOQL query to build the schema:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
         <span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Party</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Party</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">Political Party</span><span class="dl">"</span><span class="p">),</span>
@@ -134,7 +416,11 @@
             <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Overall</span><span class="dl">"</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="dl">"</span><span class="s2">Similarity</span><span class="dl">"</span><span class="p">)</span>
    <span class="p">)</span>
-</code></pre></div></div><p>And a WOQL to get some of that data into your database (this is a larger data set so it’ll take a little longer to return — took a little over 400 seconds last time I ran it):</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+</code></pre></div></div>
+
+<p>And a WOQL to get some of that data into your database (this is a larger data set so it’ll take a little longer to return — took a little over 400 seconds last time I ran it):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
                 <span class="nx">WOQL</span><span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">politician_a</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Rep_A</span><span class="dl">"</span><span class="p">)</span>
                 <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">politician_b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Rep_B</span><span class="dl">"</span><span class="p">)</span>
                 <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">party_a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Party_A</span><span class="dl">"</span><span class="p">)</span>
@@ -172,5 +458,240 @@
 
 <span class="kd">const</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="p">...</span><span class="nx">wrangles</span><span class="p">);</span>
 <span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">inserts</span><span class="p">);</span>
-</code></pre></div></div><p>Feel free to use any open data to do the same analysis — we’d love to see the results. In fact, TerminusDB is running a competition on UK political data. <a href="https://twitter.com/TerminusDB/status/1214829778387296256">Check it out over on twitter</a>.</p></div><ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=Are you supporting the right politician?+http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Are you supporting the right politician?&summary=&url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=&media=&url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul></div></div><div class="section-padding--none"><div class="grid p-author h-card"><hr class="sep"/></div></div><div class="section-padding"><div class="grid-small"> <span class="post__author">Posted by <a href="https://cheuk.dev" class="p-name u-url">Cheuk Ting Ho</a></span><p class="post__bio p-note">Developer Advocate for TerminusDB. Ex Data Scientist. Pytonista. Organizer of London Python Sprints and AI Club for Gender Minorities. Tech Speaker and Streamer on Twitch.</p></div></div></article></div><section class="related section-padding"><div class="grid-xlarge"><h2 class="related__title">Related</h2><div class="related__container"><article class="related__post"> <a class="related__link" href="http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/"><figure class="related__img"> <img src="https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg" alt="TerminusDB @ PyLadies Dublin"/></figure><div><h2 class="related__text">TerminusDB @ PyLadies Dublin</h2></div></a></article><article class="related__post"> <a class="related__link" href="http://blog.terminusdb.com/blog/2020/01/21/loading-your-local-files-in-terminusdb/"><figure class="related__img"> <img src="/blog/assets/images/cowduck_banner.jpeg" alt="Loading your local files in TerminusDB"/></figure><div><h2 class="related__text">Loading your local files in TerminusDB</h2></div></a></article><article class="related__post"> <a class="related__link" href="http://blog.terminusdb.com/blog/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/"><figure class="related__img"> <img src="/blog/assets/images/cowduck_sitting_logo.png" alt="Design a Query Language Client for Pythonistas and Data Scientists"/></figure><div><h2 class="related__text">Design a Query Language Client for Pythonistas and Data Scientists</h2></div></a></article></div></div></section></main><footer class="footer section-padding"><div class="grid"><div class="footer__container"><ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul><ul class="footer__social"><li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li><li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li><li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li></ul></div></div></footer><script src="/blog/assets/js/app.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script> <script> window.cookieconsent.initialise({ "palette": { "popup": { "background": "#002856", "text": "#ffffff" }, "button": { "background": "#00c08b", "text": "#000000" } }, "theme": "classic", "type": "opt-in", "content": { "href": "https://terminusdb.com/cookies.html" }, onInitialise: function (status) { var type = this.options.type; var didConsent = this.hasConsented(); if (type == 'opt-in' && didConsent) { enableCookies() } if (type == 'opt-out' && !didConsent) { disableCookies() } }, onStatusChange: function(status, chosenBefore) { var type = this.options.type; var didConsent = this.hasConsented(); if (type == 'opt-in' && didConsent) { enableCookies() } if (type == 'opt-out' && !didConsent) { disableCookies() } }, onRevokeChoice: function() { var type = this.options.type; if (type == 'opt-in') { disableCookies() } if (type == 'opt-out') { enableCookies() } }, }); </script></body></html>
-  
+</code></pre></div></div>
+
+<p>Feel free to use any open data to do the same analysis — we’d love to see the results. In fact, TerminusDB is running a competition on UK political data. <a href="https://twitter.com/TerminusDB/status/1214829778387296256">Check it out over on twitter</a>.</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Are you supporting the right politician?+http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Are you supporting the right politician?&summary=&url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=&media=&url=http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://cheuk.dev" class="p-name u-url">Cheuk Ting Ho</a></span>
+            <p class="post__bio p-note">Developer Advocate for TerminusDB. Ex Data Scientist. Pytonista. Organizer of London Python Sprints and AI Club for Gender Minorities. Tech Speaker and Streamer on Twitch.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/">
+              
+                <figure class="related__img">
+                  <img src="https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg" alt="TerminusDB @ PyLadies Dublin"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB @ PyLadies Dublin</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/01/21/loading-your-local-files-in-terminusdb/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/cowduck_banner.jpeg" alt="Loading your local files in TerminusDB"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Loading your local files in TerminusDB</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/cowduck_sitting_logo.png" alt="Design a Query Language Client for Pythonistas and Data Scientists"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Design a Query Language Client for Pythonistas and Data Scientists</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#002856",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "#00c08b",
+      "text": "#000000"
+    }
+  },
+  "theme": "classic",
+  "type": "opt-in",
+  "content": {
+    "href": "https://terminusdb.com/cookies.html"
+  },
+
+  onInitialise: function (status) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    enableCookies()
+  }
+  if (type == 'opt-out' && !didConsent) {
+    disableCookies()
+  }
+  },
+
+  onStatusChange: function(status, chosenBefore) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (type == 'opt-in' && didConsent) {
+      enableCookies()
+    }
+    if (type == 'opt-out' && !didConsent) {
+      disableCookies()
+    }
+  },
+
+  onRevokeChoice: function() {
+    var type = this.options.type;
+    if (type == 'opt-in') {
+      disableCookies()
+    }
+    if (type == 'opt-out') {
+      enableCookies()
+    }
+  },
+});
+</script>
+
+
+
+</body>
+</html>
