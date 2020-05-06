@@ -40,6 +40,11 @@
     function enableCookies() {
       console.log("Cookie enabled");
       window.dataLayer = window.dataLayer || [];
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "https://www.googletagmanager.com/gtag/js?id=UA-151888980-1";
+
+      document.getElementsByTagName('head')[0].appendChild(script);
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-151888980-1');
