@@ -128,8 +128,7 @@ create design systems with all kinds of amazing reactive components for devs to
 use in their applications, each of these components has fields and each of
 these fields have data, and this data needs to be stored in a database, and
 this database needs to updated every time new components are added, modified,
-or used in new ways. All this all becomes unmanageable quickly and productivity
-grinds to a halt
+or used in new ways.
 
 And so here we are. Stuff is complicated. And despite all the awesomeness of
 devops, design systems, CI/CD, infrastructure as code, despite all this
