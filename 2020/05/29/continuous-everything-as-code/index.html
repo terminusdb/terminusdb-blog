@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Continuous Everything As Code | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Finally, a database that works in your CI/CD pipeline.">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Continuous Everything As Code | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="Finally, a database that works in your CI/CD pipeline.">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Continuous Everything As Code | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="Finally, a database that works in your CI/CD pipeline.">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/05/29/continuous-everything-as-code/">
+
+
+  <script>
+
+    function enableCookies() {
+      console.log("Cookie enabled");
+      window.dataLayer = window.dataLayer || [];
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "https://www.googletagmanager.com/gtag/js?id=UA-151888980-1";
+
+      document.getElementsByTagName('head')[0].appendChild(script);
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-151888980-1');
+      // Hotjar Tracking Code for https://terminusdb.com/
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1579667,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    }
+
+    function disableCookies() {
+      console.log("Cookie disabled");
+      var cookies = document.cookie.split("; ");
+      for (var c = 0; c < cookies.length; c++) {
+          var d = window.location.hostname.split(".");
+          while (d.length > 0) {
+              var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+              var p = location.pathname.split('/');
+              document.cookie = cookieBase + '/';
+              while (p.length > 0) {
+                  document.cookie = cookieBase + p.join('/');
+                  p.pop();
+              };
+              d.shift();
+          }
+      }
+      location.reload();
+    }
+  </script>
+
+
+
+</head>
+<body id="continuous-everything-as-code" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Continuous Everything As Code</h2>
+
+        <time class="post__date" datetime="2020-05-29T00:00:00+00:00" itemprop="datePublished">29 May 2020</time>
+      </div>
+    </div>
+
+    
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/images/ascode.webp');"></figure>
+        </div>
+      </div>
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>Managing Databases in a CI/CD pipeline is a nightmare. Migration scripts are
+better than making changes on running servers, but become hard to manage in
+complex modern pipelines. Truly solving the problems requires revision control
+for databases so that you can clone, branch and merge your database.</p>
+
+<p>Devs have it pretty good these days.</p>
+
+<p>With Git, CI/CD, Infrastructure as Code, and the Public Cloud, you can have
+a idea in the shower, write some code after breakfast, commit to git and start
+collaborating with colleagues after lunch.</p>
+
+<p>You can Docker up your app, Terraform some infra, create a CI/CD pipeline, and
+then test and have everything deployed to production by dinner.</p>
+
+<p>By beer o’clock you’re sitting back and watching the hype buzz up the ranks on
+hacker news.</p>
+
+<p>But then, after the glorious intro to this thus-far happy film, our protagonist
+wakes up screaming.</p>
+
+<p>What horror haunts their dreams? What nightmare invades their peaceful bliss?
+What terror wrenches their face into a wretched scowl?</p>
+
+<p>It’s The Data!</p>
+
+<p>It’s the damn database.</p>
+
+<p>Every application is perfect, beautiful, flawless, until you have real users
+and their stupid data. Then, the pain begins.</p>
+
+<p>Then, when you want to push more amazing code to production, the database rears
+its ugly head, raises it’s iconic knife-fingered glove and sneers “Come to
+Freddy!”</p>
+
+<p>As I was saying, managing Databases in a CI/CD pipeline is a nightmare.</p>
+
+<p>Git, CI/CD and Cloud APIs have completely transformed the way software is made.
+The days of slow and deliberate software release with loads of manual work are
+gone, we now live in a world of continuous everything as code.</p>
+
+<p>However, once an application is live, it has production data. Production data
+is important, especially to users, and needs to be preserved, you can’t just
+wipe it out when you release a new version of your software to production, and
+the new version of your software has schema changes and new data.</p>
+
+<p>In the old days, when software changed such that the database schema also had
+to change, DBAs would immedietly wait around for a few months, mostly hiding,
+until eventually, several entity–relationship diagrams later, they would simply
+take backups, modify the schema on the live server and hope for the best.</p>
+
+<p>Since new software was deployed less often than Sylvester Stalone movies were
+released, and users were fine with a few hours, or even days, of downtime for
+each update, everything was fine. In those days “Agile” was a word you used to
+describe a Soviet gymnast, not a software development team.</p>
+
+<p>But now, applications are developed continuously, different versions of the
+application need to run in test, dev and staging environments, each of which
+has different data and a different schema. This makes for a difficult set of
+challenges in the set up of each environment, and the reliable promotion of
+software from one environment to the next.</p>
+
+<p>Moving data to production requires not only updating the databases schema with
+the latest changes, but also updating all existing data such that it is valid
+within the new schema.</p>
+
+<p>Staging environments need copies of production data in order to test things
+properly. They also need all the new data and schema changes that are required
+to make the new version of the software work.</p>
+
+<p>So now you’re moving data and schema changes back and forth, up and down the
+pipeline. But unlike with software source code, you do not have Git to clone,
+branch and merge your changes.</p>
+
+<p>You need to do migrations. And migrations are flaky, slow, error prone, and
+frankly, terrifying. The only good thing about a migration is that you can
+store it in version control with your code.</p>
+
+<p>Writing migrations as code become popular in the hey day of Ruby on Rails, they
+had “up” and “down” functions, which could either migrate the schema of the
+production database to the current version required by the software, or revert
+to the previous version.</p>
+
+<p>Writing up and down migration functions for each schema and data change was
+a lot of work, but it seemed manageable, and everyone was happy enough so they
+got back to riding around on single gear bicycles and making fun of DBAs.</p>
+
+<p>Later, clever devs working with enterprise teams at ThoughtWorks and other
+places, took a break from writing drab Java code and realized that “down”
+migrations never worked when you needed them, because new data could not be
+cleanly mapped back to an old schema without losing data. They stopped making
+them, creating “forward only” migrations, only making “up” migrations, and
+if/when they needed to revert, they would just make a new migration. Forward
+became the new back.</p>
+
+<p>It all seemed peaceful enough. But then devs everywhere started seriously
+hating on monolithic software. Armed with JavaScript and enjoying their single
+origin coffee, they decided that one schema was not enough, because with
+microservices, feature flags and various roll-out strategies, not to mention
+multiple versions of mobile apps, you couldn’t just go forward. You needed to
+support multiple versions of your schema at the same time, and the expand and
+contract pattern was born. You “expand” outward, adding new tables and fields,
+but leaving old ones for older versions of your code, or platform. Then, when
+you’ve sunsetted the older versions or API endpoints, you “contract” and delete
+what you no longer need. Except you don’t - you forget, or you never sunset
+older versions. All of this becomes unmanageable quickly and productivity
+grinds to a halt.</p>
+
+<p>It’s a lot of work, and as applications become more data-centric and designers
+create design systems with all kinds of amazing reactive components for devs to
+use in their applications, each of these components has fields and each of
+these fields have data, and this data needs to be stored in a database, and
+this database needs to updated every time new components are added, modified,
+or used in new ways. All this all becomes unmanageable quickly and productivity
+grinds to a halt</p>
+
+<p>And so here we are. Stuff is complicated. And despite all the awesomeness of
+devops, design systems, CI/CD, infrastructure as code, despite all this
+automation, everyone is still terrified of the production database.</p>
+
+<p>How we do we deal with all this?</p>
+
+<p>If only we could manage the revision of data the way we manage the revision of
+our source code. If only we could just merge our latest changes into the
+production database. If only we could simply clone our production database for
+staging, if only we could just push changes from a developer’s local machines
+to a test environment!</p>
+
+<p>If only … we had something like Git, but for data.</p>
+
+<p>Well friend, have you heard the good news? We’re building TerminusDB to provide
+distributed revision control for data. Databases in TerminusDB can be cloned,
+branched and merged with nary a migration script in sight.</p>
+
+<p>With TerminusDB you can truly integrate data into your CI/CD pipelines.</p>
+
+<p>You don’t need to fear your database anymore.</p>
+
+<p>TerminusDB is free software, and is pretty new, and still under heavy
+development, but we’d love to have join us, the best place to get involved
+early is our Discord community: https://discord.com/invite/Gvdqw97</p>
+
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Continuous Everything As Code+http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Continuous Everything As Code&summary=Finally, a database that works in your CI/CD pipeline.&url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Finally, a database that works in your CI/CD pipeline.&media=&url=http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://twitter.com/dmytri" class="p-name u-url">Dmytri Kleiner</a></span>
+            <p class="post__bio p-note">Venture Communist.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/05/29/continuous-everything-as-code/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/03/24/reluctantly-remote/">
+              
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/remote-work.webp" alt="Reluctantly Remote, and loving it"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">Reluctantly Remote, and loving it</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+      
+      
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#002856",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "#00c08b",
+      "text": "#000000"
+    }
+  },
+  "theme": "classic",
+  "type": "opt-in",
+  "content": {
+    "href": "https://terminusdb.com/cookies.html"
+  },
+
+  onInitialise: function (status) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    enableCookies()
+  }
+  if (type == 'opt-out' && !didConsent) {
+    disableCookies()
+  }
+  },
+
+  onStatusChange: function(status, chosenBefore) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (type == 'opt-in' && didConsent) {
+      enableCookies()
+    }
+    if (type == 'opt-out' && !didConsent) {
+      disableCookies()
+    }
+  },
+
+  onRevokeChoice: function() {
+    var type = this.options.type;
+    if (type == 'opt-in') {
+      disableCookies()
+    }
+    if (type == 'opt-out') {
+      enableCookies()
+    }
+  },
+});
+</script>
+
+
+
+</body>
+</html>
