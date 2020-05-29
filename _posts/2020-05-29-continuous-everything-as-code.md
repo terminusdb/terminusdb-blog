@@ -47,7 +47,7 @@ Every application is perfect, beautiful, flawless, until you have real users
 and their stupid data. Then, the pain begins.
 
 Then, when you want to push more amazing code to production, the database rears
-its ugly head, raises it's iconic knife-fingered glove and sneers "Come to
+its ugly head, raises its iconic knife-fingered glove and sneers "Come to
 Freddy!"
 
 As I was saying, managing Databases in a CI/CD pipeline is a nightmare.
@@ -66,7 +66,7 @@ to change, DBAs would immedietly wait around for a few months, mostly hiding,
 until eventually, several entity–relationship diagrams later, they would simply
 take backups, modify the schema on the live server and hope for the best.
 
-Since new software was deployed less often than Sylvester Stalone movies were
+Since new software was deployed less often than Sylvester Stallone movies were
 released, and users were fine with a few hours, or even days, of downtime for
 each update, everything was fine. In those days "Agile" was a word you used to
 describe a Soviet gymnast, not a software development team.
@@ -93,7 +93,7 @@ You need to do migrations. And migrations are flaky, slow, error prone, and
 frankly, terrifying. The only good thing about a migration is that you can
 store it in version control with your code.
 
-Writing migrations as code become popular in the hey day of Ruby on Rails, they
+Writing migrations as code become popular in the heyday of Ruby on Rails, they
 had "up" and "down" functions, which could either migrate the schema of the
 production database to the current version required by the software, or revert
 to the previous version. 
