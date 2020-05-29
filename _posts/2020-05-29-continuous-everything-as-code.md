@@ -156,5 +156,5 @@ You don't need to fear your database anymore.
 TerminusDB is free software, and is pretty new, and still under heavy
 development, but we'd love to have join us, the best place to get involved
 early is our Discord community:
-(https://discord.com/invite/Gvdqw97)[https://discord.com/invite/Gvdqw97]
+[https://discord.com/invite/Gvdqw97](https://discord.com/invite/Gvdqw97)
 
