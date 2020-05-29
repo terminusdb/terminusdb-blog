@@ -23,8 +23,8 @@ for databases so that you can clone, branch and merge your database.
 
 Devs have it pretty good these days.
 
-With Git, CI/CD, Infrastructure as Code, and the Public Cloud, you can have
-a idea in the shower, write some code after breakfast, commit to git and start
+With Git, CI/CD, Infrastructure as Code, and the Public Cloud, you can have an
+idea in the shower, write some code after breakfast, commit to git and start
 collaborating with colleagues after lunch.
 
 You can Docker up your app, Terraform some infra, create a CI/CD pipeline, and
