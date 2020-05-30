@@ -62,7 +62,7 @@ wipe it out when you release a new version of your software to production, and
 the new version of your software has schema changes and new data.
 
 In the old days, when software changed such that the database schema also had
-to change, DBAs would immedietly wait around for a few months, mostly hiding,
+to change, DBAs would immediately wait around for a few months, mostly hiding,
 until eventually, several entity–relationship diagrams later, they would simply
 take backups, modify the schema on the live server and hope for the best.
 
