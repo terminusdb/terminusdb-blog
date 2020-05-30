@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 May 2020 13:22:20 +0000</pubDate>
-    <lastBuildDate>Fri, 29 May 2020 13:22:20 +0000</lastBuildDate>
+    <pubDate>Sat, 30 May 2020 10:19:14 +0000</pubDate>
+    <lastBuildDate>Sat, 30 May 2020 10:19:14 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
     
@@ -59,7 +59,7 @@ wipe it out when you release a new version of your software to production, and
 the new version of your software has schema changes and new data.&lt;/p&gt;
 
 &lt;p&gt;In the old days, when software changed such that the database schema also had
-to change, DBAs would immedietly wait around for a few months, mostly hiding,
+to change, DBAs would immediately wait around for a few months, mostly hiding,
 until eventually, several entity–relationship diagrams later, they would simply
 take backups, modify the schema on the live server and hope for the best.&lt;/p&gt;
 
@@ -125,8 +125,7 @@ create design systems with all kinds of amazing reactive components for devs to
 use in their applications, each of these components has fields and each of
 these fields have data, and this data needs to be stored in a database, and
 this database needs to updated every time new components are added, modified,
-or used in new ways. All this all becomes unmanageable quickly and productivity
-grinds to a halt&lt;/p&gt;
+or used in new ways.&lt;/p&gt;
 
 &lt;p&gt;And so here we are. Stuff is complicated. And despite all the awesomeness of
 devops, design systems, CI/CD, infrastructure as code, despite all this
