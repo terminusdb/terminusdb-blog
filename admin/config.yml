@@ -2,7 +2,7 @@ backend:
   name: github
   repo: terminusdb/terminusdb-blog # Path to your GitHub repository
   branch: src # Branch to update (optional; defaults to master)
-  base_url: https://terminusdbblogauth.herokuapp.com
+  base_url: https://terminusdblogoauthprovider.herokuapp.com
 media_folder: 'assets/uploads'
 public_folder: '/blog/assets/uploads'
 collections:
