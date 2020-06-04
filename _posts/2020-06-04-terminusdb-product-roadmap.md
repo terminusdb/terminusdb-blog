@@ -10,7 +10,7 @@ author:
 tags:
   - Database
 ---
-As a truly open-source platform, we would like our Terminators to know what our product roadmap is and where we currently stand. We use multiple product development frameworks and tools such as Milanote to help ideate and visualise our product decisions strategically. The product roadmap is just as it sounds, it is a paper/video which helps to carry out our company’s vision for a period of time, normally 12 months or longer. At TerminusDB we believe product roadmaps are important as It provides a digestible and comprehensible way to communicate key product priorities with internal and external stakeholders. We have divided this into different episodes.  
+As a truly open-source platform, we would like our Terminators to know what our product roadmap is and where we currently stand. We use multiple product development frameworks and tools such as Milanote to help ideate and visualise our product decisions strategically. The product roadmap is just as it sounds, it is a paper/video which helps to carry out our company’s vision for a period of time, normally 12 months or longer. At TerminusDB we believe product roadmaps are important as it provides a digestible and comprehensible way to communicate key product priorities with internal and external stakeholders. We have divided this into different episodes.  
 
 Video - <https://www.youtube.com/watch?v=xseqLEMF7YQ>
 
