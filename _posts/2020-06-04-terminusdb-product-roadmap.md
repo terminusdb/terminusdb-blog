@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TerminusDB Product Roadmap "
+title: "TerminusDB - Product Roadmap "
 date: 2020-06-04T11:51:05.016Z
 description: "Episode 1: Nathan Gets A Spreadsheet In The End"
 image: /blog/assets/uploads/roadmap-2.jpg
