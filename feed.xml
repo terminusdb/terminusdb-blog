@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jun 2020 14:12:03 +0000</pubDate>
-    <lastBuildDate>Thu, 04 Jun 2020 14:12:03 +0000</lastBuildDate>
+    <pubDate>Fri, 05 Jun 2020 09:15:22 +0000</pubDate>
+    <lastBuildDate>Fri, 05 Jun 2020 09:15:22 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -306,7 +306,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2508/1*jjM9YCuvUtaymfkPA787oQ.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;By the mid 2000s, it was clear that the vision of the semantic web, as set out by Tim Berners Lee in 2001, despite a huge amount of initial hype and investment, remained largely unrealized. The basic idea — that a network of machine readable, semantically rich documents would form a ‘semantic web’ much like the world wide web of documents, was proving much more difficult than had been anticipated. This prompted the emergence of the concept of ‘linked data’, again promoted by Tim Berners Lee, and laid out in two documents published in 2006 and 2009.&lt;/p&gt; &lt;p&gt;Linked data was, in essence, an attempt to reduce the idea of the semantic web down to a small...
+        &lt;p&gt;This is the fourth and final installment in this series, you can find the first 3 episodes here: &lt;a href=&quot;/blog/2019/09/20/graph-fundamentals-part-1-rdf/&quot;&gt;Part 1: RDF&lt;/a&gt;, &lt;a href=&quot;/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/&quot;&gt;Part 2: Property Graphs&lt;/a&gt;, &lt;a href=&quot;/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/&quot;&gt;Part 3: Graph Schemas&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;By the mid 2000s, it was clear that the vision of the semantic web, as set out by Tim Berners Lee in 2001, despite a huge amount of initial hype and investment, remained largely unrealized. The basic idea — that a network of machine readable, semantically rich documents would form a ‘semantic web’ much like the world wide web of documents, was proving much more difficult than had been anticipated. This prompted the emergence of the concept of ‘linked data’, again promoted by Tim Berners Lee, and laid out in two documents published in 2006 and 2009.&lt;/p&gt; &lt;p&gt;Linked data was, in essence, an attempt to reduce the idea of the semantic web down to a small...
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
