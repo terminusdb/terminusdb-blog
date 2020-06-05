@@ -12,7 +12,7 @@ tags:
   - Rdf
 
 ---
-This is the fourth and final installment in this series, you can find the first 3 episodes here: [Part 1: RDF](/2019/09/20/graph-fundamentals-part-1-rdf/), [Part 2: Property Graphs](/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Part 3: Graph Schemas](/2020/02/25/graph-fundamentals-part-4-linked-data/)
+This is the fourth and final installment in this series, you can find the first 3 episodes here: [Part 1: RDF](/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Part 2: Property Graphs](/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Part 3: Graph Schemas](/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/)
 
 -----------------------
 
