@@ -17,7 +17,7 @@ I don’t care what anyone says, global pandemics are not a good time to get a d
 
 I take some comfort from the fact that both Google and Salesforce started just before the dot com bust and got on pretty well in the long run – but, as I say, I’m not sure that we’ve seen anything as disruptive as this pandemic/civil strife mega-crisis and it sometimes feels like it’s still getting started.  
 
-This blog is to explain to those that care what happened to DataChemist (a very limited set of people) and why you should be interested about TerminusDB. 
+This blog is to explain to those that care what happened to DataChemist (a very limited set of people) and why you should be interested in TerminusDB. 
 
 The great thing about working in a small enterprise is agility. We were work from home in early March and were able to quickly transition to the new world. 
 
