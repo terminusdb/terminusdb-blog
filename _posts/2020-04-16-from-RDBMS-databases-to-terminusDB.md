@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Form RDBMS databases to TerminusDB"
+title: From RDBMS databases to TerminusDB
 date: 2020-04-16T10:44:15.289Z
-description:
+description: "From "
 image: /blog/assets/images/autumn-3937289_1920.jpg
 author:
   - value: francesca
@@ -13,7 +13,6 @@ tags:
   - Database
   - Data
   - Development
-
 ---
 
 Most of your applications need to store data somewhere and probably relational databases like MySQL, PostgreSQL etc.. are  the most commonly used for this purpose.
