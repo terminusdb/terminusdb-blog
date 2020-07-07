@@ -6,9 +6,34 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Jun 2020 09:37:55 +0000</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 09:37:55 +0000</lastBuildDate>
+    <pubDate>Tue, 07 Jul 2020 15:42:11 +0000</pubDate>
+    <lastBuildDate>Tue, 07 Jul 2020 15:42:11 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Be like the mammals when the asteroid struck</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/dinos.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;I don’t care what anyone says, global pandemics are not a good time to get a database startup off the ground. There’s talk that some of the biggest internet companies started during a recession (thanks MongoDB), but goddammit a pandemic is different. Trade shows are a leveler – they want exciting startups hanging around, so they make pricing attractive. Meet-ups are a leveler. That’s why startups use those channels so effectively. Getting from 0 to 1 means finding people that really believe in your project and that’s hard in the vast expanse of the internet.&lt;/p&gt; &lt;p&gt;I take some comfort from the fact that both Google and Salesforce started just before the dot com bust and got on pretty well in the long run – but, as I say, I’m not sure that we’ve seen anything as disruptive as this pandemic/civil strife mega-crisis and it sometimes feels like it’s still getting...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 07 Jul 2020 15:29:40 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/</guid>
+        
+        <category>database</category>
+        
+        <category>startups</category>
+        
+        <category>DataChemist</category>
+        
+        <category>dinosaurs</category>
+        
+        
+      </item>
     
       <item>
         <title>Product Roadmap Episode 1: Nathan Gets A Spreadsheet In The End</title>
