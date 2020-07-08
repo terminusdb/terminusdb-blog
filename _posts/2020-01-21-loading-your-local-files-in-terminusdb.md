@@ -20,10 +20,10 @@ We have got lot’s of feedback since we have posted our tutorial — [My First 
 If your container is running stop it with:
 
 ```
-./terminus-container stop
+./terminusdb-container stop
 ```
 
-> Extra tip: you may want to run `./terminus-container rm-config` now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.
+> Extra tip: you may want to run `./terminusdb-container rm-config` now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.
 
 set the `TERMINUSDB_LOCAL` environment variable to the path to the parent directory of your csv:
 
@@ -42,7 +42,7 @@ Make sure the ‘C’ is clicked and ‘Apply’
 
 then start your container again:
 ```
-./terminus-container run
+./terminusdb-container run
 ```
 now, `TERMINUSDB_LOCAL` will be mounted as `/app/local_files`
 so, in your WOQL query, you can use:
