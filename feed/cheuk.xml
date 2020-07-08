@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Jul 2020 20:15:41 +0000</pubDate>
-    <lastBuildDate>Tue, 07 Jul 2020 20:15:41 +0000</lastBuildDate>
+    <pubDate>Wed, 08 Jul 2020 08:50:11 +0000</pubDate>
+    <lastBuildDate>Wed, 08 Jul 2020 08:50:11 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
     
@@ -528,14 +528,14 @@
   &lt;p&gt;Extra tip: you may want to run &lt;code class=&quot;highlighter-rouge&quot;&gt;./terminus-container rm-config&lt;/code&gt; now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUS_LOCAL&lt;/code&gt; environment variable to the path to the parent directory of your csv:&lt;/p&gt;
+&lt;p&gt;set the &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUSDB_LOCAL&lt;/code&gt; environment variable to the path to the parent directory of your csv:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=/home/me/somewhere
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUSDB_LOCAL=/home/me/somewhere
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;for Windows users:&lt;/p&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUS_LOCAL=c:/Users/you/somewhere
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export TERMINUSDB_LOCAL=c:/Users/you/somewhere
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
   &lt;p&gt;Go to Docker Desktop Settings and make sure that the Drive (i.e. ‘C’) your file on is enabled in Shared Drives&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -546,7 +546,7 @@ Make sure the ‘C’ is clicked and ‘Apply’&lt;/p&gt;
 &lt;p&gt;then start your container again:&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./terminus-container run
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;now, &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUS_LOCAL&lt;/code&gt; will be mounted as &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/local_files&lt;/code&gt;
+&lt;p&gt;now, &lt;code class=&quot;highlighter-rouge&quot;&gt;TERMINUSDB_LOCAL&lt;/code&gt; will be mounted as &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/local_files&lt;/code&gt;
 so, in your WOQL query, you can use:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;.file(/app/local_files/myfilename.csv)&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;.remote()&lt;/code&gt;&lt;/p&gt;
 

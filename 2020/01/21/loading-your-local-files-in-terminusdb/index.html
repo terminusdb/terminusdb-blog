@@ -102,14 +102,14 @@
   <p>Extra tip: you may want to run <code class="highlighter-rouge">./terminus-container rm-config</code> now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.</p>
 </blockquote>
 
-<p>set the <code class="highlighter-rouge">TERMINUS_LOCAL</code> environment variable to the path to the parent directory of your csv:</p>
+<p>set the <code class="highlighter-rouge">TERMINUSDB_LOCAL</code> environment variable to the path to the parent directory of your csv:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export TERMINUS_LOCAL=/home/me/somewhere
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export TERMINUSDB_LOCAL=/home/me/somewhere
 </code></pre></div></div>
 
 <blockquote>
   <p>for Windows users:</p>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export TERMINUS_LOCAL=c:/Users/you/somewhere
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export TERMINUSDB_LOCAL=c:/Users/you/somewhere
 </code></pre></div>  </div>
   <p>Go to Docker Desktop Settings and make sure that the Drive (i.e. ‘C’) your file on is enabled in Shared Drives</p>
 </blockquote>
@@ -120,7 +120,7 @@ Make sure the ‘C’ is clicked and ‘Apply’</p>
 <p>then start your container again:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./terminus-container run
 </code></pre></div></div>
-<p>now, <code class="highlighter-rouge">TERMINUS_LOCAL</code> will be mounted as <code class="highlighter-rouge">/app/local_files</code>
+<p>now, <code class="highlighter-rouge">TERMINUSDB_LOCAL</code> will be mounted as <code class="highlighter-rouge">/app/local_files</code>
 so, in your WOQL query, you can use:
 <code class="highlighter-rouge">.file(/app/local_files/myfilename.csv)</code> instead of <code class="highlighter-rouge">.remote()</code></p>
 
