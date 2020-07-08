@@ -25,15 +25,15 @@ If your container is running stop it with:
 
 > Extra tip: you may want to run `./terminus-container rm-config` now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.
 
-set the `TERMINUS_LOCAL` environment variable to the path to the parent directory of your csv:
+set the `TERMINUSDB_LOCAL` environment variable to the path to the parent directory of your csv:
 
 ```
-export TERMINUS_LOCAL=/home/me/somewhere
+export TERMINUSDB_LOCAL=/home/me/somewhere
 ```
 
 >for Windows users:
 ```
-export TERMINUS_LOCAL=c:/Users/you/somewhere
+export TERMINUSDB_LOCAL=c:/Users/you/somewhere
 ```
 >Go to Docker Desktop Settings and make sure that the Drive (i.e. ‘C’) your file on is enabled in Shared Drives
 
@@ -44,7 +44,7 @@ then start your container again:
 ```
 ./terminus-container run
 ```
-now, `TERMINUS_LOCAL` will be mounted as `/app/local_files`
+now, `TERMINUSDB_LOCAL` will be mounted as `/app/local_files`
 so, in your WOQL query, you can use:
 `.file(/app/local_files/myfilename.csv)` instead of `.remote()`
 
