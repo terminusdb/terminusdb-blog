@@ -95,11 +95,11 @@
 
 <p>If your container is running stop it with:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./terminus-container stop
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./terminusdb-container stop
 </code></pre></div></div>
 
 <blockquote>
-  <p>Extra tip: you may want to run <code class="highlighter-rouge">./terminus-container rm-config</code> now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.</p>
+  <p>Extra tip: you may want to run <code class="highlighter-rouge">./terminusdb-container rm-config</code> now before you mount the volume. This remove old settings to advoid version conflits that may comes in later if there’s a newer version of Docker image avaliable.</p>
 </blockquote>
 
 <p>set the <code class="highlighter-rouge">TERMINUSDB_LOCAL</code> environment variable to the path to the parent directory of your csv:</p>
@@ -118,7 +118,7 @@
 Make sure the ‘C’ is clicked and ‘Apply’</p>
 
 <p>then start your container again:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./terminus-container run
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./terminusdb-container run
 </code></pre></div></div>
 <p>now, <code class="highlighter-rouge">TERMINUSDB_LOCAL</code> will be mounted as <code class="highlighter-rouge">/app/local_files</code>
 so, in your WOQL query, you can use:
