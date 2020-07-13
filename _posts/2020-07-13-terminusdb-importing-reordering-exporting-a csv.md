@@ -52,7 +52,7 @@ Windows users can use this:
 
 The mkdir csvs command made sure that Sarah had a local directory - Sarah will save the output of this tutorial in that folder. That is also the purpose of the TERMINUSDB_LOCAL environment variable, it sets the directory for TerminusDB to mount to the local csvs directory.
 
-After installing TerminusDB using Quickstart, Sarah opens the Console. The default address is http://127.0.0.1:6363/console.
+After installing TerminusDB using Quickstart, Sarah opens the Console. The default address is <http://127.0.0.1:6363/console>.
 
 The TerminusDB console appears in Sarah's browser:
 
