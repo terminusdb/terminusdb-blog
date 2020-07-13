@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TerminusDB: Importing, Reordering &amp; Exporting a CSV | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Sarah unwarbels the widgets and delivers for Nathan">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/terminators-e1.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TerminusDB: Importing, Reordering &amp; Exporting a CSV | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="Sarah unwarbels the widgets and delivers for Nathan">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/terminators-e1.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TerminusDB: Importing, Reordering &amp; Exporting a CSV | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="Sarah unwarbels the widgets and delivers for Nathan">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/terminators-e1.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+
+
+
+
+</head>
+<body id="terminusdb-importing-reordering-exporting-a-csv" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">TerminusDB: Importing, Reordering & Exporting a CSV</h2>
+
+        <time class="post__date" datetime="2020-07-13T18:17:34+00:00" itemprop="datePublished">13 Jul 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/terminators-e1.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>Remember <a href="https://youtu.be/xseqLEMF7YQ">Sarah</a>? She’s a junior developer at Industrial Gizmos and Widgets. Her boss Nathan needs to figure out how to unwarble some widgets. It’s not an easy task and her senior team members don’t seem interested.</p>
+
+<p>Industrial Gizmos and Widgets have some seriously antiquated IT systems and that makes everything harder.</p>
+
+<p>The main gizmo and widget ERP is built on a DB2 that was first installed in 1986 when DB2 was still young. The database schema is out of control and the source code for the application has been lost. The only person that knows how to fix the DB2 was poached by IBM and they charge Industrial Gizmos and Widgets $2,500 per hour of her time.</p>
+
+<p><img src="/blog/assets/uploads/0-y0pbrnz9kyjcbz64.png" alt="Database mess" /></p>
+
+<p>The system is a mess.</p>
+
+<p>Sarah thinks that what they really need is some sort of abstraction layer to allow them to better understand the important things in the ERP data — leave the DB2 chugging away and extract the key information into a knowledge graph. Much easier to manipulate and query once it’s there.</p>
+
+<p>If they had such a tool, solving the warbled widgets problem would be relatively easy.</p>
+
+<p>Sarah saw Cheuk’s <a href="https://www.twitch.tv/videos/578697754">‘World of WOQLcraft’ stream on Twitch</a> and thought she could use some of the methods to solve the warbled widgets problem.</p>
+
+<p>After watching Cheuk’s videos, Sarah ran <a href="https://github.com/terminusdb/terminusdb-quickstart">TerminusDB Quickstart</a>.</p>
+
+<p>She opened up a terminal (or Git Bash for a Windows user — Sarah runs Ubuntu) and ran:</p>
+
+<pre><code class="language-git">git clone https://github.com/terminusdb/terminusdb-quickstart.git
+cd terminusdb-quickstart
+mkdir csvs
+</code></pre>
+
+<p>(For the moment you have to run the <a href="https://martinfowler.com/bliki/CanaryRelease.html">Canary branch</a> of TerminusDB so <code class="highlighter-rouge">git checkout canary</code> )</p>
+
+<p>Sarah ran the following afterwards:</p>
+
+<p><code class="highlighter-rouge">TERMINUSDB_LOCAL="$(pwd)/csvs" ./terminusdb-container run</code></p>
+
+<p>Windows users can use this:</p>
+
+<p><code class="highlighter-rouge">TERMINUSDB_LOCAL=$(cmd //c cd)\\csvs ./terminusdb-container run</code></p>
+
+<p>The mkdir csvs command made sure that Sarah had a local directory - Sarah will save the output of this tutorial in that folder. That is also the purpose of the TERMINUSDB_LOCAL environment variable, it sets the directory for TerminusDB to mount to the local csvs directory.</p>
+
+<p>After installing TerminusDB using Quickstart, Sarah opens the Console. The default address is http://127.0.0.1:6363/console.</p>
+
+<p>The TerminusDB console appears in Sarah’s browser:</p>
+
+<p><img src="/blog/assets/uploads/1-xwodx4vjqd2rfhjy4s6vyw.png" alt="TerminusDB Console" /></p>
+
+<p>Sarah creates a new database so she can import and manipulate her warbled widgets CSV. She calls it <code class="highlighter-rouge">ProjectSpreadsheet</code> .</p>
+
+<p><img src="/blog/assets/uploads/capture.jpg" alt="Database home page" /></p>
+
+<p>Next Sarah wants to eyeball the data to see what she is dealing with. So she <a href="http://terminusdb.github.io/terminusdb-web-assets/tutorials/episode_1/items.csv">grabs the relevant csv extract</a>. It is a mess:</p>
+
+<p><img src="/blog/assets/uploads/1-afcu7rbzqti3mf6b_4vbyq.png" alt="" /></p>
+
+<p>Sarah quickly writes a short WOQL query to load the CSV into TerminusDB, filter the data to only contain the warbled widgets, and export a new CSV.</p>
+
+<p>Sarah knows that the warbled widgets contain the date “1970–01–01T00:00:00” as the DB2 was set up in 1986 and no widgets could possibly have been created at the company at that time!</p>
+
+<p>Here is the query she uses:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WOQL.put(
+    WOQL.as('Sku', 'v:Sku')
+        .as('date_added', 'v:Date'),
+    WOQL.and(
+    WOQL.get(
+        WOQL.as('sku', 'v:Sku')
+            .as('date_added', 'v:Date')
+            .as('category', 'v:Category')
+    ).remote('http://terminusdb.github.io/terminusdb-web-assets/tutorials/episode_1/items.csv'),
+        WOQL.eq('v:Date', '1970-01-01T00:00:00'),
+        WOQL.eq('v:Category', 'widgets')
+    ), WOQL.file('/app/local_files/warbled_widgets.csv'))
+</code></pre></div></div>
+
+<p>She puts it into the query pane on her TerminusDB console and uses the commit message <code class="highlighter-rouge">Importing, Ordering and Exporting CSV</code> so she knows what happens if she has to come back to check. She then hits <code class="highlighter-rouge">run query</code> .</p>
+
+<p><img src="/blog/assets/uploads/1-x78t8j595bj3vwtenc5ccg.png" alt="Query Pane" /></p>
+
+<p>The query returned in just under 2 seconds and Sarah found the exported CSV in the csvs directory in the terminusdb-quickstart folder. All tidied up as well:<code class="highlighter-rouge">warbled_widgets.csv</code> .</p>
+
+<p><img src="/blog/assets/uploads/1-_mlemhvuwa4s9zz5spzqga.png" alt="" /></p>
+
+<p>When she opens the CSV, Sarah found that it had been filtered just the way she wanted it:</p>
+
+<p><img src="/blog/assets/uploads/1-siz8rg_72p-ud0fboiqzmq.png" alt="" /></p>
+
+<p>Sarah took the csv and emailed it to her boss, Nathan. He rang her the next morning to thank her for her excellent work and, while he still called her Sandra, she was happy to have solved a meaningful problem.</p>
+
+<p>Sarah thought — if I could do that so easily with TerminusDB, maybe I should take a deeper look.</p>
+
+<p>See you soon for Episode 2!</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=TerminusDB: Importing, Reordering & Exporting a CSV+http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=TerminusDB: Importing, Reordering & Exporting a CSV&summary=Sarah unwarbels the widgets and delivers for Nathan&url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Sarah unwarbels the widgets and delivers for Nathan&media=http://blog.terminusdb.com/blog/blog/assets/uploads/terminators-e1.jpg&url=http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/luke-feeney" class="p-name u-url">Luke Feeney</a></span>
+            <p class="post__bio p-note">Building the database of the future.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/dinos.jpg" alt="Be like the mammals when the asteroid struck"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Be like the mammals when the asteroid struck</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminusdb-black-mascot-1-.png" alt="TerminusDB: A Technical History"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: A Technical History</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+      
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminusdb-black-mascot-1-.png" alt="TerminusDB: A Technical History"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: A Technical History</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

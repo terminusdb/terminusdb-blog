@@ -6,9 +6,36 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Jul 2020 13:00:56 +0000</pubDate>
-    <lastBuildDate>Wed, 08 Jul 2020 13:00:56 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Jul 2020 18:32:33 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Jul 2020 18:32:33 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB: Importing, Reordering &amp; Exporting a CSV</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/terminators-e1.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;Remember &lt;a href=&quot;https://youtu.be/xseqLEMF7YQ&quot;&gt;Sarah&lt;/a&gt;? She’s a junior developer at Industrial Gizmos and Widgets. Her boss Nathan needs to figure out how to unwarble some widgets. It’s not an easy task and her senior team members don’t seem interested.&lt;/p&gt; &lt;p&gt;Industrial Gizmos and Widgets have some seriously antiquated IT systems and that makes everything harder.&lt;/p&gt; &lt;p&gt;The main gizmo and widget ERP is built on a DB2 that was first installed in 1986 when DB2 was still young. The database schema is out of control and the source code for the application has been lost. The only person that knows how to fix the DB2 was poached by IBM and they charge Industrial Gizmos and Widgets $2,500 per hour of her time.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/0-y0pbrnz9kyjcbz64.png&quot; alt=&quot;Database mess&quot; /&gt;&lt;/p&gt; &lt;p&gt;The system is a mess.&lt;/p&gt; &lt;p&gt;Sarah thinks that what they really need is some sort of abstraction layer to allow them to better understand the important things...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 13 Jul 2020 18:17:34 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/</guid>
+        
+        <category>database</category>
+        
+        <category>data</category>
+        
+        <category>graph</category>
+        
+        <category>sarah</category>
+        
+        <category>nathan</category>
+        
+        
+      </item>
     
       <item>
         <title>Be like the mammals when the asteroid struck</title>
