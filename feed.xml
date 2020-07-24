@@ -6,9 +6,28 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Jul 2020 16:39:10 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Jul 2020 16:39:10 +0000</lastBuildDate>
+    <pubDate>Fri, 24 Jul 2020 16:28:52 +0000</pubDate>
+    <lastBuildDate>Fri, 24 Jul 2020 16:28:52 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>The Power of Web Object Query Language</title>
+        <author>[{&quot;value&quot;=&gt;&quot;kevin&quot;, &quot;label&quot;=&gt;&quot;Kevin Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/the-power-of-woql.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.&lt;/p&gt; &lt;p&gt;To unleash the power of WOQL, you just need to understand two very simple things.&lt;/p&gt; &lt;h3 id=&quot;rule-1-triples-all-the-way-down&quot;&gt;&lt;strong&gt;&lt;em&gt;Rule 1: Triples all the way down&lt;/em&gt;&lt;/strong&gt;&lt;/h3&gt; &lt;p&gt;In Terminus DB every single fragment of information is universally stored and accessible as triples. Triples are the universal and fundamental atom of information in Terminus DB—objects, documents and everything else is stored as collections of triples, and it is always possible to break any object down in a reliable and deterministic way into a precise set of triples. TerminusDB also adheres to the RDF standard, which means all triples have a regular structure, interpretation and strong norms. From a query writer point of view, this regularity is very...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 24 Jul 2020 15:40:51 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/</guid>
+        
+        <category>Database</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB vs MongoDB</title>

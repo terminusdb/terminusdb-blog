@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The Power of Web Object Query Language | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/the-power-of-woql.png">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Power of Web Object Query Language | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/the-power-of-woql.png">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Power of Web Object Query Language | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/the-power-of-woql.png">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/07/24/the-power-of-web-object-query-language/">
+
+
+
+
+</head>
+<body id="the-power-of-web-object-query-language" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">The Power of Web Object Query Language</h2>
+
+        <time class="post__date" datetime="2020-07-24T15:40:51+00:00" itemprop="datePublished">24 Jul 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/the-power-of-woql.png'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.</p>
+
+<p>To unleash the power of WOQL, you just need to understand two very simple things.</p>
+
+<h3 id="rule-1-triples-all-the-way-down"><strong><em>Rule 1: Triples all the way down</em></strong></h3>
+
+<p>In Terminus DB every single fragment of information is universally stored and accessible as triples. Triples are the universal and fundamental atom of information in Terminus DB—objects, documents and everything else is stored as collections of triples, and it is always possible to break any object down in a reliable and deterministic way into a precise set of triples. TerminusDB also adheres to the RDF standard, which means all triples have a regular structure, interpretation and strong norms. From a query writer point of view, this regularity is very helpful; you don’t have to care about the low-level structure of the data (what table it is stored in, how many columns it contains, etc.), you just have to care about the patterns of meaning you are interested in.</p>
+
+<p>A triple is just a data structure with three slots to which we can assign values. Each row in the table below shows a different view of what each of the three slots means.</p>
+
+<h5 id="three-is-the-magic-number-understanding-triples">Three is the Magic Number: Understanding Triples</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td>*| Form</td>
+      <td>Triple Slot 1</td>
+      <td>Triple Slot 2</td>
+      <td>Triple Slot 3</td>
+      <td> </td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td> </td>
+      <td>Terminus DB Terminology</td>
+      <td>Object ID</td>
+      <td>Property</td>
+      <td>Value</td>
+      <td> </td>
+      <td>Triple Example 1</td>
+      <td>joe</td>
+      <td>date_born</td>
+      <td>1/2/34</td>
+      <td> </td>
+      <td>Example 1 Interpretation</td>
+      <td>The record with ID joe</td>
+      <td>has a property called date_born</td>
+      <td>with Value 1/2/34</td>
+      <td> </td>
+      <td>Triple Example 2</td>
+      <td>joe</td>
+      <td>parent</td>
+      <td>mary</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Example 2 Interpretation</td>
+      <td>The record with ID joe</td>
+      <td>has a property named parent</td>
+      <td>with Value mary</td>
+      <td>*</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Every triple with the same ID is interpreted as being about the same thing. So if we add triples with different properties to our database which have the same IDs, they will be interpreted as representing different properties of the same thing. That’s how we build up information about things—just add properties to the appropriate record ID. The magic of triples is that the Value of a triple can be another record ID (as in the joe mother Mary example), and IDs can appear in either the first or the third slot of the triple.</p>
+
+<p>Writing the above examples into TerminusDB with WOQL</p>
+
+<p><em>WOQL.add_triple(‘joe’, ‘date_born’, ‘1/2/34’)</em></p>
+
+<p><em>.add_triple(‘joe’, ‘parent’, ‘mary’)</em></p>
+
+<h3 id="rule-2-unify-all-the-things"><strong><em>Rule 2: Unify All The Things</em></strong></h3>
+
+<p>The second fundamental concept behind WOQL is unification. This is an old computer science concept that has been polished and refined for 60 years and is defined in obscure mathematical jargon, but it is remarkably simple and intuitive to understand by example.</p>
+
+<h5 id="woql-variables">WOQL Variables</h5>
+
+<p>In WOQL we have the concept of variables, which are normally represented by a string that starts with v: —we use them to store the results of queries. For example, we might define variables like v:First Name , v:Family Name, v:Date of Birth for a query to find somebody’s basic identifying information.</p>
+
+<p>If we use a variable in a triple query, TerminusDB will show us every possible value that exists in the database that could possibly fill that variable in that position in the query.</p>
+
+<p>SINGLE VARIABLE TRIPLE PATTERN EXAMPLES</p>
+
+<p>Adding a variable in the first slot of the triple will find the IDs of all the Objects that have a specific property set to the specified value: <em>WOQL.triple(‘v:Person ID’, ‘date_born’, ‘1/2/34’)</em></p>
+
+<p>Adding a variable in the second slot will find the names of all the properties that the specified object has which contains that value: <em>WOQL.triple(‘joe’, ‘v:Property List’, 10)  // returns list of all the properties of Joe that have a value equal to 10</em></p>
+
+<p>Putting a variable in the third slot will find the value(s) of the specified property for the specified object ID: <em>WOQL.triple(‘joe’, ‘parent’, “v:Joes Parents”)</em></p>
+
+<p><em>TWO VARIABLE TRIPLE PATTERN EXAMPLES</em></p>
+
+<p>Putting a variable in the first two slots of the triple, will find all object IDs and properties in the database that have the specified value</p>
+
+<p><em>WOQL.triple(‘v:Object ID’, ‘v:Properties’, 10) //list of all objects and property names that have the value 10.</em> Putting variables in the first and third slots will find the names of all the properties that the specified object has which have that value</p>
+
+<p><em>WOQL.triple(‘v:Object ID’, ‘date_born’, ‘v:Date of Births’)  // returns list of all object ids and the values of their date_born properties</em>\
+Entering variables in the second and third slot finds all the properties and their values for the object with the specified ID: <em>WOQL.triple(‘joe’, ‘v:Joes Properties’, “v:Property Values”)</em></p>
+
+<p>The third and final pattern is easier still; adding variables in all three slots will match every single triple in the database. In fact, because this is so useful, WOQL provides a special built-in shortcut for generating this pattern: WOQL.star() //generates a triple query with variables in all 3 spots - returns all triples in the database</p>
+
+<h5 id="logical-operators">Logical Operators</h5>
+
+<p>Single triple pattern matching, as shown above is certainly neat, but there’s a limited number of things that can be expressed as a single pattern of triples, even with all our variables turned on. However, WOQL also provides logical operators, AND, OR which allows you to combine as many basic patterns as you need into incredibly expressive queries in very simple forms.</p>
+
+<p>The most useful operator is logical AND—<em>WOQL.and()</em>—which behaves as we would logically expect; if all of the patterns defined within a WOQL.and() can be filled by the database, all of the results will be returned, otherwise, no results will be returned.</p>
+
+<p>The other basic logical operators: OR—<em>WOQL.or()</em>—and NOT—<em>WOQL.not()</em>—are also very useful and are interpreted also as expected. In the first case, the query will return the first result that it matches in a list of possibilities, in the second case, the query will only return true if the pattern specified is not found in the database.</p>
+
+<p>It is amazing how many things you can readily express simply by combining these patterns in different ways. Extreme simplicity and absolute regularity in the little things allows extreme elegance of description in the big things.</p>
+
+<h3 id="thats-not-all-folks"><strong><em>That’s not all folks</em></strong></h3>
+
+<p>Another advantage of a simple and regular underlying architecture is that it becomes much easier to build extra functionality on top. In addition to the basic ideas presented here, WOQL also has a broad set of built-in operators and libraries which cover arithmetic, mathematical, date and time, taxonomy specific patterns, aggregation, ordering, grouping, geographical and a wide range of other functions out of the box. This allows you to move a lot of your logic into the Database Layer and out of your application code. The database should be the only thing that cares about the structure of the storage layer, the rest of us care about getting the data we want!</p>
+
+<p>The rest of this chapter contains lots of information about all the functions and operators that WOQL provides and how you can access them, but before you leave, we have a question to ask. I want to ask my database for the full records of all living people whose direct ancestors were born in Italy before 1850 (assuming I have the records of course) along with their lineage.</p>
+
+<p><em>In WOQL my query would look like this: WOQL.(“v:Living Person Record ID”, “status”, “alive”)    	.path(“v:Living Person Record ID”, “parent+”, “v:Italian Ancestor”, “v:Ancestry Line”)    	.triple(“v:Italian Ancestor”, “date_born”, “v:Date of Birth”)
+   	.less(“v:Date of Birth”, 1850)
+   	.triple(“v:Italian Ancestor”, “country_born”, “Italy”)
+   	.get_object(“v:Living Person Record ID”, “v:Full Record”)</em></p>
+
+<p>How would you ask your database this question?</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=The Power of Web Object Query Language+http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=The Power of Web Object Query Language&summary=WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.&url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=WOQL is a powerful and sophisticated query language which allows you to concisely express complex patterns over arbitrary data structures. What makes it so expressive and easy to use is the radical simplicity of the core underlying concepts.&media=http://blog.terminusdb.com/blog/blog/assets/uploads/the-power-of-woql.png&url=http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/kevinchekovfeeney" class="p-name u-url">Kevin Feeney</a></span>
+            <p class="post__bio p-note">Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/07/24/the-power-of-web-object-query-language/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/14/terminusDB-vs-mongoDB/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/directory-106815_1920.jpg" alt="TerminusDB vs MongoDB"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB vs MongoDB</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/06/04/terminusdb-product-roadmap/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/roadmap-2.jpg" alt="Product Roadmap Episode 1: Nathan Gets A Spreadsheet In The End"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Product Roadmap Episode 1: Nathan Gets A Spreadsheet In The End</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/04/17/webinar-terminusdb-internals/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/terminusdb-webinar-termunisdb-internals.png" alt="Write up of our Webinar - TerminusDB Internals"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Write up of our Webinar - TerminusDB Internals</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
