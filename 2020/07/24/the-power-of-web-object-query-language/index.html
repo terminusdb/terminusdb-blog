@@ -115,52 +115,45 @@
       <td>Object ID</td>
       <td>Property</td>
       <td>Value</td>
-      <td> </td>
-      <td>Triple Example 1</td>
+      <td>*</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>*|Triple Example 1</td>
       <td>joe</td>
       <td>date_born</td>
       <td>1/2/34</td>
-      <td> </td>
-      <td>Example 1 Interpretation</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>|Example 1 Interpretation</td>
       <td>The record with ID joe</td>
       <td>has a property called date_born</td>
       <td>with Value 1/2/34</td>
-      <td> </td>
-      <td>Triple Example 2</td>
+      <td>*</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>*|Triple Example 2</td>
       <td>joe</td>
       <td>parent</td>
       <td>mary</td>
+      <td>*</td>
     </tr>
     <tr>
-      <td> </td>
-      <td>Example 2 Interpretation</td>
+      <td>|Example 2 Interpretation</td>
       <td>The record with ID joe</td>
       <td>has a property named parent</td>
       <td>with Value mary</td>
       <td>*</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -169,9 +162,8 @@
 
 <p>Writing the above examples into TerminusDB with WOQL</p>
 
-<p><em>WOQL.add_triple(‘joe’, ‘date_born’, ‘1/2/34’)</em></p>
-
-<p><em>.add_triple(‘joe’, ‘parent’, ‘mary’)</em></p>
+<p><em>WOQL.add_triple(‘joe’, ‘date_born’, ‘1/2/34’)</em> 
+.add_triple(‘joe’, ‘parent’, ‘mary’)*</p>
 
 <h3 id="rule-2-unify-all-the-things"><strong><em>Rule 2: Unify All The Things</em></strong></h3>
 
@@ -218,10 +210,12 @@ Entering variables in the second and third slot finds all the properties and the
 
 <p>The rest of this chapter contains lots of information about all the functions and operators that WOQL provides and how you can access them, but before you leave, we have a question to ask. I want to ask my database for the full records of all living people whose direct ancestors were born in Italy before 1850 (assuming I have the records of course) along with their lineage.</p>
 
-<p><em>In WOQL my query would look like this: WOQL.(“v:Living Person Record ID”, “status”, “alive”)    	.path(“v:Living Person Record ID”, “parent+”, “v:Italian Ancestor”, “v:Ancestry Line”)    	.triple(“v:Italian Ancestor”, “date_born”, “v:Date of Birth”)
-   	.less(“v:Date of Birth”, 1850)
-   	.triple(“v:Italian Ancestor”, “country_born”, “Italy”)
-   	.get_object(“v:Living Person Record ID”, “v:Full Record”)</em></p>
+<p><em>In WOQL my query would look like this: WOQL.(“v:Living Person Record ID”, “status”, “alive”)    	
+.path(“v:Living Person Record ID”, “parent+”, “v:Italian Ancestor”, “v:Ancestry Line”)    	
+.triple(“v:Italian Ancestor”, “date_born”, “v:Date of Birth”)</em><br />
+.less(“v:Date of Birth”, 1850)
+.triple(“v:Italian Ancestor”, “country_born”, “Italy”)
+.get_object(“v:Living Person Record ID”, “v:Full Record”)*</p>
 
 <p>How would you ask your database this question?</p>
 
