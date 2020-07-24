@@ -27,11 +27,9 @@ A triple is just a data structure with three slots to which we can assign values
 
 *\| Form | Triple Slot 1 | Triple Slot 2 | Triple Slot 3 | |—|—|—|—| |Terminus DB Terminology |Object ID | Property | Value |*
 
-*\|Triple Example 1 | joe | date_born | 1/2/34 |*
-\|Example 1 Interpretation | The record with ID joe | has a property called date_born | with Value 1/2/34 |* 
+*\|Triple Example 1 | joe | date_born | 1/2/34 |* |Example 1 Interpretation | The record with ID joe | has a property called date_born | with Value 1/2/34 |* 
 
-*\|Triple Example 2 | joe | parent | mary |* 
-\|Example 2 Interpretation | The record with ID joe | has a property named parent | with Value mary |*
+*\|Triple Example 2 | joe | parent | mary |*  |Example 2 Interpretation | The record with ID joe | has a property named parent | with Value mary |*
 
 Every triple with the same ID is interpreted as being about the same thing. So if we add triples with different properties to our database which have the same IDs, they will be interpreted as representing different properties of the same thing. That’s how we build up information about things—just add properties to the appropriate record ID. The magic of triples is that the Value of a triple can be another record ID (as in the joe mother Mary example), and IDs can appear in either the first or the third slot of the triple.
 
@@ -68,7 +66,7 @@ Putting a variable in the first two slots of the triple, will find all object ID
 *WOQL.triple('v:Object ID', 'date_born', 'v:Date of Births')  // returns list of all object ids and the values of their date_born properties*\
 Entering variables in the second and third slot finds all the properties and their values for the object with the specified ID: *WOQL.triple('joe', 'v:Joes Properties', "v:Property Values")*  
 
-The third and final pattern is easier still; adding variables in all three slots will match every single triple in the database. In fact, because this is so useful, WOQL provides a special built-in shortcut for generating this pattern: WOQL.star() //generates a triple query with variables in all 3 spots - returns all triples in the database
+The third and final pattern is easier still; adding variables in all three slots will match every single triple in the database. In fact, because this is so useful, WOQL provides a special built-in shortcut for generating this pattern: *WOQL.star() //generates a triple query with variables in all 3 spots - returns all triples in the database*
 
 ##### Logical Operators
 
@@ -86,11 +84,9 @@ Another advantage of a simple and regular underlying architecture is that it bec
 
 The rest of this chapter contains lots of information about all the functions and operators that WOQL provides and how you can access them, but before you leave, we have a question to ask. I want to ask my database for the full records of all living people whose direct ancestors were born in Italy before 1850 (assuming I have the records of course) along with their lineage.
 
-*In WOQL my query would look like this: WOQL.("v:Living Person Record ID", "status", "alive")    	
-.path("v:Living Person Record ID", "parent+", "v:Italian Ancestor", "v:Ancestry Line")    	
-.triple("v:Italian Ancestor", "date_born", "v:Date of Birth")*  
-.less("v:Date of Birth", 1850)
-.triple("v:Italian Ancestor", "country_born", "Italy")
+*In WOQL my query would look like this: WOQL.("v:Living Person Record ID", "status", "alive")    	 .path("v:Living Person Record ID", "parent+", "v:Italian Ancestor", "v:Ancestry Line")    	
+.triple("v:Italian Ancestor", "date_born", "v:Date of Birth")*\
+.less("v:Date of Birth", 1850) .triple("v:Italian Ancestor", "country_born", "Italy")
 .get_object("v:Living Person Record ID", "v:Full Record")*
 
 How would you ask your database this question?
