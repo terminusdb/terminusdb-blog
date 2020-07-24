@@ -38,6 +38,7 @@ Every triple with the same ID is interpreted as being about the same thing. So i
 Writing the above examples into TerminusDB with WOQL
 
 *WOQL.add_triple('joe', 'date_born', '1/2/34')* 
+
 .add_triple('joe', 'parent', 'mary')*
 
 ### ***Rule 2: Unify All The Things***
