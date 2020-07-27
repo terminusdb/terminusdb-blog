@@ -96,71 +96,21 @@
 
 <p>A triple is just a data structure with three slots to which we can assign values. Each row in the table below shows a different view of what each of the three slots means.</p>
 
-<h5 id="three-is-the-magic-number-understanding-triples">Three is the Magic Number: Understanding Triples</h5>
-
-<table>
-  <tbody>
-    <tr>
-      <td>*| Form</td>
-      <td>Triple Slot 1</td>
-      <td>Triple Slot 2</td>
-      <td>Triple Slot 3</td>
-      <td> </td>
-      <td>—</td>
-      <td>—</td>
-      <td>—</td>
-      <td>—</td>
-      <td> </td>
-      <td>Terminus DB Terminology</td>
-      <td>Object ID</td>
-      <td>Property</td>
-      <td>Value</td>
-      <td>*</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
-    <tr>
-      <td>*|Triple Example 1</td>
-      <td>joe</td>
-      <td>date_born</td>
-      <td>1/2/34</td>
-      <td>*</td>
-      <td>Example 1 Interpretation</td>
-      <td>The record with ID joe</td>
-      <td>has a property called date_born</td>
-      <td>with Value 1/2/34</td>
-      <td>*</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
-    <tr>
-      <td>*|Triple Example 2</td>
-      <td>joe</td>
-      <td>parent</td>
-      <td>mary</td>
-      <td>*</td>
-      <td>Example 2 Interpretation</td>
-      <td>The record with ID joe</td>
-      <td>has a property named parent</td>
-      <td>with Value mary</td>
-      <td>*</td>
-    </tr>
-  </tbody>
-</table>
+<p>Three is the Magic Number: Understanding Triples
+‘’’
+| Form | Triple Slot 1 | Triple Slot 2 | Triple Slot 3 | |—|—|—|—| |Terminus DB Terminology |Object ID | Property | Value |
+|Triple Example 1 | joe | date_born | 1/2/34 |
+|Example 1 Interpretation | The record with ID joe | has a property called date_born | with Value 1/2/34 | |Triple Example 2 | joe | parent | Mary |
+|Example 2 Interpretation | The record with ID joe | has a property named parent | with Value Mary|’’’</p>
 
 <p>Every triple with the same ID is interpreted as being about the same thing. So if we add triples with different properties to our database which have the same IDs, they will be interpreted as representing different properties of the same thing. That’s how we build up information about things—just add properties to the appropriate record ID. The magic of triples is that the Value of a triple can be another record ID (as in the joe mother Mary example), and IDs can appear in either the first or the third slot of the triple.</p>
 
 <p>Writing the above examples into TerminusDB with WOQL</p>
 
-<p><em>WOQL.add_triple(‘joe’, ‘date_born’, ‘1/2/34’)</em></p>
-
-<p>.add_triple(‘joe’, ‘parent’, ‘mary’)*</p>
+<p>’’’
+WOQL.add_triple(‘joe’, ‘date_born’, ‘1/2/34’)
+	.add_triple(‘joe’, ‘parent’, ‘mary’)
+‘’’</p>
 
 <h3 id="rule-2-unify-all-the-things"><strong><em>Rule 2: Unify All The Things</em></strong></h3>
 
@@ -207,10 +157,13 @@ Entering variables in the second and third slot finds all the properties and the
 
 <p>The rest of this chapter contains lots of information about all the functions and operators that WOQL provides and how you can access them, but before you leave, we have a question to ask. I want to ask my database for the full records of all living people whose direct ancestors were born in Italy before 1850 (assuming I have the records of course) along with their lineage.</p>
 
-<p><em>In WOQL my query would look like this: WOQL.(“v:Living Person Record ID”, “status”, “alive”)    	 .path(“v:Living Person Record ID”, “parent+”, “v:Italian Ancestor”, “v:Ancestry Line”)    	
-.triple(“v:Italian Ancestor”, “date_born”, “v:Date of Birth”)</em>\
-.less(“v:Date of Birth”, 1850) .triple(“v:Italian Ancestor”, “country_born”, “Italy”)
-.get_object(“v:Living Person Record ID”, “v:Full Record”)*</p>
+<p>In WOQL my query would look like this:
+‘'’WOQL.(“v:Living Person Record ID”, “status”, “alive”)
+   	.path(“v:Living Person Record ID”, “parent+”, “v:Italian Ancestor”, “v:Ancestry Line”)
+   	.triple(“v:Italian Ancestor”, “date_born”, “v:Date of Birth”)
+   	.less(“v:Date of Birth”, 1850)
+   	.triple(“v:Italian Ancestor”, “country_born”, “Italy”)
+   	.get_object(“v:Living Person Record ID”, “v:Full Record”)’’’</p>
 
 <p>How would you ask your database this question?</p>
 
