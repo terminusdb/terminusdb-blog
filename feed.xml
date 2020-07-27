@@ -6,9 +6,38 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jul 2020 08:33:38 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Jul 2020 08:33:38 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Jul 2020 14:48:25 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Jul 2020 14:48:25 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Taking TerminusDB to The Bank</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/cover.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that power to the world of data.&lt;/p&gt; &lt;p&gt;In order to get a feel for how these collaboration features work, we can start with a classic database management problem. The bank account balance.&lt;/p&gt; &lt;p&gt;Create a new database with the ID &lt;code class=&quot;highlighter-rouge&quot;&gt;Bank_Balance_Example&lt;/code&gt; and the name “Bank Balance Example”, in the console. Select ‘Local Only - No Sharing’ in the drop down. Once created you should land in a screen with the revision history and other details.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/create-screen.jpg&quot; alt=&quot;Database creation screen&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;schema-construction&quot;&gt;Schema construction&lt;/h2&gt; &lt;p&gt;The first thing we need to do is define a data model....
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 27 Jul 2020 12:00:32 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/</guid>
+        
+        <category>database</category>
+        
+        <category>terminusdb</category>
+        
+        <category>terminushub</category>
+        
+        <category>graph</category>
+        
+        <category>data</category>
+        
+        <category></category>
+        
+        
+      </item>
     
       <item>
         <title>The Power of Web Object Query Language</title>

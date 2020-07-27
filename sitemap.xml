@@ -145,6 +145,10 @@
 <lastmod>2020-07-24T15:40:51+00:00</lastmod>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/</loc>
+<lastmod>2020-07-27T12:00:32+00:00</lastmod>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/blog/404</loc>
 </url>
 <url>
@@ -185,6 +189,9 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/data/</loc>
+</url>
+<url>
+<loc>http://blog.terminusdb.com/blog/blog/tag/data/page/2/</loc>
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/development/</loc>
@@ -367,7 +374,10 @@
 <loc>http://blog.terminusdb.com/blog/blog/tag/nathan/</loc>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/blog/blog/tag/terminushub/</loc>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/blog/admin/</loc>
-<lastmod>2020-07-27T08:32:49+00:00</lastmod>
+<lastmod>2020-07-27T14:47:33+00:00</lastmod>
 </url>
 </urlset>

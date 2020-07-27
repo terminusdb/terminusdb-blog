@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Taking TerminusDB to The Bank | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Using the branch, merge and collaboration features of TerminusDB and Hub">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taking TerminusDB to The Bank | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="Using the branch, merge and collaboration features of TerminusDB and Hub">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taking TerminusDB to The Bank | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="Using the branch, merge and collaboration features of TerminusDB and Hub">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/07/27/taking-terminusdb-to-the-bank/">
+
+
+
+
+</head>
+<body id="taking-terminusdb-to-the-bank" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Taking TerminusDB to The Bank</h2>
+
+        <time class="post__date" datetime="2020-07-27T12:00:32+00:00" itemprop="datePublished">27 Jul 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/cover.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p><strong>THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS</strong></p>
+
+<p>TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that
+power to the world of data.</p>
+
+<p>In order to get a feel for how these collaboration features work, we can start with a classic database management problem. The bank account balance.</p>
+
+<p>Create a new database with the ID <code class="highlighter-rouge">Bank_Balance_Example</code> and the name “Bank Balance Example”, in the console. Select ‘Local Only - No Sharing’ in the drop down. Once created you should land in a screen with the revision history and other details.</p>
+
+<p><img src="/blog/assets/uploads/create-screen.jpg" alt="Database creation screen" /></p>
+
+<h2 id="schema-construction">Schema construction</h2>
+
+<p>The first thing we need to do is define a data model. To do this, click on the Query button at the top. And enter the following query,
+along with a comment “New schema”.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">BankAccount</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bank Account</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">xsd:string</span><span class="dl">"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">xsd:nonNegativeInteger</span><span class="dl">"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This query creates a new document type “BankAccount” along with two properties, one named “owner” which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very
+concise shorthand for an OWL specification which we will see later.</p>
+
+<p>However, we made a copy-paste error! We forgot to change the label associated with balance to say “balance”. This label is the way that the field is reported in user interfaces as opposed to the name
+“balance” which expands to a fully qualified URL identifier in the
+schema.</p>
+
+<p>If we go to the schema page we can click on the OWL-tab and then the “Edit OWL” button. Go down to where it says “owner” under the <code class="highlighter-rouge">scm:balance</code> object, and change the label string to <code class="highlighter-rouge">"balance"@en</code> (highlighted below). Now click save.</p>
+
+<p><img src="/blog/assets/uploads/owl-schema.jpg" alt="OWL Schema" /></p>
+
+<p>We now have a new revised schema. If you click on the “Bank Balance Example” button on the top of the screen, it will bring you back to the revision overview and you should be able to see what changes you have made.</p>
+
+<h2 id="data-entry">Data Entry</h2>
+
+<p>Ok, so far so good, but we’ve no data. Now it is time to try and put some data in the db.</p>
+
+<p>Let’s go to the query screen and write the following query:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WOQL.and(
+  WOQL.add_triple("doc:mike", "type", "scm:BankAccount"),
+  WOQL.add_triple("doc:mike", "owner", "mike"),
+  WOQL.add_triple("doc:mike", "balance", 123)
+  )
+</code></pre></div></div>
+
+<p>This adds some data to our database. You can click on the Documents page and you will see, that in fact mike was indeed added.</p>
+
+<p><img src="/blog/assets/uploads/doc-created.jpg" alt="" /></p>
+
+<p>Now we should try to make some edits to the bank account to see what happens.</p>
+
+<p>First, let’s try and subtract 130 dollars from mikes account.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">vars</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">sl</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">sl</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">v:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">s</span><span class="p">)}</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">balance</span><span class="p">,</span><span class="nx">new_balance</span><span class="p">]</span> <span class="o">=</span> <span class="nx">vars</span><span class="p">([</span><span class="dl">"</span><span class="s2">Balance</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">New Balance</span><span class="dl">"</span><span class="p">])</span>
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">delete_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">WOQL</span><span class="p">.</span><span class="nx">minus</span><span class="p">(</span><span class="nx">balance</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="nx">new_balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">new_balance</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>This query fails with the following JSON-LD witness object:</p>
+
+<p><img src="/blog/assets/uploads/vio.jpg" alt="" /></p>
+
+<p>This tells us that our bank balance is invalid as it is negative! TerminusDB doesn’t allow the transaction to go through.</p>
+
+<p>However, we can change the balance by subtracting a smaller number:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">vars</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">sl</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">sl</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">v:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">s</span><span class="p">)}</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">balance</span><span class="p">,</span><span class="nx">new_balance</span><span class="p">]</span> <span class="o">=</span> <span class="nx">vars</span><span class="p">([</span><span class="dl">"</span><span class="s2">Balance</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">New Balance</span><span class="dl">"</span><span class="p">])</span>
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">delete_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">WOQL</span><span class="p">.</span><span class="nx">minus</span><span class="p">(</span><span class="nx">balance</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="nx">new_balance</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:mike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:balance</span><span class="dl">"</span><span class="p">,</span> <span class="nx">new_balance</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now we have a balance of 13 as expected and everything works fine.</p>
+
+<p><img src="/blog/assets/uploads/minus-result.jpg" alt="" /></p>
+
+<h2 id="branching">Branching</h2>
+
+<p>Now that we have some data and some updates, we can go ahead and try creating a branch. A branch starts a new database from the a particular commit, allowing us to change the database without affecting the original database.</p>
+
+<p>This can be used to make isolated changes and test them, before we merge them back into the original.</p>
+
+<p>Ok, so go click on the “Bank Balance Example” button at the top and then go to the Manage-tab. Click on the “Branch” button.</p>
+
+<p>Under the field “New Branch ID*” enter in “branch_office” and we’ll pretend we have a branch office adding accounts. In the commit message put: “Branch for our new branch office”.</p>
+
+<p><img src="/blog/assets/uploads/branching.jpg" alt="" /></p>
+
+<p>Now go to the query page. If you look up at the top right of the interface, you’ll see we are still on “branch: main”. Pull the
+selector down to “branch: branch_office”.</p>
+
+<p>Now we can enter the following query:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jim</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:BankAccount</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jim</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">jim</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jim</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>This creates Jim, with all 8 dollars to his name.  If we now go to the Documents tab we can see that Jim and Mike’s bank account are both listed now.</p>
+
+<h2 id="rebase">Rebase</h2>
+
+<p>Let’s go back to the original branch (main), by selecting it in the upper right hand corner, and add one more person, jane in the main branch so that we now have two different histories, with one common
+commit.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:BankAccount</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">jane</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="mi">887</span><span class="p">)</span>
+  <span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Jane was a bit more frugal and has saved 887 dollars.</p>
+
+<p>But we’re still missing the information about jim, as its stuck in the branch office. How do we get the information into our main branch?</p>
+
+<p><img src="/blog/assets/uploads/branches.jpg" alt="" /></p>
+
+<p>This is why we have merge. Go to the “Bank balance Example” button and then click on the manage-tab.</p>
+
+<p>Click on Merge. Select the “branch_office” branch in the upper right hand corner. Now select the “merge into” branch as “main”. Now you can type: “Merging branch office info” in the commit message.</p>
+
+<p><img src="/blog/assets/uploads/merge.jpg" alt="" /></p>
+
+<p>Now we should go back to the main branch (again in the upper right hand corner), and select the documents view. You’ll see that we have merged the two databases together!</p>
+
+<p><img src="/blog/assets/uploads/merged.jpg" alt="" /></p>
+
+<p>Great! But wait until we get to part II - where we use collaboration and pipelines to utilize these branches effectively with the branch office.</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Taking TerminusDB to The Bank+http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Taking TerminusDB to The Bank&summary=Using the branch, merge and collaboration features of TerminusDB and Hub&url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Using the branch, merge and collaboration features of TerminusDB and Hub&media=http://blog.terminusdb.com/blog/blog/assets/uploads/cover.jpg&url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/luke-feeney" class="p-name u-url">Luke Feeney</a></span>
+            <p class="post__bio p-note">Building the database of the future.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminators-e1.jpg" alt="TerminusDB: Importing, Reordering & Exporting a CSV"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: Importing, Reordering & Exporting a CSV</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/dinos.jpg" alt="Be like the mammals when the asteroid struck"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Be like the mammals when the asteroid struck</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/04/14/terminusdb-a-technical-history/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminusdb-black-mascot-1-.png" alt="TerminusDB: A Technical History"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: A Technical History</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/open-source">Open Source</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
