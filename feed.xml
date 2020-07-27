@@ -6,9 +6,40 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jul 2020 16:11:54 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Jul 2020 16:11:54 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Jul 2020 21:09:19 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Jul 2020 21:09:19 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Taking TerminusDB to the bank (Part II)</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/collaborate.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;In the first installment we created a branch_office branch where we added some data. But the strength of the distributed model of TerminusDB is that others can work on data assets in parallel. To make use of this powerful feature, we need to make alterations in a different database.&lt;/p&gt; &lt;p&gt;Since we are using collaboration features, first you will need to log into hub. You can do that by clicking on “Connect to Hub” in the right hand corner.&lt;/p&gt; &lt;p&gt;We’ll start with the database as created in Part 1. If you don’t have this database anymore, you can rebuild it be following the steps in &lt;a href=&quot;https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/&quot;&gt;part 1 of this tutorial&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;First step - make sure you share the database to hub.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/upload-to-hub.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;distributed-updates&quot;&gt;Distributed updates&lt;/h1&gt; &lt;p&gt;Click...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 27 Jul 2020 14:52:29 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/</guid>
+        
+        <category>database</category>
+        
+        <category>collaborate</category>
+        
+        <category>terminusdb</category>
+        
+        <category>terminushub</category>
+        
+        <category>graph</category>
+        
+        <category>data</category>
+        
+        <category></category>
+        
+        
+      </item>
     
       <item>
         <title>Taking TerminusDB to The Bank (Part I)</title>

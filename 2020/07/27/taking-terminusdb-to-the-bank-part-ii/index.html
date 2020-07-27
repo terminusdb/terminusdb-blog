@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Taking TerminusDB to the bank (Part II) | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Using the collaboration features of TerminusDB">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/collaborate.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taking TerminusDB to the bank (Part II) | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="Using the collaboration features of TerminusDB">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/collaborate.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taking TerminusDB to the bank (Part II) | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="Using the collaboration features of TerminusDB">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/collaborate.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/">
+
+
+
+
+</head>
+<body id="taking-terminusdb-to-the-bank-part-ii" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Taking TerminusDB to the bank (Part II)</h2>
+
+        <time class="post__date" datetime="2020-07-27T14:52:29+00:00" itemprop="datePublished">27 Jul 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/collaborate.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p><strong>THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS</strong></p>
+
+<p>In the first installment we created a branch_office branch where we added some data. But the strength of the distributed model of TerminusDB is that others can work on data assets in parallel. To make use of this powerful feature, we need to make alterations in a different database.</p>
+
+<p>Since we are using collaboration features, first you will need to log into hub. You can do that by clicking on “Connect to Hub” in the right hand corner.</p>
+
+<p>We’ll start with the database as created in Part 1. If you don’t have this database anymore, you can rebuild it be following the steps in <a href="https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">part 1 of this tutorial</a>.</p>
+
+<p>First step - make sure you share the database to hub.</p>
+
+<p><img src="/blog/assets/uploads/upload-to-hub.jpg" alt="" /></p>
+
+<h1 id="distributed-updates">Distributed updates</h1>
+
+<p>Click on your “Bank Balance Example” and go to the synchronise page. Select “Push”, and then select the branch we named <code class="highlighter-rouge">branch_office</code> both locally and on the remote and click the button “Push Updates”.</p>
+
+<p><img src="/blog/assets/uploads/branch-office-on-hub.jpg" alt="" /></p>
+
+<p>Now we have the data on hub! If you go to the main “Bank Balance Example” page, you can see the remote URL in the box on the right which says “origin Remote”. Copy this URL, we’re going to make a clone.</p>
+
+<p><img src="/blog/assets/uploads/pushed.jpg" alt="" /></p>
+
+<p>Now go to the main TerminusDB page and click on clone. Then enter the URL of the database remote URL on Hub.</p>
+
+<p><img src="/blog/assets/uploads/clone.jpg" alt="" /></p>
+
+<p>This operation could be done from <em>any</em> computer. It doesn’t have to be the same installation of TerminusDB, but if you only want to install once, then this is certainly easiest.</p>
+
+<p><img src="/blog/assets/uploads/post-clone.jpg" alt="" title="Post Clone" /></p>
+
+<p>Now go to the manage page and click on pull. We’re going to pull the <code class="highlighter-rouge">branch_office</code> branch to main locally. Once you’ve done this go to documents. You should see that the documents include <code class="highlighter-rouge">doc:mike</code> and <code class="highlighter-rouge">doc:jim</code> (as these were entered from the <code class="highlighter-rouge">branch_office</code> branch)</p>
+
+<p><img src="/blog/assets/uploads/pull-from-branch-office.jpg" alt="" /></p>
+
+<h1 id="updating-the-branch-office-database">Updating the Branch Office Database</h1>
+
+<p>Now that we have the data on our local we can go to the query screen again, and enter a new record:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:BankAccount</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">jill</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="mi">87</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>We now have Jill in our main branch in our new database. Now it’s time to push our changes to hub. Go to the “Branch Office” database, click on the Synchronize-tab and push changes to remote.</p>
+
+<p>This time we want to push main to branch_office on the remote.</p>
+
+<h1 id="bringing-the-branch-office-data-to-head-quarters">Bringing the Branch Office data to Head Quarters</h1>
+
+<p>Once you have pushed, you should back into your old “Bank Balance Example” database. From here we can get the changes back from the branch_office changes on hub.</p>
+
+<p>Now let’s do another synchronize. Pull changes from hub from the <code class="highlighter-rouge">branch_office</code> branch to the <code class="highlighter-rouge">branch_office</code> branch. We now should have Jill on our local database. Let’s just check quickly by looking at documents (make sure you select the correct branch in the branch selector in the top right!).</p>
+
+<p>We still don’t have the changes in main however (although we could have pulled directly) and so now we should do a merge operation again, just as we did in Part 1. We’ll leave this as an exercise for the reader… good luck!</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Taking TerminusDB to the bank (Part II)+http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Taking TerminusDB to the bank (Part II)&summary=Using the collaboration features of TerminusDB&url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Using the collaboration features of TerminusDB&media=http://blog.terminusdb.com/blog/blog/assets/uploads/collaborate.jpg&url=http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/luke-feeney" class="p-name u-url">Luke Feeney</a></span>
+            <p class="post__bio p-note">Building the database of the future.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/cover.jpg" alt="Taking TerminusDB to The Bank (Part I)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to The Bank (Part I)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminators-e1.jpg" alt="TerminusDB: Importing, Reordering & Exporting a CSV"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: Importing, Reordering & Exporting a CSV</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/07/be-like-the-mammals-when-the-asteroid-struck/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/dinos.jpg" alt="Be like the mammals when the asteroid struck"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Be like the mammals when the asteroid struck</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
