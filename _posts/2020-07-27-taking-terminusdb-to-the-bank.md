@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Taking TerminusDB to The Bank
+title: Taking TerminusDB to The Bank (Part I)
 date: 2020-07-27T12:00:32.110Z
 description: Using the branch, merge and collaboration features of TerminusDB and Hub
 image: /blog/assets/uploads/cover.jpg
