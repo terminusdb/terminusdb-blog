@@ -42,13 +42,17 @@ Now go to the main TerminusDB page and click on clone. Then enter the URL of the
 
 ![](/blog/assets/uploads/clone.jpg)
 
+![](/blog/assets/uploads/post-clone-2.jpg)
+
+
+
 This operation could be done from *any* computer. It doesn't have to be the same installation of TerminusDB, but if you only want to install once, then this is certainly easiest.
 
 ![](/blog/assets/uploads/post-clone.jpg "Post Clone")
 
 Now go to the manage page and click on pull. We're going to pull the `branch_office` branch to main locally. Once you've done this go to documents. You should see that the documents include `doc:mike` and `doc:jim` (as these were entered from the `branch_office` branch)
 
-![](/blog/assets/uploads/pull-from-branch-office.jpg)
+![](/blog/assets/uploads/docs-post-pull.jpg)
 
 # Updating the Branch Office Database
 
@@ -66,10 +70,14 @@ We now have Jill in our main branch in our new database. Now it's time to push o
 
 This time we want to push main to branch_office on the remote.
 
+![](/blog/assets/uploads/post-pull-branch-office.jpg)
+
 # Bringing the Branch Office data to Head Quarters
 
 Once you have pushed, you should back into your old "Bank Balance Example" database. From here we can get the changes back from the branch_office changes on hub.
 
 Now let's do another synchronize. Pull changes from hub from the `branch_office` branch to the `branch_office` branch. We now should have Jill on our local database. Let's just check quickly by looking at documents (make sure you select the correct branch in the branch selector in the top right!).
+
+![](/blog/assets/uploads/docs-with-jill.jpg)
 
 We still don't have the changes in main however (although we could have pulled directly) and so now we should do a merge operation again, just as we did in Part 1. We'll leave this as an exercise for the reader... good luck!
