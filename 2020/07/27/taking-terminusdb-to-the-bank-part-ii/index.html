@@ -112,13 +112,15 @@
 
 <p><img src="/blog/assets/uploads/clone.jpg" alt="" /></p>
 
+<p><img src="/blog/assets/uploads/post-clone-2.jpg" alt="" /></p>
+
 <p>This operation could be done from <em>any</em> computer. It doesn’t have to be the same installation of TerminusDB, but if you only want to install once, then this is certainly easiest.</p>
 
 <p><img src="/blog/assets/uploads/post-clone.jpg" alt="" title="Post Clone" /></p>
 
 <p>Now go to the manage page and click on pull. We’re going to pull the <code class="highlighter-rouge">branch_office</code> branch to main locally. Once you’ve done this go to documents. You should see that the documents include <code class="highlighter-rouge">doc:mike</code> and <code class="highlighter-rouge">doc:jim</code> (as these were entered from the <code class="highlighter-rouge">branch_office</code> branch)</p>
 
-<p><img src="/blog/assets/uploads/pull-from-branch-office.jpg" alt="" /></p>
+<p><img src="/blog/assets/uploads/docs-post-pull.jpg" alt="" /></p>
 
 <h1 id="updating-the-branch-office-database">Updating the Branch Office Database</h1>
 
@@ -135,11 +137,15 @@
 
 <p>This time we want to push main to branch_office on the remote.</p>
 
+<p><img src="/blog/assets/uploads/post-pull-branch-office.jpg" alt="" /></p>
+
 <h1 id="bringing-the-branch-office-data-to-head-quarters">Bringing the Branch Office data to Head Quarters</h1>
 
 <p>Once you have pushed, you should back into your old “Bank Balance Example” database. From here we can get the changes back from the branch_office changes on hub.</p>
 
 <p>Now let’s do another synchronize. Pull changes from hub from the <code class="highlighter-rouge">branch_office</code> branch to the <code class="highlighter-rouge">branch_office</code> branch. We now should have Jill on our local database. Let’s just check quickly by looking at documents (make sure you select the correct branch in the branch selector in the top right!).</p>
+
+<p><img src="/blog/assets/uploads/docs-with-jill.jpg" alt="" /></p>
 
 <p>We still don’t have the changes in main however (although we could have pulled directly) and so now we should do a merge operation again, just as we did in Part 1. We’ll leave this as an exercise for the reader… good luck!</p>
 
