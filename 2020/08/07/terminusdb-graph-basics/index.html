@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TerminusDB Graph Basics  | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/graph-image.png">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TerminusDB Graph Basics  | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/graph-image.png">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TerminusDB Graph Basics  | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/graph-image.png">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/08/07/terminusdb-graph-basics/">
+
+
+
+
+</head>
+<body id="terminusdb-graph-basics" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://community.terminusdb.com/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">TerminusDB Graph Basics </h2>
+
+        <time class="post__date" datetime="2020-08-07T17:28:33+00:00" itemprop="datePublished">7 Aug 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/graph-image.png'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.</p>
+
+<p>Whereas traditional relational databases divide data into tables, columns and rows, in TerminusDB everything is an object - objects can have properties and some of these properties may link to other objects. The network of interlinked objects forms a graph structure (in the mathematical sense - nodes and edges).</p>
+
+<p>This is the basic idea of the graph database - using data structures that are things rather than cells allows users to create models that are much closer to the real world things that they want to model - because people perceive the world as things, not cells.</p>
+
+<p>To explain with a very simple example - if we were building a database to hold a family tree and we want to record the parents and grandparents of an individual. In a relational database, we might record this in a simple table</p>
+
+<p><img src="/blog/assets/uploads/screenshot-2020-08-07-at-6.29.36-pm.png" alt="" /></p>
+
+<p>In a graph database, this would look like the following</p>
+
+<p><img src="/blog/assets/uploads/family-tree.png" alt="" /></p>
+
+<p>The big advantage is that it is much easier to interpret the model and understand how it maps to real-world entities compared to the relational example. This increased ease also extends to querying the database.</p>
+
+<p>Query For example, if we wanted to fetch the name of john’s mother and grandmother from the database, if we were using a relational database, we could use the following two SQL queries to get the name of the mother and grandmother respectively:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE where Name="John")
+SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE WHERE Person_ID = (SELECT mother from TABLE where Name="John"))
+
+
+</code></pre></div></div>
+
+<p>In a graph database this is much simpler: we can use a triple pattern such as the following to get both names in the same query - we do not have to explicitly join the records together, the joins are implicit - we use the same ID in different parts of the query:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WOQL.and(
+   WOQL.triple("v:Person", "mother", "v:MotherID"),
+   WOQL.triple("v:MotherID", "name", "v:MotherName"),
+   WOQL.triple("v:MotherID", "mother", "v:GrandmotherID"),
+   WOQL.triple("v:GrandmotherID", "name", "v:GrandmotherName"),
+)
+
+</code></pre></div></div>
+
+<p>By using <code class="highlighter-rouge">“v:MotherID”</code> multiple times in the query, we create a chain: <code class="highlighter-rouge">v:Person =mother=&gt; v:Mother =mother=&gt; v:Grandmother</code></p>
+
+<p>This makes our queries much easier to understand - we can follow them naturally across multiple patterns.</p>
+
+<p>Classes &amp; Properties Under the hood, Terminus DB uses a very rich data modelling language called OWL - the Web Ontology Language. Although it is a very rich language, the basic ideas are simple.</p>
+
+<p>In our schema, we can define classes - which are definitions of types of complex data structure. Classes can be subclasses of other classes, which means that they inherit all the parent’s definitions (much like inheritance in object-oriented programming). We can also define properties in the schema - each property has a domain (the class that is the subject of the property) and a range - the type of data that the property points to. The range can either be a simple datatype literal (e.g. an integer or string) or it can be a class.</p>
+
+<p>For most use cases, that’s all you really need to know. You define a hierarchy of classes to represent the different types of things that you want to represent in your database, then you define properties to represent the different attributes of these things that you want to record and the relationships between the things. From these simple building blocks - class hierarchies and typed properties, you can build almost arbitrarily complex data structures to represent whatever real-world entities you are interested in.</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=TerminusDB Graph Basics +http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=TerminusDB Graph Basics &summary=TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.&url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=TerminusDB organises data in a very simple structure to make it easy and natural to model the real world.&media=http://blog.terminusdb.com/blog/blog/assets/uploads/graph-image.png&url=http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/kevinchekovfeeney" class="p-name u-url">Kevin Feeney</a></span>
+            <p class="post__bio p-note">Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/08/07/terminusdb-graph-basics/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/collaborate.jpg" alt="Taking TerminusDB to the bank (Part II)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to the bank (Part II)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/cover.jpg" alt="Taking TerminusDB to The Bank (Part I)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to The Bank (Part I)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="http://blog.terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminators-e1.jpg" alt="TerminusDB: Importing, Reordering & Exporting a CSV"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB: Importing, Reordering & Exporting a CSV</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/database">Database</a></li></ul>
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
