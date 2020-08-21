@@ -6,9 +6,28 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Aug 2020 09:06:06 +0000</pubDate>
-    <lastBuildDate>Fri, 21 Aug 2020 09:06:06 +0000</lastBuildDate>
+    <pubDate>Fri, 21 Aug 2020 09:38:21 +0000</pubDate>
+    <lastBuildDate>Fri, 21 Aug 2020 09:38:21 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>The decision to move away from Google Analytics</title>
+        <author>[{&quot;value&quot;=&gt;&quot;Vivek&quot;, &quot;label&quot;=&gt;&quot;Vivek Varughese&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/ga-banner-image.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;&lt;em&gt;History&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;First, let’s go back in time to the early 2000s when companies first began to understand the importance of digital marketing. The first challenge was simple, but the hardest to overcome—how to get maximum return on your investment? When Google introduced its Analytics software in 2005 it was a real saviour that helped analyse which marketing campaigns were converting and the ones that needed to be reviewed. It quickly became the most widely used web analytics service.&lt;/p&gt; &lt;p&gt;Google Analytics monitors the behaviour of websites in terms of session length, pages per session, bounce rate, number of visitors and traffic source information. Google Ads integrates with Analytics, enabling users to build and review online campaigns through the quality monitoring of landing pages and conversions (goals). It includes high-level dashboard details for users and, more detailed in-depth custom reports if required.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/ga-pic.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;The concern with user privacy&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Google...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/08/21/the-decision-to-move-away-from-google-analytics/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 21 Aug 2020 09:04:59 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/08/21/the-decision-to-move-away-from-google-analytics/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/08/21/the-decision-to-move-away-from-google-analytics/</guid>
+        
+        <category>database</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB Graph Basics </title>
