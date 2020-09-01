@@ -6,13 +6,13 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Sep 2020 18:36:28 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Sep 2020 18:36:28 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Sep 2020 18:40:57 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Sep 2020 18:40:57 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
         <title>My First TerminusDB 3.0 Graph — Bike Share Data</title>
-        <author>Luke Feeney</author>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
         
         
         <description>
