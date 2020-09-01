@@ -16,8 +16,6 @@ tags:
   - data
   - ""
 ---
-**THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS**
-
 In the first installment we created a branch_office branch where we added some data. But the strength of the distributed model of TerminusDB is that others can work on data assets in parallel. To make use of this powerful feature, we need to make alterations in a different database.
 
 Since we are using collaboration features, first you will need to log into hub. You can do that by clicking on "Connect to Hub" in the right hand corner.
@@ -43,8 +41,6 @@ Now go to the main TerminusDB page and click on clone. Then enter the URL of the
 ![](/blog/assets/uploads/clone.jpg)
 
 ![](/blog/assets/uploads/post-clone-2.jpg)
-
-
 
 This operation could be done from *any* computer. It doesn't have to be the same installation of TerminusDB, but if you only want to install once, then this is certainly easiest.
 
