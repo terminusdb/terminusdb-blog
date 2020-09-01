@@ -86,10 +86,7 @@
     <div class="post__content section-padding">
       <div class="grid">
         <div id="markdown" itemprop="articleBody" class="e-content">
-          <p><strong>THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS</strong></p>
-
-<p>TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that
-power to the world of data.</p>
+          <p>TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that power to the world of data.</p>
 
 <p>In order to get a feel for how these collaboration features work, we can start with a classic database management problem. The bank account balance.</p>
 
@@ -99,8 +96,7 @@ power to the world of data.</p>
 
 <h2 id="schema-construction">Schema construction</h2>
 
-<p>The first thing we need to do is define a data model. To do this, click on the Query button at the top. And enter the following query,
-along with a comment “New schema”.</p>
+<p>The first thing we need to do is define a data model. To do this, click on the Query button at the top. And enter the following query, along with a comment “New schema”.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">BankAccount</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bank Account</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">xsd:string</span><span class="dl">"</span><span class="p">)</span>
@@ -111,11 +107,9 @@ along with a comment “New schema”.</p>
        <span class="p">.</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>This query creates a new document type “BankAccount” along with two properties, one named “owner” which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very
-concise shorthand for an OWL specification which we will see later.</p>
+<p>This query creates a new document type “BankAccount” along with two properties, one named “owner” which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very concise shorthand for an OWL specification which we will see later.</p>
 
-<p>However, we made a copy-paste error! We forgot to change the label associated with balance to say “balance”. This label is the way that the field is reported in user interfaces as opposed to the name
-“balance” which expands to a fully qualified URL identifier in the
+<p>However, we made a copy-paste error! We forgot to change the label associated with balance to say “balance”. This label is the way that the field is reported in user interfaces as opposed to the name “balance” which expands to a fully qualified URL identifier in the
 schema.</p>
 
 <p>If we go to the schema page we can click on the OWL-tab and then the “Edit OWL” button. Go down to where it says “owner” under the <code class="highlighter-rouge">scm:balance</code> object, and change the label string to <code class="highlighter-rouge">"balance"@en</code> (highlighted below). Now click save.</p>
@@ -189,8 +183,7 @@ schema.</p>
 
 <p><img src="/blog/assets/uploads/branching.jpg" alt="" /></p>
 
-<p>Now go to the query page. If you look up at the top right of the interface, you’ll see we are still on “branch: main”. Pull the
-selector down to “branch: branch_office”.</p>
+<p>Now go to the query page. If you look up at the top right of the interface, you’ll see we are still on “branch: main”. Pull the selector down to “branch: branch_office”.</p>
 
 <p>Now we can enter the following query:</p>
 
@@ -205,15 +198,13 @@ selector down to “branch: branch_office”.</p>
 
 <h2 id="rebase">Rebase</h2>
 
-<p>Let’s go back to the original branch (main), by selecting it in the upper right hand corner, and add one more person, jane in the main branch so that we now have two different histories, with one common
-commit.</p>
+<p>Let’s go back to the original branch (main), by selecting it in the upper right hand corner, and add one more person, jane in the main branch so that we now have two different histories, with one common commit.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
   <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:BankAccount</span><span class="dl">"</span><span class="p">),</span>
   <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">jane</span><span class="dl">"</span><span class="p">),</span>
   <span class="nx">WOQL</span><span class="p">.</span><span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:jane</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="mi">887</span><span class="p">)</span>
   <span class="p">)</span>
-
 </code></pre></div></div>
 
 <p>Jane was a bit more frugal and has saved 887 dollars.</p>
