@@ -6,9 +6,36 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Sep 2020 10:18:49 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Sep 2020 10:18:49 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Sep 2020 10:55:44 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Sep 2020 10:55:44 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB: From 'Master' to Main</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/black-lives-matter-2400x1260.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;TerminusDB and TerminusHub will no longer use ‘master’ to designate the principal branch of your databases. As of our 3.0 release, we have switched to ‘main’. We are Open Source and will always be open to all users. We stand with the oppressed.&lt;/p&gt; &lt;p&gt;Following the murder of George Floyd by Police Officers in Minneapolis and the subsequent Black Lives Matter protests, there has been debate about racially charged terminology commonly used in technology. A particularly egregious example is Master/Slave used to describe primary and secondary resources. It is not hard to understand why this is offensive to so many.&lt;/p&gt; &lt;p&gt;TerminusDB previously used the designation ‘master’ for the original database that users create. This mirrored the Git terminology - TerminusDB is a ‘Git for data’ and we wanted to minimize mental friction for users.&lt;/p&gt; &lt;p&gt;We understand that this term excludes and offends some people. Open source and openness are the core...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/01/terminusdb-from-master-to-main/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 01 Sep 2020 10:41:36 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/09/01/terminusdb-from-master-to-main/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/01/terminusdb-from-master-to-main/</guid>
+        
+        <category>database</category>
+        
+        <category>black lives matter</category>
+        
+        <category>master</category>
+        
+        <category>main</category>
+        
+        <category></category>
+        
+        
+      </item>
     
       <item>
         <title>The decision to move away from Google Analytics</title>
