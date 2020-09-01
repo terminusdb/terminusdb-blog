@@ -7,7 +7,7 @@ author:
 cover_image: https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg
 title: My First TerminusDB 3.0 Graph — Bike Share Data
 description: "Bike tutorial with 3.0. Terminators rule ok. "
-image: /blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg
+image: /blog/assets/uploads/capture.jpg
 tags:
   - Database
   - Data
