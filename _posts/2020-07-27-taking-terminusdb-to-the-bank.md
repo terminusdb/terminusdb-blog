@@ -15,12 +15,7 @@ tags:
   - data
   - ""
 ---
-**THIS IS A EARLY RELEASE TUTORIAL TO ACCOMPANY TERMINUSHUB PRIVATE BETA PROGRAM. CONTACT US IF YOU WOULD LIKE TO GET ACCESS**
-
-
-
-TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that
-power to the world of data.
+TerminusDB is designed to enable collaboration and revision control on data assets. While git is a fantastic piece of software, it is really designed for code management, and not data management. We bring that power to the world of data.
 
 In order to get a feel for how these collaboration features work, we can start with a classic database management problem. The bank account balance.
 
@@ -30,8 +25,7 @@ Create a new database with the ID `Bank_Balance_Example` and the name "Bank Bala
 
 ## Schema construction
 
-The first thing we need to do is define a data model. To do this, click on the Query button at the top. And enter the following query,
-along with a comment "New schema".
+The first thing we need to do is define a data model. To do this, click on the Query button at the top. And enter the following query, along with a comment "New schema".
 
 ```javascript
 WOQL.doctype("BankAccount").label("Bank Account")
@@ -43,11 +37,9 @@ WOQL.doctype("BankAccount").label("Bank Account")
        .cardinality(1)
 ```
 
-This query creates a new document type "BankAccount" along with two properties, one named "owner" which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very
-concise shorthand for an OWL specification which we will see later.
+This query creates a new document type "BankAccount" along with two properties, one named "owner" which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very concise shorthand for an OWL specification which we will see later.
 
-However, we made a copy-paste error! We forgot to change the label associated with balance to say "balance". This label is the way that the field is reported in user interfaces as opposed to the name
-"balance" which expands to a fully qualified URL identifier in the
+However, we made a copy-paste error! We forgot to change the label associated with balance to say "balance". This label is the way that the field is reported in user interfaces as opposed to the name "balance" which expands to a fully qualified URL identifier in the
 schema.
 
 If we go to the schema page we can click on the OWL-tab and then the "Edit OWL" button. Go down to where it says "owner" under the `scm:balance` object, and change the label string to `"balance"@en` (highlighted below). Now click save.
@@ -124,8 +116,7 @@ Under the field "New Branch ID*" enter in "branch_office" and we'll pretend we h
 
 ![](/blog/assets/uploads/branching.jpg)
 
-Now go to the query page. If you look up at the top right of the interface, you'll see we are still on "branch: main". Pull the
-selector down to "branch: branch_office".
+Now go to the query page. If you look up at the top right of the interface, you'll see we are still on "branch: main". Pull the selector down to "branch: branch_office".
 
 Now we can enter the following query:
 
@@ -141,10 +132,7 @@ This creates Jim, with all 8 dollars to his name.  If we now go to the Documents
 
 ## Rebase
 
-Let's go back to the original branch (main), by selecting it in the upper right hand corner, and add one more person, jane in the main branch so that we now have two different histories, with one common
-commit.
-
-
+Let's go back to the original branch (main), by selecting it in the upper right hand corner, and add one more person, jane in the main branch so that we now have two different histories, with one common commit.
 
 ```javascript
 WOQL.and(
@@ -152,7 +140,6 @@ WOQL.and(
   WOQL.add_triple("doc:jane", "owner", "jane"),
   WOQL.add_triple("doc:jane", "balance", 887)
   )
-
 ```
 
 Jane was a bit more frugal and has saved 887 dollars.
@@ -164,8 +151,6 @@ But we're still missing the information about jim, as its stuck in the branch of
 This is why we have merge. Go to the "Bank balance Example" button and then click on the manage-tab.
 
 Click on Merge. Select the "branch_office" branch in the upper right hand corner. Now select the "merge into" branch as "main". Now you can type: "Merging branch office info" in the commit message.
-
-
 
 ![](/blog/assets/uploads/merge.jpg)
 
