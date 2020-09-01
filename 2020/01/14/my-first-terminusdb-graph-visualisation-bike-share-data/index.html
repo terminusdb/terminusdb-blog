@@ -11,28 +11,25 @@
 ">
 
 <meta itemprop="name" content="TerminusDB">
-<meta itemprop="description" content="News and tutorials of TerminusDB.
-">
-<meta itemprop="image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+<meta itemprop="description" content="Bike tutorial with 3.0. Terminators rule ok. ">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg">
 
 <meta property="og:url" content="http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="My First TerminusDB Graph Visualisation — Bike Share Data | TerminusDB Blog - News and Tutorials">
 <meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
-<meta property="og:description" content="News and tutorials of TerminusDB.
-">
-<meta property="og:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+<meta property="og:description" content="Bike tutorial with 3.0. Terminators rule ok. ">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg">
 
 <meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My First TerminusDB Graph Visualisation — Bike Share Data | TerminusDB Blog - News and Tutorials">
 <meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
-<meta name="twitter:description" content="News and tutorials of TerminusDB.
-">
+<meta name="twitter:description" content="Bike tutorial with 3.0. Terminators rule ok. ">
 
   <meta name="twitter:creator" content="@TerminusDB">
 
-<meta property="twitter:image" content="http://blog.terminusdb.com/blog/assets/images/cowduck_sitting_logo.jpg">
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg">
 
 <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
 
@@ -77,6 +74,12 @@
     </div>
 
     
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
 
     
       <div class="post__img u-photo">
@@ -89,67 +92,41 @@
     <div class="post__content section-padding">
       <div class="grid">
         <div id="markdown" itemprop="articleBody" class="e-content">
-          <p>In this tutorial, we will start using TerminusDB and its query client — WOQL.js — to quickly build a database and a schema; import and organise data; create a visualisation; and plug it in to your website.</p>
+          <p>In this tutorial, we will start using TerminusDB 3.0, TerminusDB Console and its query client. This is a step-by-step guide to create your first knowledge graph.</p>
 
-<p>We’re assuming you already have TerminusDB installed, but if you haven’t go to our <a href="https://github.com/terminusdb/terminus-quickstart">quick start installation guide</a>. It’s very easy to get started.</p>
+<p>We’re assuming you already have TerminusDB installed, but if you haven’t go to our <a href="https://terminusdb.com/hub/download">download center</a>. It’s very easy to get started.</p>
 
-<p>In this tutorial, we are going to import data from CSVs about bike journeys between stations in Washington D.C., USA, build a knowledge graph from the data, analyse and visualise it. The data is taken from Capital Bike Share (available here — thanks folks!) and the CSV data used this tutorial is available at <a href="https://terminusdb.com/t/data/bike_tutorial.csv">https://terminusdb.com/t/data/bike_tutorial.csv</a></p>
+<p>In this tutorial, we are going to import data from CSVs about bike journeys between stations in Washington D.C., USA, build a knowledge graph from the data, analyze and visualize it. The data is taken from Capital Bike Share (available <a href="https://www.capitalbikeshare.com/system-data">here</a> — thanks folks) and the CSV data used this tutorial is available at <a href="https://terminusdb.com/t/data/bike_tutorial.csv">https://terminusdb.com/t/data/bike_tutorial.csv</a></p>
 
 <hr />
 
-<h2 id="lets-create-a-database">Let’s Create a Database</h2>
+<h1 id="create-a-database">Create a Database</h1>
 
-<p>The first thing we need to do is to create a database for our graph. Open up the Terminus DB console ( default: http://localhost:6363/console ). Click on <code class="highlighter-rouge">Create Database</code> to start with.</p>
+<p>Open up the TerminusDB console (https://127.0.0.1:6363/ — go to our <a href="https://terminusdb.com/hub/download">download center</a> to get up and running). Click on <code class="highlighter-rouge">Create</code> to start.</p>
+
+<p>Click on <code class="highlighter-rouge">Create</code> to start and select ‘TerminusHub Database’ as we want to share this with the world.</p>
 
 <p>You can specify an id for the database, to make it memorable, let’s make it <code class="highlighter-rouge">1stdb</code> (note that Terminus IDs are URLs and they cannot have spaces!). As a title, enter the name you want to give your Database, something meaningful like <code class="highlighter-rouge">My First Database</code>. Then you can add a short description to your database, like <code class="highlighter-rouge">It is my first database using TerminusDB</code>.</p>
 
-<p><img src="https://miro.medium.com/max/2232/1*_05f3gD0v45a-Xncpv1SUQ.png" alt="Create Database" /></p>
+<p><img src="/blog/assets/uploads/capture.jpg" alt="Create Database" /></p>
 
-<p>Click the <code class="highlighter-rouge">Create</code> button at the bottom, and you should see the <code class="highlighter-rouge">Successfully Created Database</code> 1stDB in green at the top. Something like this:</p>
+<p>Click the <code class="highlighter-rouge">Create On TerminusDB</code> button at the top right, and you’ll automatically go to the main database page. Something like this:</p>
 
-<p><img src="https://miro.medium.com/max/2096/1*iDole0nJP9PpxQHCkzaUBw.png" alt="Successfully created Database" /></p>
+<p><img src="/blog/assets/uploads/db-home.jpg" alt="Successfully created Database" /></p>
 
 <p>Now we have a database, let’s have a look at the data we want to import. Click on the <code class="highlighter-rouge">Query</code> link in the left hand menu and you should see a query page that looks like the screen below.</p>
 
 <hr />
-<h2 id="lets-preview-the-data">Let’s Preview the Data</h2>
-
-<p><img src="https://miro.medium.com/max/3490/1*ayRgYyCY2-yUOTrhJZxURA.png" alt="TerminusDB Query Page" /></p>
-
-<p>TerminusDB has a powerful query language called WOQL (Web Object Query Language) which supports Javascript and Python as well as pure JSON. In this case we will use WOQL.js as we can input it directly into the console. One of the nice things about WOQL is that we can query directly from remote CSV files anywhere on the web. Copy the following query into the console and click <code class="highlighter-rouge">Submit</code>:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
-    <span class="nx">WOQL</span><span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start station</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Start_Station</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">End station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Station</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Start_Time</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">End date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Time</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start station number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Start_ID</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">End station number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_ID</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Member type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Member_Type</span><span class="dl">"</span><span class="p">)</span>
-<span class="p">).</span><span class="nx">remote</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://terminusdb.com/t/data/bike_tutorial.csv</span><span class="dl">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>You should see a result that looks like the screen below:</p>
-
-<p><img src="https://miro.medium.com/max/4910/1*ylh1o-If4F5AMQTSZq1bQQ.png" alt="CSV Preview Result Screen" /></p>
-
-<p>This query reads data directly from the CSV — <code class="highlighter-rouge">remote</code> specifies the location of the CSV and <code class="highlighter-rouge">get</code> specifies how the columns in the CSV should be loaded into WOQL variables. The <code class="highlighter-rouge">get</code> takes 2 lists as parameters: the 1st is the title of the column in the CSV, while the 2nd is the name of a variable that we can use to refer to the data in that column in other parts of the query. In technical terms we are binding the variables, for example <code class="highlighter-rouge">v:Start_Station</code> is bound to the data in the column with the header “Start Station” (WOQL variables always start with v: and can’t contain spaces).</p>
-
-<p>This query allows us to preview the data without importing it, but if we want to really analyse, we need to import it into our TerminusDB database. The first step is to create a schema to govern the structure of the data that we will store.</p>
 
 <hr />
 
-<h2 id="lets-create-a-schema">Let’s Create a Schema</h2>
+<h1 id="lets-create-a-schema">Let’s Create a Schema</h1>
 
-<p>Now that we have had a look at the data, we have a good idea of what we want in our graph and we can build a schema for our database.</p>
+<p>The schema allows you to organize data into meaningful objects, and it ensures data integrity — nothing goes into your database that is not in the schema. This is a TerminusDB super power — and ensures you derive long term value from your data.</p>
 
-<p>The schema allows you to organise data into meaningful objects, and it ensures data integrity — nothing goes into your database that is not in the schema. This is a TerminusDB super power — and ensures you derive long term value from your data.</p>
+<p>The TerminusDB Console provides a schema editor using WOQL.js. Remaining on the query page, copy this WOQL.js query into the text box:</p>
 
-<p>The TerminusDB Console provides a schema editor using WOQL.js. Remaining on the query page, copy this WOQL.js query into the text box (remember to delete the previous query before entering this one):</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>         
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>         
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">)</span>             
         <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike Station</span><span class="dl">"</span><span class="p">)</span>             
         <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A station where bicycles are deposited</span><span class="dl">"</span><span class="p">),</span>         
@@ -172,45 +149,40 @@
 <span class="p">)</span>
 </code></pre></div></div>
 
-<p>and click <code class="highlighter-rouge">Submit</code></p>
+<p>Add a commit message in the box above (e.g. “Add Schema”) and click <code class="highlighter-rouge">Run Query</code></p>
 
-<p>Let’s stop to review this schema-building WOQL query:</p>
+<p><img src="/blog/assets/uploads/add-schema.jpg" alt="" /></p>
 
-<ol>
-  <li>The when will perform the operation for every time its first argument istrue. In this case, exactly once.</li>
-  <li>We perform all operations within the and.</li>
-</ol>
+<p>It worked!</p>
+
+<p><img src="/blog/assets/uploads/success-schema.jpg" alt="" /></p>
+
+<p>Let’s stop to review this schema-building query:</p>
+
+<p>We perform all operations within the <code class="highlighter-rouge">and</code>.</p>
 
 <p>So here’s the operations we have performed:</p>
 
 <ol>
-  <li>We created three different document types (given by the <code class="highlighter-rouge">doctype</code> function): <code class="highlighter-rouge">Station</code> , <code class="highlighter-rouge">Journey</code> and <code class="highlighter-rouge">Bicycle</code></li>
+  <li>We created three different document types (given by the <code class="highlighter-rouge">doctype</code>function): <code class="highlighter-rouge">Station</code> , <code class="highlighter-rouge">Journey</code> and <code class="highlighter-rouge">Bicycle</code></li>
   <li>We added <code class="highlighter-rouge">label</code> (names) or <code class="highlighter-rouge">description</code> (short descriptions) to them.</li>
   <li>We created properties for <code class="highlighter-rouge">Journey</code>, we do that by using the <code class="highlighter-rouge">property</code> function after <code class="highlighter-rouge">Journey</code> with the first argument as the name of the property and the second argument as the type (or range) of the property.</li>
   <li>For each property, you have to provide an id and the type of that property in <code class="highlighter-rouge">property</code>, as with class you can add a <code class="highlighter-rouge">label</code> to it as well.</li>
 </ol>
 
-<p>Check that you have successfully created the schema by clicking the Schema button on the left. You should now be able to see the classes and properties in table format and get a graph representation by clicking the ‘graph’ button (circled in red):</p>
+<p>We can view the result by clicking the ‘Schema’ tab:</p>
 
-<p><img src="https://miro.medium.com/max/2756/1*1e2iw6CJnWm3NWTFuc9HKw.png" alt="showing classes in schema" /></p>
-
-<p><img src="https://miro.medium.com/max/2780/1*x95n_XNGsO5-pNJci1iTJA.png" alt="graph of the classes in schema" /></p>
-
-<p><img src="https://miro.medium.com/max/2754/1*ty448DHo8KcoUsFZGJ8n_Q.png" alt="showing properties in schema" /></p>
-
-<p><img src="https://miro.medium.com/max/2736/1*xY5-Liid961dk1T-GfuE3g.png" alt="graph of the properties in schema" /></p>
+<p><img src="/blog/assets/uploads/schema-view.jpg" alt="showing classes in schema" /></p>
 
 <hr />
 
-<h2 id="lets-load-in-the-data">Let’s Load in the Data</h2>
+<h1 id="lets-load-in-the-data">Let’s Load in the Data</h1>
 
-<p>Now let’s get to the good part. We have our schema, which defines the shape of the data and ensures data integrity.</p>
+<p>Now let’s get to the good part. We’ll now load the data from the CSV. We’re going to progressively extend the query to import the data, cleaning it and matching it as we go. WOQL is a highly composable language, you can combine queries arbitrarily using logical ANDs and ORs.</p>
 
-<p>We’ll now load the data from the CSV. We’re going to progressively extend the query to import the data, cleaning it and matching it as we go. WOQL is a highly composable language, you can combine queries arbitrarily using logical ANDs and ORs.</p>
+<p><strong>Let’s build the next query in steps and only hit</strong><code class="highlighter-rouge">Run Query</code><strong>at the end of the query (full query is available at the bottom of the section)</strong></p>
 
-<p><strong>Let’s build the next query in steps and only hit <code class="highlighter-rouge">Submit</code> at the end of the query (full query is available at the bottom of the section)</strong></p>
-
-<p>Go back to the Query page, and copy in the following query:</p>
+<p>Go back to the <code class="highlighter-rouge">Query</code> page, and copy in the following query:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Read data from CSV</span>
 <span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
@@ -237,12 +209,10 @@
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Station</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">v:End_ID</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:End_Station_URL</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Bicycle</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Bike_URL</span><span class="dl">"</span><span class="p">),</span>    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start_ID - v:End_ID @ v:Start_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike v:Bike from v:Start_Station to v:End_Station at v:Start_Time until v:End_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
-<span class="p">];</span>
+<span class="p">];</span> 
 <span class="c1">//Combine with logical and</span>
 <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="p">...</span><span class="nx">wrangles</span><span class="p">)</span>
 </code></pre></div></div>
-
-<p><img src="https://miro.medium.com/max/4478/1*MXJohHDXNIN6zuoBVjacnQ.png" alt="Result of import / clean data query" /></p>
 
 <p>We’ll explain each of the steps in this query in turn. As a first step, we saved the part of the query that imports the data from CSV in a <code class="highlighter-rouge">const</code> variable named <code class="highlighter-rouge">csv</code>. Then we create a list of WOQL operators and save it in another constvariable called <code class="highlighter-rouge">wrangles</code>, we combine the two parts of the query with a <code class="highlighter-rouge">WOQL.and</code> operator.</p>
 
@@ -251,6 +221,44 @@
 <p>Besides generating IDs, we also create new fields with new data types, for example, we use <code class="highlighter-rouge">typecast</code> to cast <code class="highlighter-rouge">Duration</code> into <code class="highlighter-rouge">integer</code> and store it as <code class="highlighter-rouge">Duration_Cast</code>. We can also use <code class="highlighter-rouge">concat</code> to contract new text formatted with variables in the fields — for example, to create <code class="highlighter-rouge">Journey_Label</code>.</p>
 
 <p>We’ll insert them in the graph by adding <code class="highlighter-rouge">triples</code>! Triples are the atomic data entity in the RDF data model. We add the following to the query:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="p">...</span><span class="nx">wrangles</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Journey</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:ST_Cast</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">end_time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:ET_Cast</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Duration_Cast</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Start_Station_URL</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">end_station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Station_URL</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike_URL</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start_Station_URL</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:SS_Label</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:End_Station_URL</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:ES_Label</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_URL</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bicycle</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>If we hit <code class="highlighter-rouge">Run Query</code> for this section and you should see the following in the <code class="highlighter-rouge">Results Viewer</code> tab:</p>
+
+<p><img src="/blog/assets/uploads/load-in-the-data-1.jpg" alt="" /></p>
+
+<p>Click on the <code class="highlighter-rouge">table</code> drop down menu in the top right of the results and switch to <code class="highlighter-rouge">graph</code> view:</p>
+
+<p><img src="/blog/assets/uploads/graph-of-data-load.jpg" alt="" /></p>
+
+<p>Now you can see your results in graph form.</p>
+
+<p>We’ll explain each of the steps in the query in turn. As a first step, we saved the part of the query that imports the data from CSV in a <code class="highlighter-rouge">const</code> variable named <code class="highlighter-rouge">csv</code>. Then we create a list of WOQL operators and save it in another constvariable called <code class="highlighter-rouge">wrangles</code>, we combine the two parts of the query with a <code class="highlighter-rouge">WOQL.and</code> operator.</p>
+
+<p>The <code class="highlighter-rouge">wrangles</code> clause uses 3 WOQL functions to transform the data into the correct form for input. In each case, the function creates a new variable as output — the last argument in each case. The <code class="highlighter-rouge">idgen</code> function generates IDs for our three document types <code class="highlighter-rouge">Journey</code>, <code class="highlighter-rouge">Station</code>, and <code class="highlighter-rouge">Bicycle</code>. The first argument is the prefix that will be used, the second is a list of variables which combine to give a unique identity for the id. For example, in <code class="highlighter-rouge">Journey</code> we use 3 fields in the <code class="highlighter-rouge">csv</code> (<code class="highlighter-rouge">Start_ID</code>, <code class="highlighter-rouge">Start_Time</code> and <code class="highlighter-rouge">Bike</code>) to generate a unique id <code class="highlighter-rouge">Journey_ID</code>.</p>
+
+<p>Besides generating IDs, we also create new fields with new data types, for example, we use <code class="highlighter-rouge">typecast</code> to cast <code class="highlighter-rouge">Duration</code> into <code class="highlighter-rouge">integer</code> and store it as <code class="highlighter-rouge">Duration_Cast</code>. We can also use <code class="highlighter-rouge">concat</code> to contract new text formatted with variables in the fields — for example, to create <code class="highlighter-rouge">Journey_Label</code>.</p>
+
+<p>We’ll insert them in the graph by adding <code class="highlighter-rouge">triples.</code> Triples are the atomic data entity in the RDF data model. We add the following to the query:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="p">...</span><span class="nx">wrangles</span><span class="p">)</span>
 <span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
@@ -281,18 +289,12 @@
 
 <p>Finally, we have to put all of the above together and create the query that reads the data from the csv, do the data wrangling and add them in the graph as triples. We add this to complete the query:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">inserts</span><span class="p">);</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WOQL.and(inputs, inserts);
 </code></pre></div></div>
 
-<p>and click <code class="highlighter-rouge">submit</code>. Remember, this is getting the data in to our graph so you won’t have a query output just yet. It should look something like this:</p>
+<p>Write some commit message again (e.g. “inserting data”) and click <code class="highlighter-rouge">Run Query</code>. Remember, this is getting the data in to our graph so you won’t have a query output just yet.</p>
 
-<p><img src="https://miro.medium.com/max/2688/1*fKSEaLdiwPdpNH_QOOiStw.png" alt="query result" />
-We are working to make it prettier!</p>
-
-<p>Or this if you have the view pane open:</p>
-
-<p><img src="https://miro.medium.com/max/2710/1*x-Pj1FTVVeVLqll7e3EGuw.png" alt="open view pane" />
-The little x closes the view pane and the button opens it (both circled in red)</p>
+<p>The little x closes the view pane and the button opens it (both circled in red)</p>
 
 <p>The full query in all it’s glory and in easy to copy format:</p>
 
@@ -342,22 +344,14 @@ The little x closes the view pane and the button opens it (both circled in red)<
         <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">);</span>
 <span class="c1">//Combine inputs and inserts with when clause</span>
-<span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">inserts</span><span class="p">);</span>
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">inserts</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>and click <code class="highlighter-rouge">submit</code>.</p>
-
-<p>Now we have the data in our graph❗️ And we can start querying ( 💪🏼).</p>
-
-<p>If you have more than one CSV that you want to load in programmatically, you can so easily with a script and our API. You can find both Javascript and Python scripts that cover and extend this tutorial at: <a href="https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/">https://github.com/terminusdb/terminus-tutorials/tree/master/bike-tutorial</a></p>
-
-<blockquote>
-  <p>Extra: Check out how to <a href="http://blog.terminusdb.com/2020/01/21/loading-your-local-files-in-terminusdb/">Load your local files in TerminusDB</a></p>
-</blockquote>
+<p>don’t forget to put in the commit message, then click <code class="highlighter-rouge">Run Query</code>.</p>
 
 <hr />
 
-<h2 id="lets-query-the-data-and-visualise-it">Let’s Query The Data and Visualise It</h2>
+<h1 id="query-the-data">Query The Data</h1>
 
 <p>Back to the query page — again input into the WOQL.js query builder:</p>
 
@@ -371,11 +365,11 @@ The little x closes the view pane and the button opens it (both circled in red)<
 <span class="p">)</span>
 </code></pre></div></div>
 
-<p>click <code class="highlighter-rouge">Submit</code></p>
+<p>Click on <code class="highlighter-rouge">Run Query</code>and you should see the query returning a table:</p>
 
-<p>You should see the query returning a table:</p>
+<p><img src="/blog/assets/uploads/results.jpg" alt="query returns a table" /></p>
 
-<p><img src="https://miro.medium.com/max/2716/1*gv6sXsUvEjXteY0wZqgYfA.png" alt="query returns a table" /></p>
+<!--StartFragment-->
 
 <p>Here we used <code class="highlighter-rouge">select</code> to filter out the variables (those starting with <code class="highlighter-rouge">v:</code>) that appear in our output. Then we used <code class="highlighter-rouge">and</code> to link all the conditions we want to include, as you can see there are lot’s of <code class="highlighter-rouge">triples</code> to be conditioned. The ones with <code class="highlighter-rouge">opt()</code> means that they are optional — it will be ignored if that data is missing (instead of returning an error — very handy).</p>
 
@@ -390,79 +384,17 @@ The little x closes the view pane and the button opens it (both circled in red)<
   <li>and all the <code class="highlighter-rouge">journey_bicycles</code> of all the <code class="highlighter-rouge">Journeys</code> (let’s call them <code class="highlighter-rouge">Bike</code>)</li>
 </ol>
 
-<p>So we now have a query that gives us a result, but it doesn’t mean much in a table — we can click the graph button and that gives us a basic graph:</p>
+<p>We can click the <code class="highlighter-rouge">table</code> drop down menu in the top right and get a <code class="highlighter-rouge">graph</code> view of the results:</p>
 
-<p><img src="https://miro.medium.com/max/2742/1*uKREL4NhiB3MdDAQQx9Iog.png" alt="result as graph" /></p>
+<p><img src="/blog/assets/uploads/results-graph-view.jpg" alt="result as graph" /></p>
 
-<p>We want to change the view and turn the query output into a graph visualisation that give us insights about bike journeys in Washington D.C.</p>
+<p>You can go back to ‘DB Home’ to view all of the information about the database, including all your commit messages:</p>
 
-<p>So lets click on the view button beside the graph (circled in red):</p>
+<p><img src="/blog/assets/uploads/db-home-post.jpg" alt="click on the view button" /></p>
 
-<p><img src="https://miro.medium.com/max/2742/1*T2kI7TkDtmjsbQLjKXarqw.png" alt="click on the view button" /></p>
+<p>Of course, with TerminusHub there is a way to short circuit this tutorial. You can go back to the start, click on ‘Clone’ and copy the bike database in full. You can then immediately run your queries. No need for any interim steps. Life is getting easier!</p>
 
-<p>You should get this:</p>
-
-<p><img src="https://miro.medium.com/max/2730/1*1xr6zU_ezS5dpB5D2Pwk3w.png" alt="start editing the view script" /></p>
-
-<p>In the view text box (the query builder is still visible above) input the following (remembering to delete the text already in the box):</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
-<span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start_Label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">End_Label</span><span class="dl">"</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-<span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">End</span><span class="dl">"</span><span class="p">).</span><span class="nx">icon</span><span class="p">({</span><span class="na">color</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="na">unicode</span><span class="p">:</span> <span class="dl">"</span><span class="se">\</span><span class="s2">uf84a</span><span class="dl">"</span><span class="p">})</span>
-    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:End_Label</span><span class="dl">"</span><span class="p">).</span><span class="nx">size</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="nx">charge</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
-<span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start</span><span class="dl">"</span><span class="p">).</span><span class="nx">icon</span><span class="p">({</span><span class="na">color</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="na">unicode</span><span class="p">:</span> <span class="dl">"</span><span class="se">\</span><span class="s2">uf84a</span><span class="dl">"</span><span class="p">})</span>
-    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start_Label</span><span class="dl">"</span><span class="p">).</span><span class="nx">size</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="nx">collisionRadius</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nx">view</span><span class="p">.</span><span class="nx">edge</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">End</span><span class="dl">"</span><span class="p">).</span><span class="nx">weight</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>And 💥 we have 🚲s: — a graphical model of all the journeys in the dataset between bike station. OK — it’s bike journey data between Washington D.C. stations, so not entirely relevant to all users, but you have completed the basics of TerminusDB and WOQL. You can now start to introduce more complex, more relevant data.</p>
-
-<p><img src="https://miro.medium.com/max/1640/1*cbF3mvAVCJAOS09F-FHMCw.png" alt="graph showing all bike journeys" /></p>
-
-<p>So what did we do here? First we use <code class="highlighter-rouge">hidden(true)</code> to hide some nodes — too many nodes complicate the graph with information we don’t need to see right now.</p>
-
-<p>Updating <code class="highlighter-rouge">color</code> and <code class="highlighter-rouge">unicode</code> changed the colours and inserted icons size set the icon <code class="highlighter-rouge">size</code>, making the nodes a little bigger so they pop, and <code class="highlighter-rouge">charge</code> pushes the nodes away from each other so the view isn’t too cluttered.</p>
-
-<p>Setting <code class="highlighter-rouge">text</code> in the graph so when you hover over the node you get the label — in this case the names of bike stations in Washington D.C. We use <code class="highlighter-rouge">collisionRadius</code> to determine the radius of the node in terms of collisions. Finally, we use <code class="highlighter-rouge">view.edge</code> to create lines between nodes setting what the end points are and set the weight to determine how dark the edges are — we don’t want the edges to dominate the view.</p>
-
-<h2 id="lets-put-it-in-my-website">Let’s Put it in My Website</h2>
-
-<p>To finish off the tutorial, let’s take the data and put it in our website. You can use the files from <a href="https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/bike-tutorial.js">https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/bike-tutorial.js</a> and <a href="https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/bike-tutorial.html">https://github.com/terminusdb/terminus-tutorials/blob/master/bike-tutorial/javascript/bike-tutorial.html</a> as examples. The basic idea is simple — you create a HTML page and include the TerminusDB libraries and dependencies in the header</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://terminusdb.github.io/terminus-dashboard/dist/terminus-dashboard.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>                           <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3.v5.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>                           <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-2.2.4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>                           <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"</span><span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<p>Then, finally, we can use the library to load the query and view above and inject it into the DOM of our HTML page:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">showView</span><span class="p">(</span><span class="nx">client</span><span class="p">){</span>
-    <span class="kd">const</span> <span class="nx">WOQL</span> <span class="o">=</span> <span class="nx">TerminusClient</span><span class="p">.</span><span class="nx">WOQL</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">View</span> <span class="o">=</span> <span class="nx">TerminusClient</span><span class="p">.</span><span class="nx">View</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">woql</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start”,</span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">S_Lab</span><span class="err">”</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:End”,</span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">E_Lab</span><span class="err">”</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">and</span><span class="p">(</span>
-        <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey”, </span><span class="dl">"</span><span class="nx">type</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:Journey”),
-        WOQL.triple(</span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">Journey</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">start_station”, </span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">Start</span><span class="err">”</span><span class="p">),</span>
-        <span class="nx">WOQL</span><span class="p">.</span><span class="nx">opt</span><span class="p">().</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start”, </span><span class="dl">"</span><span class="nx">label</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:S_Lab”),
-        WOQL.triple(</span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">Journey</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">end_station”, </span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">End</span><span class="err">”</span><span class="p">),</span>
-        <span class="nx">WOQL</span><span class="p">.</span><span class="nx">opt</span><span class="p">().</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:End”, </span><span class="dl">"</span><span class="nx">label</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:E_Lab”),
-        WOQL.triple(</span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">Journey</span><span class="err">”</span><span class="p">,</span> <span class="dl">"</span><span class="s2">journey_bicycle”, </span><span class="dl">"</span><span class="nx">v</span><span class="p">:</span><span class="nx">Bike</span><span class="err">”</span><span class="p">)</span>
-    <span class="p">);</span>
-    <span class="kd">let</span> <span class="nx">view</span> <span class="o">=</span> <span class="nx">View</span><span class="p">.</span><span class="nx">graph</span><span class="p">();</span>
-    <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">S_Lab”, </span><span class="dl">"</span><span class="nx">E_Lab</span><span class="err">”</span><span class="p">).</span><span class="nx">hidden</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-    <span class="nx">view</span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="dl">"</span><span class="s2">End”).icon({color: [255,0,0], unicode: </span><span class="dl">"</span><span class="err">\</span><span class="nx">uf84a</span><span class="err">”</span><span class="p">})</span>
-        <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:E_Lab”).size(25).charge(-10)
-    view.node(</span><span class="dl">"</span><span class="nx">Start</span><span class="err">”</span><span class="p">).</span><span class="nx">icon</span><span class="p">({</span><span class="na">color</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="na">unicode</span><span class="p">:</span> <span class="dl">"</span><span class="se">\</span><span class="s2">uf84a”})
-        .text(</span><span class="dl">"</span><span class="na">v</span><span class="p">:</span><span class="nx">S_Lab</span><span class="err">”</span><span class="p">).</span><span class="nx">size</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="nx">collisionRadius</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="nx">view</span><span class="p">.</span><span class="nx">edge</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start”, </span><span class="dl">"</span><span class="nx">End</span><span class="err">”</span><span class="p">).</span><span class="nx">weight</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">tv</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TerminusDashboard</span><span class="p">.</span><span class="nx">TerminusViewer</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">tv</span><span class="p">.</span><span class="nx">getResult</span><span class="p">(</span><span class="nx">woql</span><span class="p">,</span> <span class="nx">view</span><span class="p">);</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="err">‘</span><span class="nx">target</span><span class="err">’</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">getAsDOM</span><span class="p">());</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>You can experiment with the query to find different things in the data, and the view to show it in different ways — for example, how would you find the routes covered by a specific bike?</p>
-
-<p>Well done — you are now a level 1 Terminator!</p>
+<p>Terminators first, always!</p>
 
         </div>
 
@@ -472,11 +404,11 @@ The little x closes the view pane and the button opens it (both circled in red)<
   <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-facebook"></i></a></li>
   <li><a href="https://twitter.com/intent/tweet?&text=My First TerminusDB Graph Visualisation — Bike Share Data+http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
   <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=My First TerminusDB Graph Visualisation — Bike Share Data&summary=&url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=My First TerminusDB Graph Visualisation — Bike Share Data&summary=Bike tutorial with 3.0. Terminators rule ok. &url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
   <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
   <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
   <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
-  <li><a href="https://www.pinterest.com/pin/create/link/?description=&media=&url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Bike tutorial with 3.0. Terminators rule ok. &media=http://blog.terminusdb.com/blog/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg&url=http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 </ul>
 
       </div>
