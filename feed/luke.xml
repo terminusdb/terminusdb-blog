@@ -6,292 +6,9 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Sep 2020 18:36:14 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Sep 2020 18:36:14 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Sep 2020 18:36:28 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Sep 2020 18:36:28 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      <item>
-        <title>TerminusDB @ PyLadies Dublin</title>
-        <description>&lt;p&gt;Hello Terminators!&lt;/p&gt;
-
-&lt;p&gt;A first — for me at least — attending PyLadies, Dublin!&lt;/p&gt;
-
-&lt;p&gt;PyLadies helps more women become active participants and leaders in the Python open-source community. PyLadies Dublin also provides a friendly support network for women and a bridge to the larger Python world. Anyone with an interest in Python is encouraged to participate. You can see more &lt;a href=&quot;https://www.meetup.com/PyLadiesDublin/&quot;&gt;here&lt;/a&gt; — we really enjoyed, so I’d encourage people to attend.&lt;/p&gt;
-
-&lt;p&gt;TerminusDB Developer Advocate Extraordinaire, Cheuk, spoke at the PyLadies event earlier this week. There were about 40 PyLadies in the audience and a sprinkling of interloping PyMen.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg&quot; alt=&quot;PyLadiesDublin meetup&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The event took place in the Dublin office of Qualtrics, which has a full replica of an Irish pub. Another good reason to attend!&lt;/p&gt;
-
-&lt;p&gt;Cheuk used TerminusDB to ask if we are supporting the correct politician. She used data from the Dublin City Council. It is a fascinating use case, and relevant in Ireland as we have just had an inconclusive election (and might have another in the not too distant future). There is a run through of the demo &lt;a href=&quot;/2020/01/15/are-you-supporting-the-right-politician/&quot;&gt;over here&lt;/a&gt; — give it a try.&lt;/p&gt;
-
-&lt;p&gt;The full video of the excellent presentation is here:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3XKJ9_bplUY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;TerminusDB is open source now and forever so it is perfect for the Python community. We are rolling out ever more features for Pythonistas — check out our &lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;python query client&lt;/a&gt;! And watch this space for exciting news.&lt;/p&gt;
-
-&lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</guid>
-        
-        <category>Python</category>
-        
-        <category>Database</category>
-        
-        <category>Data</category>
-        
-        <category>Data Science</category>
-        
-        <category>Politics</category>
-        
-        
-      </item>
-    
-    
-    
-      <item>
-        <title>Terminalia — Our Day</title>
-        <description>&lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt;
-
-&lt;p&gt;TerminusDB is named after the Roman God of boundaries, Terminus — all databases need good boundaries — and Terminalia is his festival.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg&quot; alt=&quot;We want the finest wines available to humanity!&quot; /&gt;
-We want the finest wines available to humanity!&lt;/p&gt;
-
-&lt;p&gt;Terminus is an old Roman god — probably introduced by Romulus after the founding of the city. There is a famous story told of the last king of Rome, Tarquin (so disliked &amp;amp; proud that he was overthrown and the Republic declared) — he wanted to reshape Rome as an imperial capital and engaged in a large scale building programme. As part of his works, he set about reconstructing the Temple of Jupiter on the Capitol Hill. Tarquin thought that constructing a massive temple over the remains of a holy site consecrated by Romulus would cement his place as a great King of Rome. To facilitate the reconstruction, the older shrines to various gods had to be removed; however, when they attempted to move the shrine of Terminus, it would not budge. Terminus was the immovable rock of the Capitol. Even Jupiter, the king of the gods, had to kneel to Terminus.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/terminusdb/terminusdb-whats-in-a-name-27b8be6b0794&quot;&gt;More on Terminus and TerminusDB’s name.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Terminus’ slogan &lt;em&gt;‘Concedo Nulli’&lt;/em&gt; — concede to nobody — remains at the heart of the TerminusDB project. We continue to walk through walls to get the features out the door. We will not yield.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3792/0*QpWPQjM2KyznDjeD.jpg&quot; alt=&quot;statue of Terminus&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Terminalia is the official holiday for TerminusDB. As it’s on a Sunday this year, we celebrate tonight. As Ovid dictates, we will allow the pagan spirits to flow. We will pour lamb’s blood on the statue of Terminus and offer him suckling pigs and wine.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2600/0*u1Y5gT-CQ3_Fx6bz.jpg&quot; alt=&quot;painting of Terminalia&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;“When night has passed, let the god be celebrated With customary honour, who separates the fields with his sign. Terminus, whether a stone or a stump buried in the earth, You have been a god since ancient times. You are crowned from either side by two landowners, Who bring two garlands and two cakes in offering. An altar’s made: here the farmer’s wife herself Brings coals from the warm hearth on a broken pot. The old man cuts wood and piles the logs with skill, And works at setting branches in the solid earth. Then he nurses the first flames with dry bark, While a boy stands by and holds the wide basket. When he’s thrown grain three times into the fire The little daughter offers the sliced honeycombs. Others carry wine: part of each is offered to the flames: The crowd, dressed in white, watch silently. Terminus, at the boundary, is sprinkled with lamb’s blood, And doesn’t grumble when a sucking pig is granted him. Neighbours gather sincerely, and hold a feast, And sing your praises, sacred Terminus: ‘You set bounds to peoples, cities, great kingdoms: Without you every field would be disputed. You curry no favour: you aren’t bribed with gold, Guarding the land entrusted to you in good faith. If you’d once marked the bounds of Thyrean lands, Three hundred men would not have died, Nor Othryades’ name be seen on the pile of weapons. O how he made his fatherland bleed! What happened when the new Capitol was built? The whole throng of gods yielded to Jupiter and made room: But as the ancients tell, Terminus remained in the shrine Where he was found, and shares the temple with great Jupiter. Even now there’s a small hole in the temple roof, So he can see nothing above him but stars. Since then, Terminus, you’ve not been free to wander: Stay there, in the place where you’ve been put, And yield not an inch to your neighbour’s prayers, Lest you seem to set men above Jupiter: And whether they beat you with rakes, or ploughshares, Call out: “This is your field, and that is his!”’ There’s a track that takes people to the Laurentine fields, The kingdom once sought by Aeneas, the Trojan leader: The sixth milestone from the City, there, bears witness To the sacrifice of a sheep’s entrails to you, Terminus. The lands of other races have fixed boundaries: The extent of the City of Rome and the world is one.” — Ovid, Fasti II&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.irishtimes.com/opinion/the-other-marching-season-terminalia-the-roman-festival-of-boundaries-1.3803276&quot;&gt;Terminalia and Terminus also sneak into Irish place names and traditional events&lt;/a&gt; (link to a great Irish Times article on the subject)&lt;/p&gt;
-
-&lt;p&gt;Terminators around the world are encouraged to celebrate this momentous day. Wear white, sacrifice a lamb, let the spirit of pre-Republican Rome flow.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2000/0*P0qHv01fUcd8XSMU.jpg&quot; alt=&quot;modern festival&quot; /&gt;
-Get out there, Terminators&lt;/p&gt;
-</description>
-        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</guid>
-        
-        <category>Terminusdb</category>
-        
-        <category>Rome</category>
-        
-        <category>Database</category>
-        
-        <category>Party</category>
-        
-        <category>Do It Yourself</category>
-        
-        
-      </item>
-    
-    
-    
-    
-    
-    
-    
-      <item>
-        <title>TerminusDB Discussions</title>
-        <description>&lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt;
-
-&lt;p&gt;We are a moderately distributed team and we have plenty of opportunity for detailed technical discussion (indexing strategy anyone?) so we thought that it’d be a good idea to start a less formal weekly exchange. One member of the team leads the discussion and the rest contribute with questions &amp;amp; comments.&lt;/p&gt;
-
-&lt;p&gt;Over the year and a bit since we started the tradition, we’ve had everything from the innards of JavaScript to Crypto Kitties to Theories of Developer Relations to Cloud Architecture to the Dialectics of Software Development (a personal favorite — I must post the slides).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1602/1*AiOAyqAcjMq5qd8fBUdw2w.png&quot; alt=&quot;The right superstructure is important&quot; /&gt;
-The right superstructure is important&lt;/p&gt;
-
-&lt;p&gt;We’ve also had nuclear power, the political economy of open source software, values vs virtues and Terry Davis (TempleOS is something else — I’d encourage all to check it out).&lt;/p&gt;
-
-&lt;p&gt;Really whatever was of special interest to the person assigned that day. I looked back through the chat and realize that I have suggested ‘Practical Maoism for the Workplace’ twice and nobody has taken up my lead.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1308/1*qa5C7ZG-4mvCH5KKJaUiLg.png&quot; alt=&quot;The system's features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&quot; /&gt;
-The system’s features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&lt;/p&gt;
-
-&lt;p&gt;The tradition has grown to be an important part of every TerminusDB week. If we continue to grow the core group, I’m not sure how we’ll scale — 1 week in 30 might be a little infrequent. We can cross that bridge when we get there.&lt;/p&gt;
-
-&lt;p&gt;So anyway, we really value these discussions and thought the the broader Terminus Community might also enjoy. We’ve recorded the latest discussion, which took place yesterday, and uploaded it to our YouTube channel.&lt;/p&gt;
-
-&lt;p&gt;This week we were led by our BDFL Gavin in a discussion of ‘Regular Expressions - Theory and Practice’. It covers a bunch of interesting aspects including Chomsky’s Hierarchy, Büchi automata, grammars and much more.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mbtpAyn0n0o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;I apologize for the sound quality issues — we’ll work on a setup that captures the various contributors in high fidelity. At least you can hear the main presentation. Only one instance of adult language — less than normal I’d say — so be warned.&lt;/p&gt;
-
-&lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</guid>
-        
-        <category>Database</category>
-        
-        <category>Development</category>
-        
-        <category>Programming</category>
-        
-        <category>Maoism</category>
-        
-        <category>Dialectics</category>
-        
-        
-      </item>
-    
-    
-    
-    
-    
-    
-    
-      <item>
-        <title>TerminusDB 1.1 — The Big Babushka</title>
-        <description>&lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt;
-
-&lt;h2 id=&quot;terminus-store&quot;&gt;Terminus-store&lt;/h2&gt;
-
-&lt;p&gt;The major development is our new storage backend, terminus-store. With the introduction of the new store, TerminusDB takes a radical departure from traditional database architectures. Our approach has three parts:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;We have a graph database with strong schema to retain simplicity and generality&lt;/li&gt;
-  &lt;li&gt;The graph is implemented using succinct immutable data structures which enable more sparing use of main memory resources.&lt;/li&gt;
-  &lt;li&gt;We adopt a delta encoding approach to updates (‘like git, but for data’) which provides the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel facilitating CI/CD approaches on data.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This final point is crucial — with TerminusDB we can now use advanced CI/CD workflows in data operations. The large impact of git on the software development world can now be envisioned in the world of data. This is made possible by synergies between an immutable layered approach and the succinct data structure approach that we’ve used for encoding. The DevOps revolution becomes the DataOps revolution.&lt;/p&gt;
-
-&lt;p&gt;Just as with DevOps, DataOps means a focus on collaboration, automation and integration. There is a requirement to bridge what is today a chasm between huge reams of unstructured data on the one hand, and analysts looking for access to simple, clean, structured data on the other. DataOps is that bridge.&lt;/p&gt;
-
-&lt;p&gt;TerminusDB is a practical tool for enabling branch, merge, rollback, and the various automated and manual testing regimes which they facilitate on a transactional database management system while providing sophisticated query support&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1194/1*ADSnYco_5vlMbLT7eiT2Rw.png&quot; alt=&quot;showing how TerminusDB transections&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The new TerminusDB store is implemented in Rust. It is low level, memory safe, has no run time and is C compatible. We think Rust will be the language of the 2020s and we are delighted to be Rustaceans!&lt;/p&gt;
-
-&lt;p&gt;There is a &lt;a href=&quot;https://github.com/terminusdb/terminus-server/blob/dev/docs/whitepaper/terminusdb.pdf&quot;&gt;TerminusDB Technical Paper&lt;/a&gt; that goes into this in more detail for those interested.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1678/1*S9ho_dXwojark-UnLrRSeQ.png&quot; alt=&quot;White Paper&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;woql&quot;&gt;WOQL&lt;/h2&gt;
-
-&lt;p&gt;The Web Object Query Language — or WOQL — has developed considerably since our first release:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Extended WOQL to greater functionality for string and arithmetic processing&lt;/li&gt;
-  &lt;li&gt;Better date handling in WOQL&lt;/li&gt;
-  &lt;li&gt;Improved type casting in WOQL&lt;/li&gt;
-  &lt;li&gt;Improvements to query processing speed&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The growing maturity of WOQL provides a strong platform to import, clean and query complex data. WOQL remains the best graph query language available today.&lt;/p&gt;
-
-&lt;p&gt;WOQL itself is specified as a JSON document format. All transmission of data uses the canonical JSON format, but this is generally annoying to write, hence WOQL.js is the preferred means by which human users can write queries manually. In developing WOQL we wanted to make querying graph data easy to learn, understand, and use, but also build on the power and functionality of other standard data access languages. As we can see from the TerminusDB tutorials, WOQL is a highly composable and flexible graph query language. Graphs are very generically applicable to a much wider range of data than table structured data. Ultimately, the flexibility of graphs with well specified schema, will show their value.&lt;/p&gt;
-
-&lt;h2 id=&quot;terminus--console&quot;&gt;Terminus — Console&lt;/h2&gt;
-
-&lt;p&gt;The new Console significantly builds on the simple JavaScript client application that released with 1.0.&lt;/p&gt;
-
-&lt;p&gt;In the query interface, you can now switch between WOQL.js and JSON. You can also add new queries to the original query — as inspired by the Jupyter Notebook functionality you know and love.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3474/1*uScpmhNCu0UwUR30Y_RGAA.png&quot; alt=&quot;TerminusDB console&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you have run your query, we have a view interface to easily change the view on the output&lt;/p&gt;
-
-&lt;p&gt;Throughout the console you now have the ability to toggle between table and graph view. On the query page, on the document page and on the schema page, you can see as a graph. This is super helpful when you are trying to see what’s in a complex schema, or trying to derive insight from a query.&lt;/p&gt;
-
-&lt;p&gt;The new Console gives user a quality interface for managing and querying TerminusDB. It ships with TerminusDB.&lt;/p&gt;
-
-&lt;h2 id=&quot;python-client&quot;&gt;Python Client&lt;/h2&gt;
-
-&lt;p&gt;With the release of the TerminusDB python client, python users can query data and interact with TerminusDB through the API and WOQL.py. We will continue to work to make TerminusDB more accessible for the python community (firstly, by improving our documentation!). TerminusDB is the database for data people, and there are no people that are more data than Pythonistas!&lt;/p&gt;
-
-&lt;h2 id=&quot;whats-next&quot;&gt;What’s Next&lt;/h2&gt;
-
-&lt;p&gt;We are working hard on our collaboration and DataOps features. They should be available by the end of February 2020.&lt;/p&gt;
-
-&lt;p&gt;We’ll be pushing out documentation as fast as we can. There is lots of new stuff available, including a couple of tutorials, but it is never enough!&lt;/p&gt;
-
-&lt;p&gt;Remember we are open source (GPLv3) now and forever.&lt;/p&gt;
-
-&lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
-        
-        <category>Developer Tools</category>
-        
-        <category>Data</category>
-        
-        <category>Database</category>
-        
-        <category>Python</category>
-        
-        <category>Rust</category>
-        
-        
-      </item>
-    
-    
-    
     
     
       <item>
@@ -602,9 +319,9 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
 
 &lt;p&gt;Terminators first, always!&lt;/p&gt;
 </description>
-        <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
+        <pubDate>Tue, 01 Sep 2020 18:34:56 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
         <category>Database</category>
         
@@ -616,6 +333,289 @@ The system’s features, such as its 640x480 resolution, 16-color display and si
         
         
       </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <item>
+        <title>TerminusDB @ PyLadies Dublin</title>
+        <description>&lt;p&gt;Hello Terminators!&lt;/p&gt;
+
+&lt;p&gt;A first — for me at least — attending PyLadies, Dublin!&lt;/p&gt;
+
+&lt;p&gt;PyLadies helps more women become active participants and leaders in the Python open-source community. PyLadies Dublin also provides a friendly support network for women and a bridge to the larger Python world. Anyone with an interest in Python is encouraged to participate. You can see more &lt;a href=&quot;https://www.meetup.com/PyLadiesDublin/&quot;&gt;here&lt;/a&gt; — we really enjoyed, so I’d encourage people to attend.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB Developer Advocate Extraordinaire, Cheuk, spoke at the PyLadies event earlier this week. There were about 40 PyLadies in the audience and a sprinkling of interloping PyMen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/9216/1*TyLh-oQIByoTjJ37rR3HzQ.jpeg&quot; alt=&quot;PyLadiesDublin meetup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The event took place in the Dublin office of Qualtrics, which has a full replica of an Irish pub. Another good reason to attend!&lt;/p&gt;
+
+&lt;p&gt;Cheuk used TerminusDB to ask if we are supporting the correct politician. She used data from the Dublin City Council. It is a fascinating use case, and relevant in Ireland as we have just had an inconclusive election (and might have another in the not too distant future). There is a run through of the demo &lt;a href=&quot;/2020/01/15/are-you-supporting-the-right-politician/&quot;&gt;over here&lt;/a&gt; — give it a try.&lt;/p&gt;
+
+&lt;p&gt;The full video of the excellent presentation is here:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3XKJ9_bplUY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;TerminusDB is open source now and forever so it is perfect for the Python community. We are rolling out ever more features for Pythonistas — check out our &lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;python query client&lt;/a&gt;! And watch this space for exciting news.&lt;/p&gt;
+
+&lt;p&gt;We’ll keep you up to date with reports from TerminusDB talks and events. A veritable Terminator news service.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminusdb-pyladies-dublin/</guid>
+        
+        <category>Python</category>
+        
+        <category>Database</category>
+        
+        <category>Data</category>
+        
+        <category>Data Science</category>
+        
+        <category>Politics</category>
+        
+        
+      </item>
+    
+    
+    
+      <item>
+        <title>Terminalia — Our Day</title>
+        <description>&lt;p&gt;The end of the year approaches. This Sunday 23 February we celebrate Terminalia — the festival that marks the end of the Old Roman Year.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB is named after the Roman God of boundaries, Terminus — all databases need good boundaries — and Terminalia is his festival.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1658/0*ArjA9ORibKUVEZFP.jpeg&quot; alt=&quot;We want the finest wines available to humanity!&quot; /&gt;
+We want the finest wines available to humanity!&lt;/p&gt;
+
+&lt;p&gt;Terminus is an old Roman god — probably introduced by Romulus after the founding of the city. There is a famous story told of the last king of Rome, Tarquin (so disliked &amp;amp; proud that he was overthrown and the Republic declared) — he wanted to reshape Rome as an imperial capital and engaged in a large scale building programme. As part of his works, he set about reconstructing the Temple of Jupiter on the Capitol Hill. Tarquin thought that constructing a massive temple over the remains of a holy site consecrated by Romulus would cement his place as a great King of Rome. To facilitate the reconstruction, the older shrines to various gods had to be removed; however, when they attempted to move the shrine of Terminus, it would not budge. Terminus was the immovable rock of the Capitol. Even Jupiter, the king of the gods, had to kneel to Terminus.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/terminusdb/terminusdb-whats-in-a-name-27b8be6b0794&quot;&gt;More on Terminus and TerminusDB’s name.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Terminus’ slogan &lt;em&gt;‘Concedo Nulli’&lt;/em&gt; — concede to nobody — remains at the heart of the TerminusDB project. We continue to walk through walls to get the features out the door. We will not yield.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3792/0*QpWPQjM2KyznDjeD.jpg&quot; alt=&quot;statue of Terminus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Terminalia is the official holiday for TerminusDB. As it’s on a Sunday this year, we celebrate tonight. As Ovid dictates, we will allow the pagan spirits to flow. We will pour lamb’s blood on the statue of Terminus and offer him suckling pigs and wine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2600/0*u1Y5gT-CQ3_Fx6bz.jpg&quot; alt=&quot;painting of Terminalia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;“When night has passed, let the god be celebrated With customary honour, who separates the fields with his sign. Terminus, whether a stone or a stump buried in the earth, You have been a god since ancient times. You are crowned from either side by two landowners, Who bring two garlands and two cakes in offering. An altar’s made: here the farmer’s wife herself Brings coals from the warm hearth on a broken pot. The old man cuts wood and piles the logs with skill, And works at setting branches in the solid earth. Then he nurses the first flames with dry bark, While a boy stands by and holds the wide basket. When he’s thrown grain three times into the fire The little daughter offers the sliced honeycombs. Others carry wine: part of each is offered to the flames: The crowd, dressed in white, watch silently. Terminus, at the boundary, is sprinkled with lamb’s blood, And doesn’t grumble when a sucking pig is granted him. Neighbours gather sincerely, and hold a feast, And sing your praises, sacred Terminus: ‘You set bounds to peoples, cities, great kingdoms: Without you every field would be disputed. You curry no favour: you aren’t bribed with gold, Guarding the land entrusted to you in good faith. If you’d once marked the bounds of Thyrean lands, Three hundred men would not have died, Nor Othryades’ name be seen on the pile of weapons. O how he made his fatherland bleed! What happened when the new Capitol was built? The whole throng of gods yielded to Jupiter and made room: But as the ancients tell, Terminus remained in the shrine Where he was found, and shares the temple with great Jupiter. Even now there’s a small hole in the temple roof, So he can see nothing above him but stars. Since then, Terminus, you’ve not been free to wander: Stay there, in the place where you’ve been put, And yield not an inch to your neighbour’s prayers, Lest you seem to set men above Jupiter: And whether they beat you with rakes, or ploughshares, Call out: “This is your field, and that is his!”’ There’s a track that takes people to the Laurentine fields, The kingdom once sought by Aeneas, the Trojan leader: The sixth milestone from the City, there, bears witness To the sacrifice of a sheep’s entrails to you, Terminus. The lands of other races have fixed boundaries: The extent of the City of Rome and the world is one.” — Ovid, Fasti II&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.irishtimes.com/opinion/the-other-marching-season-terminalia-the-roman-festival-of-boundaries-1.3803276&quot;&gt;Terminalia and Terminus also sneak into Irish place names and traditional events&lt;/a&gt; (link to a great Irish Times article on the subject)&lt;/p&gt;
+
+&lt;p&gt;Terminators around the world are encouraged to celebrate this momentous day. Wear white, sacrifice a lamb, let the spirit of pre-Republican Rome flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2000/0*P0qHv01fUcd8XSMU.jpg&quot; alt=&quot;modern festival&quot; /&gt;
+Get out there, Terminators&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/02/21/terminalia-our-day/</guid>
+        
+        <category>Terminusdb</category>
+        
+        <category>Rome</category>
+        
+        <category>Database</category>
+        
+        <category>Party</category>
+        
+        <category>Do It Yourself</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+    
+    
+      <item>
+        <title>TerminusDB Discussions</title>
+        <description>&lt;p&gt;One of the really nice things about TerminusDB is our weekly get together where one team member gives a short presentation on something. It doesn’t have to be work, it doesn’t have to be TerminusDB, it can be anything really.&lt;/p&gt;
+
+&lt;p&gt;We are a moderately distributed team and we have plenty of opportunity for detailed technical discussion (indexing strategy anyone?) so we thought that it’d be a good idea to start a less formal weekly exchange. One member of the team leads the discussion and the rest contribute with questions &amp;amp; comments.&lt;/p&gt;
+
+&lt;p&gt;Over the year and a bit since we started the tradition, we’ve had everything from the innards of JavaScript to Crypto Kitties to Theories of Developer Relations to Cloud Architecture to the Dialectics of Software Development (a personal favorite — I must post the slides).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1602/1*AiOAyqAcjMq5qd8fBUdw2w.png&quot; alt=&quot;The right superstructure is important&quot; /&gt;
+The right superstructure is important&lt;/p&gt;
+
+&lt;p&gt;We’ve also had nuclear power, the political economy of open source software, values vs virtues and Terry Davis (TempleOS is something else — I’d encourage all to check it out).&lt;/p&gt;
+
+&lt;p&gt;Really whatever was of special interest to the person assigned that day. I looked back through the chat and realize that I have suggested ‘Practical Maoism for the Workplace’ twice and nobody has taken up my lead.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1308/1*qa5C7ZG-4mvCH5KKJaUiLg.png&quot; alt=&quot;The system's features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&quot; /&gt;
+The system’s features, such as its 640x480 resolution, 16-color display and single audio voice, were explicitly instructed to Terry Davis by God&lt;/p&gt;
+
+&lt;p&gt;The tradition has grown to be an important part of every TerminusDB week. If we continue to grow the core group, I’m not sure how we’ll scale — 1 week in 30 might be a little infrequent. We can cross that bridge when we get there.&lt;/p&gt;
+
+&lt;p&gt;So anyway, we really value these discussions and thought the the broader Terminus Community might also enjoy. We’ve recorded the latest discussion, which took place yesterday, and uploaded it to our YouTube channel.&lt;/p&gt;
+
+&lt;p&gt;This week we were led by our BDFL Gavin in a discussion of ‘Regular Expressions - Theory and Practice’. It covers a bunch of interesting aspects including Chomsky’s Hierarchy, Büchi automata, grammars and much more.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mbtpAyn0n0o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I apologize for the sound quality issues — we’ll work on a setup that captures the various contributors in high fidelity. At least you can hear the main presentation. Only one instance of adult language — less than normal I’d say — so be warned.&lt;/p&gt;
+
+&lt;p&gt;This will be a regular series, so watch this space.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/28/terminusdb-discussions/</guid>
+        
+        <category>Database</category>
+        
+        <category>Development</category>
+        
+        <category>Programming</category>
+        
+        <category>Maoism</category>
+        
+        <category>Dialectics</category>
+        
+        
+      </item>
+    
+    
+    
+    
+    
+    
+    
+      <item>
+        <title>TerminusDB 1.1 — The Big Babushka</title>
+        <description>&lt;p&gt;Another very big day for us — our first iteration on &lt;a href=&quot;https://github.com/terminusdb/terminus-server&quot;&gt;TerminusDB goes out into the wild&lt;/a&gt;. We are calling it the &lt;strong&gt;Big Babushka&lt;/strong&gt; release as it has some huge changes to the way we manage data and the operations we support — it could almost be a 2.0, but given that we are a relatively young DB, we want to save those release numbers for future exciting developments (I did see another DB on release 0.50.0 — I won’t name names, but come on folks, give us a 1.0!).&lt;/p&gt;
+
+&lt;h2 id=&quot;terminus-store&quot;&gt;Terminus-store&lt;/h2&gt;
+
+&lt;p&gt;The major development is our new storage backend, terminus-store. With the introduction of the new store, TerminusDB takes a radical departure from traditional database architectures. Our approach has three parts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We have a graph database with strong schema to retain simplicity and generality&lt;/li&gt;
+  &lt;li&gt;The graph is implemented using succinct immutable data structures which enable more sparing use of main memory resources.&lt;/li&gt;
+  &lt;li&gt;We adopt a delta encoding approach to updates (‘like git, but for data’) which provides the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel facilitating CI/CD approaches on data.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This final point is crucial — with TerminusDB we can now use advanced CI/CD workflows in data operations. The large impact of git on the software development world can now be envisioned in the world of data. This is made possible by synergies between an immutable layered approach and the succinct data structure approach that we’ve used for encoding. The DevOps revolution becomes the DataOps revolution.&lt;/p&gt;
+
+&lt;p&gt;Just as with DevOps, DataOps means a focus on collaboration, automation and integration. There is a requirement to bridge what is today a chasm between huge reams of unstructured data on the one hand, and analysts looking for access to simple, clean, structured data on the other. DataOps is that bridge.&lt;/p&gt;
+
+&lt;p&gt;TerminusDB is a practical tool for enabling branch, merge, rollback, and the various automated and manual testing regimes which they facilitate on a transactional database management system while providing sophisticated query support&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1194/1*ADSnYco_5vlMbLT7eiT2Rw.png&quot; alt=&quot;showing how TerminusDB transections&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The new TerminusDB store is implemented in Rust. It is low level, memory safe, has no run time and is C compatible. We think Rust will be the language of the 2020s and we are delighted to be Rustaceans!&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;a href=&quot;https://github.com/terminusdb/terminus-server/blob/dev/docs/whitepaper/terminusdb.pdf&quot;&gt;TerminusDB Technical Paper&lt;/a&gt; that goes into this in more detail for those interested.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1678/1*S9ho_dXwojark-UnLrRSeQ.png&quot; alt=&quot;White Paper&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;woql&quot;&gt;WOQL&lt;/h2&gt;
+
+&lt;p&gt;The Web Object Query Language — or WOQL — has developed considerably since our first release:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extended WOQL to greater functionality for string and arithmetic processing&lt;/li&gt;
+  &lt;li&gt;Better date handling in WOQL&lt;/li&gt;
+  &lt;li&gt;Improved type casting in WOQL&lt;/li&gt;
+  &lt;li&gt;Improvements to query processing speed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The growing maturity of WOQL provides a strong platform to import, clean and query complex data. WOQL remains the best graph query language available today.&lt;/p&gt;
+
+&lt;p&gt;WOQL itself is specified as a JSON document format. All transmission of data uses the canonical JSON format, but this is generally annoying to write, hence WOQL.js is the preferred means by which human users can write queries manually. In developing WOQL we wanted to make querying graph data easy to learn, understand, and use, but also build on the power and functionality of other standard data access languages. As we can see from the TerminusDB tutorials, WOQL is a highly composable and flexible graph query language. Graphs are very generically applicable to a much wider range of data than table structured data. Ultimately, the flexibility of graphs with well specified schema, will show their value.&lt;/p&gt;
+
+&lt;h2 id=&quot;terminus--console&quot;&gt;Terminus — Console&lt;/h2&gt;
+
+&lt;p&gt;The new Console significantly builds on the simple JavaScript client application that released with 1.0.&lt;/p&gt;
+
+&lt;p&gt;In the query interface, you can now switch between WOQL.js and JSON. You can also add new queries to the original query — as inspired by the Jupyter Notebook functionality you know and love.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/3474/1*uScpmhNCu0UwUR30Y_RGAA.png&quot; alt=&quot;TerminusDB console&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have run your query, we have a view interface to easily change the view on the output&lt;/p&gt;
+
+&lt;p&gt;Throughout the console you now have the ability to toggle between table and graph view. On the query page, on the document page and on the schema page, you can see as a graph. This is super helpful when you are trying to see what’s in a complex schema, or trying to derive insight from a query.&lt;/p&gt;
+
+&lt;p&gt;The new Console gives user a quality interface for managing and querying TerminusDB. It ships with TerminusDB.&lt;/p&gt;
+
+&lt;h2 id=&quot;python-client&quot;&gt;Python Client&lt;/h2&gt;
+
+&lt;p&gt;With the release of the TerminusDB python client, python users can query data and interact with TerminusDB through the API and WOQL.py. We will continue to work to make TerminusDB more accessible for the python community (firstly, by improving our documentation!). TerminusDB is the database for data people, and there are no people that are more data than Pythonistas!&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-next&quot;&gt;What’s Next&lt;/h2&gt;
+
+&lt;p&gt;We are working hard on our collaboration and DataOps features. They should be available by the end of February 2020.&lt;/p&gt;
+
+&lt;p&gt;We’ll be pushing out documentation as fast as we can. There is lots of new stuff available, including a couple of tutorials, but it is never enough!&lt;/p&gt;
+
+&lt;p&gt;Remember we are open source (GPLv3) now and forever.&lt;/p&gt;
+
+&lt;p&gt;(And for anybody wondering, that’s CowDuck, our new mascot)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/01/16/terminusdb-1-1-the-big-babushka/</guid>
+        
+        <category>Developer Tools</category>
+        
+        <category>Data</category>
+        
+        <category>Database</category>
+        
+        <category>Python</category>
+        
+        <category>Rust</category>
+        
+        
+      </item>
+    
+    
     
     
     

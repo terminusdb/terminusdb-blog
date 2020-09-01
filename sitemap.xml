@@ -41,10 +41,6 @@
 <lastmod>2019-11-29T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>http://blog.terminusdb.com/blog/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/</loc>
-<lastmod>2020-01-14T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://blog.terminusdb.com/blog/2020/01/15/are-you-supporting-the-right-politician/</loc>
 <lastmod>2020-01-15T00:00:00+00:00</lastmod>
 </url>
@@ -165,6 +161,10 @@
 <lastmod>2020-09-01T10:41:36+00:00</lastmod>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</loc>
+<lastmod>2020-09-01T18:34:56+00:00</lastmod>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/blog/404</loc>
 </url>
 <url>
@@ -244,9 +244,6 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/terminusdb/</loc>
-</url>
-<url>
-<loc>http://blog.terminusdb.com/blog/blog/tag/visualization/</loc>
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/data-science/</loc>
@@ -405,7 +402,10 @@
 <loc>http://blog.terminusdb.com/blog/blog/tag/main/</loc>
 </url>
 <url>
+<loc>http://blog.terminusdb.com/blog/blog/tag/visualization/</loc>
+</url>
+<url>
 <loc>http://blog.terminusdb.com/blog/admin/</loc>
-<lastmod>2020-09-01T18:35:24+00:00</lastmod>
+<lastmod>2020-09-01T18:35:40+00:00</lastmod>
 </url>
 </urlset>
