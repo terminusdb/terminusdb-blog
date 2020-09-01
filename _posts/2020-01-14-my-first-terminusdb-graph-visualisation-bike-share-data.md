@@ -3,7 +3,7 @@ layout: post
 date: 2020-01-14T00:00:00.000Z
 author: Luke Feeney
 cover_image: https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg
-title: My First TerminusDB Graph Visualisation — Bike Share Data
+title: My First TerminusDB 3.0 Graph — Bike Share Data
 description: "Bike tutorial with 3.0. Terminators rule ok. "
 image: /blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg
 tags:
@@ -12,13 +12,13 @@ tags:
   - Graph
   - Visualization
 ---
-
-
 In this tutorial, we will start using TerminusDB 3.0, TerminusDB Console and its query client. This is a step-by-step guide to create your first knowledge graph.
 
 We’re assuming you already have TerminusDB installed, but if you haven’t go to our [download center](https://terminusdb.com/hub/download). It’s very easy to get started.
 
 In this tutorial, we are going to import data from CSVs about bike journeys between stations in Washington D.C., USA, build a knowledge graph from the data, analyze and visualize it. The data is taken from Capital Bike Share (available [here](https://www.capitalbikeshare.com/system-data) — thanks folks) and the CSV data used this tutorial is available at <https://terminusdb.com/t/data/bike_tutorial.csv>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6BK5tPHKryc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
@@ -96,8 +96,6 @@ So here’s the operations we have performed:
 We can view the result by clicking the ‘Schema’ tab:
 
 ![showing classes in schema](/blog/assets/uploads/schema-view.jpg)
-
-
 
 - - -
 
@@ -295,8 +293,6 @@ WOQL.select("v:Start", "v:Start_Label", "v:End", "v:End_Label").and(
 ```
 
 Click on `Run Query`and you should see the query returning a table:
-
-
 
 ![query returns a table](/blog/assets/uploads/results.jpg)
 
