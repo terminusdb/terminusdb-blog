@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-01-14T00:00:00.000Z
+date: 2020-09-01T18:34:56.791Z
 author: Luke Feeney
 cover_image: https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg
 title: My First TerminusDB 3.0 Graph — Bike Share Data
