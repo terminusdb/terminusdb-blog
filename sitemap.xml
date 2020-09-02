@@ -161,10 +161,6 @@
 <lastmod>2020-09-01T10:41:36+00:00</lastmod>
 </url>
 <url>
-<loc>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</loc>
-<lastmod>2020-09-01T18:34:56+00:00</lastmod>
-</url>
-<url>
 <loc>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</loc>
 <lastmod>2020-09-01T18:41:35+00:00</lastmod>
 </url>
@@ -224,9 +220,6 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/graph/</loc>
-</url>
-<url>
-<loc>http://blog.terminusdb.com/blog/blog/tag/graph/page/2/</loc>
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/blog/tag/graph-database/</loc>
@@ -413,6 +406,6 @@
 </url>
 <url>
 <loc>http://blog.terminusdb.com/blog/admin/</loc>
-<lastmod>2020-09-01T21:26:34+00:00</lastmod>
+<lastmod>2020-09-02T12:52:29+00:00</lastmod>
 </url>
 </urlset>

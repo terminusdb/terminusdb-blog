@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Sep 2020 21:27:23 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Sep 2020 21:27:23 +0000</lastBuildDate>
+    <pubDate>Wed, 02 Sep 2020 12:53:16 +0000</pubDate>
+    <lastBuildDate>Wed, 02 Sep 2020 12:53:16 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -23,31 +23,6 @@
         <pubDate>Tue, 01 Sep 2020 18:41:35 +0000</pubDate>
         <link>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</link>
         <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</guid>
-        
-        <category>Database</category>
-        
-        <category>Data</category>
-        
-        <category>Graph</category>
-        
-        <category>Visualization</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>My First TerminusDB 3.0 Graph — Bike Share Data</title>
-        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
-        
-        
-        <description>
-        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/0-zba-5cqjbrrvqsal.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;In this tutorial, we will start using TerminusDB 3.0, TerminusDB Console and its query client. This is a step-by-step guide to create your first knowledge graph.&lt;/p&gt; &lt;p&gt;We’re assuming you already have TerminusDB installed, but if you haven’t go to our &lt;a href=&quot;https://terminusdb.com/hub/download&quot;&gt;download center&lt;/a&gt;. It’s very easy to get started.&lt;/p&gt; &lt;p&gt;In this tutorial, we are going to import data from CSVs about bike journeys between stations in Washington D.C., USA, build a knowledge graph from the data, analyze and visualize it. The data is taken from Capital Bike Share (available &lt;a href=&quot;https://www.capitalbikeshare.com/system-data&quot;&gt;here&lt;/a&gt; — thanks folks) and the CSV data used this tutorial is available at &lt;a href=&quot;https://terminusdb.com/t/data/bike_tutorial.csv&quot;&gt;https://terminusdb.com/t/data/bike_tutorial.csv&lt;/a&gt;&lt;/p&gt; &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6BK5tPHKryc&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt; &lt;hr /&gt; &lt;h1 id=&quot;create-a-database&quot;&gt;Create a Database&lt;/h1&gt; &lt;p&gt;Open up the TerminusDB console (https://127.0.0.1:6363/ — go to our &lt;a href=&quot;https://terminusdb.com/hub/download&quot;&gt;download center&lt;/a&gt; to get up and running). Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Create&lt;/code&gt; to start.&lt;/p&gt; &lt;p&gt;Click on &lt;code...
-        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
-        </description>
-        <pubDate>Tue, 01 Sep 2020 18:34:56 +0000</pubDate>
-        <link>http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</link>
-        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/</guid>
         
         <category>Database</category>
         
