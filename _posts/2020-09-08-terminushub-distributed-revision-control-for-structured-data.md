@@ -29,7 +29,7 @@ The first one was a rich and universally machine-interpretable modeling language
 
 The second major missing requirement is effective revision control. Revision control technologies have been instrumental in turning software production from a craft to an engineering discipline because they make collaboration and coordination between large groups much more fault tolerant - and boy humans produce faults. The need for such capabilities is screamingly obvious when dealing with data - where the existence of multiple versions of the same underlying dataset is almost ubiquitous and with only the most primitive tool support.
 
-In October 2019, we released version 1.0 of Terminus DB - it contained the culmination of 4 years of building out the data modeling capacity that we needed - the W3Cs web ontology language with a closed world interpretation.
+In October 2019, we released version 1.0 of TerminusDB - it contained the culmination of 4 years of building out the data modeling capacity that we needed - the W3Cs web ontology language with a closed world interpretation.
 
 We chose this solution firstly because OWL is by far the best thing humanity has yet produced in terms of a rich, machine-interpretable data modeling interchange format. It is essentially first-order logic with set operations - when it comes to platform interoperability nothing beats mathematics! And adding a closed world interpretation to OWL turns out to be surprisingly easy and semantically unproblematic (closed worlds are contained within open worlds).
 
