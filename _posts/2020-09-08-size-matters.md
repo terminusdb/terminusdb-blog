@@ -16,7 +16,7 @@ tags:
 ---
 ### In the design of distributed data collaboration, it turns out that size matters a lot. *And smaller is better*.
 
-[TerminusHub](https://terminusdb.com/hub/) - which allows you to collaborate between TerminusDBs launches today. 
+[TerminusHub](https://terminusdb.com/hub/) - distributed revision control for structured data launches today.
 
 Despite the enduring popularity of the traditional RDBMS (with SQL as its query language) there have been many innovations in database design over the last decades which hope to solve specific questions that make traditional designs inconvenient or unworkable. These include everything from time-series databases to distributed key-value stores.
 
