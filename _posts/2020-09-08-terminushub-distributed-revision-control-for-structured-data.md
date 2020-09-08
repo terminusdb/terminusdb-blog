@@ -19,7 +19,7 @@ If the data is well chosen, it is almost always the case that computational anal
 
 And because the universe is chaotic and there are combinatorial explosions of possibilities all over the place, evidence is always better than intuition when seeking insight.
 
-As anybody who has grappled with computers and large quantities of data will know, it's not as simple as that. The joy of analysis and insight is often crushed beneath a mountain of tedious data sourcing, preparation, management and cleaning tasks - ugly ETL scripts that are a horror to maintain and the horror of trying to extract data with unknown character encodings from undocumented legacy systems - CP-1252 and its friends.
+As anybody who has grappled with computers and large quantities of data will know, it's not as simple as that. The joy of analysis and insight is often crushed beneath a mountain of tedious data sourcing, preparation, management and cleaning tasks - ugly ETL scripts that are a horror to maintain and the double horror of trying to extract data with unknown character encodings from undocumented legacy systems - CP-1252 and its friends.
 
 It shouldn't be like this; it doesn't have to be like this. Computers should be able to do most of this for us. It makes no sense that we are still writing the same simple and tedious data validation and transformation programs over and over ad infinitum. There must be a better way.
 
