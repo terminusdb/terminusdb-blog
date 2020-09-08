@@ -6,9 +6,34 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Sep 2020 12:53:16 +0000</pubDate>
-    <lastBuildDate>Wed, 02 Sep 2020 12:53:16 +0000</lastBuildDate>
+    <pubDate>Tue, 08 Sep 2020 10:37:07 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Sep 2020 10:37:07 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Size Matters</title>
+        <author>[{&quot;value&quot;=&gt;&quot;gavin&quot;, &quot;label&quot;=&gt;&quot;Gavin Mendel Gleason&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/sizematters2.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;h3 id=&quot;in-the-design-of-distributed-data-collaboration-it-turns-out-that-size-matters-a-lot-and-smaller-is-better&quot;&gt;In the design of distributed data collaboration, it turns out that size matters a lot. &lt;em&gt;And smaller is better&lt;/em&gt;.&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/hub/&quot;&gt;TerminusHub&lt;/a&gt; - which allows you to collaborate between TerminusDBs launches today.&lt;/p&gt; &lt;p&gt;Despite the enduring popularity of the traditional RDBMS (with SQL as its query language) there have been many innovations in database design over the last decades which hope to solve specific questions which make traditional designs inconvenient or unworkable. These include everything from time-series databases to distributed key-value stores.&lt;/p&gt; &lt;p&gt;When we were designing TerminusDB we were concerned with one very specific problem: collaboration.&lt;/p&gt; &lt;p&gt;As we were working on the Seshat global history database we needed a database which could enable researchers all over the world to collaborate on data collection on a large dataset with a very complex schema.&lt;/p&gt; &lt;p&gt;Git has created a very compelling model for collaboration in software using distributed revision control. This works essentially by...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/08/size-matters/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 08 Sep 2020 10:27:11 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/09/08/size-matters/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/08/size-matters/</guid>
+        
+        <category>database</category>
+        
+        <category>size</category>
+        
+        <category>data</category>
+        
+        <category></category>
+        
+        
+      </item>
     
       <item>
         <title>My First TerminusDB 3.0 Graph — Bike Share Data</title>
