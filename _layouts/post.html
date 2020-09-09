@@ -84,7 +84,7 @@ layout: default
         {% for post in site.tags[relatedTag] %}
         {% if post.title !=  page.title%}
           <article class="related__post">
-            <a class="related__link" href="{{ post.url | absolute_url }}">
+            <a class="related__link" href="{{ post.url | prepend: site.baseurl }}"">
               {% if post.image %}
                 <figure class="related__img">
                   <img src="{{ post.image }}" alt="{{ post.title }}"/>
