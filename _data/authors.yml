@@ -1,4 +1,3 @@
-# _data/authors.yml
 items:
   - name: luke
     display_name: Luke Feeney
@@ -6,15 +5,20 @@ items:
     url: https://github.com/luke-feeney
   - name: kevin
     display_name: Kevin Feeney
-    bio: Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd
+    bio: Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of
+      Data Chemist Ltd
     url: https://github.com/kevinchekovfeeney
   - name: cheuk
     display_name: Cheuk Ting Ho
-    bio: Developer Advocate for TerminusDB. Ex Data Scientist. Pytonista. Organizer of London Python Sprints and AI Club for Gender Minorities. Tech Speaker and Streamer on Twitch.
+    bio: Developer Advocate for TerminusDB. Ex Data Scientist. Pytonista. Organizer
+      of London Python Sprints and AI Club for Gender Minorities. Tech Speaker
+      and Streamer on Twitch.
     url: https://cheuk.dev
   - name: gavin
     display_name: Gavin Mendel Gleason
-    bio: A software engineer interested in improving the best practices of the software development community through the use of logic, mathematics and formal methods.
+    bio: A software engineer interested in improving the best practices of the
+      software development community through the use of logic, mathematics and
+      formal methods.
     url: https://github.com/GavinMendelGleason
   - name: dmytri
     display_name: Dmytri Kleiner
@@ -24,3 +28,7 @@ items:
     display_name: Francesca Bitto
     bio: Never stop learning.
     url: https://github.com/Francesca-Bit
+  - name: Vivek
+    display_name: Vivek Varughese
+    bio: "Marketing Enthusiast. "
+    url: https://github.com/vivek9209

@@ -40,8 +40,6 @@ cd terminusdb-quickstart
 mkdir csvs
 ```
 
-(For the moment you have to run the [Canary branch](https://martinfowler.com/bliki/CanaryRelease.html) of TerminusDB so `git checkout canary` )
-
 Sarah ran the following afterwards:
 
 `TERMINUSDB_LOCAL="$(pwd)/csvs" ./terminusdb-container run`
