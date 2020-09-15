@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Sep 2020 13:21:34 +0000</pubDate>
-    <lastBuildDate>Tue, 15 Sep 2020 13:21:34 +0000</lastBuildDate>
+    <pubDate>Tue, 15 Sep 2020 13:28:51 +0000</pubDate>
+    <lastBuildDate>Tue, 15 Sep 2020 13:28:51 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -17,7 +17,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/cover-1-.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.&lt;/p&gt; &lt;p&gt;Today’s post will be about a new feature that we’re working on called ‘delta rollups’. Delta rollups will hopefully make queries much faster in the future, especially when done on databases that have a lot of commits. We’ll probably roll out this feature in an upcoming minor release, so stay tuned!&lt;/p&gt; &lt;p&gt;To describe what delta rollups are, we first need to discuss what problem it tries to solve. As you probably know, TerminusDB is append-only. This means that when you...
+        &lt;p&gt;Hi there! Matthijs here.&lt;/p&gt; &lt;p&gt;I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.&lt;/p&gt; &lt;p&gt;Today’s post will be about a new feature that we’re working on called ‘delta rollups’. Delta rollups will hopefully make queries much faster in the future, especially when done on databases that have a lot of commits. We’ll probably roll out this feature in an upcoming minor release, so stay tuned!&lt;/p&gt; &lt;p&gt;To describe what delta rollups are, we first need to discuss what problem it tries to solve. As you probably know, TerminusDB is append-only. This...
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 15 Sep 2020 13:16:07 +0000</pubDate>
