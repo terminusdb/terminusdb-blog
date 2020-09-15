@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Delta Rollup | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover-1-.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Delta Rollup | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover-1-.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Delta Rollup | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/cover-1-.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/09/15/delta-rollup/">
+
+
+
+
+</head>
+<body id="delta-rollup" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Delta Rollup</h2>
+
+        <time class="post__date" datetime="2020-09-15T13:16:07+00:00" itemprop="datePublished">15 Sep 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/cover-1-.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.</p>
+
+<p>Today’s post will be about a new feature that we’re working on called ‘delta rollups’. Delta rollups will hopefully make queries much faster in the future, especially when done on databases that have a lot of commits. We’ll probably roll out this feature in an upcoming minor release, so stay tuned!</p>
+
+<p>To describe what delta rollups are, we first need to discuss what problem it tries to solve. As you probably know, TerminusDB is append-only. This means that when you delete some data, that data is not actually thrown away. Instead, those deletions are saved in a new data layer on top of your old data. When querying, the query engine looks through all those layers to reconstruct your data from all the additions and deletions contained in the various layers. The big advantage of doing things this way, rather than modifying the data directly, is that we can actually reason about the changes done to a database over time. Among other things, this is what allows TerminusDB to be used collaboratively. It is what allows us to do branching, rebasing, pushing and pulling of data.</p>
+
+<p>There is however a big disadvantage: the more commits in a database, the more layers queries need to search through to find data. Each layer adds some cost to the query. This is fine for a small number of layers, but when you have hundreds of commits, this really starts being noticeable. Roughly, query time scales linearly with the number of layers that need to be searched, so to keep query speeds low, we would rather not have so many layers.</p>
+
+<p>A straightforward way to reduce the number of layers would be to squash them all together into one giant layer. This is an approach we actually already take for some of our own internal graphs, such as the system database. However, doing this throws away history. After doing a squash, it is no longer clear what sequence of operations led a database to be in a certain state. This is no problem for some internal databases where we don’t care about the history, but it is definitely a problem for any normal database. For example, if you were to squash your own database, and then tried to pull in changes from somebody else who worked off the original, the system would no longer be able to recognize the common history, and would reject the change.</p>
+
+<p>What we need is a way to squash a layer, without throwing away the history. This is what delta rollups aim to achieve. A delta rollup is a squashed layer which to the system appears to be exactly the same as the layer stack that it replaces. It allows queries to be much faster, while still allowing all the collaboration features to work.</p>
+
+<p>Let’s talk about what is required for delta rollups to deliver on this goal. First, it is important that the original changes aren’t thrown away. Delta rollups should be considered an optimization that is fully transparent. We don’t want to rewrite history. So rather than rewiring layer stacks to point at a new delta rollup layer, we’ll instead update the existing layer to point at its delta rollup. When loading the layer, the query engine will be able to detect this information and load the rollup version instead, all the while pretending to the rest of the system that it is looking at the original layer.</p>
+
+<p>The second important feature for delta rollups to work properly is id stability. In terminusdb-store, each node, predicate or value string is assigned an id. Each layer stores newly added strings in dictionary files, where ids are assigned to them in the lexicographical order for that layer. Each layer then takes up an id range adjacent to its parent layer. So for example, the first layer takes up ids 1 through 10, the second layer 11 to 20, etcetera. This means that when you merge a bunch of dictionaries, the ids may change. Continuing our example, you’d now have a single layer with ids ranging from 1 to 20, and unless each string that originally came out of layer 2 is lexicographically ahead of each string from layer 1, those strings will now be interspersed, completely changing their ids.</p>
+
+<p>We can’t just change the ids of strings. Suppose someone did some work based on the original layer, they may have done insertions and deletions with those strings, which are stored under the original id. If we were to change ids on delta rollup, such a change could no longer be pulled in cleanly. Therefore, delta rollups will store an id remap table, mapping the internal id to an external one and back.</p>
+
+<p>The third important bit in making delta rollups work properly is dealing with queries that investigate the additions and removals to a layer. We can’t just query the delta rollup layer for these, since the delta rollup layer has a different set of additions and removals than the layer it replaces. In order to support these operations, we are introducing a way to load in the original layer on-demand, without loading in the entire layer stack. Addition and removal queries can then transparently use this layer delta, rather than the delta rollup layer.</p>
+
+<p>In order to support all this, we’ve been hard at work over the past few weeks to revamp a lot of our internals. A lot of the logic dealing with building and querying of layers has been refactored to be much more modular so that it can be recombined in a different way to support the building and querying of delta rollup layers. As a side-effect, these changes should also bring in general query speedups, so everybody wins!</p>
+
+<p>So that’s it! Delta rollups, coming soon to a TerminusDB near you! May it grace your data with ever-improving query speeds!</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Delta Rollup+http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Delta Rollup&summary=I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.&url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.&media=http://blog.terminusdb.com/blog/blog/assets/uploads/cover-1-.jpg&url=http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/matko" class="p-name u-url">Matthijs Van Otterdijk</a></span>
+            <p class="post__bio p-note">Database Software Engineer </p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/09/15/delta-rollup/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/capture.jpg" alt="My First TerminusDB 3.0 Graph — Bike Share Data"/>
+                </figure>
+              
+              
+                <figure class="related__img">
+                  <img src="https://miro.medium.com/max/10944/1*wHpEF7tcwMY0OqIC33mxKA.jpeg" alt="My First TerminusDB 3.0 Graph — Bike Share Data"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">My First TerminusDB 3.0 Graph — Bike Share Data</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/24/the-power-of-web-object-query-language/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/the-power-of-woql.png" alt="The Power of Web Object Query Language"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">The Power of Web Object Query Language</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/14/terminusDB-vs-mongoDB/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/directory-106815_1920.jpg" alt="TerminusDB vs MongoDB"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB vs MongoDB</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
