@@ -2,12 +2,11 @@
 layout: post
 title: Delta Rollup
 date: 2020-09-15T13:16:07.625Z
-description: I’m one of the developers of TerminusDB, where I work on the
-  backend. I’m the primary author of terminusdb-store, our storage backend, as
-  well as a contributor to the database server. Unless things go terribly wrong,
-  my work is largely invisible to people actually using TerminusDB, which is a
-  shame, because it is fascinating stuff! Therefore, I have decided to start
-  writing blog posts to highlight some of these things.
+description: Today’s post will be about a new feature that we’re working on
+  called ‘delta rollups’. Delta rollups will hopefully make queries much faster
+  in the future, especially when done on databases that have a lot of commits.
+  We’ll probably roll out this feature in an upcoming minor release, so stay
+  tuned!
 image: /blog/assets/uploads/cover-1-.jpg
 author:
   - value: Matthijs
@@ -15,6 +14,10 @@ author:
 tags:
   - Database
 ---
+
+
+Hi there! Matthijs here.
+
 I’m one of the developers of TerminusDB, where I work on the backend. I’m the primary author of terminusdb-store, our storage backend, as well as a contributor to the database server. Unless things go terribly wrong, my work is largely invisible to people actually using TerminusDB, which is a shame, because it is fascinating stuff! Therefore, I have decided to start writing blog posts to highlight some of these things.
 
 Today’s post will be about a new feature that we’re working on called ‘delta rollups’. Delta rollups will hopefully make queries much faster in the future, especially when done on databases that have a lot of commits. We’ll probably roll out this feature in an upcoming minor release, so stay tuned!
