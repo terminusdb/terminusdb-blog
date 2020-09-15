@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Delta Rollup
+title: Delta Rollups
 date: 2020-09-15T13:16:07.625Z
 description: Today’s post will be about a new feature that we’re working on
   called ‘delta rollups’. Delta rollups will hopefully make queries much faster
