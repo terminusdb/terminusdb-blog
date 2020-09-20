@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Hackathon: Work with TerminusDB and TerminusHub to Built a Versioned
-  Controlled Knowledge Graph of All of Human History  "
+title: "Hackathon: Build a Version Controlled Knowledge Graph of All of Human
+  History  "
 date: 2020-09-20T15:51:30.438Z
 description: DBpedia Hackathon
 image: /blog/assets/uploads/hackathon.png
@@ -17,7 +17,11 @@ tags:
 ---
 ### Hackathon call:
 
-## Work with TerminusDB and TerminusHub to Built a Versioned Controlled Knowledge Graph of All of Human History
+
+
+## Work with TerminusDB and TerminusHub to Build a Version Controlled Knowledge Graph of All of Human History
+
+
 
 ### Sponsored by the DBpedia Association
 
