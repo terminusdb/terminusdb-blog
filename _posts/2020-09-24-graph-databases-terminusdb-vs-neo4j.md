@@ -255,7 +255,7 @@ Here an Cypher example
 
 ```sql
 
- MATCH (person)-[:KNOWS]-(otherPerson)
+MATCH (person:Person)-[:KNOWS]-(otherPerson:Person)
 RETURN person.name,otherPerson.name
 
 ```
@@ -270,20 +270,26 @@ or(triple('v:Person', 'knows', 'v:OtherPerson'),
 
 ```
 
-Now how we get only the person that know each others and are patient of the same doctor
+Now, how do we get only people who know each other and are patients of the doctor **Freud** ?
 
-Neo4j Cypher example
+Neo4j Cypher query example
 
 ```sql
 
 
 
-
 ```
+
+TerminusDB query example
 
 ```Js
 
-
+and(
+	triple('v:Person', 'knows', 'v:OtherPerson'),
+	triple("v:Doc",'patient','v:Person'),
+	triple("v:Doc",'patient','v:OtherPerson'),
+  	triple("v:Doc",'name','v:Freud')
+)
 
 ```
 
