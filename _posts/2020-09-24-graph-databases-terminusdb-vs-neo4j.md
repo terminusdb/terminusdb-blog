@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Graph Databases, TerminusDB vs Neo4j"
+title: "Graph Databases <br>TerminusDB vs Neo4j"
 date: 2020-09-24
 description: "Let’s see the main differences between TerminusDB and Neo4j in practice"
 image: /blog/assets/images/clint-adair-unsplash.jpg
@@ -18,7 +18,7 @@ tags:
 
 Are the Graph Databases the future?  Structured and unstructured data coming from multiple sources can have an immense value if you can find relationships between them, Graph databases hold the relationships between data as a priority.
 
-Inter-connected data is the future and probably the easy way to model interconnected data is using Graph Databases
+Inter-connected data are the future, probably the easy way to model interconnected data is using Graph Databases.
 
 In this tutorial will see two different way to model and query data using native graph databases technology.
 
@@ -64,7 +64,7 @@ In TerminusDB everything is a Class object - objects can have properties and som
 
 Classes can be subclasses of other classes, which means that they inherit all the parent’s definitions (much like inheritance in object-oriented programming).
 
-the type of data that the property points to. The range can either be a simple datatype literal (e.g. an integer or string) or it can be a class.
+The type of data that the property points to can either be a simple datatype literal (e.g. an integer or string) or it can be a class.
 
 ## Query language
 
@@ -92,8 +92,8 @@ Remember TerminusDB is a graph database that stores data like Git. **TerminusDB 
 
 ```js
 WOQL.doctype("Person")            
-    .label("Person Name")            
-    .description("A Person Document")
+  .label("Person Name")            
+  .description("A Person Document")
 	.property("name", "string").label("Name").cardinality(1)
 	.property("date_of_born", "date").label("Date Of Born").cardinality(1)
 	.property("knows", "Person").label("Knows")
@@ -124,40 +124,40 @@ RETURN maria.name, anna.name, tom.name, jim.name
 ```
 
 
-Let's see how add Documents and relationships connection in WOQL
+Let's see how add Documents and relationships connection in WOQL.
+TerminusDB is accessible in very easy way with JavaScript using the woql.js layer.
 
-TerminusDB is accessible in very easy with JavaScript using the woql.js layer
-
-We create **Person** documents and we link this Documents using the property **"knows"** property in **Person** document. Our relationship link between document has been created
+We create **Person** documents and we link this Documents using the property **"knows"** property in **Person** document. Our relationships link between documents has been created.
 
 ```js
 and(
-    idgen("doc:Person",["Maria","1978-12-03"],"v:Maria"),
-    idgen("doc:Person",["Anna","1974-02-10"],"v:Anna"),
-    idgen("doc:Person",["Tom","1975-06-23"],"v:Tom"),
-    idgen("doc:Person",["Jim","1974-07-20"],"v:Jim"),
+  idgen("doc:Person",["Maria","1978-12-03"],"v:Maria"),
+  idgen("doc:Person",["Anna","1974-02-10"],"v:Anna"),
+  idgen("doc:Person",["Tom","1975-06-23"],"v:Tom"),
+  idgen("doc:Person",["Jim","1974-07-20"],"v:Jim"),
  	
-    insert("v:Maria", "Person").label("Maria")
-  		.property("date_of_born", {'@value':"1978-12-03",'@type': 'xsd:date'})
-		.property("name", "Maria")
-       	.property("knows", "v:Anna"),
+  insert("v:Maria", "Person").label("Maria")
+  .property("date_of_born", {'@value':"1978-12-03",'@type': 'xsd:date'})
+  .property("name", "Maria")
+  .property("knows", "v:Anna"),
 
-    insert("v:Anna", "Person").label("Anna")
-  		.property("date_of_born", {'@value':"1974-02-10",'@type': 'xsd:date'})
-		.property("name", "Anna")
-       	.property("knows", "v:Tom"),
+  insert("v:Anna", "Person").label("Anna")
+  .property("date_of_born", {'@value':"1974-02-10",'@type': 'xsd:date'})
+  .property("name", "Anna")
+  .property("knows", "v:Tom"),
 
-    insert("v:Tom", "Person").label("Tom")
-  		.property("date_of_born", {'@value':"1975-06-23",'@type': 'xsd:date'})
-		.property("name", "Tom")
-       	.property("knows", "v:Maria"),
+  insert("v:Tom", "Person").label("Tom")
+  .property("date_of_born", {'@value':"1975-06-23",'@type': 'xsd:date'})
+  .property("name", "Tom")
+  .property("knows", "v:Maria"),
 
-     insert("v:Jim", "Person").label("Jim")
-  		.property("date_of_born", {'@value':"1974-07-20",'@type': 'xsd:date'})
-		.property("name", "Jim")
-       	.property("knows", "v:Tom")
+  insert("v:Jim", "Person").label("Jim")
+  .property("date_of_born", {'@value':"1974-07-20",'@type': 'xsd:date'})
+  .property("name", "Jim")
+  .property("knows", "v:Tom")
 )
 ```
+
 
 ## Add a new node type and relationship
 
@@ -181,7 +181,7 @@ In TerminusDB we create a new Document Object **City**
 WOQL.doctype("City").label("City Name").description("A City name")
 ```
 
-We add a new property **city_of_born** in the Document **Person** with range type **City**
+We add a new property **city_of_born** in the Document **Person** with range type **City**.
 Here our relationship between **Person**->**City**
 
 ```js
@@ -192,23 +192,23 @@ Now update the data!!
 
 ```js 
 and(
-    idgen("doc:City",["Dublin"],"v:City_id"),
-    insert("v:City_id", "City").label("Dublin"),
-  	triple('v:Person','type','scm:Person'),
-	add_triple("v:Person","city_of_born","v:City_id")
+  idgen("doc:City",["Dublin"],"v:City_id"),
+  insert("v:City_id", "City").label("Dublin"),
+  triple('v:Person','type','scm:Person'),
+  add_triple("v:Person","city_of_born","v:City_id")
 )
 
 ```
 
 ## Creating hierarchies 
 
-In our graph we like to add another kind of Person called Doctor, this person need to have all the property of Person plus patient
+In our graph we now add another type of Person called Doctor, this entity has all the Person properties plus it is connected to the other nodes by the **patient** relationship
 
-In Neo4j If we like to said that one node is a Person and a Doctor we can add a multi label to this node,
+In Neo4j we can add multi labels to a node so our node is Person and Doctor at the same time.
 
 ```sql
 
-create (Freud:Person:Doctor {name:'Freud', born:'1976-08-25'})
+create (freud:Person:Doctor {name:'Freud', born:'1976-08-25'})
 
 MATCH (a:Person),(b:Doctor)
 WHERE a.name = 'Maria' AND b.name="Freud"
@@ -223,9 +223,9 @@ RETURN type(r), r.label
 ```
 
 
-In terminusDB classes can be subclasses of other classes, so let’s add a subclass for scm:Person called scm:Doctor.
+In TerminusDB classes can be subclasses of other classes, so let’s add a subclass for **scm:Person** called **scm:Doctor**.
 
-A Doctor shares all of the properties available to a Person, but it also has a patient. 
+A Doctor shares all of the properties available to a Person, but it also has a **patient** (ObjectProperty). 
 
 ```js
 
@@ -236,12 +236,12 @@ WOQL.doctype("Doctor")
   .property("patient", "Person")
 
 WOQL.and(
-    idgen("doc:Doctor",["Freud","1976-08-25"],"v:Freud"),
-    insert("v:Freud", "Doctor").label("Freud")
-  	.property("date_of_born", {'@value':"1976-08-25",'@type': 'xsd:date'})
-	.property("name", "Freud")
-	.property("patient","doc:Person_Maria_1978-12-03")
-	.property("patient","doc:Person_Tom_1975-06-23")
+  idgen("doc:Doctor",["Freud","1976-08-25"],"v:Freud"),
+  insert("v:Freud", "Doctor").label("Freud")
+  .property("date_of_born", {'@value':"1976-08-25",'@type': 'xsd:date'})
+  .property("name", "Freud")
+  .property("patient","doc:Person_Maria_1978-12-03")
+  .property("patient","doc:Person_Tom_1975-06-23")
        	
 )
 
@@ -260,7 +260,7 @@ RETURN person.name,otherPerson.name
 
 ```
 
-Let's see the TerminusDB woql query using woql.js 
+Let's see the TerminusDB WOQL query using woql.js 
 
 ```js
 
@@ -270,31 +270,36 @@ or(triple('v:Person', 'knows', 'v:OtherPerson'),
 
 ```
 
-Now, how do we get only people who know each other and are patients of the doctor **Freud** ?
+How do we get only people who knows each other and are patients of the doctor **Freud** ?
 
 Neo4j Cypher query example
 
+![](/blog/assets/images/neo4j-graph-knows-doc.png)
+
 ```sql
 
-
+MATCH (doc:Doctor { name: 'Freud' })<-[:IS_PATIENT_OF]-(person:Person),
+      (doc:Doctor { name: 'Freud' })<-[:IS_PATIENT_OF]-(otherPerson:Person)
+WHERE (person:Person)-[:KNOWS]-(otherPerson:Person)
+RETURN person.name
 
 ```
 
 TerminusDB query example
 
-```Js
+![](/blog/assets/images/terminusdb-graph-know-doc.png)
 
+```js
 and(
-	triple('v:Person', 'knows', 'v:OtherPerson'),
-	triple("v:Doc",'patient','v:Person'),
-	triple("v:Doc",'patient','v:OtherPerson'),
-  	triple("v:Doc",'name','v:Freud')
+  triple('v:Person', 'knows', 'v:OtherPerson'),
+  triple("v:Doc",'patient','v:Person'),
+  triple("v:Doc",'patient','v:OtherPerson'),
+  triple("v:Doc",'name','v:Freud')
 )
 
 ```
 
-
-If you like to jump in anothe intersting tutorial and keep to build new TerminusDB graph data model
+Let's jump into another interesting tutorial and continue to build
 [Bank Tutorial](https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/)
 
 
