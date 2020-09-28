@@ -16,27 +16,22 @@ tags:
   - Development
 ---
 
-Are the Graph Databases the future?  Structured and unstructured data coming from multiple sources can have an immense value if you can find relationships between them, Graph databases hold the relationships between data as a priority.
+Are Graph Databases the future?  Structured and unstructured data coming from multiple sources can have immense value if you can find the relationships within it, Graph databases consider the relationships between data as first class citizens.
 
-Inter-connected data are the future, probably the easy way to model interconnected data is using Graph Databases.
+Inter-connected data are the future, and probably the easiest way to model interconnected data is using a Graph Database.
 
-In this tutorial will see two different way to model and query data using native graph databases technology.
+In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.
 
 if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
 [My First TerminusDB Graph Visualisation — Bike Share Data](/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/).
 
 Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.
 
-*Note: We are assuming you are already familiar with the basic process of designing a property graph data model using Neo4j*
-
-
 ## Graph Database Main Concepts
 
+Graph databases  are databases that use graph structures to organize data: nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store to be linked together. 
 
-Graph databases  are databases that use graph structures for semantic queries with nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store to be linked together. 
-
-
-#### Neo4J
+#### Neo4J Main Concepts
 
 - Node 
 - Label (:Person)
@@ -47,8 +42,7 @@ Graph databases  are databases that use graph structures for semantic queries wi
 
 In Neo4j the main components of the property graph model are nodes and relationships, in our example, **Maria**, **Anna**, **Tom** and **Jim** are our nodes and **KNOWS** is our relationship between nodes. 
 
-Nodes and Relationships can have properties, properties are name-value pairs that provide additional details to nodes and relationships. You can group similar nodes together by assigning a node label (:Person). A node can have zero to many labels. 
-
+Nodes and Relationships can have properties, properties are name-value pairs that provide additional details for nodes and relationships. You can group similar nodes together by assigning a node label (:Person). A node can have zero to many labels. 
 
 #### TerminusDB
 
@@ -60,35 +54,34 @@ Nodes and Relationships can have properties, properties are name-value pairs tha
 ![](/blog/assets/images/terminusdb-graph-knows.png)
 
 
-In TerminusDB everything is a Class object - objects can have properties and some of these properties may link to other objects, in our example **Maria**, **Anna**, **Tom**, and **Jim** are our Document Object the range data type of the **knows** property (ObjectProperty) is the **Person** document.
+In TerminusDB everything is an object of a Class - objects can have properties and some of these properties may link to other objects. Document Classes are top-level classes, which allow the graph to be serialized into documents.  Our example **Maria**, **Anna**, **Tom**, and **Jim** are our Document Objects. The **knows** property is an ObjectProperty with range being the **Person** document.
 
-Classes can be subclasses of other classes, which means that they inherit all the parent’s definitions (much like inheritance in object-oriented programming).
+Classes can be subclasses of other classes, which means that they inherit all the parent’s properties (much like inheritance in object-oriented programming). Multiple inheritance is supported. 
 
-The type of data that the property points to can either be a simple datatype literal (e.g. an integer or string) or it can be a class.
+The type of data that the property points to can either be a simple datatype literal (e.g. an integer or string) (DatatypeProperty) or it can be a class (ObjectProperty).
 
 ## Query language
 
 Neo4j uses **Cypher** to store and retrieve data from the graph database. Cypher is 
 a graph query language and the best way to interact with Neo4j. 
 
-In TerminusDB we use [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/woql). It is a unified model query language, WOQL's primary syntax and interchange format is in JSON-LD.
-All our example are writing using woql.js a javascript layer that help you to compose WOQL query.
+TerminusDB uses [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/woql) which allows queries to be written in either javascript, python or as JSON-LD documents. All these examples are written using woql.js a javascript layer that allows queries to be written in simple javascript.
 
 ## Schema
 
-A schema in Neo4j refers to indexes and constraints. Neo4j is often described as schema optional, meaning that it is not necessary to create indexes and constraints. Index and Constraint can be added at any time.
+A schema in Neo4j refers to indexes and constraints that can be applied to nodes. Neo4j is often described as schema optional, meaning that it is not necessary to create indexes and constraints. Index and Constraint can be added at any time.
 
-*In our example we create the constaint **person_unique**, the properties **name** and **born** have to exist on all the nodes with label **Person** and the combination of the property values is unique.*
+*In our example we create the constraint **person_unique**, it specifies that the properties **name** and **born** have to exist on all nodes with label **Person** and the combination of the property values is unique.*
 
 ```sql
 CREATE CONSTRAINT person_unique
 ON (n:Person) ASSERT (n.name, n.born) IS NODE KEY
 ```
 
-TerminusDB is schema optional but for schema checking is better create a schema before insert data, with terminusDB you can change your schema at any time. 
-Remember TerminusDB is a graph database that stores data like Git. **TerminusDB allows for the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel.**
+TerminusDB is schema optional, but to take advantage of schema checking, it is better to create a schema before inserting data. TerminusDB lets you change your schema at any time. 
+TerminusDB is a graph database that stores data like Git. **TerminusDB allows for the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel.**
 
-[**If you like to read more ...**](https://terminusdb.com/docs/quickstart/)
+[**If you want to read more ...**](https://terminusdb.com/docs/quickstart/)
 
 ```js
 WOQL.doctype("Person")            
@@ -99,11 +92,11 @@ WOQL.doctype("Person")
 	.property("knows", "Person").label("Knows")
 ```
 
-Using the WOQL.js api, we create the **Person** Document class. This object has 3 properties, with three different datatypes. The data type range in **knows** property (ObjectProperty) is the **Person** document. The cardinality 1 for *name* and *born* said that the combination of the property values is unique for every Document instance.
+Using the WOQL.js api, we create the **Person** Document class. This object has 3 properties, with three different datatypes. The data type range in **knows** property (ObjectProperty) is the **Person** document class. The cardinality 1 for *name* and *born* said that the combination of the property values is unique for every Document instance.
 
 ## Insert Data 
 
-Here an example of Cypress syntax for insert data
+Here is an example of Cypress syntax for inserting data
 
 We add 4 nodes of type (label) **Person** and relationships **KNOWS** between the nodes.
 
@@ -124,8 +117,7 @@ RETURN maria.name, anna.name, tom.name, jim.name
 ```
 
 
-Let's see how add Documents and relationships connection in WOQL.
-TerminusDB is accessible in very easy way with JavaScript using the woql.js layer.
+Let's see how we add documents and relationships with TerminusDB - queries are accessible in a very easy way with JavaScript using the woql.js layer.
 
 We create **Person** documents and we link this Documents using the property **"knows"** property in **Person** document. Our relationships link between documents has been created.
 
@@ -137,22 +129,22 @@ and(
   idgen("doc:Person",["Jim","1974-07-20"],"v:Jim"),
  	
   insert("v:Maria", "Person").label("Maria")
-  .property("date_of_born", {'@value':"1978-12-03",'@type': 'xsd:date'})
+  .property("date_of_born", literal("1978-12-03",'date'))
   .property("name", "Maria")
   .property("knows", "v:Anna"),
 
   insert("v:Anna", "Person").label("Anna")
-  .property("date_of_born", {'@value':"1974-02-10",'@type': 'xsd:date'})
+  .property("date_of_born", literal("1974-02-10",'date'))
   .property("name", "Anna")
   .property("knows", "v:Tom"),
 
   insert("v:Tom", "Person").label("Tom")
-  .property("date_of_born", {'@value':"1975-06-23",'@type': 'xsd:date'})
+  .property("date_of_born", literal("1975-06-23",'date'))
   .property("name", "Tom")
   .property("knows", "v:Maria"),
 
   insert("v:Jim", "Person").label("Jim")
-  .property("date_of_born", {'@value':"1974-07-20",'@type': 'xsd:date'})
+  .property("date_of_born", literal("1974-07-20",'date'))
   .property("name", "Jim")
   .property("knows", "v:Tom")
 )
