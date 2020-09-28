@@ -88,11 +88,11 @@ WOQL.doctype("Person")
   .label("Person Name")            
   .description("A Person Document")
 	.property("name", "string").label("Name").cardinality(1)
-	.property("date_of_born", "date").label("Date Of Born").cardinality(1)
+	.property("date_of_birth", "date").label("Date Of Birth").cardinality(1)
 	.property("knows", "Person").label("Knows")
 ```
 
-Using the WOQL.js api, we create the **Person** Document class. This object has 3 properties, with three different datatypes. The data type range in **knows** property (ObjectProperty) is the **Person** document class. The cardinality 1 for *name* and *born* said that the combination of the property values is unique for every Document instance.
+Using the WOQL.js api, we create the **Person** Document class. This object has 3 properties, with three different types. The data type range in **knows** property (ObjectProperty) is the **Person** document class. The cardinality 1 for *name* and *date_of_birth* specifies that both property values have a single value.
 
 ## Insert Data 
 
@@ -119,7 +119,7 @@ RETURN maria.name, anna.name, tom.name, jim.name
 
 Let's see how we add documents and relationships with TerminusDB - queries are accessible in a very easy way with JavaScript using the woql.js layer.
 
-We create **Person** documents and we link this Documents using the property **"knows"** property in **Person** document. Our relationships link between documents has been created.
+We create **Person** documents and we link them using the **"knows"** property in **Person** document. Our relationships between documents have been created.
 
 ```js
 and(
@@ -129,22 +129,22 @@ and(
   idgen("doc:Person",["Jim","1974-07-20"],"v:Jim"),
  	
   insert("v:Maria", "Person").label("Maria")
-  .property("date_of_born", literal("1978-12-03",'date'))
+  .property("date_of_birth", literal("1978-12-03",'date'))
   .property("name", "Maria")
   .property("knows", "v:Anna"),
 
   insert("v:Anna", "Person").label("Anna")
-  .property("date_of_born", literal("1974-02-10",'date'))
+  .property("date_of_birth", literal("1974-02-10",'date'))
   .property("name", "Anna")
   .property("knows", "v:Tom"),
 
   insert("v:Tom", "Person").label("Tom")
-  .property("date_of_born", literal("1975-06-23",'date'))
+  .property("date_of_birth", literal("1975-06-23",'date'))
   .property("name", "Tom")
   .property("knows", "v:Maria"),
 
   insert("v:Jim", "Person").label("Jim")
-  .property("date_of_born", literal("1974-07-20",'date'))
+  .property("date_of_birth", literal("1974-07-20",'date'))
   .property("name", "Jim")
   .property("knows", "v:Tom")
 )
@@ -153,7 +153,7 @@ and(
 
 ## Add a new node type and relationship
 
-In Neo4j we add a node with the label **City**, a new constaint and we connect our nodes **Person** and **City** with **CITY_OF_BORN** relationship 
+In Neo4j we add a node with the label **City**, a new constaint and we connect our nodes **Person** and **City** with **CITY_OF_BIRTH** relationship 
 
 ```sql
 CREATE(dublin:City { name:"Dublin"})
@@ -162,7 +162,7 @@ CREATE CONSTRAINT city_name ON (city:City) ASSERT city.name IS UNIQUE
 
 MATCH (a:Person),(b:City)
 WHERE b.name = 'Dublin'
-MERGE (a)-[r:CITY_OF_BORN { label: a.name + ' born in ' + b.name }]->(b)
+MERGE (a)-[r:CITY_OF_BIRTH { label: a.name + ' born in ' + b.name }]->(b)
 RETURN type(r), r.label
 
 ```
@@ -173,11 +173,11 @@ In TerminusDB we create a new Document Object **City**
 WOQL.doctype("City").label("City Name").description("A City name")
 ```
 
-We add a new property **city_of_born** in the Document **Person** with range type **City**.
+We add a new property **city_of_birth** in the Document **Person** with range type **City**.
 Here our relationship between **Person**->**City**
 
 ```js
-add_property("city_of_born","City").domain("Person")
+add_property("city_of_birth","City").domain("Person")
 ```
 
 Now update the data!!
@@ -187,7 +187,7 @@ and(
   idgen("doc:City",["Dublin"],"v:City_id"),
   insert("v:City_id", "City").label("Dublin"),
   triple('v:Person','type','scm:Person'),
-  add_triple("v:Person","city_of_born","v:City_id")
+  add_triple("v:Person","city_of_birth","v:City_id")
 )
 
 ```
@@ -230,7 +230,7 @@ WOQL.doctype("Doctor")
 WOQL.and(
   idgen("doc:Doctor",["Freud","1976-08-25"],"v:Freud"),
   insert("v:Freud", "Doctor").label("Freud")
-  .property("date_of_born", {'@value':"1976-08-25",'@type': 'xsd:date'})
+  .property("date_of_birth", literal("1976-08-25",'date'})
   .property("name", "Freud")
   .property("patient","doc:Person_Maria_1978-12-03")
   .property("patient","doc:Person_Tom_1975-06-23")
