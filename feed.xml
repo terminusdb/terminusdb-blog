@@ -6,9 +6,36 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Sep 2020 16:12:04 +0000</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2020 16:12:04 +0000</lastBuildDate>
+    <pubDate>Mon, 28 Sep 2020 16:56:12 +0000</pubDate>
+    <lastBuildDate>Mon, 28 Sep 2020 16:56:12 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Graph Databases &lt;br&gt;TerminusDB vs Neo4j</title>
+        <author>[{&quot;value&quot;=&gt;&quot;francesca&quot;, &quot;label&quot;=&gt;&quot;Francesca Bitto&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/images/clint-adair-unsplash.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;Are Graph Databases the future? Structured and unstructured data coming from multiple sources can have immense value if you can find the relationships within it, Graph databases consider the relationships between data as first class citizens.&lt;/p&gt; &lt;p&gt;Inter-connected data are the future, and probably the easiest way to model interconnected data is using a Graph Database.&lt;/p&gt; &lt;p&gt;In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.&lt;/p&gt; &lt;h2 id=&quot;graph-database-main-concepts&quot;&gt;Graph Database Main Concepts&lt;/h2&gt; &lt;p&gt;Graph databases are databases that use graph structures to organize data: nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store...
+        &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+        <link>http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/</link>
+        <guid isPermaLink="true">http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/</guid>
+        
+        <category>graph</category>
+        
+        <category>Terminus</category>
+        
+        <category>Database</category>
+        
+        <category>Data</category>
+        
+        <category>Development</category>
+        
+        
+      </item>
     
       <item>
         <title>Hackathon: Build a Version Controlled Knowledge Graph of All of Human History  </title>

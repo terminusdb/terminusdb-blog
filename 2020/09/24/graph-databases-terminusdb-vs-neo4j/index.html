@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Graph Databases &lt;br&gt;TerminusDB vs Neo4j | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Let’s see the main differences between TerminusDB and Neo4j in practice">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/images/clint-adair-unsplash.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graph Databases &lt;br&gt;TerminusDB vs Neo4j | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="Let’s see the main differences between TerminusDB and Neo4j in practice">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/images/clint-adair-unsplash.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Graph Databases &lt;br&gt;TerminusDB vs Neo4j | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="Let’s see the main differences between TerminusDB and Neo4j in practice">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/images/clint-adair-unsplash.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/">
+
+
+
+
+</head>
+<body id="graph-databases-br-terminusdb-vs-neo4j" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Graph Databases <br>TerminusDB vs Neo4j</h2>
+
+        <time class="post__date" datetime="2020-09-24T00:00:00+00:00" itemprop="datePublished">24 Sep 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/images/clint-adair-unsplash.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>Are Graph Databases the future?  Structured and unstructured data coming from multiple sources can have immense value if you can find the relationships within it, Graph databases consider the relationships between data as first class citizens.</p>
+
+<p>Inter-connected data are the future, and probably the easiest way to model interconnected data is using a Graph Database.</p>
+
+<p>In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.</p>
+
+<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
+<a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+
+<p>Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.</p>
+
+<h2 id="graph-database-main-concepts">Graph Database Main Concepts</h2>
+
+<p>Graph databases  are databases that use graph structures to organize data: nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store to be linked together.</p>
+
+<h4 id="neo4j-main-concepts">Neo4J Main Concepts</h4>
+
+<ul>
+  <li>Node</li>
+  <li>Label (:Person)</li>
+  <li>Relationship :KNOWS</li>
+  <li>Property {name}</li>
+</ul>
+
+<p><img src="/blog/assets/images/neo4j-graph-know.png" alt="" /></p>
+
+<p>In Neo4j the main components of the property graph model are nodes and relationships, in our example, <strong>Maria</strong>, <strong>Anna</strong>, <strong>Tom</strong> and <strong>Jim</strong> are our nodes and <strong>KNOWS</strong> is our relationship between nodes.</p>
+
+<p>Nodes and Relationships can have properties, properties are name-value pairs that provide additional details for nodes and relationships. You can group similar nodes together by assigning a node label (:Person). A node can have zero to many labels.</p>
+
+<h4 id="terminusdb">TerminusDB</h4>
+
+<ul>
+  <li>OrdinaryClass</li>
+  <li>DocumentClass (doc:Person)</li>
+  <li>ObjectProperty (knows:doc:Person)</li>
+  <li>DatatypeProperty (name:String)</li>
+</ul>
+
+<p><img src="/blog/assets/images/terminusdb-graph-knows.png" alt="" /></p>
+
+<p>In TerminusDB everything is an object of a Class - objects can have properties and some of these properties may link to other objects. Document Classes are top-level classes, which allow the graph to be serialized into documents.  Our example <strong>Maria</strong>, <strong>Anna</strong>, <strong>Tom</strong>, and <strong>Jim</strong> are our Document Objects. The <strong>knows</strong> property is an ObjectProperty with range being the <strong>Person</strong> document.</p>
+
+<p>Classes can be subclasses of other classes, which means that they inherit all the parent’s properties (much like inheritance in object-oriented programming). Multiple inheritance is supported.</p>
+
+<p>The type of data that the property points to can either be a simple datatype literal (e.g. an integer or string) (DatatypeProperty) or it can be a class (ObjectProperty).</p>
+
+<h2 id="query-language">Query language</h2>
+
+<p>Neo4j uses <strong>Cypher</strong> to store and retrieve data from the graph database. Cypher is 
+a graph query language and the best way to interact with Neo4j.</p>
+
+<p>TerminusDB uses <a href="https://terminusdb.com/docs/woql"><strong>WOQL</strong> (Web Object Query Language)</a> which allows queries to be written in either javascript, python or as JSON-LD documents. All these examples are written using woql.js a javascript layer that allows queries to be written in simple javascript.</p>
+
+<h2 id="schema">Schema</h2>
+
+<p>A schema in Neo4j refers to indexes and constraints that can be applied to nodes. Neo4j is often described as schema optional, meaning that it is not necessary to create indexes and constraints. Index and Constraint can be added at any time.</p>
+
+<p><em>In our example we create the constraint <strong>person_unique</strong>, it specifies that the properties <strong>name</strong> and <strong>born</strong> have to exist on all nodes with label <strong>Person</strong> and the combination of the property values is unique.</em></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">CONSTRAINT</span> <span class="n">person_unique</span>
+<span class="k">ON</span> <span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span> <span class="n">ASSERT</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">.</span><span class="n">born</span><span class="p">)</span> <span class="k">IS</span> <span class="n">NODE</span> <span class="k">KEY</span>
+</code></pre></div></div>
+
+<p>TerminusDB is schema optional, but to take advantage of schema checking, it is better to create a schema before inserting data. TerminusDB lets you change your schema at any time. 
+TerminusDB is a graph database that stores data like Git. <strong>TerminusDB allows for the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel.</strong></p>
+
+<p><a href="https://terminusdb.com/docs/quickstart/"><strong>If you want to read more …</strong></a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>            
+  <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person Name</span><span class="dl">"</span><span class="p">)</span>            
+  <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A Person Document</span><span class="dl">"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Name</span><span class="dl">"</span><span class="p">).</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">date</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Date Of Birth</span><span class="dl">"</span><span class="p">).</span><span class="nx">cardinality</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">knows</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Knows</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Using the WOQL.js api, we create the <strong>Person</strong> Document class. This object has 3 properties, with three different types. The data type range in <strong>knows</strong> property (ObjectProperty) is the <strong>Person</strong> document class. The cardinality 1 for <em>name</em> and <em>date_of_birth</em> specifies that both property values have a single value.</p>
+
+<h2 id="insert-data">Insert Data</h2>
+
+<p>Here is an example of Cypress syntax for inserting data</p>
+
+<p>We add 4 nodes of type (label) <strong>Person</strong> and relationships <strong>KNOWS</strong> between the nodes.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">CREATE</span> <span class="p">(</span><span class="n">maria</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Maria"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1978-12-03'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
+<span class="k">CREATE</span> <span class="p">(</span><span class="n">anna</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Anna"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1974-02-10'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
+<span class="k">CREATE</span> <span class="p">(</span><span class="n">tom</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Tom"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1975-06-23'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
+<span class="k">CREATE</span> <span class="p">(</span><span class="n">jim</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Jim"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1974-07-20'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
+
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">maria</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">KNOWS</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">maria</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' knows '</span> <span class="o">+</span> <span class="n">anna</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">anna</span><span class="p">)</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">anna</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r01</span><span class="p">:</span><span class="n">KNOWS</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">anna</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' knows '</span> <span class="o">+</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">tom</span><span class="p">)</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">tom</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r02</span><span class="p">:</span><span class="n">KNOWS</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' knows '</span> <span class="o">+</span> <span class="n">maria</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">maria</span><span class="p">)</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">tom</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r03</span><span class="p">:</span><span class="n">KNOWS</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' knows '</span> <span class="o">+</span> <span class="n">jim</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">jim</span><span class="p">)</span>
+
+<span class="k">RETURN</span> <span class="n">maria</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">anna</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">jim</span><span class="p">.</span><span class="n">name</span>
+
+</code></pre></div></div>
+
+<p>Let’s see how we add documents and relationships with TerminusDB - queries are accessible in a very easy way with JavaScript using the woql.js layer.</p>
+
+<p>We create <strong>Person</strong> documents and we link them using the <strong>“knows”</strong> property in <strong>Person</strong> document. Our relationships between documents have been created.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Person</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Maria</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">1978-12-03</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Maria</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Person</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Anna</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">1974-02-10</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Anna</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Person</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Tom</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">1975-06-23</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Tom</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Person</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Jim</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">1974-07-20</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Jim</span><span class="dl">"</span><span class="p">),</span>
+ 	
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Maria</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Maria</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="nx">literal</span><span class="p">(</span><span class="dl">"</span><span class="s2">1978-12-03</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Maria</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">knows</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Anna</span><span class="dl">"</span><span class="p">),</span>
+
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Anna</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Anna</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="nx">literal</span><span class="p">(</span><span class="dl">"</span><span class="s2">1974-02-10</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Anna</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">knows</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Tom</span><span class="dl">"</span><span class="p">),</span>
+
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Tom</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Tom</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="nx">literal</span><span class="p">(</span><span class="dl">"</span><span class="s2">1975-06-23</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Tom</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">knows</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Maria</span><span class="dl">"</span><span class="p">),</span>
+
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Jim</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jim</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="nx">literal</span><span class="p">(</span><span class="dl">"</span><span class="s2">1974-07-20</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Jim</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">knows</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Tom</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="add-a-new-node-type-and-relationship">Add a new node type and relationship</h2>
+
+<p>In Neo4j we add a node with the label <strong>City</strong>, a new constaint and we connect our nodes <strong>Person</strong> and <strong>City</strong> with <strong>CITY_OF_BIRTH</strong> relationship</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span><span class="p">(</span><span class="n">dublin</span><span class="p">:</span><span class="n">City</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Dublin"</span><span class="err">}</span><span class="p">)</span>
+
+<span class="k">CREATE</span> <span class="k">CONSTRAINT</span> <span class="n">city_name</span> <span class="k">ON</span> <span class="p">(</span><span class="n">city</span><span class="p">:</span><span class="n">City</span><span class="p">)</span> <span class="n">ASSERT</span> <span class="n">city</span><span class="p">.</span><span class="n">name</span> <span class="k">IS</span> <span class="k">UNIQUE</span>
+
+<span class="k">MATCH</span> <span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="n">Person</span><span class="p">),(</span><span class="n">b</span><span class="p">:</span><span class="n">City</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Dublin'</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">CITY_OF_BIRTH</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' born in '</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">RETURN</span> <span class="k">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span><span class="p">.</span><span class="n">label</span>
+
+</code></pre></div></div>
+
+<p>In TerminusDB we create a new Document Object <strong>City</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">City Name</span><span class="dl">"</span><span class="p">).</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A City name</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We add a new property <strong>city_of_birth</strong> in the Document <strong>Person</strong> with range type <strong>City</strong>.
+Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">add_property</span><span class="p">(</span><span class="dl">"</span><span class="s2">city_of_birth</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">).</span><span class="nx">domain</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now update the data!!</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:City</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Dublin</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:City_id</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:City_id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Dublin</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">scm:Person</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Person</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">city_of_birth</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:City_id</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="creating-hierarchies">Creating hierarchies</h2>
+
+<p>In our graph we now add another type of Person called Doctor, this entity has all the Person properties plus it is connected to the other nodes by the <strong>patient</strong> relationship</p>
+
+<p>In Neo4j we can add multi labels to a node so our node is Person and Doctor at the same time.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">create</span> <span class="p">(</span><span class="n">freud</span><span class="p">:</span><span class="n">Person</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span><span class="s1">'Freud'</span><span class="p">,</span> <span class="n">born</span><span class="p">:</span><span class="s1">'1976-08-25'</span><span class="err">}</span><span class="p">)</span>
+
+<span class="k">MATCH</span> <span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="n">Person</span><span class="p">),(</span><span class="n">b</span><span class="p">:</span><span class="n">Doctor</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Maria'</span> <span class="k">AND</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="nv">"Freud"</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">IS_PATIENT_OF</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' is patient of '</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">RETURN</span> <span class="k">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span><span class="p">.</span><span class="n">label</span>
+
+<span class="k">MATCH</span> <span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="n">Person</span><span class="p">),(</span><span class="n">b</span><span class="p">:</span><span class="n">Doctor</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Tom'</span> <span class="k">AND</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="nv">"Freud"</span>
+<span class="n">MERGE</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">IS_PATIENT_OF</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' is patient of '</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">RETURN</span> <span class="k">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span><span class="p">.</span><span class="n">label</span>
+
+</code></pre></div></div>
+
+<p>In TerminusDB classes can be subclasses of other classes, so let’s add a subclass for <strong>scm:Person</strong> called <strong>scm:Doctor</strong>.</p>
+
+<p>A Doctor shares all of the properties available to a Person, but it also has a <strong>patient</strong> (ObjectProperty).</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A Doctor is a person with patients</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">patient</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">idgen</span><span class="p">(</span><span class="dl">"</span><span class="s2">doc:Doctor</span><span class="dl">"</span><span class="p">,[</span><span class="dl">"</span><span class="s2">Freud</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">1976-08-25</span><span class="dl">"</span><span class="p">],</span><span class="dl">"</span><span class="s2">v:Freud</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Freud</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Freud</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">,</span> <span class="nx">literal</span><span class="p">(</span><span class="dl">"</span><span class="s2">1976-08-25</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Freud</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">patient</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">doc:Person_Maria_1978-12-03</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">patient</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">doc:Person_Tom_1975-06-23</span><span class="dl">"</span><span class="p">)</span>
+       	
+<span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="query-the-data">Query the Data</h2>
+
+<p>Now, how we write our query for getting how the <strong>Person</strong> <strong>knows</strong> each others</p>
+
+<p>Here an Cypher example</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">MATCH</span> <span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span><span class="o">-</span><span class="p">[:</span><span class="n">KNOWS</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
+<span class="k">RETURN</span> <span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">otherPerson</span><span class="p">.</span><span class="n">name</span>
+
+</code></pre></div></div>
+
+<p>Let’s see the TerminusDB WOQL query using woql.js</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">or</span><span class="p">(</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
+   <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>How do we get only people who knows each other and are patients of the doctor <strong>Freud</strong> ?</p>
+
+<p>Neo4j Cypher query example</p>
+
+<p><img src="/blog/assets/images/neo4j-graph-knows-doc.png" alt="" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">MATCH</span> <span class="p">(</span><span class="n">doc</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">'Freud'</span> <span class="err">}</span><span class="p">)</span><span class="o">&lt;-</span><span class="p">[:</span><span class="n">IS_PATIENT_OF</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">),</span>
+      <span class="p">(</span><span class="n">doc</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">'Freud'</span> <span class="err">}</span><span class="p">)</span><span class="o">&lt;-</span><span class="p">[:</span><span class="n">IS_PATIENT_OF</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span><span class="o">-</span><span class="p">[:</span><span class="n">KNOWS</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
+<span class="k">RETURN</span> <span class="n">person</span><span class="p">.</span><span class="n">name</span>
+
+</code></pre></div></div>
+
+<p>TerminusDB query example</p>
+
+<p><img src="/blog/assets/images/terminusdb-graph-know-doc.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">and</span><span class="p">(</span>
+  <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Doc</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">patient</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Doc</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">patient</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Doc</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:Freud</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Let’s jump into another interesting tutorial and continue to build
+<a href="https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">Bank Tutorial</a></p>
+
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Graph Databases <br>TerminusDB vs Neo4j+http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Graph Databases <br>TerminusDB vs Neo4j&summary=Let’s see the main differences between TerminusDB and Neo4j in practice&url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Let’s see the main differences between TerminusDB and Neo4j in practice&media=http://blog.terminusdb.com/blog/blog/assets/images/clint-adair-unsplash.jpg&url=http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/Francesca-Bit" class="p-name u-url">Francesca Bitto</a></span>
+            <p class="post__bio p-note">Never stop learning.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/collaborate.jpg" alt="Taking TerminusDB to the bank (Part II)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to the bank (Part II)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/27/taking-terminusdb-to-the-bank/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/cover.jpg" alt="Taking TerminusDB to The Bank (Part I)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to The Bank (Part I)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/14/terminusDB-vs-mongoDB/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/images/directory-106815_1920.jpg" alt="TerminusDB vs MongoDB"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB vs MongoDB</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
