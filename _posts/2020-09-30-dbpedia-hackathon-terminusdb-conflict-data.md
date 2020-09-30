@@ -152,15 +152,15 @@ Here is a video of the query running in the console:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b2HKX69JI58" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This is a graph:
+This is the resulting graph for you to examine:
 
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html" width="100%" height="600px"></iframe>
 
-And the image of the graph:
+And the image of the full graph so you can appreciate the complex picture of developing and changing polities:
 
 ![](/blog/assets/uploads/graph-of-developments.jpg)
 
-To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity `doc:frmerve`
+To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity ``doc:frmerve``
 
 ```
 add_triple("doc:Battle_of_Vézeronce", "type", "scm:Battle")
