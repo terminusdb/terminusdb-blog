@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttp://blog.terminusdb.com</link>
     <atom:link href="http://blog.terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Sep 2020 15:13:16 +0000</pubDate>
-    <lastBuildDate>Wed, 30 Sep 2020 15:13:16 +0000</lastBuildDate>
+    <pubDate>Wed, 30 Sep 2020 15:18:25 +0000</pubDate>
+    <lastBuildDate>Wed, 30 Sep 2020 15:18:25 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -17,7 +17,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/roadmap-2.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qgj5FI_lQBI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;!--StartFragment--&gt; &lt;p&gt;“Hey, Sarah!” said Delphine, “I wanted to come by and thank you for automating that CSV export with the unwarbled widget data last week. I can’t tell you how helpful that’s been for us.”&lt;/p&gt; &lt;p&gt;“Delphine! Great that you’re here, I wanted to show you something cool!” said Sarah.&lt;/p&gt; &lt;p&gt;Sarah opened the TerminusDB console on her laptop. “You know those CSVs, this is the same data here in the database I’m using to tidy the data, TerminusDB. I’m sure those CSVs are useful, but the data is even more useful here. Look, I’ve written a WOQL query to show the average amount of time a widget waits before it’s warbled.”&lt;/p&gt; &lt;p&gt;“A what query?” Delphine pulled up a chair and sat down beside Sarah, watching intently.&lt;/p&gt; &lt;p&gt;“WOQL” said Sarah. “Web Object Query Language.”&lt;/p&gt; &lt;p&gt;“Watch this”...
+        &lt;!--StartFragment--&gt; &lt;p&gt;“Hey, Sarah!” said Delphine, “I wanted to come by and thank you for automating that CSV export with the unwarbled widget data last week. I can’t tell you how helpful that’s been for us.”&lt;/p&gt; &lt;p&gt;“Delphine! Great that you’re here, I wanted to show you something cool!” said Sarah.&lt;/p&gt; &lt;p&gt;Sarah opened the TerminusDB console on her laptop. “You know those CSVs, this is the same data here in the database I’m using to tidy the data, TerminusDB. I’m sure those CSVs are useful, but the data is even more useful here. Look, I’ve written a WOQL query to show the average amount of time a widget waits before it’s warbled.”&lt;/p&gt; &lt;p&gt;“A what query?” Delphine pulled up a chair and sat down beside Sarah, watching intently.&lt;/p&gt; &lt;p&gt;“WOQL” said Sarah. “Web Object Query Language.”&lt;/p&gt; &lt;p&gt;“Watch this” Sarah said as she moved a slider at the top of the console. “I can go...
         &lt;p&gt;&lt;a href=&quot;http://blog.terminusdb.com/blog/2020/09/30/product-roadmap-episode-3/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Wed, 30 Sep 2020 14:17:51 +0000</pubDate>
