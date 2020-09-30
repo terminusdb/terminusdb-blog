@@ -10,10 +10,6 @@ author:
 tags:
   - database
 ---
-```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qgj5FI_lQBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
 <!--StartFragment-->
 
 "Hey, Sarah!" said Delphine, "I wanted to come by and thank you for automating that CSV export with the unwarbled widget data last week. I can't tell you how helpful that's been for us."
