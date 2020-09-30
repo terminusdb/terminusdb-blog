@@ -49,7 +49,7 @@ limit(10).triple("v:X", "type", "scm:MilitaryConflict")
   .greater(600, "v:Year_Integer")
 ```
 
-That query gave us this result
+That query gave us this result:
 
 ![](/blog/assets/uploads/first-result.png)
 
@@ -101,7 +101,7 @@ We first looked for the Franks using the scanning query and get this result:
 
 We can see that the Franks in that period are the Early Merovingian variety (Clovis, the first King of the Franks, has died and his sons are fighting over his former lands). The associated doc is:
 
-``doc:frmerve``
+`doc:frmerve`
 
 This is the search for the Franks:
 
@@ -160,7 +160,7 @@ And the image of the full graph so you can appreciate the complex picture of dev
 
 ![](/blog/assets/uploads/graph-of-developments.jpg)
 
-To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity ``doc:frmerve``
+To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity `doc:frmerve`
 
 ```
 add_triple("doc:Battle_of_Vézeronce", "type", "scm:Battle")
@@ -182,7 +182,11 @@ Using the Social Resilience cases identify military conflicts in the period 500-
 
 We were able to establish the conflicts in the period and enrich the data with that information. Unfortunately there was no estimates of the numbers of deaths in the DBpedia data. This will have to be extracted from other sources. 
 
-## Generalized Script
+## Generalized Script and Jupyter Notebooks
+
+We used the TerminusDB Jupyter Notebook integration for exploration and visualization of the data. All our work can be seen in our GitHub repository:
+
+https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020
 
 We were able to generalize a cross-database query that allows us, and other researchers, to take the full list of all polities from Seshat and then combine with all the battle from DBpedia. This script check names and dates to make sure there is a match and then carries out an auto insert. 
 
@@ -198,5 +202,4 @@ In the examples we used, the Sasanids were no more by the end of the Little Ice 
 
 On the other end of our polities, the Franks increase their strength through the Little Ice Age and emerge with an Empire under Charles 'The Hammer' Martel at the turn of the 8th Century.  
 
-Documenting and enriching this data allows for deeper understnading of the drivers of resiliance and will hopefully allow us to better understand how societies can prepare for cataclysmic change. 
-
+Documenting and enriching this data allows for deeper understnading of the drivers of resiliance and will hopefully allow us to better understand how societies can prepare for cataclysmic change.
