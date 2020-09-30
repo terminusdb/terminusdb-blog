@@ -123,7 +123,7 @@ As examples for the workshop, you might use the Seshat Latium case and illustrat
   .greater(600, "v:Year_Integer")
 </code></pre></div></div>
 
-<p>That query gave us this result</p>
+<p>That query gave us this result:</p>
 
 <p><img src="/blog/assets/uploads/first-result.png" alt="" /></p>
 
@@ -250,7 +250,11 @@ view.node("v:Polity", "v:Presence").in("scm:unknown").color([150,150,150])
 
 <p>We were able to establish the conflicts in the period and enrich the data with that information. Unfortunately there was no estimates of the numbers of deaths in the DBpedia data. This will have to be extracted from other sources.</p>
 
-<h2 id="generalized-script">Generalized Script</h2>
+<h2 id="generalized-script-and-jupyter-notebooks">Generalized Script and Jupyter Notebooks</h2>
+
+<p>We used the TerminusDB Jupyter Notebook integration for exploration and visualization of the data. All our work can be seen in our GitHub repository:</p>
+
+<p>https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020</p>
 
 <p>We were able to generalize a cross-database query that allows us, and other researchers, to take the full list of all polities from Seshat and then combine with all the battle from DBpedia. This script check names and dates to make sure there is a match and then carries out an auto insert.</p>
 
@@ -267,7 +271,6 @@ view.node("v:Polity", "v:Presence").in("scm:unknown").color([150,150,150])
 <p>On the other end of our polities, the Franks increase their strength through the Little Ice Age and emerge with an Empire under Charles ‘The Hammer’ Martel at the turn of the 8th Century.</p>
 
 <p>Documenting and enriching this data allows for deeper understnading of the drivers of resiliance and will hopefully allow us to better understand how societies can prepare for cataclysmic change.</p>
-
 
         </div>
 
