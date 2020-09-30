@@ -186,13 +186,13 @@ We were able to establish the conflicts in the period and enrich the data with t
 
 We used the TerminusDB Jupyter Notebook integration for exploration and visualization of the data. All our work can be seen in our GitHub repository:
 
-https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020
+<https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020>
 
 We were able to generalize a cross-database query that allows us, and other researchers, to take the full list of all polities from Seshat and then combine with all the battle from DBpedia. This script check names and dates to make sure there is a match and then carries out an auto insert. 
 
 The query is available on GitHub:
 
-https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/master/DBpedia_to_Seshat.ipynb
+<https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/master/DBpedia_to_Seshat.ipynb>
 
 ## Historical Context
 
