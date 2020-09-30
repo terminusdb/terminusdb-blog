@@ -101,7 +101,7 @@ We first looked for the Franks using the scanning query and get this result:
 
 We can see that the Franks in that period are the Early Merovingian variety (Clovis, the first King of the Franks, has died and his sons are fighting over his former lands). The associated doc is:
 
-\`\`doc:frmerve\`\`
+``doc:frmerve``
 
 This is the search for the Franks:
 
@@ -154,7 +154,7 @@ Here is a video of the query running in the console:
 
 This is a graph:
 
-<iframe width="560" height="315" src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html"frameborder="0" allow="accelerometer; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 And the image of the graph:
 
