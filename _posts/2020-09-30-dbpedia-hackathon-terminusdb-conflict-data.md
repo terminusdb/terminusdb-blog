@@ -154,7 +154,7 @@ Here is a video of the query running in the console:
 
 This is a graph:
 
-<iframe width="560" height="315" src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html" width="100%" height="600px"></iframe>
 
 And the image of the graph:
 
