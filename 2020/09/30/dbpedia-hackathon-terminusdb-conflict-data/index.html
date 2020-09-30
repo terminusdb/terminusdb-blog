@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DBpedia Hackathon: TerminusDB &amp; Conflict Data | TerminusDB Blog - News and Tutorials</title>
+<meta name="description" content="News and tutorials of TerminusDB.
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="The TerminusDB Team Entry">
+<meta itemprop="image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/3480.1551362519.jpg">
+
+<meta property="og:url" content="http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DBpedia Hackathon: TerminusDB &amp; Conflict Data | TerminusDB Blog - News and Tutorials">
+<meta property="og:site_name" content="TerminusDB Blog - News and Tutorials">
+<meta property="og:description" content="The TerminusDB Team Entry">
+<meta property="og:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/3480.1551362519.jpg">
+
+<meta name="twitter:url" content="http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DBpedia Hackathon: TerminusDB &amp; Conflict Data | TerminusDB Blog - News and Tutorials">
+<meta name="twitter:site" content="TerminusDB Blog - News and Tutorials">
+<meta name="twitter:description" content="The TerminusDB Team Entry">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="http://blog.terminusdb.com/blog/blog/assets/uploads/3480.1551362519.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="TerminusDB Blog - News and Tutorials" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/">
+
+
+
+
+</head>
+<body id="dbpedia-hackathon-terminusdb-conflict-data" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">DBpedia Hackathon: TerminusDB & Conflict Data</h2>
+
+        <time class="post__date" datetime="2020-09-30T09:25:37+00:00" itemprop="datePublished">30 Sep 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/blog/assets/uploads/3480.1551362519.jpg'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <h2 id="terminusdb-in-the-dbpedia-hackathon">TerminusDB in the DBpedia Hackathon</h2>
+
+<p>Team TerminusDB took part in the <strong>DBpedia Autumn Hackathon 2020</strong> DBpedia is an extract of all of the structured data from Wikipedia. You can clone the full data set from <a href="https://terminusdb.com/hub/">TerminusHub</a> and run all of the below steps for yourself (for non-technical users - like your correspondent - it is easy to do and feels like a type of magic when the queries emerge with data attached).</p>
+
+<p>We started with a great working seminar with well-known American archaeologist and anthropologist <a href="https://en.wikipedia.org/wiki/Peter_N._Peregrine">Peter Peregrine</a>. It was an illuminating session, we set out the context of the work and we got started on delivery (first 25 minutes is a discussion of Peter’s work and the work of <a href="http://seshatdatabank.info/">Seshat: Global History Databank</a>, the remainder is working with TerminusDB and TerminusHub).</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LFhwORjn-Nc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Peter left us with some interesting ideas for how we might combine the the DBpedia data with Seshat in the context of his work on historical conflicts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here are some ideas for tasks to give to hackathon teams:
+
+1) Using the Social Resilience cases identify episodes of famine and/or epidemic disease in the 50-year period following 535CE, with estimates of deaths, where possible.
+
+2) Using the Social Resilience cases identify military conflicts in the period 500-600CE, with estimates of the number of combatants and the number of deaths, where possible.
+
+Bonus: link references to their MARC records
+
+As examples for the workshop, you might use the Seshat Latium case and illustrate pulling information and images from Perseus and shapefiles from Pleiadies.
+</code></pre></div></div>
+
+<h2 id="into-the-server">Into the Server</h2>
+
+<p>With the context set, we moved the action into the TerminusDB <a href="https://discord.gg/QFVUJEY">Discord server</a>. We used a <a href="https://app.mural.co/t/asymmetric6612/m/asymmetric6612/1600859397643/1cad3d5ff4cdb2809b41bb148aaf808353512157">public Mural board </a>to brainstorm and plot our course.</p>
+
+<p><img src="/blog/assets/uploads/mural.jpg" alt="" title="Planning to attach the Hackathon" /></p>
+
+<p>We knew that we were looking for conflicts between 500CE and 600 CE in the DBpedia data set and wrote this simple query to find and extract that information:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>limit(10).triple("v:X", "type", "scm:MilitaryConflict")
+  .triple("v:X", "scm:date", "v:Date")
+  .re("(....)-..-..", "v:Date", ["v:All", "v:Year"])
+  .cast("v:Year", "xsd:integer", "v:Year_Integer")
+  .greater("v:Year_Integer", 500)
+  .greater(600, "v:Year_Integer")
+</code></pre></div></div>
+
+<p>That query gave us this result</p>
+
+<p><img src="/blog/assets/uploads/first-result.png" alt="" /></p>
+
+<p>As the object of the exercise is to enrich the Seshat conflict data between 500 and 600CE, we were able to quickly exclude the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Eclipse">Battle of the Eclipse</a> as it was fought between the Medes and Lydians in the early 6th century BCE. This is an issue when working with data like that taken from Wikipedia - it is inputted by non-professionals and there are errors.</p>
+
+<p>Here is a short video of the 500-600BCE query and our results</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m5pVvzN_oBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>With the remaining four conflicts from DBpedia, we broke into teams and worked on each battle - first we checked the Seshat data (available to clone on TerminusHub) to see if the polities in Seshat matched the belligerents in the battles</p>
+
+<p>This query returns the list of all the Seshat polities and their start and end date</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>triple("v:X", "type", "scm:Polity")
+.triple("v:X", "scm:end", "v:End")
+.triple("v:X", "scm:start", "v:Start")
+.triple("v:X", "label", "v:Name")
+</code></pre></div></div>
+
+<p>Here is a video of the query running:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9sqRwCiv-lI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>That actually provides too much information from Seshat and we found it easier to use a query that scans for patterns in the Seshat polity names and alternative names</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>triple("v:X", "type", "scm:Polity").triple("v:X", "scm:end", "v:End").triple("v:X", "scm:start", "v:Start").triple("v:X", "label", "v:Name")
+.triple("v:X", "scm:alternative_names", "v:YYY").triple("v:YYY", "scm:string", "v:AName")
+.or(
+  re("Rom", "v:Name", ["v:Match"]),
+  re("Rom", "v:AName", ["v:Match"])  
+)
+</code></pre></div></div>
+
+<p>In the above case looking for the string <code class="highlighter-rouge">Rom</code> - you can change that to <code class="highlighter-rouge">Byz</code> for the Byzantines or <code class="highlighter-rouge">Sas</code> for the Sassanids.</p>
+
+<h2 id="battle-of-vézeronce">Battle of Vézeronce</h2>
+
+<p>Of the remaining battles we need to find out if the relevant belligerents are polities in the Seshat databank and add the Battles if they are. For this write up, we’ll use the Battle of Vézeronce and our exploration there (thou we added all the remaining battles too).</p>
+
+<p>The Battle of Vézeronce was fought by the Franks and the Burgundians in 524CE.</p>
+
+<p><img src="/blog/assets/uploads/both-sides.jpg" alt="" title="Structured Extract from Wikipedia" /></p>
+
+<p>We first looked for the Franks using the scanning query and get this result:</p>
+
+<p><img src="/blog/assets/uploads/franks.jpg" alt="" /></p>
+
+<p>We can see that the Franks in that period are the Early Merovingian variety (Clovis, the first King of the Franks, has died and his sons are fighting over his former lands). The associated doc is:</p>
+
+<p>``doc:frmerve``</p>
+
+<p>This is the search for the Franks:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tHNcilxJURk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>On the other side of the Battle of Vézeronce is the Burgundians - those Scandinavian/East Germanic people who ended up in South Central France.</p>
+
+<p>Burgundy turns out to not be represented in the Seshat databank:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6NWmvEX-as0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>This is the view script that colors the timeline according the presence and absence of soldiers</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>view.height(800);
+view.width(1200);
+view.edges(["v:Predecessor", "v:Polity"], ["v:Polity", "v:Successor"])
+view.node("v:Predecessor").text("v:Plab").icon({label: true})
+view.node("v:Successor").text("v:Slab").icon({label: true})
+view.node("v:Polity").text("v:Lab").icon({label: true})
+view.node("v:Polity", "v:Presence").in("scm:absent").color([255,0,0])
+view.node("v:Polity", "v:Presence").in("scm:present").color([0,255,0])
+view.node("v:Polity", "v:Presence").in("scm:unknown").color([150,150,150])
+</code></pre></div></div>
+
+<p>Now we have established where we are in relation to the data in DBpedia and Seshat, we can now move to enriching the Seshat conflict data with the conflict data from DBpedia.</p>
+
+<p>Lets take a quick look at the evolution of professional soldiers in the polities in Seshat. It certainly links across to the battles and gives us more context on the type of political entities we are talking about.</p>
+
+<p>This query will give a timeline of polities and which ones had professional soldiers</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WOQL.and(
+        WOQL.triple("v:Polity", "type", "scm:Polity"),
+        WOQL.triple("v:Polity", "successor", "v:Successor"),
+        WOQL.triple("v:Polity", "predecessor", "v:Predecessor"),
+        WOQL.triple("v:Polity", "label", "v:Lab"),
+        WOQL.triple("v:Successor", "label", "v:Slab"),
+        WOQL.triple("v:Predecessor", "label", "v:Plab"),
+        WOQL.opt().and(
+            WOQL.triple("v:Polity", "professional_soldiers", "v:Variable"),
+               WOQL.triple("v:Variable", "epistemicState", "v:Presence")
+        )
+     )
+</code></pre></div></div>
+
+<p>Here is a video of the query running in the console:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b2HKX69JI58" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>This is a graph:</p>
+
+<p>&lt;iframe width=”560” height=”315” src=”https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html”frameborder=”0” allow=”accelerometer; picture-in-picture” allowfullscreen&gt;&lt;/iframe&gt;</p>
+
+<p>And the image of the graph:</p>
+
+<p><img src="/blog/assets/uploads/graph-of-developments.jpg" alt="" /></p>
+
+<p>To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity <code class="highlighter-rouge">doc:frmerve</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add_triple("doc:Battle_of_Vézeronce", "type", "scm:Battle")
+.add_triple("doc:Battle_of_Vézeronce", "label", "doc:Battle of Vézeronce")
+.add_triple("doc:Battle_of_Vézeronce", "scm:end", literal("524", "xdd:integerRange"))
+.add_triple("doc:Battle_of_Vézeronce", "scm:start",  literal("524", "xdd:integerRange"))
+.add_triple("doc:Battle_of_Vézeronce", "scm:belligerent", "doc:frmerve")
+</code></pre></div></div>
+
+<p>This enrichment is made to the conflict branch of the Seshat Databank which can then be kept as a separate area for study. Perhaps later we can merge the conflict branch into the main Seshat data.</p>
+
+<h2 id="focus">Focus</h2>
+
+<p>We focused on the second of Peter Peregrine’s questions:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Using the Social Resilience cases identify military conflicts in the period 500-600CE, with estimates of the number of combatants and the number of deaths, where possible.
+</code></pre></div></div>
+
+<p>We were able to establish the conflicts in the period and enrich the data with that information. Unfortunately there was no estimates of the numbers of deaths in the DBpedia data. This will have to be extracted from other sources.</p>
+
+<h2 id="generalized-script">Generalized Script</h2>
+
+<p>We were able to generalize a cross-database query that allows us, and other researchers, to take the full list of all polities from Seshat and then combine with all the battle from DBpedia. This script check names and dates to make sure there is a match and then carries out an auto insert.</p>
+
+<p>The query is available on GitHub:</p>
+
+<p>https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/master/DBpedia_to_Seshat.ipynb</p>
+
+<h2 id="historical-context">Historical Context</h2>
+
+<p>To contextualize the hackathon effort, we are looking at the<a href="https://en.wikipedia.org/wiki/Late_Antique_Little_Ice_Age"> Late Antiquity Little Ice Age </a>period that lasted for about 100 years after the <a href="https://en.wikipedia.org/wiki/Extreme_weather_events_of_535%E2%80%93536">extreme events of 535-536</a> - think 2020 and multiply it by 10 and throw in an ice age - so we can study social resilience. That’s important because it can help us to understand how societies fare when faced with extreme events.</p>
+
+<p>In the examples we used, the Sasanids were no more by the end of the Little Ice Age. They along with the Eastern Roman or Byzantine Empire (another one that popped up in our battles) were so weakened by plague and internal and external conflicts in this period that they were unable to resist the onslaught of the Arabs. In the Battle of Qadisiyyah, the Muslim army defeated the Sasanids and Persia never recovered. This also led to the massive decline of the Zoroastrian religion. We can see this on the graph visualization - the Empire cuts after the Battle of Callinicum that we have documented.</p>
+
+<p>On the other end of our polities, the Franks increase their strength through the Little Ice Age and emerge with an Empire under Charles ‘The Hammer’ Martel at the turn of the 8th Century.</p>
+
+<p>Documenting and enriching this data allows for deeper understnading of the drivers of resiliance and will hopefully allow us to better understand how societies can prepare for cataclysmic change.</p>
+
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=DBpedia Hackathon: TerminusDB & Conflict Data+http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=DBpedia Hackathon: TerminusDB & Conflict Data&summary=The TerminusDB Team Entry&url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=The TerminusDB Team Entry&media=http://blog.terminusdb.com/blog/blog/assets/uploads/3480.1551362519.jpg&url=http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/luke-feeney" class="p-name u-url">Luke Feeney</a></span>
+            <p class="post__bio p-note">Building the database of the future.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/';
+        this.page.identifier = 'http://blog.terminusdb.com/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/30/product-roadmap-episode-3/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/roadmap-2.jpg" alt="Product Roadmap Episode 3: Delphine And Sarah Collaborate And Go For A Drink"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Product Roadmap Episode 3: Delphine And Sarah Collaborate And Go For A Drink</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/20/hackathon-work-with-terminusdb-and-terminushub-to-built-a-versioned-controlled-knowledge-graph-of-all-of-human-history/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/hackathon.png" alt="Hackathon: Build a Version Controlled Knowledge Graph of All of Human History  "/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Hackathon: Build a Version Controlled Knowledge Graph of All of Human History  </h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/08/terminushub-distributed-revision-control-for-structured-data/"">
+              
+                <figure class="related__img">
+                  <img src="/blog/assets/uploads/terminus-cow-up-color.png" alt="TerminusHub: Distributed Revision Control for Structured Data"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusHub: Distributed Revision Control for Structured Data</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
