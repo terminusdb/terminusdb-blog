@@ -152,11 +152,7 @@ Here is a video of the query running in the console:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b2HKX69JI58" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This is the resulting graph for you to examine:
-
-<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html" width="100%" height="600px"></iframe>
-
-And the image of the full graph so you can appreciate the complex picture of developing and changing polities:
+This the full graph of the changing polities so you can appreciate the complex picture of constant change and upheaval:
 
 ![](/blog/assets/uploads/graph-of-developments.jpg)
 
@@ -194,7 +190,7 @@ The query is available on GitHub:
 
 <https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/master/DBpedia_to_Seshat.ipynb>
 
-
+This is the output visualized as a graph. The battles cluster around certain polities (Ottoman Empires I, II & III stand out in particular).
 
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html" width="100%" height="600px"></iframe>
 
@@ -202,7 +198,13 @@ The query is available on GitHub:
 
 To contextualize the hackathon effort, we are looking at the[ Late Antique Little Ice Age ](https://en.wikipedia.org/wiki/Late_Antique_Little_Ice_Age)period that lasted for about 100 years after the [extreme events of 535-536](https://en.wikipedia.org/wiki/Extreme_weather_events_of_535%E2%80%93536) - think 2020 and multiply it by 10 and throw in an ice age - so we can study social resilience. That's important because it can help us to understand how societies fare when faced with extreme events.
 
-In the examples we used, the Sasanids were no more by the end of the Little Ice Age. They along with the Eastern Roman or Byzantine Empire (another one that popped up in our battles) were so weakened by plague and internal and external conflicts in this period that they were unable to resist the onslaught of the Arabs. In the Battle of Qadisiyyah, the Muslim army defeated the Sasanids and Persia never recovered. This also led to the massive decline of the Zoroastrian religion. We can see this on the graph visualization - the Empire cuts some time after the Battle of Callinicum that we documented. 
+In the examples we used, the Sassanids were no more by the end of the Little Ice Age. They along with the Eastern Roman or Byzantine Empire (another one that popped up in our battles) were so weakened by plague and internal and external conflicts in this period that they were unable to resist the onslaught of the Arabs. In the Battle of Qadisiyyah, the Muslim army defeated the Sassanids and Persia never recovered. This also led to the massive decline of the Zoroastrian religion. We can see this on the graph visualization - the Empire cuts some time after the Battle of Callinicum that we documented. 
+
+This is the resulting Late Antique Ice Age graph for you to examine:
+
+<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html" width="100%" height="600px"></iframe>
+
+You can see the East Romans and the Sassanids and their battles during the period, including of course the Battle of Callinicum. We have enriched the data to give us a fuller picture.
 
 On the other end of our polities, the Franks increase their strength through the Little Ice Age and emerge with an Empire under Charles 'The Hammer' Martel at the turn of the 8th Century.  
 
