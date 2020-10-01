@@ -163,7 +163,7 @@ add_triple("doc:Battle_of_Vézeronce", "type", "scm:Battle")
 .add_triple("doc:Battle_of_Vézeronce", "label", "doc:Battle of Vézeronce")
 .add_triple("doc:Battle_of_Vézeronce", "scm:end", literal("524", "xdd:integerRange"))
 .add_triple("doc:Battle_of_Vézeronce", "scm:start",  literal("524", "xdd:integerRange"))
-.add_triple("doc:Battle_of_Vézeronce", "scm:belligerent", "doc:frmerve")
+.add_triple("doc:Battle_of_Vézeronce", "scm:belligerent", "frmerve")
 ```
 
 This enrichment is made to the conflict branch of the Seshat Databank which can then be kept as a separate area for study. Perhaps later we can merge the conflict branch into the main Seshat data. 
