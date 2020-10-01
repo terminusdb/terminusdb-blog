@@ -2,7 +2,7 @@
 layout: post
 title: "DBpedia Hackathon: TerminusDB & Conflict Data"
 date: 2020-09-30T09:25:37.005Z
-description: The TerminusDB Team Entry
+description: .
 image: /blog/assets/uploads/3480.1551362519.jpg
 author:
   - value: luke
