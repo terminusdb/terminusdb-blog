@@ -209,3 +209,11 @@ You can see the East Romans and the Sassanids and their battles during the perio
 On the other end of our polities, the Franks increase their strength through the Little Ice Age and emerge with an Empire under Charles 'The Hammer' Martel at the turn of the 8th Century.  
 
 Documenting and enriching this data allows for deeper understanding of the drivers of resilience and will hopefully allow us to better understand how societies can prepare for cataclysmic change.
+
+## And Finally
+
+We had a great time doing this work. TerminusHub makes distributed collaboration easy - so we could work on the same data at our own pace, but we also got to come together for a few collective sessions. Here is an extract (excuse the colorful language in the middle):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/neYYGsK6N7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Thanks!
