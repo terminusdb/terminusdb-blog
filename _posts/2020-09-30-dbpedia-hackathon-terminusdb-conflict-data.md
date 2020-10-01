@@ -194,6 +194,12 @@ The query is available on GitHub:
 
 <https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/master/DBpedia_to_Seshat.ipynb>
 
+
+
+<iframe src="https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/6be987a189153f12029caa796c9a5535c39d0146/ice_age.html" width="100%" height="600px"></iframe>
+
+
+
 ## Historical Context
 
 To contextualize the hackathon effort, we are looking at the[ Late Antique Little Ice Age ](https://en.wikipedia.org/wiki/Late_Antique_Little_Ice_Age)period that lasted for about 100 years after the [extreme events of 535-536](https://en.wikipedia.org/wiki/Extreme_weather_events_of_535%E2%80%93536) - think 2020 and multiply it by 10 and throw in an ice age - so we can study social resilience. That's important because it can help us to understand how societies fare when faced with extreme events.
