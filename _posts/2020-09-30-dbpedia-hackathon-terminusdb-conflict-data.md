@@ -154,7 +154,7 @@ Here is a video of the query running in the console:
 
 This is the resulting graph for you to examine:
 
-<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/viz.html" width="100%" height="600px"></iframe>
+<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html" width="100%" height="600px"></iframe>
 
 And the image of the full graph so you can appreciate the complex picture of developing and changing polities:
 
@@ -196,9 +196,7 @@ The query is available on GitHub:
 
 
 
-<iframe src="https://github.com/terminusdb-labs/dbpedia-hackathon-autumn-2020/blob/6be987a189153f12029caa796c9a5535c39d0146/ice_age.html" width="100%" height="600px"></iframe>
-
-
+<iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html" width="100%" height="600px"></iframe>
 
 ## Historical Context
 
