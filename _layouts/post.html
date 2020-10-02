@@ -14,7 +14,7 @@ layout: default
     {% if page.image %}
       <div class="post__img u-photo">
         <div>
-          <figure class="absolute-bg" style="background-image: url('{{ page.image }}'); background-size: contain;"></figure>
+          <figure class="absolute-bg" style="background-image: url('{{ page.image | absolute_url }}'); background-size: contain;"></figure>
         </div>
       </div>
     {% endif %}
@@ -22,7 +22,7 @@ layout: default
     {% if page.cover_image %}
       <div class="post__img u-photo">
         <div>
-          <figure class="absolute-bg" style="background-image: url('{{ page.cover_image }}');"></figure>
+          <figure class="absolute-bg" style="background-image: url('{{ page.cover_image | absolute_url }}');"></figure>
         </div>
       </div>
     {% endif %}
