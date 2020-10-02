@@ -9,6 +9,8 @@ author:
     label: Luke Feeney
 tags:
   - database
+  - graph database
+  - ""
 ---
 ## TerminusDB in the DBpedia Hackathon
 
@@ -194,7 +196,17 @@ This is the output visualized as a graph. The battles cluster around certain pol
 
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html" width="100%" height="600px"></iframe>
 
-You can also[ explore the visualization in your browser](<https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html>).
+You can also[ explore the visualization in your browser](https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html).
+
+***Red** - Battle/War/Conflict*
+
+***Purple** - polity with a standing army*
+
+***Blue** - polity with no standing army*
+
+***Grey** - no information about standing army (unknown unknowns)*
+
+***Yellow** - known unknown (we know we don't know)*
 
 ## Historical Context
 
@@ -207,6 +219,16 @@ This is the resulting Late Antique Ice Age graph for you to examine:
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html" width="100%" height="600px"></iframe>
 
 You can [explore the visualization in your browser](https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html).
+
+***Red** - Battle/War/Conflict*
+
+***Purple** - polity with a standing army*
+
+***Blue** - polity with no standing army*
+
+***Grey** - no information about standing army (unknown unknowns)*
+
+***Yellow** - known unknown (we know don't we don't know)*
 
 You can see the East Romans and the Sassanids and their battles during the period, including of course the Battle of Callinicum. We have enriched the data to give us a fuller picture.
 
