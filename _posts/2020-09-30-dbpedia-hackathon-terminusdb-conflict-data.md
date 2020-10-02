@@ -2,7 +2,7 @@
 layout: post
 title: "DBpedia Hackathon: TerminusDB & Conflict Data"
 date: 2020-09-30T09:25:37.005Z
-description: .
+description: .nan
 image: /blog/assets/uploads/3480.1551362519.jpg
 author:
   - value: luke
@@ -194,6 +194,8 @@ This is the output visualized as a graph. The battles cluster around certain pol
 
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html" width="100%" height="600px"></iframe>
 
+You can also[ explore the visualization in your browser](<https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html>).
+
 ## Historical Context
 
 To contextualize the hackathon effort, we are looking at the[ Late Antique Little Ice Age ](https://en.wikipedia.org/wiki/Late_Antique_Little_Ice_Age)period that lasted for about 100 years after the [extreme events of 535-536](https://en.wikipedia.org/wiki/Extreme_weather_events_of_535%E2%80%93536) - think 2020 and multiply it by 10 and throw in an ice age - so we can study social resilience. That's important because it can help us to understand how societies fare when faced with extreme events.
@@ -203,6 +205,8 @@ In the examples we used, the Sassanids were no more by the end of the Little Ice
 This is the resulting Late Antique Ice Age graph for you to examine:
 
 <iframe src="https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html" width="100%" height="600px"></iframe>
+
+You can [explore the visualization in your browser](https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html).
 
 You can see the East Romans and the Sassanids and their battles during the period, including of course the Battle of Callinicum. We have enriched the data to give us a fuller picture.
 
