@@ -165,7 +165,7 @@ add_triple("doc:Battle_of_Vézeronce", "type", "scm:Battle")
 .add_triple("doc:Battle_of_Vézeronce", "label", "doc:Battle of Vézeronce")
 .add_triple("doc:Battle_of_Vézeronce", "scm:end", literal("524", "xdd:integerRange"))
 .add_triple("doc:Battle_of_Vézeronce", "scm:start",  literal("524", "xdd:integerRange"))
-.add_triple("doc:Battle_of_Vézeronce", "scm:belligerent", "frmerve")
+.add_triple("doc:Battle_of_Vézeronce", "scm:belligerent", "doc:frmerve")
 ```
 
 This enrichment is made to the conflict branch of the Seshat Databank which can then be kept as a separate area for study. Perhaps later we can merge the conflict branch into the main Seshat data. 
@@ -198,15 +198,15 @@ This is the output visualized as a graph. The battles cluster around certain pol
 
 You can also[ explore the visualization in your browser](https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/all_polities_and_conflicts.html).
 
-***Red** - Battle/War/Conflict*
+**\*Red** - Battle/War/Conflict*
 
-***Purple** - polity with a standing army*
+**\*Purple** - polity with a standing army*
 
-***Blue** - polity with no standing army*
+**\*Blue** - polity with no standing army*
 
-***Grey** - no information about standing army (unknown unknowns)*
+**\*Grey** - no information about standing army (unknown unknowns)*
 
-***Yellow** - known unknown (we know we don't know)*
+**\*Yellow** - known unknown (we know we don't know)*
 
 ## Historical Context
 
@@ -220,15 +220,15 @@ This is the resulting Late Antique Ice Age graph for you to examine:
 
 You can [explore the visualization in your browser](https://terminusdb-labs.github.io/dbpedia-hackathon-autumn-2020/ice_age.html).
 
-***Red** - Battle/War/Conflict*
+**\*Red** - Battle/War/Conflict*
 
-***Purple** - polity with a standing army*
+**\*Purple** - polity with a standing army*
 
-***Blue** - polity with no standing army*
+**\*Blue** - polity with no standing army*
 
-***Grey** - no information about standing army (unknown unknowns)*
+**\*Grey** - no information about standing army (unknown unknowns)*
 
-***Yellow** - known unknown (we know don't we don't know)*
+**\*Yellow** - known unknown (we know we don't know)*
 
 You can see the East Romans and the Sassanids and their battles during the period, including of course the Battle of Callinicum. We have enriched the data to give us a fuller picture.
 
