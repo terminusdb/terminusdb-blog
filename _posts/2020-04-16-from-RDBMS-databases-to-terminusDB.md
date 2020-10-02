@@ -3,7 +3,7 @@ layout: post
 title: From RDBMS databases to TerminusDB
 date: 2020-04-16T10:44:15.289Z
 description: "From "
-image: /blog/assets/images/autumn-3937289_1920.jpg
+image: /assets/images/autumn-3937289_1920.jpg
 author:
   - value: francesca
     label: Francesca Bitto

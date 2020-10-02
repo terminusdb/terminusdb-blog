@@ -3,7 +3,7 @@ layout: post
 title: TerminusDB vs MongoDB
 date: 2020-07-14T10:44:15.289Z
 description: "Let’s see the main differences between TerminusDB and MongoDB in practice"
-image: /blog/assets/images/directory-106815_1920.jpg
+image: /assets/images/directory-106815_1920.jpg
 author:
   - value: francesca
     label: Francesca Bitto

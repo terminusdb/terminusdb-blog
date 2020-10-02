@@ -3,7 +3,7 @@ layout: post
 title: "Continuous Everything As Code"
 date: 2020-05-29
 description: Finally, a database that works in your CI/CD pipeline.
-cover_image: /blog/assets/images/ascode.webp
+cover_image: /assets/images/ascode.webp
 author: Dmytri Kleiner
 tags:
   - Agile

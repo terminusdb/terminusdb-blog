@@ -4,7 +4,7 @@ title: "TerminusDB Graph Basics "
 date: 2020-08-07T17:28:33.366Z
 description: TerminusDB organises data in a very simple structure to make it
   easy and natural to model the real world.
-image: /blog/assets/uploads/whatisanativegraphdatabase.png
+image: /assets/uploads/whatisanativegraphdatabase.png
 author:
   - value: kevin
     label: Kevin Feeney

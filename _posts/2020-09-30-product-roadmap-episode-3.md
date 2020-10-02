@@ -3,7 +3,7 @@ layout: post
 title: "Product Roadmap Episode 3: Delphine And Sarah Collaborate And Go For A Drink"
 date: 2020-09-30T14:17:51.349Z
 description: Delphine And Sarah Collaborate And Go For A Drink
-image: /blog/assets/uploads/roadmap-2.jpg
+image: /assets/uploads/roadmap-2.jpg
 author:
   - value: dmytri
     label: Dmytri Kleiner

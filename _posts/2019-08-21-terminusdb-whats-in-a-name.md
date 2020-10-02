@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB — what’s in a name?"
 date: 2019-08-21
 description:
-image: /blog/assets/images/terminusdb_logo.png
+image: /assets/images/terminusdb_logo.png
 author: Luke Feeney
 tags:
   - Machine Learning

@@ -4,7 +4,7 @@ title: "Hackathon: Build a Version Controlled Knowledge Graph of All of Human
   History  "
 date: 2020-09-20T15:51:30.438Z
 description: DBpedia Hackathon
-image: /blog/assets/uploads/hackathon.png
+image: /assets/uploads/hackathon.png
 author:
   - value: luke
     label: Luke Feeney

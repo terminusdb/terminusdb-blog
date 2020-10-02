@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB: Importing, Reordering & Exporting a CSV"
 date: 2020-07-13T18:17:34.790Z
 description: Sarah unwarbels the widgets and delivers for Nathan
-image: /blog/assets/uploads/terminators-e1.jpg
+image: /assets/uploads/terminators-e1.jpg
 author:
   - value: luke
     label: Luke Feeney

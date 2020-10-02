@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB: From 'Master' to Main"
 date: 2020-09-01T10:41:36.702Z
 description: Black Lives Matter and TerminusDB
-image: /blog/assets/uploads/black-lives-matter-2400x1260.jpg
+image: /assets/uploads/black-lives-matter-2400x1260.jpg
 author:
   - value: luke
     label: Luke Feeney

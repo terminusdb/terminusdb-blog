@@ -3,7 +3,7 @@ layout: post
 title: "Loading your local files in TerminusDB"
 date: 2020-01-21
 description:
-image: /blog/assets/images/cowduck_banner.jpeg
+image: /assets/images/cowduck_banner.jpeg
 author: Cheuk Ting Ho
 tags:
   - Data Science

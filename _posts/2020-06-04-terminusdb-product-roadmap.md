@@ -3,7 +3,7 @@ layout: post
 title: "Product Roadmap Episode 1: Nathan Gets A Spreadsheet In The End"
 date: 2020-06-04T11:51:05.016Z
 description: "Episode 1: Nathan Gets A Spreadsheet In The End"
-image: /blog/assets/uploads/roadmap-2.jpg
+image: /assets/uploads/roadmap-2.jpg
 author:
   - value: dmytri
     label: Dmytri Kleiner

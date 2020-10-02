@@ -3,7 +3,7 @@ layout: post
 title: "Graph Databases <br>TerminusDB vs Neo4j"
 date: 2020-09-24
 description: "Let’s see the main differences between TerminusDB and Neo4j in practice"
-image: /blog/assets/images/clint-adair-unsplash.jpg
+image: /assets/images/clint-adair-unsplash.jpg
 
 author:
   - value: francesca

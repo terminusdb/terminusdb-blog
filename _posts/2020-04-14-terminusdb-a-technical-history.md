@@ -3,7 +3,7 @@ layout: post
 title: "TerminusDB: A Technical History"
 date: 2020-04-14T20:44:15.289Z
 description:
-image: /blog/assets/uploads/terminusdb-black-mascot-1-.png
+image: /assets/uploads/terminusdb-black-mascot-1-.png
 author:
   - value: luke
     label: Luke Feeney

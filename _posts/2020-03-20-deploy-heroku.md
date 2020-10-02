@@ -3,7 +3,7 @@ layout: post
 title: "One Click Deploy TerminusDB to Cloud"
 date: 2020-03-20
 description:
-cover_image: /blog/assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg
+cover_image: /assets/images/francesco-ungaro-2ilsr-Qdfuw-unsplash.jpg
 author: Cheuk Ting Ho
 tags:
   - Database

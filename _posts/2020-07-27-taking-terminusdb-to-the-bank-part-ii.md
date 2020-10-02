@@ -3,7 +3,7 @@ layout: post
 title: Taking TerminusDB to the bank (Part II)
 date: 2020-07-27T14:52:29.459Z
 description: Using the collaboration features of TerminusDB
-image: /blog/assets/uploads/collaborate.jpg
+image: /assets/uploads/collaborate.jpg
 author:
   - value: luke
     label: Luke Feeney

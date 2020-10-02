@@ -7,7 +7,7 @@ description: Today’s post will be about a new feature that we’re working on
   in the future, especially when done on databases that have a lot of commits.
   We’ll probably roll out this feature in an upcoming minor release, so stay
   tuned!
-image: /blog/assets/uploads/cover-1-.jpg
+image: /assets/uploads/cover-1-.jpg
 author:
   - value: Matthijs
     label: Matthijs Van Otterdijk

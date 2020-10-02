@@ -3,7 +3,7 @@ layout: post
 title: Be like the mammals when the asteroid struck
 date: 2020-07-07T15:29:40.636Z
 description: From DataChemist to TerminusDB
-image: /blog/assets/uploads/dinos.jpg
+image: /assets/uploads/dinos.jpg
 author:
   - value: luke
     label: Luke Feeney

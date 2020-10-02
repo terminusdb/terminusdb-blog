@@ -9,7 +9,7 @@ description: First, let’s go back in time to the early 2000s when companies
   a real saviour that helped analyse which marketing campaigns were converting
   and the ones that needed to be reviewed. It quickly became the most widely
   used web analytics service.
-image: /blog/assets/uploads/ga-banner-image.jpg
+image: /assets/uploads/ga-banner-image.jpg
 author:
   - value: Vivek
     label: Vivek Varughese

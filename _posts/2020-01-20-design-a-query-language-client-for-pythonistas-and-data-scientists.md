@@ -3,7 +3,7 @@ layout: post
 title: "Design a Query Language Client for Pythonistas and Data Scientists"
 date: 2020-01-20
 description:
-image: /blog/assets/images/cowduck_sitting_logo.png
+image: /assets/images/cowduck_sitting_logo.png
 author: Cheuk Ting Ho
 tags:
   - Database

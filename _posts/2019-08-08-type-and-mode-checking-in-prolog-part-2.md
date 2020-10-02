@@ -3,7 +3,7 @@ layout: post
 title: "Type and mode checking in prolog (part 2): mavis"
 date: 2019-08-08
 description:
-cover_image: /blog/assets/images/cover-image-03.jpeg
+cover_image: /assets/images/cover-image-03.jpeg
 author: Gavin Mendel Gleason
 tags:
   - Type Theory

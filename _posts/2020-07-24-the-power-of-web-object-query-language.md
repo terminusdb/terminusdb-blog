@@ -6,7 +6,7 @@ description: WOQL is a powerful and sophisticated query language which allows
   you to concisely express complex patterns over arbitrary data structures. What
   makes it so expressive and easy to use is the radical simplicity of the core
   underlying concepts.
-image: /blog/assets/uploads/the-power-of-woql.png
+image: /assets/uploads/the-power-of-woql.png
 author:
   - value: kevin
     label: Kevin Feeney

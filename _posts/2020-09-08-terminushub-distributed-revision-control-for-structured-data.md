@@ -3,7 +3,7 @@ layout: post
 title: "TerminusHub: Distributed Revision Control for Structured Data"
 date: 2020-09-08T10:40:07.199Z
 description: Let's Get Building
-image: /blog/assets/uploads/terminus-cow-up-color.png
+image: /assets/uploads/terminus-cow-up-color.png
 author:
   - value: kevin
     label: Kevin Feeney

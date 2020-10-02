@@ -4,7 +4,7 @@ title: Size Matters
 date: 2020-09-08T10:27:11.879Z
 description: In the design of distributed data collaboration, it turns out that
   size matters a lot. And smaller is better.
-image: /blog/assets/uploads/sizematters2.png
+image: /assets/uploads/sizematters2.png
 author:
   - value: gavin
     label: Gavin Mendel Gleason
