@@ -2,7 +2,7 @@
 layout: post
 title: "DBpedia Hackathon: TerminusDB & Conflict Data"
 date: 2020-09-30T09:25:37.005Z
-description: .nan
+description: "DBpedia Hackathon: TerminusDB & Conflict Data"
 image: /assets/uploads/3480.1551362519.jpg
 author:
   - value: luke
