@@ -4,9 +4,9 @@ baseurl: "/blog"
 permalink: /:year/:month/:day/:title/
 
 name: TerminusDB
-title: TerminusDB Blog - News and Tutorials
+title: Graph Database Blog - News and Tutorials from TerminusDB
 description: >
-  News and tutorials of TerminusDB.
+ Graph Database Management news, tutorials and updates from TerminusDB
 url: https://terminusdb.com
 twitter_username: TerminusDB
 default_img: /assets/images/cowduck_sitting_logo.jpg
