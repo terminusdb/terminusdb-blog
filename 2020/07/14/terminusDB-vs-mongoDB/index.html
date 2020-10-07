@@ -95,7 +95,7 @@
 <p>Now let’s see the main differences between TerminusDB and MongoDB in practice.</p>
 
 <p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-<a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <p><em>Note: We are assuming that you already are familiar with MongoDB.</em></p>
 
@@ -117,7 +117,7 @@
 
 <p>MongoDB uses the MongoDB Query Language (<strong>MQL</strong>) for accessing the documents.</p>
 
-<p>In TerminusDB we use <a href="https://terminusdb.com/docs/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD.
+<p>In TerminusDB we use <a href="https://terminusdb.com/docs/reference/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD.
 All our example are writing using woql.js a javascript layer that help you to compose WOQL query.</p>
 
 <hr />
@@ -270,7 +270,7 @@ mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span cla
 </code></pre></div></div>
 
 <p>With WOQL.insert() we insert  the data inside our database. We create a <strong>Station</strong> document for every <strong>v:Start_station_URL</strong> and <strong>v:End_station_URL</strong> value and we link this value inside the <strong>start_station</strong> and <strong>end_station</strong> properties in the Journey document. The relationship between journey document and station document  has been created. The relationship allows TerminusDB to normalize the data across multiple documents.❗
-In this article the complete example <a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+In this article the complete example <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <hr />
 
