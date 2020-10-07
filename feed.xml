@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Oct 2020 10:28:35 +0000</pubDate>
-    <lastBuildDate>Wed, 07 Oct 2020 10:28:35 +0000</lastBuildDate>
+    <pubDate>Wed, 07 Oct 2020 10:35:37 +0000</pubDate>
+    <lastBuildDate>Wed, 07 Oct 2020 10:35:37 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -59,7 +59,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/assets/images/clint-adair-unsplash.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;Are Graph Databases the future? Structured and unstructured data coming from multiple sources can have immense value if you can find the relationships within it, Graph databases consider the relationships between data as first class citizens.&lt;/p&gt; &lt;p&gt;Inter-connected data are the future, and probably the easiest way to model interconnected data is using a Graph Database.&lt;/p&gt; &lt;p&gt;In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.&lt;/p&gt; &lt;h2 id=&quot;graph-database-main-concepts&quot;&gt;Graph Database Main Concepts&lt;/h2&gt; &lt;p&gt;Graph databases are databases that use graph structures to organize data: nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store...
+        &lt;p&gt;Are Graph Databases the future? Structured and unstructured data coming from multiple sources can have immense value if you can find the relationships within it, Graph databases consider the relationships between data as first class citizens.&lt;/p&gt; &lt;p&gt;Inter-connected data are the future, and probably the easiest way to model interconnected data is using a Graph Database.&lt;/p&gt; &lt;p&gt;In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.&lt;/p&gt; &lt;h2 id=&quot;graph-database-main-concepts&quot;&gt;Graph Database Main Concepts&lt;/h2&gt; &lt;p&gt;Graph databases are databases that use graph structures to organize data: nodes, edges (relationship), and properties to represent and store data. The relationships allow data in the store...
         &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
