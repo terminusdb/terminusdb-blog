@@ -6,7 +6,7 @@ description: Company values act as guidelines - a framework for decision making
   - and while they’ve always been important, one could perhaps make a case for
   how crucial they are especially during challenging times – such as the current
   pandemic
-image: /blog/assets/uploads/pic-5.jpg
+image: /blog/assets/uploads/pic-6.jpg
 author:
   - value: "Sreya "
     label: "Sreya Chatterjee "
