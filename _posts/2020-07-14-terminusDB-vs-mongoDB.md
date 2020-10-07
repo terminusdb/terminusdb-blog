@@ -25,7 +25,7 @@ Both TerminusDB and MongoDB are NoSQL databases, both store data as documents, b
 Now let’s see the main differences between TerminusDB and MongoDB in practice.
 
 if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-[My First TerminusDB Graph Visualisation — Bike Share Data](/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/).
+[My First TerminusDB Graph Visualisation — Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/).
 
 *Note: We are assuming that you already are familiar with MongoDB.*
 
@@ -47,7 +47,7 @@ The CSV data used this tutorial is available at [https://terminusdb.com/t/data/b
 
 MongoDB uses the MongoDB Query Language (**MQL**) for accessing the documents.
 
-In TerminusDB we use [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/woql). It is a unified model query language, WOQL's primary syntax and interchange format is in JSON-LD.
+In TerminusDB we use [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/reference/woql). It is a unified model query language, WOQL's primary syntax and interchange format is in JSON-LD.
 All our example are writing using woql.js a javascript layer that help you to compose WOQL query.
 
 --------------------
@@ -210,7 +210,7 @@ const inserts = WOQL.and(
 ```
 
 With WOQL.insert() we insert  the data inside our database. We create a **Station** document for every **v:Start_station_URL** and **v:End_station_URL** value and we link this value inside the **start_station** and **end_station** properties in the Journey document. The relationship between journey document and station document  has been created. The relationship allows TerminusDB to normalize the data across multiple documents.❗
-In this article the complete example [My First TerminusDB Graph Visualisation — Bike Share Data](/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/).
+In this article the complete example [My First TerminusDB Graph Visualisation — Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/).
 
 --------------------
 
