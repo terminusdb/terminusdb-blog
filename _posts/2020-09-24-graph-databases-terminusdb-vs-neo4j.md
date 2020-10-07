@@ -23,7 +23,7 @@ Inter-connected data are the future, and probably the easiest way to model inter
 In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.
 
 if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-[My First TerminusDB Graph Visualisation — Bike Share Data](/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/).
+[My First TerminusDB Graph Visualisation — Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/).
 
 Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.
 
@@ -65,7 +65,7 @@ The type of data that the property points to can either be a simple datatype lit
 Neo4j uses **Cypher** to store and retrieve data from the graph database. Cypher is 
 a graph query language and the best way to interact with Neo4j. 
 
-TerminusDB uses [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/woql) which allows queries to be written in either javascript, python or as JSON-LD documents. All these examples are written using woql.js a javascript layer that allows queries to be written in simple javascript.
+TerminusDB uses [**WOQL** (Web Object Query Language)](https://terminusdb.com/docs/reference/woql) which allows queries to be written in either javascript, python or as JSON-LD documents. All these examples are written using woql.js a javascript layer that allows queries to be written in simple javascript.
 
 ## Schema
 
