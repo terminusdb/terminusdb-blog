@@ -23,7 +23,7 @@ Inter-connected data are the future, and probably the easiest way to model inter
 In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.
 
 if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-[My First TerminusDB Graph Visualisation — Bike Share Data](/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/).
+[My First TerminusDB Graph Visualisation — Bike Share Data](/2020/09/01/my-first-terminusdb-graph-visualisation-bike-share-data/).
 
 Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.
 
