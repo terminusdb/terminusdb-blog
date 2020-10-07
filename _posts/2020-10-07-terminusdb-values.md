@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TerminusDB Values "
+title: "The TerminusDB Values "
 date: 2020-10-07T15:14:54.030Z
 description: Company values act as guidelines - a framework for decision making
   - and while they’ve always been important, one could perhaps make a case for
