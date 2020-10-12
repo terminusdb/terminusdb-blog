@@ -94,11 +94,11 @@
 
 <p>To explain with a very simple example - if we were building a database to hold a family tree and we want to record the parents and grandparents of an individual. In a relational database, we might record this in a simple table</p>
 
-<p><img src="/blog/assets/uploads/screenshot-2020-08-07-at-6.29.36-pm.png" alt="" /></p>
+<p><img src="/blog/assets/uploads/screenshot-2020-08-07-at-6.29.36-pm.png" alt="Relational Database Table " /></p>
 
 <p>In a graph database, this would look like the following</p>
 
-<p><img src="/blog/assets/uploads/family-tree.png" alt="" /></p>
+<p><img src="/blog/assets/uploads/family-tree.png" alt="Graph Database TerminusDB" /></p>
 
 <p>The big advantage is that it is much easier to interpret the model and understand how it maps to real-world entities compared to the relational example. This increased ease also extends to querying the database.</p>
 
@@ -106,8 +106,6 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE where Name="John")
 SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE WHERE Person_ID = (SELECT mother from TABLE where Name="John"))
-
-
 </code></pre></div></div>
 
 <p>In a graph database this is much simpler: we can use a triple pattern such as the following to get both names in the same query - we do not have to explicitly join the records together, the joins are implicit - we use the same ID in different parts of the query:</p>
@@ -118,7 +116,6 @@ SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE WHERE Person_
    WOQL.triple("v:MotherID", "mother", "v:GrandmotherID"),
    WOQL.triple("v:GrandmotherID", "name", "v:GrandmotherName"),
 )
-
 </code></pre></div></div>
 
 <p>By using <code class="highlighter-rouge">“v:MotherID”</code> multiple times in the query, we create a chain: <code class="highlighter-rouge">v:Person =mother=&gt; v:Mother =mother=&gt; v:Grandmother</code></p>
