@@ -92,8 +92,7 @@
 
 <p>In this tutorial will see two different way to model and query data using native graph database technology - TerminusDB and Neo4j.</p>
 
-<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <p>Now let’s see how TerminusDB handles tasks compared to Neo4j in practice.</p>
 
@@ -110,7 +109,7 @@
   <li>Property {name}</li>
 </ul>
 
-<p><img src="/blog/assets/images/neo4j-graph-know.png" alt="" /></p>
+<p><img src="/blog/assets/images/neo4j-graph-know.png" alt="Neo4j Main Components" /></p>
 
 <p>In Neo4j the main components of the property graph model are nodes and relationships, in our example, <strong>Maria</strong>, <strong>Anna</strong>, <strong>Tom</strong> and <strong>Jim</strong> are our nodes and <strong>KNOWS</strong> is our relationship between nodes.</p>
 
@@ -125,7 +124,7 @@
   <li>DatatypeProperty (name:String)</li>
 </ul>
 
-<p><img src="/blog/assets/images/terminusdb-graph-knows.png" alt="" /></p>
+<p><img src="/blog/assets/images/terminusdb-graph-knows.png" alt="Graph Database TerminusDB" /></p>
 
 <p>In TerminusDB everything is an object of a Class - objects can have properties and some of these properties may link to other objects. Document Classes are top-level classes, which allow the graph to be serialized into documents.  Our example <strong>Maria</strong>, <strong>Anna</strong>, <strong>Tom</strong>, and <strong>Jim</strong> are our Document Objects. The <strong>knows</strong> property is an ObjectProperty with range being the <strong>Person</strong> document.</p>
 
@@ -135,8 +134,7 @@
 
 <h2 id="query-language">Query language</h2>
 
-<p>Neo4j uses <strong>Cypher</strong> to store and retrieve data from the graph database. Cypher is 
-a graph query language and the best way to interact with Neo4j.</p>
+<p>Neo4j uses <strong>Cypher</strong> to store and retrieve data from the graph database. Cypher is  a graph query language and the best way to interact with Neo4j.</p>
 
 <p>TerminusDB uses <a href="https://terminusdb.com/docs/reference/woql"><strong>WOQL</strong> (Web Object Query Language)</a> which allows queries to be written in either javascript, python or as JSON-LD documents. All these examples are written using woql.js a javascript layer that allows queries to be written in simple javascript.</p>
 
@@ -150,10 +148,9 @@ a graph query language and the best way to interact with Neo4j.</p>
 <span class="k">ON</span> <span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span> <span class="n">ASSERT</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">.</span><span class="n">born</span><span class="p">)</span> <span class="k">IS</span> <span class="n">NODE</span> <span class="k">KEY</span>
 </code></pre></div></div>
 
-<p>TerminusDB is schema optional, but to take advantage of schema checking, it is better to create a schema before inserting data. TerminusDB lets you change your schema at any time. 
-TerminusDB is a graph database that stores data like Git. <strong>TerminusDB allows for the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel.</strong></p>
+<p>TerminusDB is schema optional, but to take advantage of schema checking, it is better to create a schema before inserting data. TerminusDB lets you change your schema at any time.  TerminusDB is a graph database that stores data like Git. <strong>TerminusDB allows for the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel.</strong></p>
 
-<p><a href="https://terminusdb.com/docs/quickstart/"><strong>If you want to read more …</strong></a></p>
+<p><strong><a href="https://terminusdb.com/docs/quickstart/">If you want to read more …</a></strong></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>            
   <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person Name</span><span class="dl">"</span><span class="p">)</span>            
@@ -171,8 +168,7 @@ TerminusDB is a graph database that stores data like Git. <strong>TerminusDB all
 
 <p>We add 4 nodes of type (label) <strong>Person</strong> and relationships <strong>KNOWS</strong> between the nodes.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">CREATE</span> <span class="p">(</span><span class="n">maria</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Maria"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1978-12-03'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="p">(</span><span class="n">maria</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Maria"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1978-12-03'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
 <span class="k">CREATE</span> <span class="p">(</span><span class="n">anna</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Anna"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1974-02-10'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
 <span class="k">CREATE</span> <span class="p">(</span><span class="n">tom</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Tom"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1975-06-23'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
 <span class="k">CREATE</span> <span class="p">(</span><span class="n">jim</span><span class="p">:</span><span class="n">Person</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span><span class="nv">"Jim"</span><span class="p">,</span><span class="n">born</span><span class="p">:</span><span class="nb">date</span><span class="p">(</span><span class="s1">'1974-07-20'</span><span class="p">)</span><span class="err">}</span><span class="p">)</span>
@@ -183,7 +179,6 @@ TerminusDB is a graph database that stores data like Git. <strong>TerminusDB all
 <span class="n">MERGE</span> <span class="p">(</span><span class="n">tom</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r03</span><span class="p">:</span><span class="n">KNOWS</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' knows '</span> <span class="o">+</span> <span class="n">jim</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">jim</span><span class="p">)</span>
 
 <span class="k">RETURN</span> <span class="n">maria</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">anna</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tom</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">jim</span><span class="p">.</span><span class="n">name</span>
-
 </code></pre></div></div>
 
 <p>Let’s see how we add documents and relationships with TerminusDB - queries are accessible in a very easy way with JavaScript using the woql.js layer.</p>
@@ -230,7 +225,6 @@ TerminusDB is a graph database that stores data like Git. <strong>TerminusDB all
 <span class="k">WHERE</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Dublin'</span>
 <span class="n">MERGE</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">CITY_OF_BIRTH</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' born in '</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="k">RETURN</span> <span class="k">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span><span class="p">.</span><span class="n">label</span>
-
 </code></pre></div></div>
 
 <p>In TerminusDB we create a new Document Object <strong>City</strong></p>
@@ -238,8 +232,7 @@ TerminusDB is a graph database that stores data like Git. <strong>TerminusDB all
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">City Name</span><span class="dl">"</span><span class="p">).</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A City name</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We add a new property <strong>city_of_birth</strong> in the Document <strong>Person</strong> with range type <strong>City</strong>.
-Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong></p>
+<p>We add a new property <strong>city_of_birth</strong> in the Document <strong>Person</strong> with range type <strong>City</strong>. Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">add_property</span><span class="p">(</span><span class="dl">"</span><span class="s2">city_of_birth</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">).</span><span class="nx">domain</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
@@ -252,7 +245,6 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
   <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">scm:Person</span><span class="dl">'</span><span class="p">),</span>
   <span class="nx">add_triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Person</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">city_of_birth</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:City_id</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">)</span>
-
 </code></pre></div></div>
 
 <h2 id="creating-hierarchies">Creating hierarchies</h2>
@@ -261,8 +253,7 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
 
 <p>In Neo4j we can add multi labels to a node so our node is Person and Doctor at the same time.</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">create</span> <span class="p">(</span><span class="n">freud</span><span class="p">:</span><span class="n">Person</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span><span class="s1">'Freud'</span><span class="p">,</span> <span class="n">born</span><span class="p">:</span><span class="s1">'1976-08-25'</span><span class="err">}</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="p">(</span><span class="n">freud</span><span class="p">:</span><span class="n">Person</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span><span class="s1">'Freud'</span><span class="p">,</span> <span class="n">born</span><span class="p">:</span><span class="s1">'1976-08-25'</span><span class="err">}</span><span class="p">)</span>
 
 <span class="k">MATCH</span> <span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="n">Person</span><span class="p">),(</span><span class="n">b</span><span class="p">:</span><span class="n">Doctor</span><span class="p">)</span>
 <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Maria'</span> <span class="k">AND</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="nv">"Freud"</span>
@@ -273,15 +264,13 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
 <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Tom'</span> <span class="k">AND</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="nv">"Freud"</span>
 <span class="n">MERGE</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="p">[</span><span class="n">r</span><span class="p">:</span><span class="n">IS_PATIENT_OF</span> <span class="err">{</span> <span class="n">label</span><span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">' is patient of '</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="err">}</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="k">RETURN</span> <span class="k">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span><span class="p">.</span><span class="n">label</span>
-
 </code></pre></div></div>
 
 <p>In TerminusDB classes can be subclasses of other classes, so let’s add a subclass for <strong>scm:Person</strong> called <strong>scm:Doctor</strong>.</p>
 
 <p>A Doctor shares all of the properties available to a Person, but it also has a <strong>patient</strong> (ObjectProperty).</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Doctor</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A Doctor is a person with patients</span><span class="dl">"</span><span class="p">)</span>
@@ -296,7 +285,6 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
   <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">patient</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">doc:Person_Tom_1975-06-23</span><span class="dl">"</span><span class="p">)</span>
        	
 <span class="p">)</span>
-
 </code></pre></div></div>
 
 <h2 id="query-the-data">Query the Data</h2>
@@ -305,38 +293,32 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
 
 <p>Here an Cypher example</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">MATCH</span> <span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span><span class="o">-</span><span class="p">[:</span><span class="n">KNOWS</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">MATCH</span> <span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span><span class="o">-</span><span class="p">[:</span><span class="n">KNOWS</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
 <span class="k">RETURN</span> <span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">otherPerson</span><span class="p">.</span><span class="n">name</span>
-
 </code></pre></div></div>
 
 <p>Let’s see the TerminusDB WOQL query using woql.js</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">or</span><span class="p">(</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">or</span><span class="p">(</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
    <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">)</span>
-
 </code></pre></div></div>
 
 <p>How do we get only people who knows each other and are patients of the doctor <strong>Freud</strong> ?</p>
 
 <p>Neo4j Cypher query example</p>
 
-<p><img src="/blog/assets/images/neo4j-graph-knows-doc.png" alt="" /></p>
+<p><img src="/blog/assets/images/neo4j-graph-knows-doc.png" alt="Neo4j Query Example " /></p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">MATCH</span> <span class="p">(</span><span class="n">doc</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">'Freud'</span> <span class="err">}</span><span class="p">)</span><span class="o">&lt;-</span><span class="p">[:</span><span class="n">IS_PATIENT_OF</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">),</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">MATCH</span> <span class="p">(</span><span class="n">doc</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">'Freud'</span> <span class="err">}</span><span class="p">)</span><span class="o">&lt;-</span><span class="p">[:</span><span class="n">IS_PATIENT_OF</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">),</span>
       <span class="p">(</span><span class="n">doc</span><span class="p">:</span><span class="n">Doctor</span> <span class="err">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">'Freud'</span> <span class="err">}</span><span class="p">)</span><span class="o">&lt;-</span><span class="p">[:</span><span class="n">IS_PATIENT_OF</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
 <span class="k">WHERE</span> <span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span><span class="o">-</span><span class="p">[:</span><span class="n">KNOWS</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">otherPerson</span><span class="p">:</span><span class="n">Person</span><span class="p">)</span>
 <span class="k">RETURN</span> <span class="n">person</span><span class="p">.</span><span class="n">name</span>
-
 </code></pre></div></div>
 
 <p>TerminusDB query example</p>
 
-<p><img src="/blog/assets/images/terminusdb-graph-know-doc.png" alt="" /></p>
+<p><img src="/blog/assets/images/terminusdb-graph-know-doc.png" alt="Graph Database TerminusDB Query Example " /></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">and</span><span class="p">(</span>
   <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Person</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">knows</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
@@ -344,12 +326,9 @@ Here our relationship between <strong>Person</strong>-&gt;<strong>City</strong><
   <span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Doc</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">patient</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:OtherPerson</span><span class="dl">'</span><span class="p">),</span>
   <span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Doc</span><span class="dl">"</span><span class="p">,</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">v:Freud</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">)</span>
-
 </code></pre></div></div>
 
-<p>Let’s jump into another interesting tutorial and continue to build
-<a href="https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">Bank Tutorial</a></p>
-
+<p>Let’s jump into another interesting tutorial and continue to build <a href="https://terminusdb.com/blog/2020/07/27/taking-terminusdb-to-the-bank/">Bank Tutorial</a></p>
 
         </div>
 
