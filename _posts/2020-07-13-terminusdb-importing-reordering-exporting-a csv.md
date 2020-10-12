@@ -58,11 +58,11 @@ The TerminusDB console appears in Sarah's browser:
 
 Sarah creates a new database so she can import and manipulate her warbled widgets CSV. She calls it `ProjectSpreadsheet` .
 
-![Database home page](/blog/assets/uploads/capture.jpg)
+![Database ](/blog/assets/uploads/capture.jpg)
 
 Next Sarah wants to eyeball the data to see what she is dealing with. So she [grabs the relevant csv extract](http://terminusdb.github.io/terminusdb-web-assets/tutorials/episode_1/items.csv). It is a mess:
 
-![](/blog/assets/uploads/1-afcu7rbzqti3mf6b_4vbyq.png)
+![Sarah extracts csv](/blog/assets/uploads/1-afcu7rbzqti3mf6b_4vbyq.png)
 
 Sarah quickly writes a short WOQL query to load the CSV into TerminusDB, filter the data to only contain the warbled widgets, and export a new CSV.
 
@@ -91,11 +91,11 @@ She puts it into the query pane on her TerminusDB console and uses the commit me
 
 The query returned in just under 2 seconds and Sarah found the exported CSV in the csvs directory in the terminusdb-quickstart folder. All tidied up as well:`warbled_widgets.csv` .
 
-![](/blog/assets/uploads/1-_mlemhvuwa4s9zz5spzqga.png)
+![Terminusdb-quickstart folder](/blog/assets/uploads/1-_mlemhvuwa4s9zz5spzqga.png)
 
 When she opens the CSV, Sarah found that it had been filtered just the way she wanted it:
 
-![](/blog/assets/uploads/1-siz8rg_72p-ud0fboiqzmq.png)
+![Filtered CSV on TerminusDB](/blog/assets/uploads/1-siz8rg_72p-ud0fboiqzmq.png)
 
 Sarah took the csv and emailed it to her boss, Nathan. He rang her the next morning to thank her for her excellent work and, while he still called her Sandra, she was happy to have solved a meaningful problem.
 
