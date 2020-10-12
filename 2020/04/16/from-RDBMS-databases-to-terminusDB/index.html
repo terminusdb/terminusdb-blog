@@ -90,8 +90,7 @@
 
 <p>Passing from a relational database to TerminusDB requires some effort and a shift in your state of mind, but it can be done relatively fast. In this tutorial we’ll show you some parallels with how TerminusDB handles tasks compared to relational databases and the goals you can achieve with TerminusDB that are difficult to do with others databases.</p>
 
-<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-<a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. <a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <p><em>Note: We are assuming you have knowledge of relational database concepts and you already know how to write a simple sql (Structured Query Language) statement.</em></p>
 
@@ -101,7 +100,7 @@
 
 <p>In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA.</p>
 
-<p><img src="/blog/assets/images/bike_table.png" alt="" /></p>
+<p><img src="/blog/assets/images/bike_table.png" alt="Data of bike journeys between stations in Washington D.C" /></p>
 
 <p>The CSV data used this tutorial is available at <a href="https://terminusdb.com/t/data/bike_tutorial.csv">https://terminusdb.com/t/data/bike_tutorial.csv</a></p>
 
@@ -111,8 +110,7 @@
 
 <p>As you already know <strong>SQL</strong> is a standard language for accessing and manipulating relational databases.</p>
 
-<p>In TerminusDB we use <a href="https://terminusdb.com/docs/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD.
-All our example are writing using woql.js a javascript layer that help you to compose WOQL query.</p>
+<p>In TerminusDB we use <a href="https://terminusdb.com/docs/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD. All our example are writing using woql.js a javascript layer that help you to compose WOQL query.</p>
 
 <hr />
 
@@ -125,22 +123,21 @@ All our example are writing using woql.js a javascript layer that help you to co
 <p>Each table consists of rows and columns, in very simple way the columns specify the type of data, where the rows contain the actual data itself and the tables are related to each other.</p>
 
 <p>Let’s see a fragment of schema:</p>
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`journeys`</span> <span class="p">(</span>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`journeys`</span> <span class="p">(</span>
   <span class="nv">`idJourney`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
   <span class="nv">`bikeId`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
   <span class="p">......),</span>
  <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">bikeId</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">bikes</span><span class="p">(</span><span class="n">idBike</span><span class="p">),</span>
 </code></pre></div></div>
+
 <p>Here our logical relationship from tables: <em>The <strong>bikeId</strong> column is a FOREIGN KEY to the table <strong>bikes</strong> (idBike column).</em></p>
 
-<p>In terminusDB instead of tables we have documents, so for our dataset we need to create three different documents: Station, Journey and Bicycle, every document have a label and a description and is identified by an unique URL. 
-In our documents we have properties to describe the type of data and the documents are related to each other as interlinked concepts.</p>
+<p>In terminusDB instead of tables we have documents, so for our dataset we need to create three different documents: Station, Journey and Bicycle, every document have a label and a description and is identified by an unique URL.  In our documents we have properties to describe the type of data and the documents are related to each other as interlinked concepts.</p>
 
 <p>An example of relationship between documents written in woql.js</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>        
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>        
    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">)</span>            
        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike Station</span><span class="dl">"</span><span class="p">)</span>            
        <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A station where bicycles are deposited</span><span class="dl">"</span><span class="p">),</span>        
@@ -151,8 +148,8 @@ In our documents we have properties to describe the type of data and the documen
        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bicycle</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bicycle Used</span><span class="dl">"</span><span class="p">)</span>
        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dateTime</span><span class="dl">"</span><span class="p">)</span>
    <span class="p">.....)</span>        
-
 </code></pre></div></div>
+
 <p>In the <strong>Journey</strong> document the range data type of the <strong>journey_bicycle</strong> property (ObjectProperty) is the <strong>Bicycle</strong> document.</p>
 
 <hr />
@@ -163,21 +160,18 @@ In our documents we have properties to describe the type of data and the documen
 
 <p>You could write an sql statement like this to import the csv file inside bikes or stations</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">LOAD</span> <span class="k">DATA</span> <span class="k">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'bike_tutorial.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">bikes</span> 
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">LOAD</span> <span class="k">DATA</span> <span class="k">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'bike_tutorial.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">bikes</span> 
 <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">','</span> <span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>  <span class="k">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span>
 <span class="p">(</span><span class="o">@</span><span class="n">col1</span><span class="p">,</span><span class="o">@</span><span class="n">col2</span><span class="p">,</span><span class="o">@</span><span class="n">col3</span><span class="p">,</span><span class="o">@</span><span class="n">col4</span><span class="p">,</span><span class="o">@</span><span class="n">col5</span><span class="p">,</span><span class="o">@</span><span class="n">col6</span><span class="p">,</span><span class="o">@</span><span class="n">col7</span><span class="p">,</span><span class="o">@</span><span class="n">col8</span><span class="p">)</span> <span class="k">set</span> <span class="n">bikeNumber</span><span class="o">=@</span><span class="n">col8</span><span class="p">;</span>
-
 </code></pre></div></div>
 
 <p>But populating the journeys table could be more complicated because you have to get bikeId and stationId from the preview table, maybe you can use a temporary table to load all the CSV data and after, you can move the data from the temporary table to bikes, stations, journeys.</p>
 
 <p>In TerminusDB we have a very cleaner solution to import csv files into the database, with a data integrity check for any newly imported records.</p>
 
-<p>TerminusDB is accessible in very easy with JavaScript using the woql.js layer
-A fragment of an import query.</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+<p>TerminusDB is accessible in very easy with JavaScript using the woql.js layer A fragment of an import query.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start station</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Start_Station</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">End station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Station</span><span class="dl">"</span><span class="p">)</span>
   		<span class="p">......</span>     
@@ -185,12 +179,11 @@ A fragment of an import query.</p>
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Member type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Member_Type</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">).</span><span class="nx">remote</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://terminusdb.com/t/data/bike_tutorial.csv</span><span class="dl">"</span><span class="p">)</span>
-
 </code></pre></div></div>
+
 <p>We refer the first row of our file that contain the column headers in our variables, for example the field <strong>“Bike number”</strong> refers the variable <strong>“v:Bike”</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1">//Clean data for insert</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Clean data for insert</span>
 <span class="kd">const</span> <span class="nx">wrangles</span> <span class="o">=</span> <span class="p">[</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">typecast</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xsd:integer</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Duration_Cast</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">typecast</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xsd:string</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">),</span>
@@ -205,15 +198,13 @@ A fragment of an import query.</p>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start_ID - v:End_ID @ v:Start_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike v:Bike from v:Start_Station to v:End_Station at v:Start_Time until v:End_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">];</span> 
-
 </code></pre></div></div>
 
 <p>We cast (WOQL.typecast(a,b,c) method) the variable <strong>“V:Bike”</strong> as string (“xsd:string”) and refer it in a new variable “V:Bike_Label”</p>
 
 <p>We create an unique id (WOQL.idgen(a,b,c) to every document. Example for “doc:Bicycle” document we create an id from the  “v:Bike_Label” and refer it in the “v:Bike_Url”</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Journey</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
      	<span class="p">.....</span>
@@ -222,11 +213,9 @@ A fragment of an import query.</p>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_URL</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bicycle</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">);</span>
-
 </code></pre></div></div>
 
-<p>Now we can insert the data inside our database. We create a <strong>“Bicycle”</strong> document for every <strong>“v:Bike_URL”</strong> value and we link this value inside the <strong>“journey_bicycle”</strong> property in <strong>Journey</strong> document. Our relationship link between document has been created ❗
-In this article the complete example <a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<p>Now we can insert the data inside our database. We create a <strong>“Bicycle”</strong> document for every <strong>“v:Bike_URL”</strong> value and we link this value inside the <strong>“journey_bicycle”</strong> property in <strong>Journey</strong> document. Our relationship link between document has been created ❗ In this article the complete example <a href="/2020/01/14/my-first-terminusdb-graph-visualisation-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <hr />
 
@@ -236,18 +225,16 @@ In this article the complete example <a href="/2020/01/14/my-first-terminusdb-gr
 
 <p>Here an Sql example</p>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">SELECT</span> <span class="n">journeys</span><span class="p">.</span><span class="n">startTime</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">endTime</span><span class="p">,</span> <span class="n">bikes</span><span class="p">.</span><span class="n">bikeNumber</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">memberType</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">startStation</span><span class="p">.</span><span class="n">address</span> <span class="k">as</span> <span class="n">startStation</span><span class="p">,</span> <span class="n">startStation</span><span class="p">.</span><span class="n">stationNumber</span> <span class="k">as</span> <span class="n">startStationNumber</span><span class="p">,</span> <span class="n">endStation</span><span class="p">.</span><span class="n">address</span> <span class="k">as</span> <span class="n">endStation</span><span class="p">,</span> <span class="n">endStation</span><span class="p">.</span><span class="n">stationNumber</span> <span class="k">as</span> <span class="n">endStationNumber</span> 
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">journeys</span><span class="p">.</span><span class="n">startTime</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">endTime</span><span class="p">,</span> <span class="n">bikes</span><span class="p">.</span><span class="n">bikeNumber</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">memberType</span><span class="p">,</span> <span class="n">journeys</span><span class="p">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">startStation</span><span class="p">.</span><span class="n">address</span> <span class="k">as</span> <span class="n">startStation</span><span class="p">,</span> <span class="n">startStation</span><span class="p">.</span><span class="n">stationNumber</span> <span class="k">as</span> <span class="n">startStationNumber</span><span class="p">,</span> <span class="n">endStation</span><span class="p">.</span><span class="n">address</span> <span class="k">as</span> <span class="n">endStation</span><span class="p">,</span> <span class="n">endStation</span><span class="p">.</span><span class="n">stationNumber</span> <span class="k">as</span> <span class="n">endStationNumber</span> 
 <span class="k">FROM</span> <span class="n">journeys</span> 
 <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">stations</span> <span class="k">as</span> <span class="n">startStation</span> <span class="k">ON</span> <span class="n">journeys</span><span class="p">.</span><span class="n">startStation</span> <span class="o">=</span> <span class="n">startStation</span><span class="p">.</span><span class="n">idStation</span>
 <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">stations</span> <span class="k">as</span> <span class="n">endStation</span> <span class="k">ON</span> <span class="n">journeys</span><span class="p">.</span><span class="n">endStation</span> <span class="o">=</span> <span class="n">endStation</span><span class="p">.</span><span class="n">idStation</span> 
 <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">bikes</span> <span class="k">ON</span> <span class="n">journeys</span><span class="p">.</span><span class="n">bikeId</span><span class="o">=</span><span class="n">bikes</span><span class="p">.</span><span class="n">idbike</span><span class="p">;</span>
-
 </code></pre></div></div>
 
 <p>Let’s see the TerminusDB woql query</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Start_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Start_Label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Label</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">WOQL</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Start_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Start_Label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Label</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">scm:Journey</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">end_time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Time</span><span class="dl">"</span><span class="p">),</span>
@@ -262,14 +249,11 @@ In this article the complete example <a href="/2020/01/14/my-first-terminusdb-gr
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">opt</span><span class="p">().</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike_Number</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">)</span>
-
 </code></pre></div></div>
 
-<p>Could you guess that the TerminusDB schema model is an ontology (OWL) ? It is extremely difficult to express queries against graph structured ontology, but with our query language we are shielded from the complexity of interfacing with the ontology keeping the power of an ontology data model. ❗
-You can not query an ontology with sql.</p>
+<p>Could you guess that the TerminusDB schema model is an ontology (OWL) ? It is extremely difficult to express queries against graph structured ontology, but with our query language we are shielded from the complexity of interfacing with the ontology keeping the power of an ontology data model. ❗ You can not query an ontology with sql.</p>
 
 <p>Let’s keep to practise ❗</p>
-
 
         </div>
 
