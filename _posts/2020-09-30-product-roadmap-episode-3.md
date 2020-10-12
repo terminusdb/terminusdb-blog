@@ -8,7 +8,7 @@ author:
   - value: dmytri
     label: Dmytri Kleiner
 tags:
-  - database
+  - Graph database
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qgj5FI_lQBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
