@@ -94,8 +94,7 @@
 
 <p>Now let’s see the main differences between TerminusDB and MongoDB in practice.</p>
 
-<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB.
-<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <p><em>Note: We are assuming that you already are familiar with MongoDB.</em></p>
 
@@ -107,7 +106,7 @@
 
 <p>In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA.</p>
 
-<p><img src="/blog/assets/images/bike_table.png" alt="" /></p>
+<p><img src="/blog/assets/images/bike_table.png" alt="data about the bike journeys between stations in Washington D.C" /></p>
 
 <p>The CSV data used this tutorial is available at <a href="https://terminusdb.com/t/data/bike_tutorial.csv">https://terminusdb.com/t/data/bike_tutorial.csv</a></p>
 
@@ -117,8 +116,7 @@
 
 <p>MongoDB uses the MongoDB Query Language (<strong>MQL</strong>) for accessing the documents.</p>
 
-<p>In TerminusDB we use <a href="https://terminusdb.com/docs/reference/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD.
-All our example are writing using woql.js a javascript layer that help you to compose WOQL query.</p>
+<p>In TerminusDB we use <a href="https://terminusdb.com/docs/reference/woql"><strong>WOQL</strong> (Web Object Query Language)</a>. It is a unified model query language, WOQL’s primary syntax and interchange format is in JSON-LD. All our example are writing using woql.js a javascript layer that help you to compose WOQL query.</p>
 
 <hr />
 
@@ -128,10 +126,9 @@ All our example are writing using woql.js a javascript layer that help you to co
 
 <p>You can insert a document in the collection and MongoDB creates that collection on the fly or maybe you can create a collection with a schema validation before .</p>
 
-<p>Let’s see how to create a new collection with specified validation rules. Here a fragment 
-for mongoshell:</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="dl">"</span><span class="s2">journey</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<p>Let’s see how to create a new collection with specified validation rules. Here a fragment  for mongoshell:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="dl">"</span><span class="s2">journey</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
    <span class="na">validator</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">$jsonSchema</span><span class="p">:</span> <span class="p">{</span> <span class="na">bsonType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">object</span><span class="dl">"</span><span class="p">,</span>
          <span class="na">required</span><span class="p">:</span> <span class="p">[</span> <span class="dl">"</span><span class="s2">duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">member_type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bike_id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">end_time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">start_time</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">start_station</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">end_station</span><span class="dl">"</span><span class="p">],</span>
@@ -145,16 +142,15 @@ for mongoshell:</p>
                   <span class="na">address</span><span class="p">:</span> <span class="p">{</span><span class="na">bsonType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">.....</span><span class="dl">"</span><span class="p">}</span> <span class="p">}</span> <span class="p">},</span>                         
             <span class="p">...............................</span>
         <span class="p">}</span> <span class="p">}}})</span>
-
 </code></pre></div></div>
+
 <p>We have created our <strong>journey</strong> collection with embedded  the <strong>start_station</strong> and <strong>end_station</strong> data entities (station_number,address) in the journey collection data. For many use cases in MongoDB, the denormalized data model is optimal.</p>
 
 <p>In TerminusDB we have documents as well, so for our dataset we prefer to create three different documents: Station, Journey and Bicycle, every document has a label and a description and is identified by an unique URL. In our documents we have properties to describe the type of data and the documents are related to each other.  Following the link between the documents we can track the relationship between connected data for example <strong>Station</strong> - <em>many</em> - <strong>Journey</strong>.</p>
 
 <p>An example of relationship between documents written in woql.js</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>        
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span>        
    <span class="nx">WOQL</span><span class="p">.</span><span class="nx">doctype</span><span class="p">(</span><span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">)</span>            
        <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike Station</span><span class="dl">"</span><span class="p">)</span>            
        <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">A station where bicycles are deposited</span><span class="dl">"</span><span class="p">),</span>        
@@ -166,41 +162,35 @@ for mongoshell:</p>
        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">end_station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Station</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">End Station</span><span class="dl">"</span><span class="p">)</span>
        <span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bicycle</span><span class="dl">"</span><span class="p">).</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bicycle Used</span><span class="dl">"</span><span class="p">)</span>
 <span class="err">…</span><span class="p">...)</span>         
-
 </code></pre></div></div>
+
 <p>In the <strong>Journey</strong> document the range data type of the <strong>start_station</strong> and <strong>end_station</strong> properties (ObjectProperty) are the <strong>Station</strong> document.</p>
 
 <hr />
 
 <h2 id="load-data">Load Data</h2>
 
-<p>In MongoDB you can’t import a csv file in the journey collection directly. 
-We could use mongoimport.</p>
+<p>In MongoDB you can’t import a csv file in the journey collection directly.  We could use mongoimport.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span class="nt">--collection</span><span class="o">=</span>journey <span class="nt">--type</span><span class="o">=</span>csv  <span class="nt">--ignoreBlanks</span> <span class="nt">--headerline</span> <span class="nt">--file</span><span class="o">=</span><span class="s2">"./bike_tutorial.csv"</span>
-
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span class="nt">--collection</span><span class="o">=</span>journey <span class="nt">--type</span><span class="o">=</span>csv  <span class="nt">--ignoreBlanks</span> <span class="nt">--headerline</span> <span class="nt">--file</span><span class="o">=</span><span class="s2">"./bike_tutorial.csv"</span>
 </code></pre></div></div>
 
 <p>But the result will be a different collection schema</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"ObjectId(5f05f055c74146b286a61cf0)"</span><span class="p">,</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"ObjectId(5f05f055c74146b286a61cf0)"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"Duration"</span><span class="p">:</span><span class="mi">831</span><span class="p">,</span><span class="w">
    </span><span class="nl">"Start date"</span><span class="p">:</span><span class="s2">"2018-12-01 00:06:00"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"End date"</span><span class="p">:</span><span class="s2">"2018-12-01 00:19:52"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"Start station number"</span><span class="p">:</span><span class="mi">31202</span><span class="p">,</span><span class="w">
    </span><span class="nl">"Start station"</span><span class="p">:</span><span class="s2">"14th &amp; R St NW"</span><span class="p">,</span><span class="w">
   </span><span class="err">........</span><span class="p">}</span><span class="w">
-
 </span></code></pre></div></div>
 
 <p>if you like to create the documents from the csv file inside the collection <strong>journey</strong> you have to implement your custom solution, maybe you could using javascript for import the data from the csv file ( csvtojson is a node.js library) and <strong>mongodb</strong> the official MongoDB driver for Node.js to insert the data into the collection.</p>
 
 <p>Here one example to insert a document inside the journey collection using <em>mongoshell</em>.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">db</span><span class="p">.</span><span class="nx">journey</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span><span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">31203_2018-12-01 00:00:44_31116_2018-12-01 00:13:54_W21477</span><span class="dl">"</span><span class="p">,</span> 
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">journey</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span><span class="dl">"</span><span class="s2">_id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">31203_2018-12-01 00:00:44_31116_2018-12-01 00:13:54_W21477</span><span class="dl">"</span><span class="p">,</span> 
     <span class="dl">"</span><span class="s2">start_station</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">station_number</span><span class="dl">"</span><span class="p">:</span><span class="nx">NumberInt</span><span class="p">(</span><span class="mi">31203</span><span class="p">),</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">14th &amp; Rhode Island Ave NW</span><span class="dl">"</span><span class="p">},</span>
     <span class="dl">"</span><span class="s2">end_station</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">station_number</span><span class="dl">"</span><span class="p">:</span><span class="nx">NumberInt</span><span class="p">(</span><span class="mi">31116</span><span class="p">),</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">California St &amp; Florida Ave NW</span><span class="dl">"</span><span class="p">},</span>
     <span class="dl">"</span><span class="s2">start_time</span><span class="dl">"</span><span class="p">:</span><span class="nx">ISODate</span><span class="p">(</span><span class="dl">"</span><span class="s2">2018-12-01 00:00:44</span><span class="dl">"</span><span class="p">),</span>
@@ -208,14 +198,13 @@ mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span cla
     <span class="dl">"</span><span class="s2">member_type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Member</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">duration</span><span class="dl">"</span><span class="p">:</span><span class="nx">NumberInt</span><span class="p">(</span><span class="mi">790</span><span class="p">),</span>
     <span class="dl">"</span><span class="s2">bike_id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">W21477</span><span class="dl">"</span><span class="p">})</span>
-
 </code></pre></div></div>
 
 <p>In TerminusDB we have a very cleaner solution to import csv files into the database, with a data integrity check for any newly imported records. We use the woql.js layer for write the query statement to load the data from the csv file.</p>
 
 <p>A fragment of an import query.</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">csv</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start station</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Start_Station</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">End station</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:End_Station</span><span class="dl">"</span><span class="p">)</span>
   		<span class="p">......</span>     
@@ -223,12 +212,11 @@ mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span cla
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike number</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="k">as</span><span class="p">(</span><span class="dl">"</span><span class="s2">Member type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Member_Type</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">).</span><span class="nx">remote</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://terminusdb.com/t/data/bike_tutorial.csv</span><span class="dl">"</span><span class="p">)</span>
-
 </code></pre></div></div>
+
 <p>We use <strong>WOQL.as(a,b)</strong> to refer the first row of our csv file that contain the column headers in our variables, for example the field <strong>Start station number</strong> refers the variable <strong>v:Start_ID</strong> and the  <strong>Start station</strong> refers the variable <strong>v:Start_Station</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1">//Clean data for insert</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Clean data for insert</span>
 <span class="kd">const</span> <span class="nx">wrangles</span> <span class="o">=</span> <span class="p">[</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">typecast</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Duration</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xsd:integer</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Duration_Cast</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">typecast</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">xsd:string</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">),</span>
@@ -243,15 +231,13 @@ mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span cla
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Start_ID - v:End_ID @ v:Start_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bike v:Bike from v:Start_Station to v:End_Station at v:Start_Time until v:End_Time</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">];</span> 
-
 </code></pre></div></div>
 
 <p>We cast (WOQL.typecast(a,b,c) method) the variable <strong>v:Start_Station</strong> as string (“xsd:string”) and refer it in a new variable <strong>v:SS_Label</strong></p>
 
 <p>With WOQL.idgen(a,b,c) we create an unique id for every document. Example for <em>doc:Station</em> document we create an id from the <em>v:Start_ID</em> and refer it in the <em>v:Start_Station_URL</em></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inserts</span> <span class="o">=</span> <span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span>
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Journey</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:J_Label</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">description</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey_Description</span><span class="dl">"</span><span class="p">)</span>
@@ -266,11 +252,9 @@ mongoimport <span class="nt">--db</span><span class="o">=</span>mybike <span cla
     <span class="nx">WOQL</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_URL</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bicycle</span><span class="dl">"</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">label</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike_Label</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">);</span>
-
 </code></pre></div></div>
 
-<p>With WOQL.insert() we insert  the data inside our database. We create a <strong>Station</strong> document for every <strong>v:Start_station_URL</strong> and <strong>v:End_station_URL</strong> value and we link this value inside the <strong>start_station</strong> and <strong>end_station</strong> properties in the Journey document. The relationship between journey document and station document  has been created. The relationship allows TerminusDB to normalize the data across multiple documents.❗
-In this article the complete example <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+<p>With WOQL.insert() we insert  the data inside our database. We create a <strong>Station</strong> document for every <strong>v:Start_station_URL</strong> and <strong>v:End_station_URL</strong> value and we link this value inside the <strong>start_station</strong> and <strong>end_station</strong> properties in the Journey document. The relationship between journey document and station document  has been created. The relationship allows TerminusDB to normalize the data across multiple documents.❗ In this article the complete example <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
 <hr />
 
@@ -278,21 +262,17 @@ In this article the complete example <a href="https://terminusdb.com/blog/2020/0
 
 <p>Here is an example of query operations using the db.collection.find() method in mongoshell, we select from the <strong>journey</strong> collection all documents where the status <strong>bike_id</strong> equals <strong>W21477</strong>.</p>
 
-<p><img src="/blog/assets/images/query-mongo.png" alt="" /></p>
+<p><img src="/blog/assets/images/query-mongo.png" alt="example of query operations using the db.collection" /></p>
 
 <p>The following example selects all the <strong>journey</strong> documents where the <strong>journey_bicycle</strong> property is linked at the <strong>bike</strong> document <strong>W21477</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">).</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">W21477</span><span class="dl">"</span><span class="p">).</span><span class="nx">read_object</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Journey Doc</span><span class="dl">"</span><span class="p">)</span>
-
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">WOQL</span><span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">journey_bicycle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">).</span><span class="nx">triple</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Bike</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">W21477</span><span class="dl">"</span><span class="p">).</span><span class="nx">read_object</span><span class="p">(</span><span class="dl">"</span><span class="s2">v:Journey</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">v:Journey Doc</span><span class="dl">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/blog/assets/images/terminusdb-query.png" alt="" /></p>
+<p><img src="/blog/assets/images/terminusdb-query.png" alt="Graph Database TerminusDB" /></p>
 
-<p>Remember that TerminusDB is a graph-database, this means that TerminusDB
-creates relationships between the documents and properties inside documents.
+<p>Remember that TerminusDB is a graph-database, this means that TerminusDB creates relationships between the documents and properties inside documents.
 TerminusDB can analyze and traverse complex relationships between connected data structures. Let’s keep to practise❗</p>
-
 
         </div>
 
