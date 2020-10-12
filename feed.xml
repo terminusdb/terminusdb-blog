@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 15:41:34 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 15:41:34 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 15:46:13 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 15:46:13 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -43,7 +43,7 @@
         <link>https://terminusdb.com/blog/2020/09/30/product-roadmap-episode-3/</link>
         <guid isPermaLink="true">https://terminusdb.com/blog/2020/09/30/product-roadmap-episode-3/</guid>
         
-        <category>database</category>
+        <category>Graph database</category>
         
         
       </item>
