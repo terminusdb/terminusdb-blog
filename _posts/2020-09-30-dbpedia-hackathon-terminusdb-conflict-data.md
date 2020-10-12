@@ -95,11 +95,11 @@ Of the remaining battles we need to find out if the relevant belligerents are po
 
 The Battle of Vézeronce was fought by the Franks and the Burgundians in 524CE. 
 
-![](/blog/assets/uploads/both-sides.jpg "Structured Extract from Wikipedia")
+![Graph Database TerminusDB](/blog/assets/uploads/both-sides.jpg "Structured Extract from Wikipedia")
 
 We first looked for the Franks using the scanning query and get this result:
 
-![](/blog/assets/uploads/franks.jpg)
+![Graph Database TerminusDB](/blog/assets/uploads/franks.jpg)
 
 We can see that the Franks in that period are the Early Merovingian variety (Clovis, the first King of the Franks, has died and his sons are fighting over his former lands). The associated doc is:
 
@@ -156,7 +156,7 @@ Here is a video of the query running in the console:
 
 This the full graph of the changing polities so you can appreciate the complex picture of constant change and upheaval:
 
-![](/blog/assets/uploads/graph-of-developments.jpg)
+![Graph Database TerminusDB](/blog/assets/uploads/graph-of-developments.jpg)
 
 To return to the Battle of Vézeronce, we use this query to insert the battle with our belligerent polity `doc:frmerve`
 
