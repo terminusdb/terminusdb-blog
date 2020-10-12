@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Graph Fundamentals — Part 1: RDF"
-date: 2019-09-20
-description:
+date: 2019-09-20T00:00:00.000Z
+description: Graph databases are on the rise, but amid all the hype it can be
+  hard to understand the differences under the hood.
 image: https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png
 author: Kevin Feeney
 tags:
@@ -11,13 +12,12 @@ tags:
   - Graph
   - Graph Database
   - W3C
-
 ---
 Graph databases are on the rise, but amid all the hype it can be hard to understand the differences under the hood. This is the first article in a four part series describing the fundamental technologies that graph databases use under the hood. Unlike most articles that you will come across, this is neither marketing nor is it a tutorial — it’s a warts and all description of their strengths and weaknesses — stuff I have learned over 20 years of pain and suffering, in the hope that I can help somebody else out there to avoid having to learn these lessons the hard way.
 
 There are two major variants of graph databases in the wild — RDF graphs (aka triple-stores) and Labelled Property Graphs. In this, the first article in the series, I’ll describe RDF (Resource Description Framework), its strengths and weaknesses and where it came from. In subsequent articles, I’ll describe labelled property graphs and some of the the standards and technologies that have been built on top of them.
 
-----------
+- - -
 
 RDF is a child of the web, formulated back in the 1990s, by Tim Bray at Netscape as a meta-data schema for describing things. The basic idea is simple, RDF files consist of a set of logical assertions of the form subject, predicate, object — known as a triple:
 
@@ -36,7 +36,7 @@ jane -> likes -> chocolate
 
 When joined together a set of triples forms a graph consisting of nodes and edges — it really is as simple as that.
 
-![Knowledge Graph](https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png)
+![Knowledge Graph TerminusDB](https://miro.medium.com/max/1830/1*2F8lFQCruqyyGnKAXPx3jQ.png)
 
 Triples can be combined to represent a knowledge graph which computers can interpret and reason about. When joined together, they form a natural graph, where the predicates (the middle part of the triple) are interpreted as edges and the subjects and objects are the nodes.
 
@@ -128,12 +128,12 @@ Back in 1999 when the RDF and RDF/XML standards were published, the social web w
 
 Probably the greatest mistake ever made by the W3C was imposing RDF/XML as the new standard for RSS — RSS 1.0. There was a very quick revolution of bloggers who found the new standard vastly increased the complexity of sharing updates, without giving anything extra in return. Bloggers generally stuck to the old non-RDF 0.91 version — the ideological wars that this created effectively turned the world of web-developers against RDF — a blow that RDF and the W3C have never really recovered from.
 
---------------------
+- - -
 
 ## Conclusion: There Is Hope
 
 Despite the terrible mistakes made in the definition of the RDF specification, at its very core, **RDF remains by far and away the most advanced and sophisticated mechanism available for describing things in a computer interpretable way.** And the standard did not remain static — the W3C issued a series of new standards that refined and extended the original RDF and built several other standards on top of it.
 
---------------------
+- - -
 
 The second part of this series on graph fundamentals covers Labelled Property Graphs, the second major variant of graph databases today, while the third part covers graph schema languages with particular focus on OWL, the most ambitious attempt yet to provide us with a language for talking about data.
