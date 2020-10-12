@@ -22,9 +22,7 @@ First, let’s go back in time to the early 2000s when companies first began to 
 
 Google Analytics monitors the behaviour of websites in terms of session length, pages per session, bounce rate, number of visitors and traffic source information. Google Ads integrates with Analytics, enabling users to build and review online campaigns through the quality monitoring of landing pages and conversions (goals). It includes high-level dashboard details for users and, more detailed in-depth custom reports if required.
 
-![](/blog/assets/uploads/ga-pic.png)
-
-
+![How google analytics works ](/blog/assets/uploads/ga-pic.png)
 
 ***The concern with user privacy***
 
