@@ -39,8 +39,7 @@ WOQL.doctype("BankAccount").label("Bank Account")
 
 This query creates a new document type "BankAccount" along with two properties, one named "owner" which is a string, and one named balance. Both have a cardinality of 1. This query is in fact a very concise shorthand for an OWL specification which we will see later.
 
-However, we made a copy-paste error! We forgot to change the label associated with balance to say "balance". This label is the way that the field is reported in user interfaces as opposed to the name "balance" which expands to a fully qualified URL identifier in the
-schema.
+However, we made a copy-paste error! We forgot to change the label associated with balance to say "balance". This label is the way that the field is reported in user interfaces as opposed to the name "balance" which expands to a fully qualified URL identifier in the schema.
 
 If we go to the schema page we can click on the OWL-tab and then the "Edit OWL" button. Go down to where it says "owner" under the `scm:balance` object, and change the label string to `"balance"@en` (highlighted below). Now click save.
 
@@ -64,7 +63,7 @@ WOQL.and(
 
 This adds some data to our database. You can click on the Documents page and you will see, that in fact mike was indeed added.
 
-![](/blog/assets/uploads/doc-created.jpg)
+![Adding data to database ](/blog/assets/uploads/doc-created.jpg)
 
 Now we should try to make some edits to the bank account to see what happens.
 
@@ -83,7 +82,7 @@ WOQL.and(
 
 This query fails with the following JSON-LD witness object:
 
-![](/blog/assets/uploads/vio.jpg)
+![Failed Query ](/blog/assets/uploads/vio.jpg)
 
 This tells us that our bank balance is invalid as it is negative! TerminusDB doesn't allow the transaction to go through.
 
@@ -102,7 +101,7 @@ WOQL.and(
 
 Now we have a balance of 13 as expected and everything works fine.
 
-![](/blog/assets/uploads/minus-result.jpg)
+![TerminusDB Console ](/blog/assets/uploads/minus-result.jpg)
 
 ## Branching
 
@@ -114,7 +113,7 @@ Ok, so go click on the "Bank Balance Example" button at the top and then go to t
 
 Under the field "New Branch ID*" enter in "branch_office" and we'll pretend we have a branch office adding accounts. In the commit message put: "Branch for our new branch office".
 
-![](/blog/assets/uploads/branching.jpg)
+![Branching TerminusDB Console ](/blog/assets/uploads/branching.jpg)
 
 Now go to the query page. If you look up at the top right of the interface, you'll see we are still on "branch: main". Pull the selector down to "branch: branch_office".
 
@@ -146,16 +145,16 @@ Jane was a bit more frugal and has saved 887 dollars.
 
 But we're still missing the information about jim, as its stuck in the branch office. How do we get the information into our main branch?
 
-![](/blog/assets/uploads/branches.jpg)
+![TerminusDB Console ](/blog/assets/uploads/branches.jpg)
 
 This is why we have merge. Go to the "Bank balance Example" button and then click on the manage-tab.
 
 Click on Merge. Select the "branch_office" branch in the upper right hand corner. Now select the "merge into" branch as "main". Now you can type: "Merging branch office info" in the commit message.
 
-![](/blog/assets/uploads/merge.jpg)
+![Merge TerminusDB Console](/blog/assets/uploads/merge.jpg)
 
 Now we should go back to the main branch (again in the upper right hand corner), and select the documents view. You'll see that we have merged the two databases together!
 
-![](/blog/assets/uploads/merged.jpg)
+![Merge TerminusDB Console ](/blog/assets/uploads/merged.jpg)
 
 Great! But wait until we get to part II - where we use collaboration and pipelines to utilize these branches effectively with the branch office.
