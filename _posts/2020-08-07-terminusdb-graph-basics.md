@@ -19,11 +19,11 @@ This is the basic idea of the graph database - using data structures that are th
 
 To explain with a very simple example - if we were building a database to hold a family tree and we want to record the parents and grandparents of an individual. In a relational database, we might record this in a simple table
 
-![](/blog/assets/uploads/screenshot-2020-08-07-at-6.29.36-pm.png)
+![Relational Database Table ](/blog/assets/uploads/screenshot-2020-08-07-at-6.29.36-pm.png)
 
 In a graph database, this would look like the following
 
-![](/blog/assets/uploads/family-tree.png)
+![Graph Database TerminusDB](/blog/assets/uploads/family-tree.png)
 
 The big advantage is that it is much easier to interpret the model and understand how it maps to real-world entities compared to the relational example. This increased ease also extends to querying the database.
 
@@ -32,8 +32,6 @@ Query For example, if we wanted to fetch the name of john’s mother and grandmo
 ```
 SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE where Name="John")
 SELECT Name from TABLE where Person_ID = (SELECT mother from TABLE WHERE Person_ID = (SELECT mother from TABLE where Name="John"))
-
-
 ```
 
 In a graph database this is much simpler: we can use a triple pattern such as the following to get both names in the same query - we do not have to explicitly join the records together, the joins are implicit - we use the same ID in different parts of the query:
@@ -45,7 +43,6 @@ WOQL.and(
    WOQL.triple("v:MotherID", "mother", "v:GrandmotherID"),
    WOQL.triple("v:GrandmotherID", "name", "v:GrandmotherName"),
 )
-
 ```
 
 By using `“v:MotherID”` multiple times in the query, we create a chain: `v:Person =mother=> v:Mother =mother=> v:Grandmother`
