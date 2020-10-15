@@ -4,7 +4,7 @@ title: Collaboration for structured Data
 date: 2020-10-15T14:59:28.622Z
 description: Structured data gives us the ability to surface the data we need to
   software which can then give it to people
-image: /blog/assets/uploads/collaboration2.jpg
+image: /assets/uploads/collaboration2.jpg
 author:
   - value: gavin
     label: Gavin Mendel Gleason
