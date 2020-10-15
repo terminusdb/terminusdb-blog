@@ -6,9 +6,34 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 16:33:56 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 16:33:56 +0000</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2020 15:03:24 +0000</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2020 15:03:24 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Collaboration for structured Data</title>
+        <author>[{&quot;value&quot;=&gt;&quot;gavin&quot;, &quot;label&quot;=&gt;&quot;Gavin Mendel Gleason&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/collaboration2.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;Structured data gives us the ability to surface the data we need to software which can then give it to people. Data analytics/data science is required for good decisions, but machines need to be able to eat the data. Currently, 80% of the time is taken in curation. Curation and editing to obtain high-quality data are therefore critical and it is facilitated by well-structured (schema controlled) data. Publishing of data requires easy access (query) and sufficient information to surface the data appropriately in graphs, charts, forms, web-pages, etc.&lt;/p&gt; &lt;p&gt;Currently many ML/AI shops use CSVs + email or slack for the storage and distribution of both data and features. This creates an enormous headache for AI practitioners for a number of reasons:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Data versioning is *required* but not uniformly specified or facilitated. Usually, it ends up being a suffix on a file, rather than a proper version-controlled system as is...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/10/15/collaboration-for-structured-data/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 15 Oct 2020 14:59:28 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2020/10/15/collaboration-for-structured-data/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2020/10/15/collaboration-for-structured-data/</guid>
+        
+        <category>database</category>
+        
+        <category>graph database</category>
+        
+        <category>revision control</category>
+        
+        <category>collaboration</category>
+        
+        
+      </item>
     
       <item>
         <title>The TerminusDB Values </title>
