@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Stuffing all of Human History into a Single Knowledge Graph"
-date: 2020-03-01
-description:
-cover_image: https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png
+title: Stuffing all of Human History into a Single Knowledge Graph
+date: 2020-03-01T00:00:00.000Z
+description: Knowledge graph
+image: /assets/uploads/pic-2.jpg
 author: Cheuk Ting Ho
+cover_image: https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png
 tags:
   - Database
   - Dataops
   - Knowledge Graph
   - Open Source
   - Data Pipeline
-
 ---
 The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.
 
@@ -45,6 +45,6 @@ All these can be achieved easily with WOQL, the Web Object Query Language. It is
 
 We used WOQL to ingest all of the Seshat data into a great big knowledge graph and then generate graphs showing the evolution of hundreds of different properties of historical societies as they changed over time. The above graph shows all of the global historical timelines in Seshat, with each node representing a polity and the edges showing the ‘successor’ polity, the colour of the nodes represents the presence (green) or absence (red) of professional soldiers in each society. Stay tuned as we will soon be publishing a detailed tutorial showing you how you can build your own knowledge graph using TerminusDB and the Seshat dataset.
 
-[Design a Query Language Client for Pythonistas and Data Scientists](/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/)
+[Design a Query Language Client for Pythonistas and Data Scientists](https://medium.com/terminusdb/design-a-query-language-client-for-pythonistas-and-data-scientists-db5e6a76141a)
 
 If you want to know more, follow our publication to get the news about our talks, tutorials and community events.
