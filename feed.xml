@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Oct 2020 10:57:15 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Oct 2020 10:57:15 +0000</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2020 14:55:09 +0000</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2020 14:55:09 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -735,7 +735,7 @@
         
         
         <description>
-        &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;/assets/uploads/pic-2.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/2110/1*2Cm8rFu45ogPIm8C6fsnXg.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
         &lt;p&gt;The history of the world sounds amazing, unimaginably massive. Thanks to academics and scholars, we know a lot about the life of our ancestors and thanks to the progress of technology, we now have lots of open data available on the internet. To gather and organise a knowledge graph covering large-scale human social evolution is a huge challenge.&lt;/p&gt; &lt;h2 id=&quot;seshat-global-history-databank&quot;&gt;Seshat: Global History Databank&lt;/h2&gt; &lt;p&gt;Named after the Egyptian goddess of wisdom, knowledge, and writing, &lt;a href=&quot;http://seshatdatabank.info/&quot;&gt;Seshat&lt;/a&gt;, the Global History Databank aims to bring together the most current and comprehensive body of knowledge about human history in one place.&lt;/p&gt; &lt;p&gt;Researchers divided the world into a series of Natural Geographic Areas and collected datasets describing all of the specific historical societies or polities that had existed in those areas. By storing the data in a systematic way, different hypotheses about the rise and fall of large-scale societies across the globe and human history...
         &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/03/01/stuffing-the-whole-human-history-in-one-knowledge-graph/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>

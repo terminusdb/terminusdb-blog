@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Oct 2020 10:57:15 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Oct 2020 10:57:15 +0000</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2020 14:55:09 +0000</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2020 14:55:09 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
     
@@ -309,7 +309,7 @@
 
 &lt;p&gt;We used WOQL to ingest all of the Seshat data into a great big knowledge graph and then generate graphs showing the evolution of hundreds of different properties of historical societies as they changed over time. The above graph shows all of the global historical timelines in Seshat, with each node representing a polity and the edges showing the ‘successor’ polity, the colour of the nodes represents the presence (green) or absence (red) of professional soldiers in each society. Stay tuned as we will soon be publishing a detailed tutorial showing you how you can build your own knowledge graph using TerminusDB and the Seshat dataset.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/2020/01/20/design-a-query-language-client-for-pythonistas-and-data-scientists/&quot;&gt;Design a Query Language Client for Pythonistas and Data Scientists&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/terminusdb/design-a-query-language-client-for-pythonistas-and-data-scientists-db5e6a76141a&quot;&gt;Design a Query Language Client for Pythonistas and Data Scientists&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you want to know more, follow our publication to get the news about our talks, tutorials and community events.&lt;/p&gt;
 </description>
