@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TerminusDB TodoMVC (feat. Svelte) | Graph Database Blog - News and Tutorials from TerminusDB</title>
+<meta name="description" content="Graph Database Management news, tutorials and updates from TerminusDB
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="This is a simple example of making a typical web app with [TerminusDB](https://terminusdb.com/). This example implements [TodoMVC](http://todomvc.com/) with [Svelte](https://svelte.dev/) and then uses TerminusDB to store the Todo list.">
+<meta itemprop="image" content="https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png">
+
+<meta property="og:url" content="https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TerminusDB TodoMVC (feat. Svelte) | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:site_name" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:description" content="This is a simple example of making a typical web app with [TerminusDB](https://terminusdb.com/). This example implements [TodoMVC](http://todomvc.com/) with [Svelte](https://svelte.dev/) and then uses TerminusDB to store the Todo list.">
+<meta property="og:image" content="https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png">
+
+<meta name="twitter:url" content="https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TerminusDB TodoMVC (feat. Svelte) | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:site" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:description" content="This is a simple example of making a typical web app with [TerminusDB](https://terminusdb.com/). This example implements [TodoMVC](http://todomvc.com/) with [Svelte](https://svelte.dev/) and then uses TerminusDB to store the Todo list.">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Graph Database Blog - News and Tutorials from TerminusDB" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/10/30/terminusdb-todomvc-feat-svelte/">
+
+
+
+
+</head>
+<body id="terminusdb-todomvc-feat-svelte" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">TerminusDB TodoMVC (feat. Svelte)</h2>
+
+        <time class="post__date" datetime="2020-10-30T12:08:13+00:00" itemprop="datePublished">30 Oct 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png'); background-size: contain;"></figure>
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <!--StartFragment-->
+
+<h2 id="what-is-this">What is this?</h2>
+
+<p>This is a simple example of making a typical web app with <a href="https://terminusdb.com/">TerminusDB</a>. This example implements <a href="http://todomvc.com/">TodoMVC</a> with <a href="https://svelte.dev/">Svelte</a> and then uses TerminusDB to store the Todo list.</p>
+
+<h3 id="install-todo-app">Install Todo App</h3>
+
+<p>Please <a href="https://terminusdb.com/hub/download">install TerminusDB</a> and have it running. TerminusDB just needs to be running, you will not be using the console right now, so you can just minimize it.</p>
+
+<p>Once TerminusDB is running, add the DB and Schema.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm run initdb
+
+&gt; svelte-app@1.0.0 initdb /home/dk/Work/TerminusDB/terminusdb-todoapp
+&gt; node util/initdb.js
+
+# checking db
+# creating db
+# checking schema
+# creating schema
+# add todo1
+# add todo2
+# done
+</code></pre></div></div>
+
+<p>Now npm install and run the app.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install &amp;&amp; npm run dev
+
+[...miles of scrolling console spew...]
+
+ Your application is ready~! 🚀
+
+  - Local:      http://localhost:5000
+  - Network:    Add `--host` to expose
+</code></pre></div></div>
+
+<p>────────────────── LOGS ──────────────────</p>
+
+<p>You can access the Todo app on <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000</a> and, you know, do stuff.</p>
+
+<p><img src="https://lh5.googleusercontent.com/j-sMXkcqsk_XYxVu5Vy0gCz7MiGTakCIQAwKhzReoJZTShBmhkvO8OiPFLsJkZPq8898uMsnGXrb28I7KDrmeVyyTi0XAa5xTfuEqNy4K7Z3K61hJ_6yvFZ1Ifp7SHODrWgCjDdw" alt="TerminusDB Todo" /></p>
+
+<h2 id="ok-so-how-does-that-all-work">Ok, so how does that all work?</h2>
+
+<p>We’ll spare you the details of npm and Svelte. Please see the excellent documentation from those projects to learn more. We will focus on the TerminusDB stuff here.</p>
+
+<p>Using Svelte we created a JavaScript Single Page Application (SPA) that implements the specifications of TodoMVC, a project used to compare frontend frameworks.</p>
+
+<p>The SPA runs in the browser and uses TerminusDB as the backend, as TerminusDB is a database for the web, no intermediary backend server is needed. The frontend can connect directly with the database using RESTful HTTP and the <a href="https://www.npmjs.com/package/@terminusdb/terminusdb-client">TerminusDB JavaScript SDK</a></p>
+
+<h3 id="so-how-does-that-initdb-bit-do-its-thing">So, how does that initdb bit do its thing?</h3>
+
+<p>We will only give a few important examples from the initdb script here, you can see the entire script with comments here: <a href="https://github.com/dmytri/terminusdb-todoapp/blob/master/util/initdb.js">util/initdb.js</a></p>
+
+<h3 id="create-database">Create Database</h3>
+
+<p>First we use the JavaScript SDK to connect to the Database.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const Client = require('@terminusdb/terminusdb-client')
+const DB = new Client.WOQLClient('https://127.0.0.1:6363/',
+  { user: 'admin', key: 'root' })
+DB.organization('admin')
+DB.connect()
+  .then(() =&gt; hasDB())
+  .catch(error =&gt; console.log('error', error))
+</code></pre></div></div>
+
+<p>Once it’s connected, we call a function called <code class="highlighter-rouge">hasDB</code> which creates a database called <code class="highlighter-rouge">TodoMVC</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.createDatabase('TodoMVC', {
+  label: 'TodoMVC',
+  comment: 'DB for TodoMVC backend',
+  schema: true
+}, 'admin').then(() =&gt; hasSchema())
+</code></pre></div></div>
+
+<p>When the database has been created the function<code class="highlighter-rouge"> hasSchema</code> is called.</p>
+
+<h3 id="create-schema">Create Schema</h3>
+
+<p>In order to make our code a little more concise, we can set our DB to <code class="highlighter-rouge">TodoMVC</code> and create a constant <code class="highlighter-rouge">Q</code> for <code class="highlighter-rouge">Client.WOQL</code>, which will help us build queries.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.db('TodoMVC')
+const Q = Client.WOQL
+</code></pre></div></div>
+
+<p>Now we can use our connected <code class="highlighter-rouge">DB</code> and our query builder <code class="highlighter-rouge">Q</code> to create a schema for the database.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.query(Q
+  .doctype('Todo')
+  .label('Todo')
+  .description('Things To Do')
+  .property('title', 'xsd:string').cardinality(1)
+  .property('completed', 'xsd:boolean').cardinality(1)
+).then(response =&gt; addExamples())
+</code></pre></div></div>
+
+<p>Here we created our schema, which is a <code class="highlighter-rouge">Todo</code> document type that has two properties, a <code class="highlighter-rouge">string title</code> and a <code class="highlighter-rouge">boolean completed</code>. Both have a <code class="highlighter-rouge">cardinality</code> of <code class="highlighter-rouge">1</code>, which means that each <code class="highlighter-rouge">Todo</code> can only have 1 of each property, for example a single <code class="highlighter-rouge">Todo</code> can not have two titles or zero titles, but must have one.</p>
+
+<p>Once the <code class="highlighter-rouge">Todo</code> document type is created, the function <code class="highlighter-rouge">addExamples</code> is called.</p>
+
+<h3 id="add-example-todo-items">Add Example Todo Items</h3>
+
+<h4 id="triples-triples-rah-rah-rah-triples-triples-ha-ha-ha">Triples, Triples, rah rah rah, Triples, Triples, ha ha ha.</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.query(Q
+  .add_triple('doc:todo1', 'type', 'scm:Todo')
+  .add_triple('doc:todo1', 'title',
+    Q.literal('Taste TerminusDB', 'string'))
+  .add_triple('doc:todo1', 'completed',
+    Q.literal(true, 'boolean'))
+</code></pre></div></div>
+
+<p>So above is how we add an example Todo to the database, by adding triples.</p>
+
+<h3 id="triples">Triples</h3>
+
+<p>Now, what in tarnation is a triple? Well, in TerminusDB everything. It’s all triples. Triples all the way down.</p>
+
+<p>Formally, a triple is a fact that includes a subject, a predicate, and an object.</p>
+
+<p>The subject tells us what thing this fact refers to, in our case that thing is a document in our database called <code class="highlighter-rouge">doc:todo1</code>.</p>
+
+<p>The predicate tells us what this fact tells you about the thing you are referring to. So in our case, we have three predicates:<code class="highlighter-rouge">type</code> tells us what kind of document <code class="highlighter-rouge">doc:todo1</code>is, <code class="highlighter-rouge">title</code> tells us what the title is, and a <code class="highlighter-rouge">completed</code> value that tells us if it has been completed or not.</p>
+
+<p>The object is the value of the predicate for this subject.</p>
+
+<p>So the object ‘<code class="highlighter-rouge">scm:Todo</code>’ is a Todo document type, The object ‘<code class="highlighter-rouge">Taste TerminusDB</code>’ is a string that containing the title, and the object false is a boolean that means that it is not completed.</p>
+
+<p>This language is handed down to us by the venerable creators of RDF and OWL, standards that TerminusDB uses internally, but those of us who don’t care about these things can think of a triple in a simpler way.</p>
+
+<p>Think of a triple as an object, a property, and a value. So, each triple assigns a value to a particular property of an object, with the value also being an object. So subject just means this object, predicate is a property name, and object is the value of this property on the subject.</p>
+
+<p>Looking at the query above, we add three triples, one that assigns a type to our Todo, another that assigns a title, and another that assigns the completed value.</p>
+
+<p>So for us to tell the DB to add a Todo with the title “Taste TerminusDB” that is not completed, we add the three triples above.</p>
+
+<p>The <code class="highlighter-rouge">Q.literal</code> bits are how we cast values. Properties in TerminusDB have many more possible types of values than JavaScript has.</p>
+
+<p>Thinking in terms of triples is one of the two major differences in how Terminators think compared to users of relational or document-based databases. The other is unification. That’s a real head trip, and we’ll cover that in the next section.</p>
+
+<h3 id="ok-we-created-the-db-and-an-example-todo-but-how-does-the-app-work">Ok, we created the DB and an example Todo, but how does the app work?</h3>
+
+<p>Once again, we will just cover some important examples, you can find the complete script here <a href="https://github.com/dmytri/terminusdb-todoapp/blob/master/src/terminusdb.js">src/terminusdb.js</a></p>
+
+<p>Also, the JavaScript SDK has convenience functions that allow you to interact with documents and their properties in a simpler way, often like other graph or document databases, we will not use these. We’re not trying to be mean or anything, we just really want you to understand this triple business, oh, and unification, more on that in a bit.</p>
+
+<p>In the terminusdb.js module, we export 6 functions, <code class="highlighter-rouge">state, create, alter, remove, toggle</code> and <code class="highlighter-rouge">clear</code>. These functions are used by the Svelte app to read from and write to the database.</p>
+
+<p>I’ll explain <code class="highlighter-rouge">state</code> and <code class="highlighter-rouge">toggle</code></p>
+
+<h3 id="reading-from-the-database">Reading from the Database</h3>
+
+<p>The state function returns all the Todo documents in the database, it works like this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.query(Q 
+  .triple('v:Doc', 'type', 'scm:Todo')
+  .triple('v:Doc', 'scm:title', 'v:Title')
+  .triple('v:Doc', 'scm:completed', 'v:Completed')
+).then((response) =&gt; {
+  callback(null,
+    response.bindings.map(item =&gt; ({
+      id: item.Doc,
+      title: item.Title['@value'],
+      completed: item.Completed === 'system:unknown'
+        ? false
+        : item.Completed['@value'] === 'true'
+    }))
+  )
+})
+</code></pre></div></div>
+
+<p>Oh, we love triples.</p>
+
+<h3 id="unification">Unification</h3>
+
+<p>So, we’ve covered add_triple above when we created our database and added an example <code class="highlighter-rouge">Todo</code>, we now we are querying for existing triples, and we are doing so using, you guessed it, unification.</p>
+
+<p>The subject in our triple statements above is always <code class="highlighter-rouge">v:Doc</code>. This is a variable.</p>
+
+<p>In our first triple statement, we are saying we don’t know what this value is. So, the database will solve for all possible values of this subject that match the predicate and object.</p>
+
+<p>The predicate is <code class="highlighter-rouge">type</code> and the object is <code class="highlighter-rouge">scm:Todo</code>. So the first triple statement will solve for all triples in the database that have the type <code class="highlighter-rouge">scm:Todo</code>. Simply, this means that it returns all the <code class="highlighter-rouge">Todos</code> in the database.</p>
+
+<p>Our SDK uses a fluent style, so the query continues with the next triple statement, which says that for each possible value of <code class="highlighter-rouge">v:Doc</code> from the previous statement, find a triple that has the same subject and a predicate of <code class="highlighter-rouge">scm:title</code> (think property called title) and assign the object (think the value of the property) to the variable <code class="highlighter-rouge">v:Title</code>.</p>
+
+<p>The next triple statement does the same thing but for the predicate <code class="highlighter-rouge">scm:completed</code>.</p>
+
+<p>So, all told, this is a way of saying find all of our <code class="highlighter-rouge">Todos</code> and get the title and completed properties for them too.</p>
+
+<p>We then take look at all the results and map them to an array of JavaScript objects with id, title and completed as properties. The Todo app uses this array for its state.</p>
+
+<p>Unification happened here, but it’s subtle, so let’s not let it slip by without comment. Understanding what happened unlocks the power of logic!</p>
+
+<p>Most of us developers think in terms of inputs and outputs. Functions have arguments, which are inputs, and return something, which is an output.</p>
+
+<p>Triple statements are not functions, and the three values are not arguments. You construct a query by chaining statements, you tell the database what you know, and it returns all possible solutions based on what you know and what is found in the database.</p>
+
+<p>Ok, so before you think I’m wasting your time with profound sounding bullshit, let me give you some more examples that are not used in this app.</p>
+
+<p>Say we know the document Id of a Todo, say <code class="highlighter-rouge">doc:todo1</code>, but want to know it’s title, this means we know the subject,<code class="highlighter-rouge">doc:todo1</code> and the predicate <code class="highlighter-rouge">scm:title</code>, but not the object, the string which contains the title</p>
+
+<p>So we say this:</p>
+
+<p><code class="highlighter-rouge">triple('doc:todo1','scm:title','v:Doc')</code></p>
+
+<p>The solution to this statement will bind the string which contains the title to the variable<code class="highlighter-rouge">v:Doc</code></p>
+
+<p>So, the first two “arguments” (they’re not arguments), are kinda like arguments, and the third “argument” is kinda like a return value (it’s not a return value).</p>
+
+<p>Now, say we know we have a <code class="highlighter-rouge">Todo</code> with the title “Taste TerminusDB”, but we don’t know the document Id.</p>
+
+<p>Now we say this:</p>
+
+<p><code class="highlighter-rouge">triple('v:Doc','scm:title','Taste TerminusDB')</code></p>
+
+<p>Now the databases solves this statement such that the variable <code class="highlighter-rouge">v:Doc</code> contains the document Id of the Todo with the title ‘Taste TerminusDB’</p>
+
+<p>Woah, right?</p>
+
+<p>You might want to jump into the <a href="https://127.0.0.1:6363/">TerminusDB console</a> and try these two queries. If you haven’t yet deleted the <code class="highlighter-rouge">Todo</code> with the document Id <code class="highlighter-rouge">doc:todo1</code> and the <code class="highlighter-rouge">title</code> “Taste TerminusDB” the queries will work if you just copy and paste them in.</p>
+
+<p>It feels like the inputs and outputs just move around. But it’s more complicated than that. These are not inputs and outputs, they are statements and solutions.</p>
+
+<p>You say what you know and the database finds all possible solutions where your statement is true.</p>
+
+<p>A few of you are saying, oh, like in <a href="https://en.wikipedia.org/wiki/Unification_%28computer_science%29">Prolog</a>. Well, yeah, like in Prolog, but let’s explain some more.</p>
+
+<p>So a TermunisDB query chains many statements, and the database finds all solutions where all the statements are true, and as variables are solved for, those variables are bound and available to the next statements.</p>
+
+<p>Stay with me here, this is where it really gets trippy.</p>
+
+<h3 id="writing-to-the-database">Writing to the Database</h3>
+
+<p>Let’s take a look at another function from<code class="highlighter-rouge"> terminusdb.js</code>, the <code class="highlighter-rouge">toggle</code> function. This function is given a boolean value passed as <code class="highlighter-rouge">data.completed</code> and sets all <code class="highlighter-rouge">completed</code> on all <code class="highlighter-rouge">Todos</code> to this value.</p>
+
+<p>This is the query that is used:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DB.query(Q
+  .triple('v:Doc', 'completed', Q.literal(!data.completed, 'boolean'))
+  .delete_triple('v:Doc', 'completed', Q.literal(!data.completed, 'boolean'))
+  .add_triple('v:Doc', 'completed', Q.literal(data.completed, 'boolean'))
+)
+
+</code></pre></div></div>
+
+<p>So, let’s say that the <code class="highlighter-rouge">toggle</code> function was called with data completed having a value of <code class="highlighter-rouge">true</code>.</p>
+
+<p>The first triple statement solves for all subjects (all <code class="highlighter-rouge">Todos</code> in our case) into a database with a predicate <code class="highlighter-rouge">completed</code> with an object (think value) that is <code class="highlighter-rouge">false</code> (<code class="highlighter-rouge">!data.completed</code>), and then binds the document d of each of these to the variable <code class="highlighter-rouge">v:Doc</code>.</p>
+
+<p>We now have a list of all Todos that are not completed so we can set them to be completed.</p>
+
+<p>The next statement, delete_triple, receives all the document Ids from the first statement and deletes each of them. Remember that one triple is a property here, so it’s not deleting the <code class="highlighter-rouge">Todo</code>, just it’s <code class="highlighter-rouge">completed</code> property. Also note that because our Schema has a cardinality of 1 for <code class="highlighter-rouge">completed</code>, if we our query only had these two statements it would fail, because a <code class="highlighter-rouge">Todo</code> can not have zero titles, but since we add completed with the value <code class="highlighter-rouge">true(data.completed)</code> in the third statement, an<code class="highlighter-rouge"> add_triple</code>, the query is successful.</p>
+
+<p>This is a demonstration of unification. The value of ‘v:Doc’ is solved for all subjects where completed is false, this value is available for all subsequent statements. Queries far more powerful than what we need for a Todo app are possible, but let’s leave that for another time.</p>
+
+<p>Another interesting thing about TerminusDB is that we can not change a triple, and even the delete just makes it invisible in the current revision. It’s an append-only database, this is what makes revision control and time-travel through the data history possible. There is in fact an <code class="highlighter-rouge">update_triple</code> convenience function in the SDK that you can use to make your code more concise, but it’s just doing more or less the above under the hood.</p>
+
+<p>Meditate on triples and unification. It is the path to Terminatordom.</p>
+
+<p>You are now ready to dive into the source code and play in the TerminusDB console. Feel free to come to our <a href="https://discord.gg/Gvdqw97">Discord server</a> we’d love to help you and get your feedback.</p>
+
+<h2 id="so-i-guess-this-is-just-hypothetical-you-wouldnt-really-build-a-todo-app-with-terminusdb">So, I guess this is just hypothetical, you wouldn’t really build a Todo app with TerminusDB?</h2>
+
+<p>Well, not so fast. Certainly, you don’t need TerminusDB to make a TodoMVC example, just dumping objects into the browser’s local storage would do just fine. And it’s true that most users of TerminusDB today are using it in DataOps/MLops scenarios, where data scientists and analysts are involved. Its roots are very much in being a database for data people.</p>
+
+<p>However, if you wanted to really disrupt the Todo industry with a breakthrough app, then yeah, you would want to use TerminusDB for your Todo app.</p>
+
+<p>For one, it’s schema control keeps your data in good shape, it’s RESTful HTTP API makes it easy to use from any stack, even a frontend web stack.</p>
+
+<p>However, what will really accelerate your development are it’s collaboration features. The ability to clone, fork, branch and merge data, and the fact that you have revision control means that so much hard stuff becomes easy.</p>
+
+<p>Take for example, adding an undo feature. With a normal database, you need to build your own versioning into your data model, turning rows into journals. With TerminusDB you have versioning out of the box, you can just revert a commit and viola, you have undo, and redo, and you even have proof for your compliance officer that the data changed in a specific order, and when and by whom all changes where made.</p>
+
+<p>Now imagine you want to add a workflow to your Todo app. Like a Todo gets assigned by a manager, done by an assignee and confirmed complete by a different manager.</p>
+
+<p>Once again, with another database this workflow would need to be added to your data model, you would need to add fields and classes or tables to contain what workflow stage each todo was in, and if the workflow changed, as it always does in the real world, sometimes from the task, your data model would also need to change, this becomes brittle fast.</p>
+
+<p>With TerminusDB you could model your workflow with branches, where assignments could be added to a managers branch, merged into an assignees branch, then merged into an approvers branch, etc. Branches could be made for ad-hoc situations that required a different workflow, and none the less all Todos could eventually be merged into a common “done” branch, all with no workflow in the data model itself.</p>
+
+<p>Say you had some clever data scientists that wanted to do some predictive analytics on your todos, you would need to give them access to your production database and risk them degrading the performance of your site with their queries, or even bringing it down with some late night fat fingering. With TerminusDB and TerminusHub they could just clone or fork their own copy of the data, merge in new updates whenever they like, and even push back changes if they somehow enrich the data.</p>
+
+<p>And last but not least, there are the issues covered in <a href="https://terminusdb.com/blog/2020/05/29/continuous-everything-as-code/">Continuous Everything as Code</a>, your devs may be changing your schema, and sometimes your data with each revision of the software that powers your app, and these changes need to go down your integration and deployment pipeline, yet other databases don’t work well with ci/cd. TerminusDB and TerminusHub make it much easier to clone, fork, and merge databases to create development, staging and production environments and push changes between them.</p>
+
+<p>Surely, whether you are building an ML/AI Skynet, or a humble productivity app, content site or e-shop, all these benefits are worth the effort to learn to think in triples.</p>
+
+<!--EndFragment-->
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=TerminusDB TodoMVC (feat. Svelte)+https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=TerminusDB TodoMVC (feat. Svelte)&summary=This is a simple example of making a typical web app with [TerminusDB](https://terminusdb.com/). This example implements [TodoMVC](http://todomvc.com/) with [Svelte](https://svelte.dev/) and then uses TerminusDB to store the Todo list.&url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=This is a simple example of making a typical web app with [TerminusDB](https://terminusdb.com/). This example implements [TodoMVC](http://todomvc.com/) with [Svelte](https://svelte.dev/) and then uses TerminusDB to store the Todo list.&media=https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png&url=https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://twitter.com/dmytri" class="p-name u-url">Dmytri Kleiner</a></span>
+            <p class="post__bio p-note">Venture Communist.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/';
+        this.page.identifier = 'https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/10/15/collaboration-for-structured-data/"">
+              
+                <figure class="related__img">
+                  <img src="https://terminusdb.com/blog/assets/uploads/collaboration2.jpg" alt="Collaboration for structured Data"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Collaboration for structured Data</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/10/07/terminusdb-values/"">
+              
+                <figure class="related__img">
+                  <img src="https://terminusdb.com/blog/assets/images/blog-cover.jpg" alt="The TerminusDB Values "/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">The TerminusDB Values </h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/30/dbpedia-hackathon-terminusdb-conflict-data/"">
+              
+                <figure class="related__img">
+                  <img src="https://terminusdb.com/blog/assets/uploads/3480.1551362519.jpg" alt="DBpedia Hackathon: TerminusDB & Conflict Data"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">DBpedia Hackathon: TerminusDB & Conflict Data</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

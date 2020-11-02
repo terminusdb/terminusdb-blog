@@ -6,9 +6,28 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 31 Oct 2020 14:55:09 +0000</pubDate>
-    <lastBuildDate>Sat, 31 Oct 2020 14:55:09 +0000</lastBuildDate>
+    <pubDate>Mon, 02 Nov 2020 10:21:07 +0000</pubDate>
+    <lastBuildDate>Mon, 02 Nov 2020 10:21:07 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB TodoMVC (feat. Svelte)</title>
+        <author>[{&quot;value&quot;=&gt;&quot;dmytri&quot;, &quot;label&quot;=&gt;&quot;Dmytri Kleiner&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/assets/uploads/screenshot-2020-11-02-101454.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;!--StartFragment--&gt; &lt;h2 id=&quot;what-is-this&quot;&gt;What is this?&lt;/h2&gt; &lt;p&gt;This is a simple example of making a typical web app with &lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt;. This example implements &lt;a href=&quot;http://todomvc.com/&quot;&gt;TodoMVC&lt;/a&gt; with &lt;a href=&quot;https://svelte.dev/&quot;&gt;Svelte&lt;/a&gt; and then uses TerminusDB to store the Todo list.&lt;/p&gt; &lt;h3 id=&quot;install-todo-app&quot;&gt;Install Todo App&lt;/h3&gt; &lt;p&gt;Please &lt;a href=&quot;https://terminusdb.com/hub/download&quot;&gt;install TerminusDB&lt;/a&gt; and have it running. TerminusDB just needs to be running, you will not be using the console right now, so you can just minimize it.&lt;/p&gt; &lt;p&gt;Once TerminusDB is running, add the DB and Schema.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm run initdb &amp;gt; svelte-app@1.0.0 initdb /home/dk/Work/TerminusDB/terminusdb-todoapp &amp;gt; node util/initdb.js # checking db # creating db # checking schema # creating schema # add todo1 # add todo2 # done &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Now npm install and run the app.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm install &amp;amp;&amp;amp; npm run dev [...miles of scrolling console spew...] Your application is ready~! 🚀 - Local: http://localhost:5000 - Network: Add `--host` to expose &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Fri, 30 Oct 2020 12:08:13 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2020/10/30/terminusdb-todomvc-feat-svelte/</guid>
+        
+        <category>database</category>
+        
+        
+      </item>
     
       <item>
         <title>Collaboration for structured Data</title>
