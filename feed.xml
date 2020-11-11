@@ -6,9 +6,28 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Nov 2020 10:21:07 +0000</pubDate>
-    <lastBuildDate>Mon, 02 Nov 2020 10:21:07 +0000</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2020 12:21:15 +0000</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2020 12:21:15 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Achieving Product / Market Fit  </title>
+        <author>[{&quot;value&quot;=&gt;&quot;Vivek&quot;, &quot;label&quot;=&gt;&quot;Vivek Varughese&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/assets/uploads/cover-image.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;For startups, ‘Market Fit’ is crucial and can be the fine line that separates success and failure. From the get-go, a startup needs to identify the pain points of the customer and the precise problem they are addressing. If a business tries to address a non-existent problem or sell inferior goods that are not suitable to the market, it inevitably fails. Marc Andreesen, originally coined this term as ‘Product/Market Fit’ which means being in a good market with a product that can satisfy that market.&lt;/p&gt; &lt;p&gt;The following challenges are faced by businesses which don’t find a product/market fit:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Customers who do not understand the product’s value&lt;/li&gt; &lt;li&gt;Insignificant number of sales&lt;/li&gt; &lt;li&gt;Lack of repeat customers&lt;/li&gt; &lt;li&gt;Near zero virality&lt;/li&gt; &lt;li&gt;Very long sales cycles&lt;/li&gt; &lt;li&gt;Difficulty getting the word out and drawing media coverage through press releases&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The first step to finding this market fit is by determining the target audience. Divide...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/11/11/achieving-product-market-fit/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Wed, 11 Nov 2020 11:24:57 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2020/11/11/achieving-product-market-fit/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2020/11/11/achieving-product-market-fit/</guid>
+        
+        <category>database</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB TodoMVC (feat. Svelte)</title>
