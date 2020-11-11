@@ -2,8 +2,8 @@
 layout: post
 title: "Achieving Product / Market Fit  "
 date: 2020-11-11T11:24:57.676Z
-description: For startups, ‘Market Fit’ is crucial and can be the fine line that
-  separates success and failure
+description: For startups, ‘Product/Market Fit’ is crucial and can be the fine
+  line that separates success and failure
 image: /assets/uploads/cover-image.png
 author:
   - value: Vivek
@@ -11,7 +11,7 @@ author:
 tags:
   - database
 ---
-For startups, ‘Market Fit’ is crucial and can be the fine line that separates success and failure. From the get-go, a startup needs to identify the pain points of the customer and the precise problem they are addressing. If a business tries to address a non-existent problem or sell inferior goods that are not suitable to the market, it inevitably fails. Marc Andreesen, originally coined this term as ‘Product/Market Fit’ which means being in a good market with a product that can satisfy that market.
+For startups, ‘Product/Market Fit’ is crucial and can be the fine line that separates success and failure. From the get-go, a startup needs to identify the pain points of the customer and the precise problem they are addressing. If a business tries to address a non-existent problem or sell inferior goods that are not suitable to the market, it inevitably fails. Marc Andreesen, originally coined this term as ‘Product/Market Fit’ which means being in a good market with a product that can satisfy that market.
 
 The following challenges are faced by businesses which don't find a product/market fit:
 
@@ -56,8 +56,6 @@ Depending on the industry and the product, the average amount of time a user spe
 
 Demographics are important for you to understand how consumers look for information and browse for online products and services. It also helps in identifying/profiling potential target audiences by matching measurable characteristics such as age, gender and region.
 
-
-
 ### **Proactively improving the product**
 
 In search of product-market fit, Marc Andreessen imparts some top-notch wisdom. He supports doing whatever is appropriate, which means embracing unpleasant changes. Changing teams, markets, products, brands, and goals are all sensible. That's the story of several businesses—Instagram, Soylent, Amazon and Twitter all drastically altered course from their initial strategy to find a match for the product market.
@@ -72,7 +70,7 @@ For a successful website, the engagement of the user is as critical as search en
 
 ***Customer lifetime value***
 
-One of the key stats to monitor as part of a customer experience program is the customer lifetime value (CLV). CLV is an assessment of the satisfaction of the customer not only on the basis of sales but over the entire relationship. To calculate this you take the` Customer revenue per year * Duration of the relationship in years – Total costs of acquiring and serving the customer = CLV`
+One of the key stats to monitor as part of a customer experience program is the customer lifetime value (CLV). CLV is an assessment of the satisfaction of the customer not only on the basis of sales but over the entire relationship. To calculate this you take the`Customer revenue per year * Duration of the relationship in years – Total costs of acquiring and serving the customer = CLV`
 
 Another relevant metric that goes hand-in-hand is CAC (Customer Acquisition Cost). This is the money you spend to attract a new client, such as publicity, marketing, special deals, etc.
 
@@ -101,8 +99,6 @@ Where `I` is ‘Invitations’ or the number of people invited to use the servic
 ***Churn and retention rate***
 
 The two best metrics for understanding whether or not you have achieved the correct product-market match are churn and retention rate. If your clients leave only after the first use of the product, it means that the necessary level of customer satisfaction has not been achieved. The greater the churn rate, the lower the chances for the right product-market match. At various points, you can assess the churn rate, such as if the product functionality failed to satisfy user expectations, if the UX interface was less user-friendly or other features required to be improved. Hence, it helps you know what the trend is giving you clear insights about the product market feedback.
-
-
 
 ### Conclusion
 
