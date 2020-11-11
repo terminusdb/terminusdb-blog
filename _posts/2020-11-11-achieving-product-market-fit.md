@@ -28,7 +28,7 @@ The second step is finding a strong value proposition that is required for new p
 
 The third step is to mark out the features that are imperative to your brand. In other words, describe the feature set of the minimum viable product (MVP). Don't use extra features to overload the MVP, as it doesn't have to be perfect; it just has to work. The MVP is targeted at early users and it is their feedback that will enable you to refine and polish your product.
 
-![MVP](/assets/uploads/minimum-viable-product-mvp-1-scaled.jpg)
+![MVP](/blog/assets/uploads/minimum-viable-product-mvp-1-scaled.jpg)
 
 It's time to launch the product in front of a big crowd after the creation of the MVP and a series of tests. Incorporate all the knowledge that you have obtained during prototyping, development, testing and launch of MVP. Always bear in mind during the development process that the final product should satisfy basic customer expectations and provide important functionality.
 
@@ -60,7 +60,7 @@ Demographics are important for you to understand how consumers look for informat
 
 In search of product-market fit, Marc Andreessen imparts some top-notch wisdom. He supports doing whatever is appropriate, which means embracing unpleasant changes. Changing teams, markets, products, brands, and goals are all sensible. That's the story of several businesses—Instagram, Soylent, Amazon and Twitter all drastically altered course from their initial strategy to find a match for the product market.
 
-![Pivoting the business model](/assets/uploads/pivot.png)
+![Pivoting the business model](/blog/assets/uploads/pivot.png)
 
 At TerminusDB as well our initial plan was to build large scale graph systems for enterprises under the banner of Datachemist. We were focused on data quality and query - the ability to ingest complex data and then quickly return network-oriented queries. But we were drifting into a consultancy model where our engineers did most of the implementation, which was painful when working with varied complex internal systems. We were much more interested in being a technology partner. In Spring 2019, we decided to open source the database and in October 2019 TerminusDB was born. With the pandemic coming in it became harder to maintain a dual strategy as an enterprise product was reliant on sales and delivery. We made the early call to drop DataChemist and the direct to enterprise channel so we could focus all our efforts on open source. In September 2020 TeminusHub was born targeted at SAAS customers with the main goal of being Git for data to promote collaboration among data people. Since then we have made huge strides forward with TerminusDB and Hub and are looking to dominate the ecosystem in the coming years.
 
@@ -94,7 +94,7 @@ Where `I` is ‘Invitations’ or the number of people invited to use the servic
 3. You have a low acquisition cost,
 4. You're likely to have high profitability
 
-![Virality](/assets/uploads/virality.jpg)
+![Virality](/blog/assets/uploads/virality.jpg)
 
 ***Churn and retention rate***
 
@@ -102,6 +102,6 @@ The two best metrics for understanding whether or not you have achieved the corr
 
 ### Conclusion
 
-![Product/Market Fit](/assets/uploads/product-market-fit.png)
+![Product/Market Fit](/blog/assets/uploads/product-market-fit.png)
 
 To sum it all up, it is important for a start-up or any other organization to consider whether they are bringing out a model that is just a problem solver or a creative way to remove a huge burden from the user. These two strategies would allow company owners to achieve their product-market fit. It takes a lot of product brainstorming and multiple iterations for a product to be groundbreaking and successful. Business owners can then introduce a product that is futuristic and advanced in compliance with all customer expectations.
