@@ -34,6 +34,8 @@ It's time to launch the product in front of a big crowd after the creation of th
 
 However, this is just the start. You will receive reviews and suggestions from users after the launch, which you can apply to keep improving the product. Scalability is key.
 
+- - -
+
 ### **Measuring market & product Fit**
 
 In the initial stages, you usually see a fairly inconsistent resonance with your product. Then, the task at hand is to decide if a particular solution resonates with a specific subset of users and what characteristics are unique to that subset of users. Once you deploy the solution to that subset and find repeatability among those users, you have possibly found a stronger description of the target audience that resonates with the offering.
@@ -56,6 +58,8 @@ Depending on the industry and the product, the average amount of time a user spe
 
 Demographics are important for you to understand how consumers look for information and browse for online products and services. It also helps in identifying/profiling potential target audiences by matching measurable characteristics such as age, gender and region.
 
+- - -
+
 ### **Proactively improving the product**
 
 In search of product-market fit, Marc Andreessen imparts some top-notch wisdom. He supports doing whatever is appropriate, which means embracing unpleasant changes. Changing teams, markets, products, brands, and goals are all sensible. That's the story of several businesses—Instagram, Soylent, Amazon and Twitter all drastically altered course from their initial strategy to find a match for the product market.
@@ -76,8 +80,8 @@ Another relevant metric that goes hand-in-hand is CAC (Customer Acquisition Cost
 
 The formula for calculation: `Customer revenue per year * Duration of the relationship = Total costs of acquiring and serving the customer`
 
-**\
-*Organic traffic***
+
+***Organic traffic***
 
 The key here is to build as many backlinks from credible relatable domains. As your organic traffic improves over time you can reduce spending on paid traffic.
 
@@ -99,6 +103,8 @@ Where `I` is ‘Invitations’ or the number of people invited to use the servic
 ***Churn and retention rate***
 
 The two best metrics for understanding whether or not you have achieved the correct product-market match are churn and retention rate. If your clients leave only after the first use of the product, it means that the necessary level of customer satisfaction has not been achieved. The greater the churn rate, the lower the chances for the right product-market match. At various points, you can assess the churn rate, such as if the product functionality failed to satisfy user expectations, if the UX interface was less user-friendly or other features required to be improved. Hence, it helps you know what the trend is giving you clear insights about the product market feedback.
+
+- - -
 
 ### Conclusion
 
