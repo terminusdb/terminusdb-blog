@@ -96,14 +96,14 @@
   <li>You will find a button Create Database from CSVs</li>
 </ol>
 
-<p><img src="/assets/uploads/1-createdb.png" alt="" title="create database " /></p>
+<p><img src="/assets/uploads/1-createdb.png" alt="create database with csvs" title="create database with csvs" /></p>
 
 <ol>
-  <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">The Bike Share Data</a></li>
+  <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"></a> <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</a></li>
   <li>I have added 2 CSVs into my database as shown below</li>
 </ol>
 
-<p><img src="/assets/uploads/2-createdbwithcsvpreview.png" alt="" /></p>
+<p><img src="/assets/uploads/2-createdbwithcsvpreview.png" alt="different csvs loaded into db" title="different csvs loaded into db" /></p>
 
 <ol>
   <li>And that’s it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊</li>
@@ -113,17 +113,17 @@
 
 <p>On creating our database, Go to the Documents Page</p>
 
-<p><img src="/assets/uploads/2-dbdocumentpage.png" alt="" /></p>
+<p><img src="/assets/uploads/2-dbdocumentpage.png" alt="document page view" title="document page view" /></p>
 
-<p>Each of our CSV files that were loaded on create becomes a separate Document Type. All the columns in the CSV file have been converted into properties and a schema is auto-generated.</p>
+<p>Each of our CSV files which were loaded on create becomes a separate Document Type. All the columns in the CSV file have been converted into properties and a schema is auto generated.</p>
 
-<p>Each CSV is of doctype CSV and has rows hanging off them, we can use these auto-generated column properties to query the database.</p>
+<p>Each CSV is of doctype CSV and have rows hanging off them, we can use these auto generated column properties to query the database.</p>
 
 <p>You can also add more CSVs once you have created your database by clicking the Add CSVs</p>
 
 <p>Go to the Schema Page to view the property types which have been generated off the columns</p>
 
-<p><img src="/assets/uploads/3-trasnformcsvtoproperties.png" alt="" /></p>
+<p><img src="/assets/uploads/3-trasnformcsvtoproperties.png" alt="comaprison between excel and loaded csv" title="comaprison between excel and loaded csv" /></p>
 
 <h3 id="lets-query-the-database">Let’s Query the Database</h3>
 
@@ -137,7 +137,7 @@
 )
 </code></pre></div></div>
 
-<p><img src="/assets/uploads/4-querycsvid.png" alt="" /></p>
+<p><img src="/assets/uploads/4-querycsvid.png" alt="query database to get csv Id" title="query database to get csv Id" /></p>
 
 <p>This query simply gives you the ID and name of available CSVs in the Database. Take a note of the CSV Id you’re interested in, also visit the Schema page to get the Property Id’s your interested in as well.</p>
 
@@ -159,9 +159,7 @@ WOQL.and (
 
 <p>This query gets all the property Id and name from the schema graph.</p>
 
-<ol>
-  <li>Next, let’s query to display a few columns of our CSV, I plan to display Start Station Number, Start Station, End Station Number, End Station and Duration</li>
-</ol>
+<p>3.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const id="doc:CSV_bike_tutorial-1.csv"
 
@@ -182,7 +180,7 @@ and (
 )
 </code></pre></div></div>
 
-<p>All the rows of CSV matching the column names will be displayed on running this query</p>
+<p>Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest</p>
 
 <p>So yeah that’s it, you can do all sorts of query on your CSV</p>
 
@@ -192,11 +190,11 @@ and (
 
 <p>Go to Documents, and filter for all CSV types to get a download option as shown and download the CSV.</p>
 
-<p><img src="/assets/uploads/5-export.png" alt="" /></p>
+<p><img src="/assets/uploads/5-export.png" alt="export csv from document page " title="export csv from document page " /></p>
 
 <p>So here we go, this tutorial shows a very simple way to import  CSVs into TerminusDB and play with them and do all sorts of useful cool queries, whatever you like.</p>
 
-<p>Earlier we had to do all the steps mentioned in <a href="https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">TerminusDB: Importing, Reordering &amp; Exporting a CSV</a> not anymore!</p>
+<p>Earlier we had to do all the steps mentioned in <a href="https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/ </a>, not anymore!</p>
 
 <p>Now it’s just a few button clicks and voilà!</p>
 
