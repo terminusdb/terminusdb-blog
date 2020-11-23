@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Creating a database with CSVs using TerminusDB console | Graph Database Blog - News and Tutorials from TerminusDB</title>
+<meta name="description" content="Graph Database Management news, tutorials and updates from TerminusDB
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="How to create a database by importing CSVs from your local file system">
+<meta itemprop="image" content="https://terminusdb.com/blog/assets/uploads/photo-1529078155058-5d716f45d604.jpg">
+
+<meta property="og:url" content="https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Creating a database with CSVs using TerminusDB console | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:site_name" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:description" content="How to create a database by importing CSVs from your local file system">
+<meta property="og:image" content="https://terminusdb.com/blog/assets/uploads/photo-1529078155058-5d716f45d604.jpg">
+
+<meta name="twitter:url" content="https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Creating a database with CSVs using TerminusDB console | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:site" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:description" content="How to create a database by importing CSVs from your local file system">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="https://terminusdb.com/blog/assets/uploads/photo-1529078155058-5d716f45d604.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Graph Database Blog - News and Tutorials from TerminusDB" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/">
+
+
+
+
+</head>
+<body id="creating-a-database-with-csvs-using-terminusdb-console" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Creating a database with CSVs using TerminusDB console</h2>
+
+        <time class="post__date" datetime="2020-11-23T13:55:43+00:00" itemprop="datePublished">23 Nov 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>        
+          <figure title="second" class="absolute-bg" style="background-image: url('https://terminusdb.com/blog/assets/uploads/photo-1529078155058-5d716f45d604.jpg');"></figure>        
+        </div>
+      </div>
+    
+
+    
+
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>Hello everybody! I am going to write a tutorial on how to work with CSVs using TerminusDB. That’s right, TerminusDB 4.0 now has the feature in which you can import and export CSVs, Let’s dive into this.</p>
+
+<h3 id="how-to-create-a-database-with-csvs">How to create a database with CSVs</h3>
+
+<ol>
+  <li>Open up the TerminusDB console and create a database</li>
+  <li>Fill in the Id, Name and description of your database</li>
+  <li>You will find a button Create Database from CSVs</li>
+</ol>
+
+<p><img src="/assets/uploads/1-createdb.png" alt="" title="create database " /></p>
+
+<ol>
+  <li>
+    <p>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"></a> <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</a></p>
+  </li>
+  <li>
+    <p>I have added 2 CSVs into my database as shown below</p>
+  </li>
+</ol>
+
+<p><img src="/assets/uploads/2-createdbwithcsvpreview.png" alt="" /></p>
+
+<ol>
+  <li>And that’s it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊</li>
+</ol>
+
+<h3 id="what-happens-when-you-import-csvs-into-your-database"><strong>What happens when you import CSVs into your Database?</strong></h3>
+
+<p>On creating our database, Go to the Documents Page</p>
+
+<p><img src="/assets/uploads/2-dbdocumentpage.png" alt="" /></p>
+
+<p>Each of our CSV files which were loaded on create becomes a separate Document Type. All the columns in the CSV file have been converted into properties and a schema is auto generated.</p>
+
+<p>Each CSV is of doctype CSV and have rows hanging off them, we can use these auto generated column properties to query the database.</p>
+
+<p>You can also add more CSVs once you have created your database by clicking the Add CSVs</p>
+
+<p>Go to the Schema Page to view the property types which have been generated off the columns</p>
+
+<p><img src="/assets/uploads/3-trasnformcsvtoproperties.png" alt="" /></p>
+
+<h3 id="lets-query-the-database">Let’s Query the Database</h3>
+
+<ol>
+  <li>Get CSV Id’s, Query for type scm:CSV</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>and (
+    triple('v:CSV ID', 'type','scm:CSV'),
+    triple('v:CSV ID', 'label', 'v:CSV Name')
+)
+
+</code></pre></div></div>
+
+<p><img src="/assets/uploads/4-querycsvid.png" alt="" /></p>
+
+<p>This query simply gives you the ID and name of available CSVs in the Database. Take a note of the CSV Id you’re interested in, also visit the Schema page to get the Property Id’s your interested in as well.</p>
+
+<ol>
+  <li>Open a new Query Pane and try the below query which shows the duration from start station to end station</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const id="doc:CSV_bike_tutorial-1.csv"
+
+WOQL.and (
+  .limit(1).triple('v:CSV ID', 'type', 'scm:CSV')
+    .eq('v:CSV ID', id)
+    .triple('v:CSV ID', 'scm:csv_row', 'v:CSV Row')
+    .triple('v:CSV Row', 'type', 'v:Row Type'),
+  .quad('v:Property', 'domain', 'v:Row Type', 'schema/main')
+    .quad('v:Property', 'label', 'v:Property Name' ,'schema/main')
+)
+
+</code></pre></div></div>
+
+<p>This query gets all the property Id and name from the schema graph.</p>
+
+<p>3.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const id="doc:CSV_bike_tutorial-1.csv"
+
+const startStationNumber = "scm:column_Start%20station%20number"
+const StartStation = "scm:column_Start%20station"
+const endStationNumber = "scm:column_End%20station%20number"
+const endStation = "scm:column_End%20station"
+const duration = "scm:column_Duration"
+
+and (
+	triple('v:CSV ID', 'type','scm:CSV').eq('v:CSV ID', id)
+      .triple('v:CSV ID', 'scm:csv_row', 'v:CSV Row')
+      .triple('v:CSV Row', startStationNumber, 'v:Start Station Number')
+      .triple('v:CSV Row', StartStation, 'v:Start Station')
+      .triple('v:CSV Row', endStationNumber, 'v:End Station Number')
+      .triple('v:CSV Row', endStation, 'v:End Station')
+      .triple('v:CSV Row', duration, 'v:Duration')
+)
+
+</code></pre></div></div>
+
+<p>Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest</p>
+
+<p>So yeah that’s it, you can do all sorts of query on your CSV</p>
+
+<h3 id="export-your-csv">Export your CSV</h3>
+
+<p>Now that we have imported our CSVs into our database we can do whatever we like or modify it however we want and Export this CSV back.</p>
+
+<p>Go to Documents, and filter for all CSV types to get a download option as shown and download the CSV.</p>
+
+<p><img src="/assets/uploads/5-export.png" alt="" /></p>
+
+<p>So here we go, this tutorial shows a very simple way to import  CSVs into TerminusDB and play with them and do all sorts of useful cool queries, whatever you like.</p>
+
+<p>Earlier we had to do all the steps mentioned in <a href="https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/ </a>, not anymore!</p>
+
+<p>Now it’s just a few button clicks and voilà!</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Creating a database with CSVs using TerminusDB console+https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Creating a database with CSVs using TerminusDB console&summary=How to create a database by importing CSVs from your local file system&url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=How to create a database by importing CSVs from your local file system&media=https://terminusdb.com/blog/assets/uploads/photo-1529078155058-5d716f45d604.jpg&url=https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/KittyJose" class="p-name u-url">Kitty Jose</a></span>
+            <p class="post__bio p-note">A computer engineer, keen to learn :) </p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/';
+        this.page.identifier = 'https://terminusdb.com/blog/2020/11/23/creating-a-database-with-csvs-using-terminusdb-console/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+      
+      
+      
+      <div class="related__text">There are no related posts.</div>
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
