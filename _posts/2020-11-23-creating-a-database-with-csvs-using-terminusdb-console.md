@@ -121,11 +121,11 @@ Now that we have imported our CSVs into our database we can do whatever we like 
 
 Go to Documents, and filter for all CSV types to get a download option as shown and download the CSV.
 
-<article>
+
 
 ![](/assets/uploads/5-export.png)
 
-</article>
+
 
 So here we go, this tutorial shows a very simple way to import  CSVs into TerminusDB and play with them and do all sorts of useful cool queries, whatever you like.
 
