@@ -99,12 +99,8 @@
 <p><img src="/assets/uploads/1-createdb.png" alt="" title="create database " /></p>
 
 <ol>
-  <li>
-    <p>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"></a> <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</a></p>
-  </li>
-  <li>
-    <p>I have added 2 CSVs into my database as shown below</p>
-  </li>
+  <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"></a> <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</a></li>
+  <li>I have added 2 CSVs into my database as shown below</li>
 </ol>
 
 <p><img src="/assets/uploads/2-createdbwithcsvpreview.png" alt="" /></p>
@@ -139,7 +135,6 @@
     triple('v:CSV ID', 'type','scm:CSV'),
     triple('v:CSV ID', 'label', 'v:CSV Name')
 )
-
 </code></pre></div></div>
 
 <p><img src="/assets/uploads/4-querycsvid.png" alt="" /></p>
@@ -160,7 +155,6 @@ WOQL.and (
   .quad('v:Property', 'domain', 'v:Row Type', 'schema/main')
     .quad('v:Property', 'label', 'v:Property Name' ,'schema/main')
 )
-
 </code></pre></div></div>
 
 <p>This query gets all the property Id and name from the schema graph.</p>
@@ -184,7 +178,6 @@ and (
       .triple('v:CSV Row', endStation, 'v:End Station')
       .triple('v:CSV Row', duration, 'v:Duration')
 )
-
 </code></pre></div></div>
 
 <p>Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest</p>
