@@ -12,31 +12,30 @@ tags:
 ---
 Hello everybody! I am going to write a tutorial on how to work with CSVs using TerminusDB. That's right, TerminusDB 4.0 now has the feature in which you can import and export CSVs, Let's dive into this.
 
+
+
 ### How to create a database with CSVs
+
+
 
 1. Open up the TerminusDB console and create a database
 2. Fill in the Id, Name and description of your database
 3. You will find a button Create Database from CSVs
 
-
-
 ![](/assets/uploads/1-createdb.png "create database ")
 
-
-
 4. Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in[](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/) <https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/>
-
 5. I have added 2 CSVs into my database as shown below
 
 ![](/assets/uploads/2-createdbwithcsvpreview.png)
-
-
 
 6. And that's it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊
 
 
 
 ### **What happens when you import CSVs into your Database?**
+
+
 
 On creating our database, Go to the Documents Page
 
@@ -52,9 +51,9 @@ Go to the Schema Page to view the property types which have been generated off t
 
 ![](/assets/uploads/3-trasnformcsvtoproperties.png)
 
-
-
 ### Let’s Query the Database
+
+
 
 1. Get CSV Id’s, Query for type scm:CSV
 
@@ -63,10 +62,7 @@ and (
     triple('v:CSV ID', 'type','scm:CSV'),
     triple('v:CSV ID', 'label', 'v:CSV Name')
 )
-
 ```
-
-
 
 ![](/assets/uploads/4-querycsvid.png)
 
@@ -85,7 +81,6 @@ WOQL.and (
   .quad('v:Property', 'domain', 'v:Row Type', 'schema/main')
     .quad('v:Property', 'label', 'v:Property Name' ,'schema/main')
 )
-
 ```
 
 This query gets all the property Id and name from the schema graph.
@@ -110,14 +105,17 @@ and (
       .triple('v:CSV Row', endStation, 'v:End Station')
       .triple('v:CSV Row', duration, 'v:Duration')
 )
-
 ```
 
 Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest
 
 So yeah that's it, you can do all sorts of query on your CSV
 
+
+
 ### Export your CSV
+
+
 
 Now that we have imported our CSVs into our database we can do whatever we like or modify it however we want and Export this CSV back.
 
