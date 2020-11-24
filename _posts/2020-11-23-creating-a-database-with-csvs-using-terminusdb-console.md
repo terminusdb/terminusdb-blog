@@ -12,8 +12,6 @@ tags:
 ---
 Hello everybody! I am going to write a tutorial on how to work with CSVs using TerminusDB. That's right, TerminusDB 4.0 now has the feature in which you can import and export CSVs, Let's dive into this.
 
-
-
 ### How to create a database with CSVs
 
 
@@ -30,8 +28,6 @@ Hello everybody! I am going to write a tutorial on how to work with CSVs using T
 ![different csvs loaded into db](/blog/assets/uploads/2-createdbwithcsvpreview.png "different csvs loaded into db")
 
 6. And that's it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊
-
-
 
 ### **What happens when you import CSVs into your Database?**
 
