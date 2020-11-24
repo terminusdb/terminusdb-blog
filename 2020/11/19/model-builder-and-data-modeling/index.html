@@ -87,10 +87,10 @@
         <div id="markdown" itemprop="articleBody" class="e-content">
           <p>In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.</p>
 
-<p>Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way. This is a reality for all databases, so how do you approach the problem?</p>
+<p>Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way, this is a reality for all the databases, so how to get the right decision?</p>
 
 <p>The model builder is a tool that lets you visualize and edit your database schema. It is very useful for designing and understanding complex data models.
-I’ll show you how we can start from a simple model, and build out a more complex model gradually.</p>
+I’ll show you as things can be simple at the start, but they can become complex in no time.</p>
 
 <p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
 
@@ -98,10 +98,9 @@ I’ll show you how we can start from a simple model, and build out a more compl
 
 <h3 id="the-dataset">The Dataset</h3>
 
-<p>In our examples we use a collection of data about bike journeys between stations in Washington D.C., USA.</p>
+<p>In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA.</p>
 
-<p>We have used this data in other blogs, where we showed how to us queries to create this database schema using woql.js, a javascript layer that helps you compose 
-  <a href="https://terminusdb.com/docs/reference/server/woql/"><strong>WOQL query</strong> (Web Object Query Language)</a></p>
+<p>We have used this data in other blogs, where with woql.js, a javascript layer that help you to compose <a href="https://terminusdb.com/docs/reference/server/woql/"><strong>WOQL query</strong> (Web Object Query Language)</a>, we have created our database scheme.</p>
 
 <p><img src="/blog/assets/images/bike_table.png" alt="data about the bike journeys between stations in Washington D.C" /></p>
 
@@ -116,7 +115,7 @@ and you have created a db named <strong>myBikes</strong>.</p>
 
 <p><img src="/blog/assets/images/schema_builder-02.png" alt="Go to model builder" /></p>
 
-<p>From the <strong>myBikes</strong> main page.</p>
+<p>Form the <strong>myBikes</strong> main page.</p>
 
 <ol>
   <li>Select the menu <strong>Schema-&gt;Schema Builder</strong> to arrive at the model builder interface.</li>
@@ -132,9 +131,9 @@ An Object can have multiple properties and can be contained inside other objects
 
 <p><strong>Document</strong> is a special type of Object. Documents are always top-level objects, never embedded inside other objects, using the Link Property you can link documents to each other.</p>
 
-<p><strong>Enum</strong> or Enumerated is a special data type that enables for a property to be a set of predefined constants. The property must be equal to one of the values that have been predefined for it. To use this set of values you’ll need to create an Enum Property and link it to a Emun Element.</p>
+<p><strong>Enum</strong> or Enumerated is a special data type that enables for a property to be a set of predefined constants. The property must be equal to one of the values that have been predefined for it. To use this set of values you’ll need to create a Enum Property and link it to a Emun Element.</p>
 
-<p>Let’s use these elements in practice.</p>
+<p>Let’s use this elements in practice.</p>
 
 <hr />
 
@@ -162,8 +161,8 @@ An Object can have multiple properties and can be contained inside other objects
 
 <h3 id="add-properties">Add Properties</h3>
 
-<p>To describe your Documents and to link them with each other, we need to add properties.
-  We have a variety of different types of properties identified by datatypes</p>
+<p>For descrive your Documents and for link them each others we need to add the properties.
+We have different type of properties identified by datatypes</p>
 
 <p>DataProperty : String/Numeric/Geo/Temporal Property refers to the format of data storage</p>
 
@@ -174,11 +173,11 @@ An Object can have multiple properties and can be contained inside other objects
 <p>Let’s add the property <strong>start_station</strong>.</p>
 
 <ol>
-  <li>Select the node <strong>Journey</strong> in the whiteboard, in the right panel click on the <strong>Properties</strong> panel</li>
+  <li>Select the node <strong>Journey</strong> in the whiteboard, in the right panel click on the <strong>Properties</strong></li>
   <li>In the properties panel, click <strong>Add Property</strong> in the pop up menu you can see the list of the available property types.</li>
   <li>Select <strong>Property Link</strong> after the form shows up, fill the fields with the value reported in the table above (Unique ID/Label/Description).</li>
   <li>Click on the <strong>Link to Type</strong> menu and Select <strong>Bike Station</strong> 
-  <em>Links to Type is a list with all the nodes you can linke</em></li>
+  <em>Links to Type is a list with all the node that you can linked</em></li>
   <li>Follow the step 1 to 4 for adding the others properties <strong>end_station</strong>, <strong>journey_bicycle</strong></li>
 </ol>
 
@@ -207,15 +206,16 @@ My initial schema is defined, but my application now need to change it, what can
 <p>Now we need to model the Document <strong>Station</strong> as Object, so we have to delete the Document <strong>Station</strong> and create a new node type.</p>
 
 <p>The database doesn’t allow you to delete a node if this is related with other node.
-More precisely: you cannot remove nodes with children or those with Link Property/Enum 
+In details the node can not have children and it can not be a Link Property/Enum 
 Property range.
-This constraint is used to prevent actions that would destroy the integrity of the relationships between document types.</p>
+Constraint is used to prevent actions that would destroy links between documents.</p>
 
 <hr />
 
 <h3 id="delete-a-node">Delete a Node</h3>
 
-<p>First we have to remove all the relationships related to our node.</p>
+<p>Here the step for doing this.
+First we have to remove all the relationship related with our node.</p>
 
 <p><img src="/blog/assets/images/schema_builder-10.png" alt="Property start_station" /></p>
 
@@ -227,7 +227,7 @@ This constraint is used to prevent actions that would destroy the integrity of t
   <li>Select the <strong>Station</strong> node in the whiteboard, in the right panel, Click the delete red icon.</li>
 </ol>
 
-<p>Deleting node is easy at this stage because we don’t have data in our database.</p>
+<p>Delete node is easy in this moment because we don’t have data Documents inside our database.</p>
 
 <hr />
 
@@ -237,7 +237,7 @@ This constraint is used to prevent actions that would destroy the integrity of t
 
 <ol>
   <li>Select the <strong>Schema myBikes</strong>, click on the + icon, from the menu Select <strong>Add Object</strong> a new node will be add in the whiteboard.</li>
-  <li>As we did before, we have to add the Unique ID/Station and the Label/Description Bike Station in the fields in the right panel.</li>
+  <li>As we did before we have to add the Unique ID/Station and the Label/Description Bike Station in the fields in the right panel.</li>
   <li>Select the Node <strong>Journey</strong> and add the Link Property <strong>Start Station</strong> <strong>End Station</strong> again (Follow the add property steps above).</li>
 </ol>
 
@@ -245,17 +245,17 @@ This constraint is used to prevent actions that would destroy the integrity of t
 
 <hr />
 
-<h3 id="differents-between-object-and-document-in-data-entry">Difference between Object and Document in data entry</h3>
+<h3 id="differents-between-object-and-document-in-data-entry">Differents between Object and Document in data entry</h3>
 
-<p>The difference in Linking a Property with a Document than a Object is in how your data will be represented in document form.</p>
+<p>The differents to Link a Property with a Document than a Object is in how your data will be stored.</p>
 
-<p>Here's an example with bike data</p>
+<p>Here an example with bike data</p>
 
-<p>If the <strong>Station</strong> is a Document Type you have to create a Document <strong>Station</strong><br />
+<p>If the <strong>Station</strong> is an Document Type you have to create a Document <strong>Station</strong><br />
 and link the id of the Document <strong>Station</strong> in the Document <strong>Journey</strong></p>
 
 <p>This means that if you remove one <strong>Journey</strong> Document 
-it removes the link but not the data in the  related <strong>Station</strong> document.</p>
+it remove the link but not the data in the <strong>Station</strong> document related.</p>
 
 <p>If the <strong>Station</strong> is an Object Type the data will be embedded in the Document <strong>Journey</strong>
 So if you remove one Journey Document entry it will be remove the related <strong>Station</strong>
@@ -265,13 +265,13 @@ Object.</p>
 
 <h3 id="add-an-enum-node">Add an Enum Node</h3>
 
-<p>We now continue evolving our by adding the <strong>Bike Type</strong> enum node</p>
+<p>We keep with our Schema evolution adding the <strong>Type Bike</strong> enum node</p>
 
 <p><img src="/blog/assets/images/schema_builder-12.png" alt="Property start_station" /></p>
 
 <ol>
   <li>Select the <strong>Schema myBikes</strong>, Select the + icon, from the menu Select <strong>Add Enum</strong></li>
-  <li>The Enum node will be added to the board</li>
+  <li>The Enum node will be added in the whiteboard</li>
   <li>Fill the fields in the right panel (Unique Id:Bike_Type..)</li>
   <li>Select values, Fill the fields and click the button <strong>Add a value</strong> for adding the list of possible values</li>
 </ol>
@@ -290,7 +290,7 @@ Object.</p>
   <li>From the <strong>Enum Type</strong> menu Select <strong>Bike Type</strong></li>
 </ol>
 
-<p>We said that the property <strong>Bicycle Type</strong> in <strong>Bicycle</strong> Document is a value chosen from a list of permitted values.</p>
+<p>We said that the property <strong>Bicycle Type</strong> in <strong>Bicycle</strong> Document is a string with a value chosen from a list of permitted values.</p>
 
 <p><img src="/blog/assets/images/schema_builder-13.png" alt="Property start_station" /></p>
 
@@ -308,12 +308,12 @@ Object.</p>
 
 <p>An Abstract Document is a completely “abstract class” that is used to group related properties.</p>
 
-<p>Abstract Documents cannot be used directly to create Data Documents, you cannot add data inside <strong>User</strong>
-Document. An abstract Document can have children, all the children will inherit all parent Properties and if the children are not abstract, you can insert data via the children.</p>
+<p>Abstract Document cannot be used to create Data Document, you cannot add data inside <strong>User</strong>
+Document. An abstract Document can have children, all the children will inherit all parent Properties and if the children are not abstract, you can insert data inside the children.</p>
 
 <p><img src="/blog/assets/images/schema_builder-15.png" alt="Property start_station" /></p>
 
-<p>Let’s see all the steps for creating an abstract document and its children.</p>
+<p>Let’s see all the steps for creating an abstract document and his children.</p>
 
 <ol>
   <li>Select the <strong>Document</strong> node in the whiteboard, Select the + icon and from the list that Show up Select <strong>Add Document</strong>.</li>
@@ -335,8 +335,7 @@ Document. An abstract Document can have children, all the children will inherit 
   <li>Follow the above steps for add the <strong>Member</strong> Document too</li>
 </ol>
 
-<p>We can decide to not add new properties in the Guest document so the guest user will be identified by the email, but for the <strong>Member</strong>
-  Document we need to add at least the String property Password.</p>
+<p>We can decide to not add new properties in the Guest document so the guest user will be identified by the email, but for the <strong>Member</strong> Document we need to add at least the String property Password.</p>
 
 <p>We have to create a Link Property <strong>Bicycle User</strong> in the <strong>Bike Journey</strong> Document for link the <strong>User</strong> Document with the <strong>Bike Journey</strong> Document.</p>
 
@@ -346,7 +345,7 @@ Document. An abstract Document can have children, all the children will inherit 
 
 <h3 id="add-a-parent">Add a Parent</h3>
 
-<p>At this point of our project we need to regroup our nodes</p>
+<p>At this point of our project we need that our nodes will be grouped again.</p>
 
 <p>We have to create an element that can be <strong>a Parent</strong> for an Object node and a Document node. 
 Object can be child only of Object type, Document can be child of Object Type and Document Type, so we have to create a <strong>New Object Node</strong></p>
