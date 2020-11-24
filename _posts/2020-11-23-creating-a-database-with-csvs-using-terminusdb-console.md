@@ -101,7 +101,7 @@ and (
 
 All the rows of CSV matching the column names will be displayed on running this query
 
-So yeah that's it, you can do all sorts of query on your CSV
+So yeah that's it, you can do all sorts of query on your CSV 
 
 
 
@@ -111,11 +111,7 @@ Now that we have imported our CSVs into our database we can do whatever we like 
 
 Go to Documents, and filter for all CSV types to get a download option as shown and download the CSV.
 
-
-
 ![export csv from document page ](/blog/assets/uploads/5-export.png "export csv from document page ")
-
-
 
 So here we go, this tutorial shows a very simple way to import  CSVs into TerminusDB and play with them and do all sorts of useful cool queries, whatever you like.
 
