@@ -64,7 +64,7 @@ and (
 
 This query simply gives you the ID and name of available CSVs in the Database. Take a note of the CSV Id you're interested in, also visit the Schema page to get the Property Id’s your interested in as well.
 
-Open a new Query Pane and try the below query which shows the duration from start station to end station
+Open a new Query Pane and try the below query 
 
 ```
 const id="doc:CSV_bike_tutorial-1.csv"
@@ -105,7 +105,7 @@ and (
 
 All the rows of CSV matching the column names will be displayed on running this query
 
-So yeah that's it, you can do all sorts of query on your CSV
+So yeah that's it, you can do all sorts of queries on your CSV
 
 
 
