@@ -17,10 +17,10 @@ tags:
 
 In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.
 
-Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way, this is a reality for all the databases, so how to get the right decision?
+Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way. This is a reality for all the databases, so how to make the right decision?
 
 The model builder is a tool that lets you visualize and edit your database schema. It is very useful for designing and understanding complex data models.
-I’ll show you as things can be simple at the start, but they can become complex in no time.
+I’ll show you how you can start from a simple model and build out something more complex in no time.
 
 if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. [My First TerminusDB Graph Visualisation — Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/).
 
@@ -59,9 +59,9 @@ An Object can have multiple properties and can be contained inside other objects
 
 **Document** is a special type of Object. Documents are always top-level objects, never embedded inside other objects, using the Link Property you can link documents to each other.
 
-**Enum** or Enumerated is a special data type that enables for a property to be a set of predefined constants. The property must be equal to one of the values that have been predefined for it. To use this set of values you'll need to create a Enum Property and link it to a Emun Element.
+**Enum** or Enumerated is a special data type that enables a property to be a set of predefined constants. The property must be equal to one of the values that have been predefined for it. To use this set of values you'll need to create an Enum Property and link it to an Emun Element.
 
-Let's use this elements in practice.
+Let's use these elements in practice.
 
 -----------------------------------------
 
@@ -75,7 +75,7 @@ Follow the steps and start to build your schema graph.
 
 1. Select the **myBikes Schema** node in the whiteboard and click the + icon
 2. Select **Add Document** from the menu. A new node will be added under the node **Documents**
-3. We start to add **Bicycle** Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle..)
+3. We start to add **Bicycle** Document. Fill the form in the right sidebar with the data from the image above. (Unique Id:Bicycle..)
 4. Follow the same steps above for adding the other Documents **Station** and **Journey**
 5. Click on the **Save** icon button in the tools bar to save your work.
 
@@ -88,12 +88,12 @@ Follow the steps and start to build your schema graph.
 
 ### Add Properties
 
-For descrive your Documents and for link them each others we need to add the properties.
-We have different type of properties identified by datatypes
+To descrive your Documents and to link them with each other, we need to add properties to our documents.
+We have various different type of properties identified by datatypes
 
 DataProperty : String/Numeric/Geo/Temporal Property refers to the format of data storage
 
-ObjectProperty : Enum/Link Property refers at the relationship between elements
+ObjectProperty : Enum/Link Property refers to a relationship between elements
 
 ![Property list](/blog/assets/images/schema_builder-06.png)
 
@@ -129,27 +129,27 @@ Let's see.
 
 Now we need to model the Document **Station** as Object, so we have to delete the Document **Station** and create a new node type.
 
-The database doesn't allow you to delete a node if this is related with other node.
-In details the node can not have children and it can not be a Link Property/Enum 
-Property range.
-Constraint is used to prevent actions that would destroy links between documents.
+The database doesn't allow you to delete a node if it is related with another node.
+More precisely the node can not have children and it can not be the range of a Link Property/Enum 
+Property.
+This constraint is used to prevent actions that would destroy the integrity of the data model.
 
 ----------------------------------------------------------------------
 
 ### Delete a Node
 
 Here the step for doing this.
-First we have to remove all the relationship related with our node.
+First we have to remove all the relationship related to our node.
 
 ![Property start_station](/blog/assets/images/schema_builder-10.png)
 
 1. Select the Document **Journey** node in the whiteboard, in the right panel Select **Properties**. the list of the properties will show up. 
-2. Select **End Station** Property and delete it using the delete red icon. 
+2. Select **End Station** Property and delete it using the red delete icon. 
 3. Follow the above steps for deleting **Start Station** Property too.
 4. All the **Station** node constraints have been removed
 5. Select the **Station** node in the whiteboard, in the right panel, Click the delete red icon.
 
-Delete node is easy in this moment because we don't have data Documents inside our database.
+Deleting a node is easy at this stage because we don't have any data in the database.
 
 ----------------------------------------------------------------------------------
 
@@ -165,19 +165,19 @@ Now we add the **Station** node as Object Type.
 
 --------------------------------------------------------------------------
 
-### Differents between Object and Document in data entry
+### Difference between Object and Document in data entry
 
-The differents to Link a Property with a Document than a Object is in how your data will be stored.
+The difference in Linking a Property to a Document than a Object is in how this data will be transformed into document form.
 
-Here an example with bike data 
+Here is an example with bike data 
 
-If the **Station** is an Document Type you have to create a Document **Station**  
-and link the id of the Document **Station** in the Document **Journey**
+If **Station** is a Document Type you have to create a **Station** Document   
+and link the id of the Document **Station** with the **start_station** property of the **Journey** Document 
 
 This means that if you remove one **Journey** Document 
-it remove the link but not the data in the **Station** document related.
+it removes the link but not the data in the related **Station** document.
 
-If the **Station** is an Object Type the data will be embedded in the Document **Journey**
+If, on the other hand, the **Station** is an Object Type, its data will be embedded in the **Journey** Document 
 So if you remove one Journey Document entry it will be remove the related **Station**
 Object.
 
@@ -185,7 +185,7 @@ Object.
 
 ### Add an Enum Node
 
-We keep with our Schema evolution adding the **Type Bike** enum node
+We continue our Schema evolution by adding the **Type Bike** enum node
 
 ![Property start_station](/blog/assets/images/schema_builder-12.png)
 
@@ -216,7 +216,7 @@ We said that the property **Bicycle Type** in **Bicycle** Document is a string w
 
 ![Property start_station](/blog/assets/images/schema_builder-14.png)
 
-We are going to add others elements to create a more complex hierarchy
+We are going to add other elements to create a more complex hierarchy
  
 At this point in our project we need to add information about the bike user, we suppose we can have 2 types of user that rent the bike, a registered user and a guest user.
  
@@ -224,12 +224,12 @@ First we create an abstract Document **User** for grouping the different type of
 
 An Abstract Document is a completely "abstract class" that is used to group related properties. 
  
-Abstract Document cannot be used to create Data Document, you cannot add data inside **User**
-Document. An abstract Document can have children, all the children will inherit all parent Properties and if the children are not abstract, you can insert data inside the children. 
+Abstract Documents cannot be used to create Data directly, you cannot add data in a **User**
+Document. An abstract Document can have children, all the children will inherit all the parent's properties and if the children are not abstract, you can insert data as children. 
 
 ![Property start_station](/blog/assets/images/schema_builder-15.png)
 
-Let's see all the steps for creating an abstract document and his children.
+Let's see all the steps for creating an abstract document and its children.
 
 1. Select the **Document** node in the whiteboard, Select the + icon and from the list that Show up Select **Add Document**.
 2. A new node Document will be added
@@ -257,10 +257,10 @@ We have to create a Link Property **Bicycle User** in the **Bike Journey** Docum
 
 ### Add a Parent
 
-At this point of our project we need that our nodes will be grouped again.
+At this point of our project we want to reorganize our nodes.
  
 We have to create an element that can be **a Parent** for an Object node and a Document node. 
-Object can be child only of Object type, Document can be child of Object Type and Document Type, so we have to create a **New Object Node**
+Objects can only be children of Object types, Documents can be children of Object Types and Document Types, so we have to create a **New Object Node**
  
 We can call this node **Entity**. The **Entity** node is abstract and has a Geo Property  **Position**
  
