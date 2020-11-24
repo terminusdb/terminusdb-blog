@@ -165,14 +165,14 @@ Now we add the **Station** node as Object Type.
 
 --------------------------------------------------------------------------
 
-### Difference between Object and Document in data entry
+### Difference between Object and Document Types
 
-The difference in Linking a Property to a Document than a Object is in how this data will be transformed into document form.
+The difference in Linking a Property to a Document than a Object is in how this data will be represented and managed in document form.
 
 Here is an example with bike data 
 
 If **Station** is a Document Type you have to create a **Station** Document   
-and link the id of the Document **Station** with the **start_station** property of the **Journey** Document 
+and link the id of the Document **Station** with the **Journey** Document 
 
 This means that if you remove one **Journey** Document 
 it removes the link but not the data in the related **Station** document.
