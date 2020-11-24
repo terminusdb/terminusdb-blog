@@ -18,10 +18,10 @@ Structured data gives us the ability to surface the data we need to software whi
 
 Currently many ML/AI shops use CSVs + email or slack for the storage and distribution of both data and features. This creates an enormous headache for AI practitioners for a number of reasons:
 
-1.  Data versioning is \*required\* but not uniformly specified or facilitated. Usually, it ends up being a suffix on a file, rather than a proper version-controlled system as is now common with Code.
+1. Data versioning is \*required\* but not uniformly specified or facilitated. Usually, it ends up being a suffix on a file, rather than a proper version-controlled system as is now common with Code.
 2. Data communication is undertaken by sending large files via slack or e-mail. This means multiple inconsistent versions can float around the team without any visibility to project managers, and without any assurance that it is the latest version.
-3.  CSVs contain no type of information, so information is routinely marshaled into and out of formats leading to extra "cleaning" time and hard to find errors (NaNs) which may not even appear in the final feature selection.
-4.  Feature selections can not be compared easily between approaches. All management has to be undertaken by the individual practitioners in their experiment and is not visible to the organization and has to be duplicated for each person involved.
+3. CSVs contain no type information, so information is routinely marshaled into and out of formats leading to extra "cleaning" time and hard to find errors (NaNs) which may not even appear in the final feature selection.
+4. Feature selections can not be compared easily between approaches. All management has to be undertaken by the individual practitioners in their experiment and is not visible to the organization and has to be duplicated for each person involved.
 
 TerminusDB solves these problems by creating a convenient repository for the storage and communication of complex data sets on a model similar to Git. We allow ML/AI programmers to easily obtain the latest data, enrich it with new features experimentally, record the methodology and store it in a versioned graph for longer-term comparison with other features or other methods of obtaining features. This is a critical infrastructure for evaluating the quality of changes to the ML/AI algorithms and approaches used - otherwise, comparison of effectiveness and avoiding quality regression becomes impossible.
 

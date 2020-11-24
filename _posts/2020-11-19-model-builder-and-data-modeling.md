@@ -15,7 +15,7 @@ tags:
   - Development
 ---
 
-In this post, I will guide you through the steps needed to design your database schema using TerminusDB Console and its model builder.
+In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.
 
 Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way, this is a reality for all the databases, so how to get the right decision?
 
@@ -26,7 +26,7 @@ if you have never used TerminusDB before, this article includes everything you n
 
 ------------------------------------------------------------------------------
 
-## The Dataset
+### The Dataset
 
 In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA. 
 
@@ -38,18 +38,17 @@ The CSV data used this tutorial is available at <https://terminusdb.com/t/data/b
 
 ---------------------------------------------------------
 
-## How do I model my data as a graph using the model builder?
+### How do I model my schema using the model builder?
 
 I assume you already have TerminusDB and Console running in your system 
 and you have created a db named **myBikes**.
 
 ![Go to model builder](/blog/assets/images/schema_builder-02.png)
 
-Form the **myBikes** main page
+Form the **myBikes** main page.
 
-* Select the menu Schema->Schema Builder to arrive at the model builder interface.
-
-* In the whiteboard select the node **myBikes Schema**, the list of all available node types will show up.
+1. Select the menu **Schema->Schema Builder** to arrive at the model builder interface.
+2. In the whiteboard select the node **myBikes Schema**, the list of all available node types will show up.
 
 ![See the whiteboard](/blog/assets/images/schema_builder-03.png)
 
@@ -66,7 +65,7 @@ Let's use this elements in practice.
 
 -----------------------------------------
 
-## Add Nodes
+### Add Nodes
 
 For storing our data we have to create 3 different Documents  **Bicycle**, **Station** and **Journey**
 
@@ -74,15 +73,11 @@ For storing our data we have to create 3 different Documents  **Bicycle**, **Sta
 
 Follow the steps and start to build your schema graph.
 
-* Select the **myBikes Schema** node in the whiteboard and click the + icon
-
-* Choice **Add Document** from the menu. A new node will be added under the node **Documents**
-
-* We start to add **Bicycle** Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle..)
-
-* Follow the same steps above for adding the other Documents **Station** and **Journey**
-
-* Click on the **Save** icon button in the tools bar to save your work.
+1. Select the **myBikes Schema** node in the whiteboard and click the + icon
+2. Select **Add Document** from the menu. A new node will be added under the node **Documents**
+3. We start to add **Bicycle** Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle..)
+4. Follow the same steps above for adding the other Documents **Station** and **Journey**
+5. Click on the **Save** icon button in the tools bar to save your work.
 
 **At this point our documents are completely unrelated.**
 
@@ -91,7 +86,7 @@ Follow the steps and start to build your schema graph.
 
 -------------------------------------------------------------
 
-## Add Properties
+### Add Properties
 
 For descrive your Documents and for link them each others we need to add the properties.
 We have different type of properties identified by datatypes
@@ -104,23 +99,17 @@ ObjectProperty : Enum/Link Property refers at the relationship between elements
 
 Let's add the property **start_station**.
 
-* Select the node **Journey** in the whiteboard, in the right panel click on the **Properties**
-
-* In the properties panel, click **Add Property** in the pop up menu you can see the list of the available property types.
-
-* Select **Property Link** after the form shows up, fill the fields with the value reported in the table above (Unique ID/Label/Description).
-
-* Click on the **Link to Type** menu and Select **Bike Station** 
+1. Select the node **Journey** in the whiteboard, in the right panel click on the **Properties**
+2. In the properties panel, click **Add Property** in the pop up menu you can see the list of the available property types.
+3. Select **Property Link** after the form shows up, fill the fields with the value reported in the table above (Unique ID/Label/Description).
+4. Click on the **Link to Type** menu and Select **Bike Station** 
   *Links to Type is a list with all the node that you can linked*
-
-* Follow the step 1 to 4 for adding the others properties **end_station**, **journey_bicycle** 
+5. Follow the step 1 to 4 for adding the others properties **end_station**, **journey_bicycle** 
 
 ![Property start_station](/blog/assets/images/schema_builder-07.png)
 
-
-* Click on the **Save** icon button in the tools bar to save your work.
-
-* Select **Relationships** in the right panel top bar to see the links.
+6. Click on the **Save** icon button in the tools bar to save your work.
+7. Select **Relationships** in the right panel top bar to see the links.
 
 
 **We have created our relationship beetween Documents.**
@@ -141,48 +130,42 @@ Let's see.
 Now we need to model the Document **Station** as Object, so we have to delete the Document **Station** and create a new node type.
 
 The database doesn't allow you to delete a node if this is related with other node.
-In details the node can not have children and it can not be a Link Property/Choice Property range.
+In details the node can not have children and it can not be a Link Property/Enum 
+Property range.
 Constraint is used to prevent actions that would destroy links between documents.
 
 ----------------------------------------------------------------------
 
-## Delete a Node
+### Delete a Node
 
 Here the step for doing this.
 First we have to remove all the relationship related with our node.
 
 ![Property start_station](/blog/assets/images/schema_builder-10.png)
 
-* Select the Document **Journey** node in the whiteboard, in the right panel Select **Properties**. the list of the properties will show up. 
-
-* Select **End Station** Property and delete it using the delete red icon. 
-
-* Follow the above steps for deleting **Start Station** Property too.
-
-* All the **Station** node constraints have been removed 
-
-* Select the **Station** node in the whiteboard, in the right panel, Click the delete red icon.
+1. Select the Document **Journey** node in the whiteboard, in the right panel Select **Properties**. the list of the properties will show up. 
+2. Select **End Station** Property and delete it using the delete red icon. 
+3. Follow the above steps for deleting **Start Station** Property too.
+4. All the **Station** node constraints have been removed
+5. Select the **Station** node in the whiteboard, in the right panel, Click the delete red icon.
 
 Delete node is easy in this moment because we don't have data Documents inside our database.
 
 ----------------------------------------------------------------------------------
 
-## Add an Object Type
+### Add an Object Type
 
 Now we add the **Station** node as Object Type.
 
-* Select the **Schema myBikes** and choice **Add Object** a new node will be add in the whiteboard. 
-
-* As we did before we have to add the Unique ID/Station and the Label/Description Bike Station
-  in the fields in the right panel.
-
-* Select the Node **Journey** and add the Link Property **Start Station** **End Station** again (Follow the add property steps above).
+1. Select the **Schema myBikes**, click on the + icon, from the menu Select **Add Object** a new node will be add in the whiteboard. 
+2. As we did before we have to add the Unique ID/Station and the Label/Description Bike Station in the fields in the right panel.
+3. Select the Node **Journey** and add the Link Property **Start Station** **End Station** again (Follow the add property steps above).
 
 ![Property start_station](/blog/assets/images/schema_builder-10.png)
 
 --------------------------------------------------------------------------
 
-## Differents between Object and Document in data entry
+### Differents between Object and Document in data entry
 
 The differents to Link a Property with a Document than a Object is in how your data will be stored.
 
@@ -200,35 +183,28 @@ Object.
 
 ------------------------------------------------------------------------
 
-## Add an Enum Node
+### Add an Enum Node
 
 We keep with our Schema evolution adding the **Type Bike** enum node
 
 ![Property start_station](/blog/assets/images/schema_builder-12.png)
 
-* Select the **Schema myBikes**, Select the + icon, from the menu choice **Add Enum** 
-
-* The Enum node will be added in the whiteboard
-
-* Fill the fields in the right panel (Unique Id:Bike_Type..)
-
-* Select values, Fill the fields and click the button **Add a value** for adding the list of possible values  
+1. Select the **Schema myBikes**, Select the + icon, from the menu Select **Add Enum** 
+2. The Enum node will be added in the whiteboard
+3. Fill the fields in the right panel (Unique Id:Bike_Type..)
+4. Select values, Fill the fields and click the button **Add a value** for adding the list of possible values  
 
 --------------------------------------------------------------------------
 
-## Link the Enum Node with the Enum Property 
+### Link the Enum Node with the Enum Property 
 
 We are going to create our Enum property for the **Bicycle** Documents
 
-* Select the **Bicycle** node
-
-* In the right panel, Select the **Properties** tab 
-
-* Select the **Add Property** menu and choice **Enum Property**
-
-* Fill the Property fields in the Property panel (Unique ID:bicycle_type ....)
-
-* From the **Enum Type** menu Select **Bike Type**
+1. Select the **Bicycle** node
+2. In the right panel, Select the **Properties** tab 
+3. Select the **Add Property** menu and Click **Enum Property**
+4. Fill the Property fields in the Property panel (Unique ID:bicycle_type ....)
+5. From the **Enum Type** menu Select **Bike Type**
 
 We said that the property **Bicycle Type** in **Bicycle** Document is a string with a value chosen from a list of permitted values. 
 
@@ -236,7 +212,7 @@ We said that the property **Bicycle Type** in **Bicycle** Document is a string w
 
 --------------------------------------------------------------------------
 
-## Add Children
+### Add Children
 
 ![Property start_station](/blog/assets/images/schema_builder-14.png)
 
@@ -255,65 +231,54 @@ Document. An abstract Document can have children, all the children will inherit 
 
 Let's see all the steps for creating an abstract document and his children.
 
-* Select the **Document** node in the whiteboard, Select the + icon and from the list that Show up Select **Add Document**.
-
-* A new node Document will be added
-
-* In the right panel fill the fields for the new Document (Unique ID:User, Label:Bike User....)
-
-* Check the **Abstract** checkbox
-
-* Select the tab **Properties**, from the menu **Add Property** choice **String Property**
-
-* The String Property Panel will show up, fill the fields (Unique ID: email, Label:Email)
-
+1. Select the **Document** node in the whiteboard, Select the + icon and from the list that Show up Select **Add Document**.
+2. A new node Document will be added
+3. In the right panel fill the fields for the new Document (Unique ID:User, Label:Bike User....)
+4. Check the **Abstract** checkbox
+5. Select the tab **Properties**, from the menu **Add Property** Click **String Property**
+6. The String Property Panel will show up, fill the fields (Unique ID: email, Label:Email)
 ![Property start_station](/blog/assets/images/schema_builder-16.png)
+7. For the **String Type** menu Select Email 
+8. In the **Cardinality Min** field add 1 (this means that if you add an User you have to add one email property)
 
-* For the **String Type** menu Select Email 
+*we added the Abstract **User** Document with its properties, now let's add the children.*
 
-* In the **Cardinality Min** field add 1 (this means that if you add an User you have to add one email property)
-
-Now we have added our Abstract **User** Document with its properties, now let's add the children
-
-* Select the node **Bike User** in the whiteboard, Click on the + icon, from the menu Select
-**Add Child**
-
-* A new Node will be added, in the right panel fill all the fields (Unique Id:Guest ....)
-
-* Follow the above steps for add the **Member** Document too
+1. Select the node **Bike User** in the whiteboard, Click on the + icon, from the menu Select **Add Child**
+2. A new Node will be added, in the right panel fill all the fields (Unique Id:Guest ....)
+3. Follow the above steps for add the **Member** Document too
 
 We can decide to not add new properties in the Guest document so the guest user will be identified by the email, but for the **Member** Document we need to add at least the String property Password.
+
+We have to create a Link Property **Bicycle User** in the **Bike Journey** Document for link the **User** Document with the **Bike Journey** Document.
 
 ![Property start_station](/blog/assets/images/schema_builder-17.png)
 
 ------------------------------------------------------------------------
 
-## Add a Parent
+### Add a Parent
 
 At this point of our project we need that our nodes will be grouped again.
  
-We have to create an element that can be **a Parent** for an Object node and a Document node
+We have to create an element that can be **a Parent** for an Object node and a Document node. 
 Object can be child only of Object type, Document can be child of Object Type and Document Type, so we have to create a **New Object Node**
  
-We can call this node **Entity**. The **Entity** node is abstract and has a **Geo Property**  **Position**
+We can call this node **Entity**. The **Entity** node is abstract and has a Geo Property  **Position**
  
-I am sure you already know all the steps for doing this.
+I am sure you already know all the steps for doing this 😊.
 
 ![Add Parent](/blog/assets/images/schema_builder-18.png)
 
-Now we need to grouping under this new node **Bike Station** and **Bicycle**
+Let's group **Bike Station** and **Bicycle** under this new node.
  
-* Select the node **Bicycle** in the whiteboard, in the right panel Select **Relationships**
- 
-* Under **Add/Remove Parents** Panel from the menu choice **Object** option
- 
-* In **Add Object as Parent** list choices **Entity** 
- 
-* The node **Entity** will be moved under the new parent.
+1. Select the node **Bicycle** in the whiteboard, in the right panel Select **Relationships**
+2. Under **Add/Remove Parents** panel from the menu Select **Object** option 
+3. In **Add Object as Parent** list Select **Entity** 
+4. The node **Bicycle** will be moved under the new parent **Entity**.
 
 ![Add Parent](/blog/assets/images/schema_builder-19.png)
+ 
+Good Job, you made your first TerminusDB schema using the model builder.
+Data is constantly evolving, be ready to change❗
 
 You can clone the full schema from [TerminusHub](https://terminusdb.com/hub/)
- 
-Good Job❗ You made your first TerminusDB schema using the model builder
-Data is constantly evolving, be ready to change❗ 
+
