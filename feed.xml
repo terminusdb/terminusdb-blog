@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Nov 2020 16:13:18 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Nov 2020 16:13:18 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Nov 2020 16:31:31 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2020 16:31:31 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -36,7 +36,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/blog/assets/images/schema_builder-01.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.&lt;/p&gt; &lt;p&gt;Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way, this is a reality for all the databases, so how to get the right decision?&lt;/p&gt; &lt;p&gt;The model builder is a tool that lets you visualize and edit your database schema. It is very useful for designing and understanding complex data models. I’ll show you as things can be simple at the start, but they can become complex in no time.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;hr /&gt; &lt;h3 id=&quot;the-dataset&quot;&gt;The Dataset&lt;/h3&gt; &lt;p&gt;In our examples we use the collection...
+        &lt;p&gt;In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.&lt;/p&gt; &lt;p&gt;Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way. This is a reality for all the databases, so how to make the right decision?&lt;/p&gt; &lt;p&gt;The model builder is a tool that lets you visualize and edit your database schema. It is very useful for designing and understanding complex data models. I’ll show you how you can start from a simple model and build out something more complex in no time.&lt;/p&gt; &lt;p&gt;if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. &lt;a href=&quot;https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/&quot;&gt;My First TerminusDB Graph Visualisation — Bike Share Data&lt;/a&gt;.&lt;/p&gt; &lt;hr /&gt; &lt;h3 id=&quot;the-dataset&quot;&gt;The Dataset&lt;/h3&gt; &lt;p&gt;In our examples we use the...
         &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Thu, 19 Nov 2020 00:00:15 +0000</pubDate>
