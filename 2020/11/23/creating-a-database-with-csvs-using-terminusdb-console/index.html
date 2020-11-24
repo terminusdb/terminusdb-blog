@@ -92,19 +92,11 @@
 <ol>
   <li>Open up the TerminusDB console and create a database</li>
   <li>Fill in the Id, Name and description of your database</li>
-  <li>You will find a button Create Database from CSVs</li>
-</ol>
-
-<p><img src="/blog/assets/uploads/1-createdb.png" alt="create database with csvs" title="create database with csvs" /></p>
-
-<ol>
-  <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use The Bike Share Data, which were used in<a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/"></a> <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/</a></li>
-  <li>I have added 2 CSVs into my database as shown below</li>
-</ol>
-
-<p><img src="/blog/assets/uploads/2-createdbwithcsvpreview.png" alt="different csvs loaded into db" title="different csvs loaded into db" /></p>
-
-<ol>
+  <li>You will find a button Create Database from CSVs
+<img src="/blog/assets/uploads/1-createdb.png" alt="create database with csvs" title="create database with csvs" /></li>
+  <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">The Bike Share Data</a></li>
+  <li>I have added 2 CSVs into my database as shown below
+<img src="/blog/assets/uploads/2-createdbwithcsvpreview.png" alt="different csvs loaded into db" title="different csvs loaded into db" /></li>
   <li>And that’s it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊</li>
 </ol>
 
@@ -114,9 +106,9 @@
 
 <p><img src="/blog/assets/uploads/2-dbdocumentpage.png" alt="document page view" title="document page view" /></p>
 
-<p>Each of our CSV files which were loaded on create becomes a separate Document Type. All the columns in the CSV file have been converted into properties and a schema is auto generated.</p>
+<p>Each of our CSV files that were loaded on create becomes a separate Document Type. All the columns in the CSV file have been converted into properties and a schema is auto-generated.</p>
 
-<p>Each CSV is of doctype CSV and have rows hanging off them, we can use these auto generated column properties to query the database.</p>
+<p>Each CSV is of doctype CSV and has rows hanging off them, we can use these auto generated column properties to query the database.</p>
 
 <p>You can also add more CSVs once you have created your database by clicking the Add CSVs</p>
 
@@ -126,60 +118,53 @@
 
 <h3 id="lets-query-the-database">Let’s Query the Database</h3>
 
-<ol>
-  <li>Get CSV Id’s, Query for type scm:CSV</li>
-</ol>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>and (
-    triple('v:CSV ID', 'type','scm:CSV'),
-    triple('v:CSV ID', 'label', 'v:CSV Name')
-)
+<p>Get CSV Id’s, Query for type scm:CSV</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">and</span> <span class="p">(</span>
+    <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">scm:CSV</span><span class="dl">'</span><span class="p">),</span>
+    <span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:CSV Name</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">)</span>
 </code></pre></div></div>
+<p><img src="/blog/assets/uploads/4-querycsvid.png" alt="query database to get csv Id" title="query database to get csv Id" />
+This query simply gives you the ID and name of available CSVs in the Database. Take a note of the CSV Id you’re interested in, also visit the Schema page to get the Property Id’s your interested in as well.</p>
 
-<p><img src="/blog/assets/uploads/4-querycsvid.png" alt="query database to get csv Id" title="query database to get csv Id" /></p>
+<p>Open a new Query Pane and try the below query which shows the duration from start station to end station</p>
 
-<p>This query simply gives you the ID and name of available CSVs in the Database. Take a note of the CSV Id you’re interested in, also visit the Schema page to get the Property Id’s your interested in as well.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">doc:CSV_bike_tutorial-1.csv</span><span class="dl">"</span>
 
-<ol>
-  <li>Open a new Query Pane and try the below query which shows the duration from start station to end station</li>
-</ol>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const id="doc:CSV_bike_tutorial-1.csv"
-
-WOQL.and (
-  .limit(1).triple('v:CSV ID', 'type', 'scm:CSV')
-    .eq('v:CSV ID', id)
-    .triple('v:CSV ID', 'scm:csv_row', 'v:CSV Row')
-    .triple('v:CSV Row', 'type', 'v:Row Type'),
-  .quad('v:Property', 'domain', 'v:Row Type', 'schema/main')
-    .quad('v:Property', 'label', 'v:Property Name' ,'schema/main')
-)
+<span class="nx">WOQL</span><span class="p">.</span><span class="nx">and</span> <span class="p">(</span>
+  <span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">scm:CSV</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">scm:csv_row</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Row Type</span><span class="dl">'</span><span class="p">),</span>
+  <span class="p">.</span><span class="nx">quad</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Property</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">domain</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Row Type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">schema/main</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">quad</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:Property</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Property Name</span><span class="dl">'</span> <span class="p">,</span><span class="dl">'</span><span class="s1">schema/main</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">)</span>
 </code></pre></div></div>
 
 <p>This query gets all the property Id and name from the schema graph.</p>
 
-<p>3.</p>
+<p>Next, let’s query to display a few columns of our CSV, I plan to display Start Station Number, Start Station, End Station Number, End Station and Duration</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const id="doc:CSV_bike_tutorial-1.csv"
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">doc:CSV_bike_tutorial-1.csv</span><span class="dl">"</span>
 
-const startStationNumber = "scm:column_Start%20station%20number"
-const StartStation = "scm:column_Start%20station"
-const endStationNumber = "scm:column_End%20station%20number"
-const endStation = "scm:column_End%20station"
-const duration = "scm:column_Duration"
+<span class="kd">const</span> <span class="nx">startStationNumber</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">scm:column_Start%20station%20number</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">StartStation</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">scm:column_Start%20station</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">endStationNumber</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">scm:column_End%20station%20number</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">endStation</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">scm:column_End%20station</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">duration</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">scm:column_Duration</span><span class="dl">"</span>
 
-and (
-	triple('v:CSV ID', 'type','scm:CSV').eq('v:CSV ID', id)
-      .triple('v:CSV ID', 'scm:csv_row', 'v:CSV Row')
-      .triple('v:CSV Row', startStationNumber, 'v:Start Station Number')
-      .triple('v:CSV Row', StartStation, 'v:Start Station')
-      .triple('v:CSV Row', endStationNumber, 'v:End Station Number')
-      .triple('v:CSV Row', endStation, 'v:End Station')
-      .triple('v:CSV Row', duration, 'v:Duration')
-)
+<span class="nx">and</span> <span class="p">(</span>
+	<span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">scm:CSV</span><span class="dl">'</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV ID</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">scm:csv_row</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="nx">startStationNumber</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Start Station Number</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="nx">StartStation</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Start Station</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="nx">endStationNumber</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:End Station Number</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="nx">endStation</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:End Station</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">triple</span><span class="p">(</span><span class="dl">'</span><span class="s1">v:CSV Row</span><span class="dl">'</span><span class="p">,</span> <span class="nx">duration</span><span class="p">,</span> <span class="dl">'</span><span class="s1">v:Duration</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">)</span>
 </code></pre></div></div>
 
-<p>Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest</p>
+<p>All the rows of CSV matching the column names will be displayed on running this query</p>
 
 <p>So yeah that’s it, you can do all sorts of query on your CSV</p>
 
@@ -193,7 +178,7 @@ and (
 
 <p>So here we go, this tutorial shows a very simple way to import  CSVs into TerminusDB and play with them and do all sorts of useful cool queries, whatever you like.</p>
 
-<p>Earlier we had to do all the steps mentioned in <a href="https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/ </a>, not anymore!</p>
+<p>Earlier we had to do all the steps mentioned in <a href="https://terminusdb.com/blog/2020/07/13/terminusdb-importing-reordering-exporting-a-csv/">TerminusDB: Importing, Reordering &amp; Exporting a CSV</a> not anymore!</p>
 
 <p>Now it’s just a few button clicks and voilà!</p>
 
