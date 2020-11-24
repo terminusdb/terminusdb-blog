@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Model Builder and Data Modeling | Graph Database Blog - News and Tutorials from TerminusDB</title>
+<meta name="description" content="Graph Database Management news, tutorials and updates from TerminusDB
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Let’s model your data in TerminusDB">
+<meta itemprop="image" content="https://terminusdb.com/blog/blog/assets/images/schema_builder-01.png">
+
+<meta property="og:url" content="https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Model Builder and Data Modeling | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:site_name" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:description" content="Let’s model your data in TerminusDB">
+<meta property="og:image" content="https://terminusdb.com/blog/blog/assets/images/schema_builder-01.png">
+
+<meta name="twitter:url" content="https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Model Builder and Data Modeling | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:site" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:description" content="Let’s model your data in TerminusDB">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="https://terminusdb.com/blog/blog/assets/images/schema_builder-01.png">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Graph Database Blog - News and Tutorials from TerminusDB" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/11/19/model-builder-and-data-modeling/">
+
+
+
+
+</head>
+<body id="model-builder-and-data-modeling" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Model Builder and Data Modeling</h2>
+
+        <time class="post__date" datetime="2020-11-19T00:00:15+00:00" itemprop="datePublished">19 Nov 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>        
+          <figure class="absolute-bg" style="background-image: url('https://terminusdb.com/blog/assets/images/schema_builder-01.png');"></figure>                
+        </div>
+      </div>
+    
+
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>In this post, I will guide you through the steps needed to design your database schema using TerminusDB 4.0 Console and its model builder.</p>
+
+<p>Having your data in the right format makes it easier to analyze the data properly but you can model your data in more than one way, this is a reality for all the databases, so how to get the right decision?</p>
+
+<p>The model builder is a tool that lets you visualize and edit your database schema. It is very useful for designing and understanding complex data models.
+I’ll show you as things can be simple at the start, but they can become complex in no time.</p>
+
+<p>if you have never used TerminusDB before, this article includes everything you need to get started with TerminusDB. <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">My First TerminusDB Graph Visualisation — Bike Share Data</a>.</p>
+
+<hr />
+
+<h3 id="the-dataset">The Dataset</h3>
+
+<p>In our examples we use the collection of data about the bike journeys between stations in Washington D.C., USA.</p>
+
+<p>We have used this data in other blogs, where with woql.js, a javascript layer that help you to compose <a href="https://terminusdb.com/docs/reference/server/woql/"><strong>WOQL query</strong> (Web Object Query Language)</a>, we have created our database scheme.</p>
+
+<p><img src="/blog/assets/images/bike_table.png" alt="data about the bike journeys between stations in Washington D.C" /></p>
+
+<p>The CSV data used this tutorial is available at <a href="https://terminusdb.com/t/data/bike_tutorial.csv">https://terminusdb.com/t/data/bike_tutorial.csv</a></p>
+
+<hr />
+
+<h3 id="how-do-i-model-my-schema-using-the-model-builder">How do I model my schema using the model builder?</h3>
+
+<p>I assume you already have TerminusDB and Console running in your system 
+and you have created a db named <strong>myBikes</strong>.</p>
+
+<p><img src="/blog/assets/images/schema_builder-02.png" alt="Go to model builder" /></p>
+
+<p>Form the <strong>myBikes</strong> main page.</p>
+
+<ol>
+  <li>Select the menu <strong>Schema-&gt;Schema Builder</strong> to arrive at the model builder interface.</li>
+  <li>In the whiteboard select the node <strong>myBikes Schema</strong>, the list of all available node types will show up.</li>
+</ol>
+
+<p><img src="/blog/assets/images/schema_builder-03.png" alt="See the whiteboard" /></p>
+
+<p>Let’s see the different nodes in detail.</p>
+
+<p><strong>Object</strong> contains a piece of the graph and can be accessed by a unique url.
+An Object can have multiple properties and can be contained inside other objects.</p>
+
+<p><strong>Document</strong> is a special type of Object. Documents are always top-level objects, never embedded inside other objects, using the Link Property you can link documents to each other.</p>
+
+<p><strong>Enum</strong> or Enumerated is a special data type that enables for a property to be a set of predefined constants. The property must be equal to one of the values that have been predefined for it. To use this set of values you’ll need to create a Enum Property and link it to a Emun Element.</p>
+
+<p>Let’s use this elements in practice.</p>
+
+<hr />
+
+<h3 id="add-nodes">Add Nodes</h3>
+
+<p>For storing our data we have to create 3 different Documents  <strong>Bicycle</strong>, <strong>Station</strong> and <strong>Journey</strong></p>
+
+<p><img src="/blog/assets/images/schema_builder-04.png" alt="Node List" /></p>
+
+<p>Follow the steps and start to build your schema graph.</p>
+
+<ol>
+  <li>Select the <strong>myBikes Schema</strong> node in the whiteboard and click the + icon</li>
+  <li>Select <strong>Add Document</strong> from the menu. A new node will be added under the node <strong>Documents</strong></li>
+  <li>We start to add <strong>Bicycle</strong> Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle..)</li>
+  <li>Follow the same steps above for adding the other Documents <strong>Station</strong> and <strong>Journey</strong></li>
+  <li>Click on the <strong>Save</strong> icon button in the tools bar to save your work.</li>
+</ol>
+
+<p><strong>At this point our documents are completely unrelated.</strong></p>
+
+<p><img src="/blog/assets/images/schema_builder-05.png" alt="Documents" /></p>
+
+<hr />
+
+<h3 id="add-properties">Add Properties</h3>
+
+<p>For descrive your Documents and for link them each others we need to add the properties.
+We have different type of properties identified by datatypes</p>
+
+<p>DataProperty : String/Numeric/Geo/Temporal Property refers to the format of data storage</p>
+
+<p>ObjectProperty : Enum/Link Property refers at the relationship between elements</p>
+
+<p><img src="/blog/assets/images/schema_builder-06.png" alt="Property list" /></p>
+
+<p>Let’s add the property <strong>start_station</strong>.</p>
+
+<ol>
+  <li>Select the node <strong>Journey</strong> in the whiteboard, in the right panel click on the <strong>Properties</strong></li>
+  <li>In the properties panel, click <strong>Add Property</strong> in the pop up menu you can see the list of the available property types.</li>
+  <li>Select <strong>Property Link</strong> after the form shows up, fill the fields with the value reported in the table above (Unique ID/Label/Description).</li>
+  <li>Click on the <strong>Link to Type</strong> menu and Select <strong>Bike Station</strong> 
+  <em>Links to Type is a list with all the node that you can linked</em></li>
+  <li>Follow the step 1 to 4 for adding the others properties <strong>end_station</strong>, <strong>journey_bicycle</strong></li>
+</ol>
+
+<p><img src="/blog/assets/images/schema_builder-07.png" alt="Property start_station" /></p>
+
+<ol>
+  <li>Click on the <strong>Save</strong> icon button in the tools bar to save your work.</li>
+  <li>Select <strong>Relationships</strong> in the right panel top bar to see the links.</li>
+</ol>
+
+<p><strong>We have created our relationship beetween Documents.</strong></p>
+
+<p><img src="/blog/assets/images/schema_builder-08.png" alt="Property start_station" /></p>
+
+<hr />
+
+<h3 id="schema-evolution-and-compatibility">Schema Evolution and Compatibility</h3>
+
+<p>An important aspect of data management is schema evolution. 
+My initial schema is defined, but my application now need to change it, what can I do?</p>
+
+<p>Let’s see.</p>
+
+<p><img src="/blog/assets/images/schema_builder-09.png" alt="Property start_station" /></p>
+
+<p>Now we need to model the Document <strong>Station</strong> as Object, so we have to delete the Document <strong>Station</strong> and create a new node type.</p>
+
+<p>The database doesn’t allow you to delete a node if this is related with other node.
+In details the node can not have children and it can not be a Link Property/Enum 
+Property range.
+Constraint is used to prevent actions that would destroy links between documents.</p>
+
+<hr />
+
+<h3 id="delete-a-node">Delete a Node</h3>
+
+<p>Here the step for doing this.
+First we have to remove all the relationship related with our node.</p>
+
+<p><img src="/blog/assets/images/schema_builder-10.png" alt="Property start_station" /></p>
+
+<ol>
+  <li>Select the Document <strong>Journey</strong> node in the whiteboard, in the right panel Select <strong>Properties</strong>. the list of the properties will show up.</li>
+  <li>Select <strong>End Station</strong> Property and delete it using the delete red icon.</li>
+  <li>Follow the above steps for deleting <strong>Start Station</strong> Property too.</li>
+  <li>All the <strong>Station</strong> node constraints have been removed</li>
+  <li>Select the <strong>Station</strong> node in the whiteboard, in the right panel, Click the delete red icon.</li>
+</ol>
+
+<p>Delete node is easy in this moment because we don’t have data Documents inside our database.</p>
+
+<hr />
+
+<h3 id="add-an-object-type">Add an Object Type</h3>
+
+<p>Now we add the <strong>Station</strong> node as Object Type.</p>
+
+<ol>
+  <li>Select the <strong>Schema myBikes</strong>, click on the + icon, from the menu Select <strong>Add Object</strong> a new node will be add in the whiteboard.</li>
+  <li>As we did before we have to add the Unique ID/Station and the Label/Description Bike Station in the fields in the right panel.</li>
+  <li>Select the Node <strong>Journey</strong> and add the Link Property <strong>Start Station</strong> <strong>End Station</strong> again (Follow the add property steps above).</li>
+</ol>
+
+<p><img src="/blog/assets/images/schema_builder-10.png" alt="Property start_station" /></p>
+
+<hr />
+
+<h3 id="differents-between-object-and-document-in-data-entry">Differents between Object and Document in data entry</h3>
+
+<p>The differents to Link a Property with a Document than a Object is in how your data will be stored.</p>
+
+<p>Here an example with bike data</p>
+
+<p>If the <strong>Station</strong> is an Document Type you have to create a Document <strong>Station</strong><br />
+and link the id of the Document <strong>Station</strong> in the Document <strong>Journey</strong></p>
+
+<p>This means that if you remove one <strong>Journey</strong> Document 
+it remove the link but not the data in the <strong>Station</strong> document related.</p>
+
+<p>If the <strong>Station</strong> is an Object Type the data will be embedded in the Document <strong>Journey</strong>
+So if you remove one Journey Document entry it will be remove the related <strong>Station</strong>
+Object.</p>
+
+<hr />
+
+<h3 id="add-an-enum-node">Add an Enum Node</h3>
+
+<p>We keep with our Schema evolution adding the <strong>Type Bike</strong> enum node</p>
+
+<p><img src="/blog/assets/images/schema_builder-12.png" alt="Property start_station" /></p>
+
+<ol>
+  <li>Select the <strong>Schema myBikes</strong>, Select the + icon, from the menu Select <strong>Add Enum</strong></li>
+  <li>The Enum node will be added in the whiteboard</li>
+  <li>Fill the fields in the right panel (Unique Id:Bike_Type..)</li>
+  <li>Select values, Fill the fields and click the button <strong>Add a value</strong> for adding the list of possible values</li>
+</ol>
+
+<hr />
+
+<h3 id="link-the-enum-node-with-the-enum-property">Link the Enum Node with the Enum Property</h3>
+
+<p>We are going to create our Enum property for the <strong>Bicycle</strong> Documents</p>
+
+<ol>
+  <li>Select the <strong>Bicycle</strong> node</li>
+  <li>In the right panel, Select the <strong>Properties</strong> tab</li>
+  <li>Select the <strong>Add Property</strong> menu and Click <strong>Enum Property</strong></li>
+  <li>Fill the Property fields in the Property panel (Unique ID:bicycle_type ….)</li>
+  <li>From the <strong>Enum Type</strong> menu Select <strong>Bike Type</strong></li>
+</ol>
+
+<p>We said that the property <strong>Bicycle Type</strong> in <strong>Bicycle</strong> Document is a string with a value chosen from a list of permitted values.</p>
+
+<p><img src="/blog/assets/images/schema_builder-13.png" alt="Property start_station" /></p>
+
+<hr />
+
+<h3 id="add-children">Add Children</h3>
+
+<p><img src="/blog/assets/images/schema_builder-14.png" alt="Property start_station" /></p>
+
+<p>We are going to add others elements to create a more complex hierarchy</p>
+
+<p>At this point in our project we need to add information about the bike user, we suppose we can have 2 types of user that rent the bike, a registered user and a guest user.</p>
+
+<p>First we create an abstract Document <strong>User</strong> for grouping the different type of user.</p>
+
+<p>An Abstract Document is a completely “abstract class” that is used to group related properties.</p>
+
+<p>Abstract Document cannot be used to create Data Document, you cannot add data inside <strong>User</strong>
+Document. An abstract Document can have children, all the children will inherit all parent Properties and if the children are not abstract, you can insert data inside the children.</p>
+
+<p><img src="/blog/assets/images/schema_builder-15.png" alt="Property start_station" /></p>
+
+<p>Let’s see all the steps for creating an abstract document and his children.</p>
+
+<ol>
+  <li>Select the <strong>Document</strong> node in the whiteboard, Select the + icon and from the list that Show up Select <strong>Add Document</strong>.</li>
+  <li>A new node Document will be added</li>
+  <li>In the right panel fill the fields for the new Document (Unique ID:User, Label:Bike User….)</li>
+  <li>Check the <strong>Abstract</strong> checkbox</li>
+  <li>Select the tab <strong>Properties</strong>, from the menu <strong>Add Property</strong> Click <strong>String Property</strong></li>
+  <li>The String Property Panel will show up, fill the fields (Unique ID: email, Label:Email)
+<img src="/blog/assets/images/schema_builder-16.png" alt="Property start_station" /></li>
+  <li>For the <strong>String Type</strong> menu Select Email</li>
+  <li>In the <strong>Cardinality Min</strong> field add 1 (this means that if you add an User you have to add one email property)</li>
+</ol>
+
+<p><em>we added the Abstract <strong>User</strong> Document with its properties, now let’s add the children.</em></p>
+
+<ol>
+  <li>Select the node <strong>Bike User</strong> in the whiteboard, Click on the + icon, from the menu Select <strong>Add Child</strong></li>
+  <li>A new Node will be added, in the right panel fill all the fields (Unique Id:Guest ….)</li>
+  <li>Follow the above steps for add the <strong>Member</strong> Document too</li>
+</ol>
+
+<p>We can decide to not add new properties in the Guest document so the guest user will be identified by the email, but for the <strong>Member</strong> Document we need to add at least the String property Password.</p>
+
+<p>We have to create a Link Property <strong>Bicycle User</strong> in the <strong>Bike Journey</strong> Document for link the <strong>User</strong> Document with the <strong>Bike Journey</strong> Document.</p>
+
+<p><img src="/blog/assets/images/schema_builder-17.png" alt="Property start_station" /></p>
+
+<hr />
+
+<h3 id="add-a-parent">Add a Parent</h3>
+
+<p>At this point of our project we need that our nodes will be grouped again.</p>
+
+<p>We have to create an element that can be <strong>a Parent</strong> for an Object node and a Document node. 
+Object can be child only of Object type, Document can be child of Object Type and Document Type, so we have to create a <strong>New Object Node</strong></p>
+
+<p>We can call this node <strong>Entity</strong>. The <strong>Entity</strong> node is abstract and has a Geo Property  <strong>Position</strong></p>
+
+<p>I am sure you already know all the steps for doing this 😊.</p>
+
+<p><img src="/blog/assets/images/schema_builder-18.png" alt="Add Parent" /></p>
+
+<p>Let’s group <strong>Bike Station</strong> and <strong>Bicycle</strong> under this new node.</p>
+
+<ol>
+  <li>Select the node <strong>Bicycle</strong> in the whiteboard, in the right panel Select <strong>Relationships</strong></li>
+  <li>Under <strong>Add/Remove Parents</strong> panel from the menu Select <strong>Object</strong> option</li>
+  <li>In <strong>Add Object as Parent</strong> list Select <strong>Entity</strong></li>
+  <li>The node <strong>Bicycle</strong> will be moved under the new parent <strong>Entity</strong>.</li>
+</ol>
+
+<p><img src="/blog/assets/images/schema_builder-19.png" alt="Add Parent" /></p>
+
+<p>Good Job, you made your first TerminusDB schema using the model builder.
+Data is constantly evolving, be ready to change❗</p>
+
+<p>You can clone the full schema from <a href="https://terminusdb.com/hub/">TerminusHub</a></p>
+
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Model Builder and Data Modeling+https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Model Builder and Data Modeling&summary=Let’s model your data in TerminusDB&url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Let’s model your data in TerminusDB&media=https://terminusdb.com/blog/blog/assets/images/schema_builder-01.png&url=https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/Francesca-Bit" class="p-name u-url">Francesca Bitto</a></span>
+            <p class="post__bio p-note">Never stop learning.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/';
+        this.page.identifier = 'https://terminusdb.com/blog/2020/11/19/model-builder-and-data-modeling/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/09/24/graph-databases-terminusdb-vs-neo4j/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/images/clint-adair-unsplash.jpg" alt="Graph Databases <br>TerminusDB vs Neo4j"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Graph Databases <br>TerminusDB vs Neo4j</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/27/taking-terminusdb-to-the-bank-part-ii/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/uploads/collaborate.jpg" alt="Taking TerminusDB to the bank (Part II)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to the bank (Part II)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/07/27/taking-terminusdb-to-the-bank/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/uploads/cover.jpg" alt="Taking TerminusDB to The Bank (Part I)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Taking TerminusDB to The Bank (Part I)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/graph-database">Graph Database</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
