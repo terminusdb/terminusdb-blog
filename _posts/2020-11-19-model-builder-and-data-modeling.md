@@ -78,15 +78,16 @@ Follow the steps and start to build your schema graph.
 
 * Choice **Add Document** from the menu. A new node will be added under the node **Documents**
 
-* We start to add **Bicycle** Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle ..)*
+* We start to add **Bicycle** Document. Fill the form in the right sidebar with the data for the image above. (Unique Id:Bicycle..)
 
-* Follow the same steps 1 and 2 for adding the other Documents **Station** and **Journey**
+* Follow the same steps above for adding the other Documents **Station** and **Journey**
 
 * Click on the **Save** icon button in the tools bar to save your work.
 
+**At this point our documents are completely unrelated.**
+
 ![Documents](/blog/assets/images/schema_builder-05.png)
 
-At this point our documents are completely unrelated.
 
 -------------------------------------------------------------
 
@@ -110,6 +111,7 @@ Let's add the property **start_station**.
 * Select **Property Link** after the form shows up, fill the fields with the value reported in the table above (Unique ID/Label/Description).
 
 * Click on the **Link to Type** menu and Select **Bike Station** 
+  *Links to Type is a list with all the node that you can linked*
 
 * Follow the step 1 to 4 for adding the others properties **end_station**, **journey_bicycle** 
 
@@ -120,13 +122,10 @@ Let's add the property **start_station**.
 
 * Select **Relationships** in the right panel top bar to see the links.
 
+
+**We have created our relationship beetween Documents.**
+
 ![Property start_station](/blog/assets/images/schema_builder-08.png)
-
-
-We have created our relationship beetween Documents
- 
-
-**Links to Type is a list with all the node that you can linked**
 
 --------------------------------------------------------------------
 
@@ -139,7 +138,7 @@ Let's see.
 
 ![Property start_station](/blog/assets/images/schema_builder-09.png)
 
-Now we need to model the Document **Station** as Object.
+Now we need to model the Document **Station** as Object, so we have to delete the Document **Station** and create a new node type.
 
 The database doesn't allow you to delete a node if this is related with other node.
 In details the node can not have children and it can not be a Link Property/Choice Property range.
@@ -162,7 +161,7 @@ First we have to remove all the relationship related with our node.
 
 * All the **Station** node constraints have been removed 
 
-* Select the **Document** tab in the right panel and press the delete red icon.
+* Select the **Station** node in the whiteboard, in the right panel, Click the delete red icon.
 
 Delete node is easy in this moment because we don't have data Documents inside our database.
 
@@ -172,11 +171,12 @@ Delete node is easy in this moment because we don't have data Documents inside o
 
 Now we add the **Station** node as Object Type.
 
-* Select the **Schema myBikes** and choice **Add Object** a new node will be add in the whiteboard 
-* As we did before we have to add the Unique ID/Station and the Label/Description Bike Station
-  in the fields in the right panel
+* Select the **Schema myBikes** and choice **Add Object** a new node will be add in the whiteboard. 
 
-* Select the Node **Journey** and add the Link Property **Start Station** **End Station** again (Follow the add property steps above)
+* As we did before we have to add the Unique ID/Station and the Label/Description Bike Station
+  in the fields in the right panel.
+
+* Select the Node **Journey** and add the Link Property **Start Station** **End Station** again (Follow the add property steps above).
 
 ![Property start_station](/blog/assets/images/schema_builder-10.png)
 
@@ -188,7 +188,7 @@ The differents to Link a Property with a Document than a Object is in how your d
 
 Here an example with bike data 
 
-If the Station is an Document Type you have to create a Document **Station**  
+If the **Station** is an Document Type you have to create a Document **Station**  
 and link the id of the Document **Station** in the Document **Journey**
 
 This means that if you remove one **Journey** Document 
@@ -206,12 +206,11 @@ We keep with our Schema evolution adding the **Type Bike** enum node
 
 ![Property start_station](/blog/assets/images/schema_builder-12.png)
 
-
-* Select the **Schema myBikes** choice **Add Enum** from the menu
+* Select the **Schema myBikes**, Select the + icon, from the menu choice **Add Enum** 
 
 * The Enum node will be added in the whiteboard
 
-* Fill the fields in the right panel (Unique Id/Label/Description)
+* Fill the fields in the right panel (Unique Id:Bike_Type..)
 
 * Select values, Fill the fields and click the button **Add a value** for adding the list of possible values  
 
@@ -227,7 +226,7 @@ We are going to create our Enum property for the **Bicycle** Documents
 
 * Select the **Add Property** menu and choice **Enum Property**
 
-* Fill the Property fields in the Property panel (bicycle_type/Bicycle Type)
+* Fill the Property fields in the Property panel (Unique ID:bicycle_type ....)
 
 * From the **Enum Type** menu Select **Bike Type**
 
@@ -241,22 +240,22 @@ We said that the property **Bicycle Type** in **Bicycle** Document is a string w
 
 ![Property start_station](/blog/assets/images/schema_builder-14.png)
 
-We are going to add others elements creating a more complex gerarchy
-
-At this point in our project we need to add information about the bike user, we suppose we can have 2 type of user that rent the bike, a registerd user and a guest user.
-
-First we create an abstract Document **User** for grouping the different type of user,
+We are going to add others elements to create a more complex hierarchy
+ 
+At this point in our project we need to add information about the bike user, we suppose we can have 2 types of user that rent the bike, a registered user and a guest user.
+ 
+First we create an abstract Document **User** for grouping the different type of user.
 
 An Abstract Document is a completely "abstract class" that is used to group related properties. 
-
+ 
 Abstract Document cannot be used to create Data Document, you cannot add data inside **User**
-Document. An abstract Document can have children, all the children will inheritance all parents Properties and if the children are not abstract, you can insert data inside the children. 
+Document. An abstract Document can have children, all the children will inherit all parent Properties and if the children are not abstract, you can insert data inside the children. 
 
 ![Property start_station](/blog/assets/images/schema_builder-15.png)
 
 Let's see all the steps for creating an abstract document and his children.
 
-* Select the **Document** node in the whiteboard, Select the plus icon and for the list that Show up Select **Add Document**.
+* Select the **Document** node in the whiteboard, Select the + icon and from the list that Show up Select **Add Document**.
 
 * A new node Document will be added
 
@@ -283,33 +282,38 @@ Now we have added our Abstract **User** Document with its properties, now let's 
 
 * Follow the above steps for add the **Member** Document too
 
-We can decide to not add new properties in the Guest document so Our guest user will be identified by the email, but for the **Member** Document we can decide to add at least the String property Password.
+We can decide to not add new properties in the Guest document so the guest user will be identified by the email, but for the **Member** Document we need to add at least the String property Password.
+
+![Property start_station](/blog/assets/images/schema_builder-17.png)
 
 ------------------------------------------------------------------------
 
 ## Add a Parent
 
-A this point of our project we can decide that can be useful that our node will be groupped again.
-
-We need to create an element that can be **a Parent** for an Object node and a Document node
+At this point of our project we need that our nodes will be grouped again.
+ 
+We have to create an element that can be **a Parent** for an Object node and a Document node
 Object can be child only of Object type, Document can be child of Object Type and Document Type, so we have to create a **New Object Node**
+ 
+We can call this node **Entity**. The **Entity** node is abstract and has a **Geo Property**  **Position**
+ 
+I am sure you already know all the steps for doing this.
 
-We can call this node **Entity**. The **Entity** node is abstract and has a **Geo Property**
-**Position**
+![Add Parent](/blog/assets/images/schema_builder-18.png)
 
-I sure you already know all the step for doing this.
-
-Now we need to groupping under this new node **Bike Station** and **Bicycle**
-
+Now we need to grouping under this new node **Bike Station** and **Bicycle**
+ 
 * Select the node **Bicycle** in the whiteboard, in the right panel Select **Relationships**
-
+ 
 * Under **Add/Remove Parents** Panel from the menu choice **Object** option
-
+ 
 * In **Add Object as Parent** list choices **Entity** 
-
+ 
 * The node **Entity** will be moved under the new parent.
 
-You can clone the full schema from [TerminusHub](https://terminusdb.com/hub/)
+![Add Parent](/blog/assets/images/schema_builder-19.png)
 
+You can clone the full schema from [TerminusHub](https://terminusdb.com/hub/)
+ 
 Good Job❗ You made your first TerminusDB schema using the model builder
 Data is constantly evolving, be ready to change❗ 
