@@ -14,7 +14,7 @@ layout: default
     {% if page.image %}
       <div class="post__img u-photo">
         <div>        
-          <figure title="second" class="absolute-bg" style="background-image: url('{{ page.image | absolute_url }}');"></figure>        
+          <figure class="absolute-bg" style="background-image: url('{{ page.image |  absolute_url | replace : "blog/blog", "blog" }}');"></figure>        
         </div>
       </div>
     {% endif %}
@@ -22,11 +22,11 @@ layout: default
     {% if page.cover_image %}
       <div class="post__img u-photo">
         <div>
-          <figure title="second" class="absolute-bg" style="background-image: url('{{ page.cover_image | absolute_url }}');"></figure>
+          <figure title="cover_image" class="absolute-bg" style="background-image: url('{{ page.cover_image | absolute_url | replace : "blog/blog", "blog" }}');"></figure>
         </div>
       </div>
     {% endif %}
-
+| replace : "blog/blog", "blog" 
     <div class="post__content section-padding">
       <div class="grid">
         <div id="markdown" itemprop="articleBody" class="e-content">
@@ -87,7 +87,7 @@ layout: default
             <a class="related__link" href="{{ post.url | prepend: site.baseurl }}"">
               {% if post.image %}
                 <figure class="related__img">
-                  <img src="{{ post.image | absolute_url }}" alt="{{ post.title }}"/>
+                  <img  src="{{ post.image | absolute_url }}" alt="{{ post.title }}"/>
                 </figure>
               {% endif %}
               {% if post.cover_image %}
