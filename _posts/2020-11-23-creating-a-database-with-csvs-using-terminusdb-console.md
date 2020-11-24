@@ -12,7 +12,11 @@ tags:
 ---
 Hello everybody! I am going to write a tutorial on how to work with CSVs using TerminusDB. That's right, TerminusDB 4.0 now has the feature in which you can import and export CSVs, Let's dive into this.
 
+
+
 ### How to create a database with CSVs
+
+
 
 1. Open up the TerminusDB console and create a database
 2. Fill in the Id, Name and description of your database
@@ -27,7 +31,11 @@ Hello everybody! I am going to write a tutorial on how to work with CSVs using T
 
 6. And that's it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊
 
+
+
 ### **What happens when you import CSVs into your Database?**
+
+
 
 On creating our database, Go to the Documents Page
 
@@ -44,6 +52,8 @@ Go to the Schema Page to view the property types which have been generated off t
 ![comaprison between excel and loaded csv](/blog/assets/uploads/3-trasnformcsvtoproperties.png "comaprison between excel and loaded csv")
 
 ### Let’s Query the Database
+
+
 
 1. Get CSV Id’s, Query for type scm:CSV
 
@@ -99,9 +109,13 @@ and (
 
 Here we query everything of type scm:CSV and match the Id with the CSV of interest and query each row with the property Id of interest
 
-So yeah that's it, you can do all sorts of query on your CSV
+So yeah that's it, you can do all sorts of query on your CSV 
+
+
 
 ### Export your CSV
+
+
 
 Now that we have imported our CSVs into our database we can do whatever we like or modify it however we want and Export this CSV back.
 
