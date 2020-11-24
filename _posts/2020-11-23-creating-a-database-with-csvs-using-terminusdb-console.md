@@ -21,14 +21,10 @@ Hello everybody! I am going to write a tutorial on how to work with CSVs using T
 1. Open up the TerminusDB console and create a database
 2. Fill in the Id, Name and description of your database
 3. You will find a button Create Database from CSVs
-
 ![create database with csvs](/blog/assets/uploads/1-createdb.png "create database with csvs")
-
 4. Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use [The Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/)
 5. I have added 2 CSVs into my database as shown below
-
 ![different csvs loaded into db](/blog/assets/uploads/2-createdbwithcsvpreview.png "different csvs loaded into db")
-
 6. And that's it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊
 
 
