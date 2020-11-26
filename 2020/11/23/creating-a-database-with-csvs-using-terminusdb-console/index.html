@@ -92,11 +92,9 @@
 <ol>
   <li>Open up the TerminusDB console and create a database</li>
   <li>Fill in the Id, Name and description of your database</li>
-  <li>You will find a button Create Database from CSVs
-<img src="/blog/assets/uploads/1-createdb.png" alt="create database with csvs" title="create database with csvs" /></li>
+  <li>You will find a button Create Database from CSVs <img src="/blog/assets/uploads/1-createdb.png" alt="create database with csvs" title="create database with csvs" /></li>
   <li>Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use <a href="https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/">The Bike Share Data</a></li>
-  <li>I have added 2 CSVs into my database as shown below
-<img src="/blog/assets/uploads/2-createdbwithcsvpreview.png" alt="different csvs loaded into db" title="different csvs loaded into db" /></li>
+  <li>I have added 2 CSVs into my database as shown below <img src="/blog/assets/uploads/2-createdbwithcsvpreview.png" alt="different csvs loaded into db" title="different csvs loaded into db" /></li>
   <li>And that’s it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊</li>
 </ol>
 
@@ -170,6 +168,26 @@ and (
 <p>All the rows of CSV matching the column names will be displayed on running this query</p>
 
 <p>So yeah that’s it, you can do all sorts of queries on your CSV</p>
+
+<h3 id="how-to-update-csv">How to update CSV</h3>
+
+<p>I am going to show an example in which I change the duration of Bike number W22558 to 500 in my CSV file and I am going to update this change. So we go to Document Page and click on Add CSVs and add the CSV of interest</p>
+
+<p><img src="/blog/assets/uploads/6-updatcsv.png" alt="update csv" title="update csv" /></p>
+
+<p>Since bike_tutorial-1.csv already exists, console will automatically prompt you to update the CSV. Input a commit message of what we have changed and hit on Upload CSV.</p>
+
+<p>The brilliant part about the update is that only diffs are considered and updated which makes update of big sized files more efficient. To understand this, Go to DB Home Page -&gt; Latest Updates</p>
+
+<p><img src="/blog/assets/uploads/7-latestudates.png" alt="DB Home latest updates " title="DB Home latest updates " /></p>
+
+<p>Click on your recent update, The only change on update was the row for bike W22558 of duration 417 was removed and a new row for bike W22558 with duration 500 was added instead. This makes updates of CSVs much more quick 😊😊😊😊😊</p>
+
+<p><img src="/blog/assets/uploads/8-updatechange.png" alt="comparison between commits" title="comparison between commits" /></p>
+
+<p>You can also time travel on the database to see the diffs on CSV files over time.</p>
+
+<p><img src="/blog/assets/uploads/9-commitime.png" alt="time travel on data" title="time travel on data" /></p>
 
 <h3 id="export-your-csv">Export your CSV</h3>
 
