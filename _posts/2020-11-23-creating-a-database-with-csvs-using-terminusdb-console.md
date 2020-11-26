@@ -14,20 +14,14 @@ Hello everybody! I am going to write a tutorial on how to work with CSVs using T
 
 ### How to create a database with CSVs
 
-
-
 1. Open up the TerminusDB console and create a database
 2. Fill in the Id, Name and description of your database
-3. You will find a button Create Database from CSVs
-![create database with csvs](/blog/assets/uploads/1-createdb.png "create database with csvs")
+3. You will find a button Create Database from CSVs ![create database with csvs](/blog/assets/uploads/1-createdb.png "create database with csvs")
 4. Click on this button to load which ever CSVs you wish to import to your database, In this blog I am going to use [The Bike Share Data](https://terminusdb.com/blog/2020/09/01/my-first-terminusdb-3-0-graph-bike-share-data/)
-5. I have added 2 CSVs into my database as shown below
-![different csvs loaded into db](/blog/assets/uploads/2-createdbwithcsvpreview.png "different csvs loaded into db")
+5. I have added 2 CSVs into my database as shown below ![different csvs loaded into db](/blog/assets/uploads/2-createdbwithcsvpreview.png "different csvs loaded into db")
 6. And that's it, go ahead and click on Create New database, which includes the 2 CSVs in it 😊😊😊😊😊
 
 ### **What happens when you import CSVs into your Database?**
-
-
 
 On creating our database, Go to the Documents Page
 
@@ -44,8 +38,6 @@ Go to the Schema Page to view the property types which have been generated off t
 ![comaprison between excel and loaded csv](/blog/assets/uploads/3-trasnformcsvtoproperties.png "comaprison between excel and loaded csv")
 
 ### Let’s Query the Database
-
-
 
 Get CSV Id’s, Query for type scm:CSV
 
@@ -105,9 +97,35 @@ So yeah that's it, you can do all sorts of queries on your CSV
 
 
 
+### How to update CSV
+
+I am going to show an example in which I change the duration of Bike number W22558 to 500 in my CSV file and I am going to update this change. So we go to Document Page and click on Add CSVs and add the CSV of interest
+
+![update csv](/blog/assets/uploads/6-updatcsv.png "update csv")
+
+
+
+Since bike_tutorial-1.csv already exists, console will automatically prompt you to update the CSV. Input a commit message of what we have changed and hit on Upload CSV.
+
+The brilliant part about the update is that only diffs are considered and updated which makes update of big sized files more efficient. To understand this, Go to DB Home Page -> Latest Updates
+
+![DB Home latest updates ](/blog/assets/uploads/7-latestudates.png "DB Home latest updates ")
+
+
+
+Click on your recent update, The only change on update was the row for bike W22558 of duration 417 was removed and a new row for bike W22558 with duration 500 was added instead. This makes updates of CSVs much more quick 😊😊😊😊😊
+
+![comparison between commits](/blog/assets/uploads/8-updatechange.png "comparison between commits")
+
+You can also time travel on the database to see the diffs on CSV files over time.
+
+
+
+![time travel on data](/blog/assets/uploads/9-commitime.png "time travel on data")
+
+
+
 ### Export your CSV
-
-
 
 Now that we have imported our CSVs into our database we can do whatever we like or modify it however we want and Export this CSV back.
 
