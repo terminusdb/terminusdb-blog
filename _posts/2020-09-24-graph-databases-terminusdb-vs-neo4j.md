@@ -90,7 +90,7 @@ Using the WOQL.js api, we create the **Person** Document class. This object has 
 
 ## Insert Data
 
-Here is an example of Cypress syntax for inserting data
+Here is an example of Cypher syntax for inserting data
 
 We add 4 nodes of type (label) **Person** and relationships **KNOWS** between the nodes.
 
