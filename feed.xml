@@ -6,9 +6,44 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Dec 2020 17:17:03 +0000</pubDate>
-    <lastBuildDate>Wed, 02 Dec 2020 17:17:03 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2020 16:55:02 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2020 16:55:02 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB 4.0 - The Star's End Release</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/banner.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;h1 id=&quot;terminusdb-40---the-stars-end-release&quot;&gt;TerminusDB 4.0 - The Star’s End Release&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;Version 4.0 of TerminusDB - the Star’s End Release&lt;/strong&gt; * - is a big step forward in solidifying and extending the functionality of TerminusDB and TerminusHub.&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/&quot;&gt;TerminusDB&lt;/a&gt; is an &lt;a href=&quot;https://github.com/terminusdb/terminusdb&quot;&gt;open source&lt;/a&gt;, revision control graph database designed for distributed collaboration. TerminusDB allows you to push, pull, time-travel and merge data, much in the way that is possible with code in Git.&lt;/p&gt; &lt;p&gt;With this release TerminusDB takes a significant step towards our vision of a general-purpose tool for data &amp;amp; content management and collaboration.&lt;/p&gt; &lt;p&gt;TerminusDB 4.0 extends the revision control features to allow greater visibility and reproducability by allowing you to look inside individual commits to see what changes were made. Provenance, lineage, and compliance are increasingly essential in the management of data and content.&lt;/p&gt; &lt;p&gt;The &lt;em&gt;major&lt;/em&gt; additional features are:&lt;/p&gt; &lt;h3 id=&quot;model-building-tool&quot;&gt;Model Building Tool&lt;/h3&gt; &lt;p&gt;The database ships with an integrated visual schema...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 03 Dec 2020 14:31:58 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/</guid>
+        
+        <category>database</category>
+        
+        <category>release</category>
+        
+        <category>revision control</category>
+        
+        <category>graph</category>
+        
+        <category>CMS</category>
+        
+        <category>content</category>
+        
+        <category>versioning</category>
+        
+        <category>collaboration</category>
+        
+        <category>data</category>
+        
+        
+      </item>
     
       <item>
         <title>Creating a database with CSVs using TerminusDB console</title>

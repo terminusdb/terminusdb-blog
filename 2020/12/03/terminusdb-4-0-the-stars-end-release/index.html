@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TerminusDB 4.0 - The Star&#39;s End Release | Graph Database Blog - News and Tutorials from TerminusDB</title>
+<meta name="description" content="Graph Database Management news, tutorials and updates from TerminusDB
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="TerminusDB 4.0 - The Star&#39;s End Release">
+<meta itemprop="image" content="https://terminusdb.com/blog/blog/assets/uploads/banner.png">
+
+<meta property="og:url" content="https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TerminusDB 4.0 - The Star&#39;s End Release | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:site_name" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:description" content="TerminusDB 4.0 - The Star&#39;s End Release">
+<meta property="og:image" content="https://terminusdb.com/blog/blog/assets/uploads/banner.png">
+
+<meta name="twitter:url" content="https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TerminusDB 4.0 - The Star&#39;s End Release | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:site" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:description" content="TerminusDB 4.0 - The Star&#39;s End Release">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="https://terminusdb.com/blog/blog/assets/uploads/banner.png">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Graph Database Blog - News and Tutorials from TerminusDB" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/">
+
+
+
+
+</head>
+<body id="terminusdb-4-0-the-star-s-end-release" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">TerminusDB 4.0 - The Star's End Release</h2>
+
+        <time class="post__date" datetime="2020-12-03T14:31:58+00:00" itemprop="datePublished">3 Dec 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>        
+          <figure class="absolute-bg" style="background-image: url('https://terminusdb.com/blog/assets/uploads/banner.png');"></figure>                
+        </div>
+      </div>
+    
+
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <h1 id="terminusdb-40---the-stars-end-release">TerminusDB 4.0 - The Star’s End Release</h1>
+
+<p><strong>Version 4.0 of TerminusDB - the Star’s End Release</strong> * - is a big step forward in solidifying and extending the functionality of TerminusDB and TerminusHub.</p>
+
+<p><a href="https://terminusdb.com/">TerminusDB</a> is an <a href="https://github.com/terminusdb/terminusdb">open source</a>, revision control graph database designed for distributed collaboration. TerminusDB allows you to push, pull, time-travel and merge data, much in the way that is possible with code in Git.</p>
+
+<p>With this release TerminusDB takes a significant step towards our vision of a general-purpose tool for data &amp; content management and collaboration.</p>
+
+<p>TerminusDB 4.0 extends the revision control features to allow greater visibility and reproducability by allowing you to look inside individual commits to see what changes were made. Provenance, lineage, and compliance are increasingly essential in the management of data and content.</p>
+
+<p>The <em>major</em> additional features are:</p>
+
+<h3 id="model-building-tool">Model Building Tool</h3>
+
+<p>The database ships with an integrated visual schema building tool. It allows users to build complex data models using point and click tooling. This makes building models significantly quicker, more efficient, and inclusive of a broader range of people by lowering the technical bar for the application of business rules to your data.</p>
+
+<p>It lets you visually design knowledge graphs in the same way they are presented to business users. We have tried to make the tool easy to use, while preserving the ability to model the most complex domains.</p>
+
+<p>Like everything in TerminusDB, the models are versioned so you can make changes in testing and if it breaks your database, you can easily roll back to an earlier working version. This <strong>collaborative knowledge graph design and implementation functionality</strong> does not exist elsewhere.</p>
+
+<p>You can currently share your models/schemas through TerminusHub - the next step is to make modelling and collaboration even easier by providing data-libraries on TerminusHub, including schema.org but also basic standard models for common domains such as CRM, accounting, and inventory. Users can then generate and share models with collaborators or the broader public.</p>
+
+<h3 id="document-editor">Document Editor</h3>
+
+<p>TerminusDB 4.0 has full surfability, clickability and editability of database documents through the console. It is a wiki or catalogue of all your data that you can edit in place. You don’t have to write code or execute a query, just edit the document directly. If you have a collaborative project, this is a useful approach to building and curating data assets.</p>
+
+<p>The documents link to associated documents delivering a linked data application. You can filter documents, you can find the document you want using search, you can create a new document in the interface - it is a <strong>general-purpose tool for managing your data</strong>.</p>
+
+<p>This is the beginning of the TerminusDB content management system, which we will be expanding over the coming months - next step is to provide web accessibility to TerminusHub databases and then a publisher API to provide the ability to publish the results of any query as a static content set.</p>
+
+<h3 id="csv-manager">CSV Manager</h3>
+
+<p>With a single click, you can now build a database from a CSV or a group of CSVs. You can easily use TerminusDB and TerminusHub as a place to version and collaborate when working with CSV data. This will be especially useful with fast changing data as frequently used in machine learning and data science projects.</p>
+
+<p>We have tried to make it as simple as possible for users to interact with the CSV tooling. You can view and edit CSVs directly in the document viewer. You can also add CSVs from this interface. No need to write code.</p>
+
+<p>The database automatically spots if the CSV is already in the database and will just add the delta. There is an append mode that just adds the data that is not there and an update mode that updates the entire CSV.</p>
+
+<p><strong>Manage your CSVs and other data via TerminusDB and Hub.</strong></p>
+
+<h3 id="command-line-interface">Command Line Interface</h3>
+
+<p>We are excited to launch the TerminusDB CLI. You can connect to TerminusDB with a Git-like CLI to run queries or use the revision control features.</p>
+
+<p>You can create databases and branches, you can list databases/branches, you can query in the command line and you can load CSVs. You also get full error reporting in the CLI. Use the CLI to import a CSV, commit changes and push the changes to TerminusHub.</p>
+
+<p>The CLI will continue to develop and add new operations. We will make it easier to execute queries directly from the CLI. We’re also planning to launch CLIs for the JavaScript and Python clients.</p>
+
+<p>TerminusDB is a big step towards our ambition to be a complete decentralized data and content management system that is accessible to all.</p>
+
+<p><strong>END</strong></p>
+
+<p>* Star’s End is a reference to the mysterious location of the Second Foundation in the Asimov series of novels. The home of the First Foundation was Terminus.</p>
+
+<p><img src="/blog/assets/uploads/4.0_2.png" alt="" /></p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=TerminusDB 4.0 - The Star's End Release+https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=TerminusDB 4.0 - The Star's End Release&summary=TerminusDB 4.0 - The Star's End Release&url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=TerminusDB 4.0 - The Star's End Release&media=https://terminusdb.com/blog/blog/assets/uploads/banner.png&url=https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/luke-feeney" class="p-name u-url">Luke Feeney</a></span>
+            <p class="post__bio p-note">Building the database of the future.</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/';
+        this.page.identifier = 'https://terminusdb.com/blog/2020/12/03/terminusdb-4-0-the-stars-end-release/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/11/11/achieving-product-market-fit/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/uploads/cover-image.png" alt="Achieving Product / Market Fit  "/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Achieving Product / Market Fit  </h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/10/30/terminusdb-todomvc-feat-svelte/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/uploads/screenshot-2020-11-02-101454.png" alt="TerminusDB TodoMVC (feat. Svelte)"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">TerminusDB TodoMVC (feat. Svelte)</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+        
+        
+          <article class="related__post">
+            <a class="related__link" href="/blog/2020/10/15/collaboration-for-structured-data/"">
+              
+                <figure class="related__img">
+                  <img  src="https://terminusdb.com/blog/assets/uploads/collaboration2.jpg" alt="Collaboration for structured Data"/>
+                </figure>
+              
+              
+              <div>
+                <h2 class="related__text">Collaboration for structured Data</h2>
+              </div>
+            </a>
+          </article>
+        
+        
+        
+          
+      
+        
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
