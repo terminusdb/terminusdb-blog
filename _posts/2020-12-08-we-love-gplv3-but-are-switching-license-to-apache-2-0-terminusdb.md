@@ -50,7 +50,7 @@ In the past there was an unwritten rule, that big platforms wouldn’t come alon
 
 Mongo, for example, is hardly suffering – it’s valued at over $15 billion. With such vast resources, they should be (and are) able to compete in the provision of their own database. MongoDB’s technology is more than competitive with AWS’ DocumentDB, and Mongo’s Atlas DBaaS - which runs on AWS infra - has been a huge success.
 
-I’m sure our perspective will shift over time, but from where we’re standing, having a cloud provider launch a competing service would be a sign of enormous success. (And this is not to say that the cloud providers parasitic approach to OSS projects is not a genuine problem, it simply acknowledges that you have to be a widely used OSS project before it \*becomes\* a problem).
+I’m sure our perspective will shift over time, but from where we’re standing, having a cloud provider launch a competing service would be a sign of enormous success. (And this is not to say that the cloud providers' parasitic approach to OSS projects is not a genuine problem, it simply acknowledges that you have to be a widely used OSS project before it \*becomes\* a problem).
 
 ### 2. Free software
 
