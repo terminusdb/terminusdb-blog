@@ -38,9 +38,11 @@ With the shift to Apache, TerminusDB is, in a sense, becoming more open source a
 
 The core TerminusDB team had a long debate about licenses before the release of 1.0 last year. The main topics of discussion were:
 
-1. The risks of a cloud provider forking the code then hosting the database
-2. What open source means to TerminusDB as a group
-3. What we, as a community of devs and users, are most comfortable with
+<ol>
+<li>The risks of a cloud provider forking the code then hosting the database</li>
+<li>What open source means to TerminusDB as a group</li>
+<li>What we, as a community of devs and users, are most comfortable with</li>
+</ol> 
 
 #### 1. The big bad cloud providers
 
