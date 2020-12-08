@@ -6,9 +6,44 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Dec 2020 13:53:11 +0000</pubDate>
-    <lastBuildDate>Tue, 08 Dec 2020 13:53:11 +0000</lastBuildDate>
+    <pubDate>Tue, 08 Dec 2020 14:36:08 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Dec 2020 14:36:08 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>We Love GPLv3, but are Switching License to Apache 2.0: TerminusDB</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/cover.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;h2 id=&quot;changing-license-from-gplv3-to-apache-20-terminusdb&quot;&gt;Changing License from GPLv3 to Apache 2.0: TerminusDB&lt;/h2&gt; &lt;p&gt;We have decided to re-license TerminusDB from GPLv3 to Apache 2.0. We want independent software developers (ISVs) to embed TerminusDB in their applications and those developers feel that Apache is a lower risk option. The substantive points of practical difference are far less important – sufficient people believe it to be true and sufficient lawyers have advised teams to be wary of GPL.&lt;/p&gt; &lt;p&gt;In our experience, ISVs and devs in large companies/institutions size up their options at project conception and there remains a niggling doubt that ‘GPL might limit commercial prospects and cause me headaches’. The world has changed – and code freedom is being overtaken by developer freedom.&lt;/p&gt; &lt;p&gt;Open-source software is everywhere. It’s eating the world. In the top 10 databases on &lt;a href=&quot;https://db-engines.com/en/ranking&quot;&gt;DB-Engines&lt;/a&gt;, the remaining proprietary databases were released in 1980 (Oracle), 1983 (IBM Db2) and 1989 (Microsoft SQL...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/12/08/we-love-gplv3-but-are-switching-license-to-apache-2-0-terminusdb/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Tue, 08 Dec 2020 13:46:36 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2020/12/08/we-love-gplv3-but-are-switching-license-to-apache-2-0-terminusdb/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2020/12/08/we-love-gplv3-but-are-switching-license-to-apache-2-0-terminusdb/</guid>
+        
+        <category>database</category>
+        
+        <category>license</category>
+        
+        <category>graph</category>
+        
+        <category>data</category>
+        
+        <category>terminus</category>
+        
+        <category>version control</category>
+        
+        <category>GNU</category>
+        
+        <category>GPL</category>
+        
+        <category>Apache</category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB 4.0 - The Star's End Release</title>
