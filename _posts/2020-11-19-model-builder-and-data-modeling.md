@@ -161,7 +161,7 @@ Now we add the **Station** node as Object Type.
 2. As we did before we have to add the Unique ID/Station and the Label/Description Bike Station in the fields in the right panel.
 3. Select the Node **Journey** and add the Link Property **Start Station** **End Station** again (Follow the add property steps above).
 
-![Property start_station](/blog/assets/images/schema_builder-10.png)
+![Property start_station](/blog/assets/images/schema_builder-11.png)
 
 --------------------------------------------------------------------------
 
@@ -231,15 +231,15 @@ Document. An abstract Document can have children, all the children will inherit 
 
 Let's see all the steps for creating an abstract document and its children.
 
-1. Select the **Document** node in the whiteboard, Select the + icon and from the list that Show up Select **Add Document**.
-2. A new node Document will be added
+1. Select the **Document** node in the whiteboard, Select the + icon and from the menu that show up, Choose **Add Document**.
+2. A new node Document will be added.
 3. In the right panel fill the fields for the new Document (Unique ID:User, Label:Bike User....)
-4. Check the **Abstract** checkbox
-5. Select the tab **Properties**, from the menu **Add Property** Click **String Property**
+4. Check the **Abstract** checkbox.
+5. Select the tab **Properties**, from the menu **Add Property** Choose **String Property**
 6. The String Property Panel will show up, fill the fields (Unique ID: email, Label:Email)
 ![Property start_station](/blog/assets/images/schema_builder-16.png)
-7. For the **String Type** menu Select Email 
-8. In the **Cardinality Min** field add 1 (this means that if you add an User you have to add one email property)
+7. Choose **Email** from the **String Type** menu.
+8. In the **Cardinality Min** field add 1 (this means that if you add an User Document, the email property must have a value in it).
 
 *we added the Abstract **User** Document with its properties, now let's add the children.*
 
