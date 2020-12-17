@@ -225,6 +225,10 @@
 <lastmod>2020-12-08T13:46:36+00:00</lastmod>
 </url>
 <url>
+<loc>https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/</loc>
+<lastmod>2020-12-15T12:52:59+00:00</lastmod>
+</url>
+<url>
 <loc>https://terminusdb.com/blog/404</loc>
 </url>
 <url>
@@ -519,7 +523,10 @@
 <loc>https://terminusdb.com/blog/blog/tag/apache/</loc>
 </url>
 <url>
+<loc>https://terminusdb.com/blog/blog/tag/database-rdf-%22graph-database%22-relationships-data-modelling/</loc>
+</url>
+<url>
 <loc>https://terminusdb.com/blog/admin/</loc>
-<lastmod>2020-12-11T09:38:45+00:00</lastmod>
+<lastmod>2020-12-17T10:39:51+00:00</lastmod>
 </url>
 </urlset>

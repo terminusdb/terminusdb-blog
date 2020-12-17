@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Boxes and Stars - Modelling Relationships in RDF Graphs | Graph Database Blog - News and Tutorials from TerminusDB</title>
+<meta name="description" content="Graph Database Management news, tutorials and updates from TerminusDB
+">
+
+<meta itemprop="name" content="TerminusDB">
+<meta itemprop="description" content="Modelling complex relationships in RDF graphs">
+<meta itemprop="image" content="https://terminusdb.com/blog/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg">
+
+<meta property="og:url" content="https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Boxes and Stars - Modelling Relationships in RDF Graphs | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:site_name" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta property="og:description" content="Modelling complex relationships in RDF graphs">
+<meta property="og:image" content="https://terminusdb.com/blog/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg">
+
+<meta name="twitter:url" content="https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Boxes and Stars - Modelling Relationships in RDF Graphs | Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:site" content="Graph Database Blog - News and Tutorials from TerminusDB">
+<meta name="twitter:description" content="Modelling complex relationships in RDF graphs">
+
+  <meta name="twitter:creator" content="@TerminusDB">
+
+<meta property="twitter:image" content="https://terminusdb.com/blog/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg">
+
+<link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Graph Database Blog - News and Tutorials from TerminusDB" href="/blog/feed.xml">
+<link rel="canonical" href="/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/">
+
+
+
+
+</head>
+<body id="boxes-and-stars-modelling-relationships-in-rdf-graphs" class="post-layout">
+  
+  <header class="header">
+  <a class="header__title" href="https://terminusdb.com/"><img src="/blog/assets/images/horizontal_lockup.png" style="height: 1.8em; margin-top: 0.8em;"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://podcast.terminusdb.com/">Podcast</a></li>
+    <li><a href="https://terminusdb.com/community/">Community</a></li>
+    <li><a href="https://events.terminusdb.com/">Events</a></li>
+    <li><a href="https://discord.gg/Gvdqw97">Join Discord</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+  <main class="💈">
+
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="h-entry">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline" class="p-name">Boxes and Stars - Modelling Relationships in RDF Graphs</h2>
+
+        <time class="post__date" datetime="2020-12-15T12:52:59+00:00" itemprop="datePublished">15 Dec 2020</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img u-photo">
+        <div>        
+          <figure class="absolute-bg" style="background-image: url('https://terminusdb.com/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg');"></figure>                
+        </div>
+      </div>
+    
+
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody" class="e-content">
+          <p>Graph databases make it easy to create relationships between things. The nodes in the graph represent the things and the edges represent the relationships .</p>
+
+<p><code class="highlighter-rouge">john --employs--&gt; joe</code></p>
+
+<p>Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.</p>
+
+<p>So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.</p>
+
+<p><code class="highlighter-rouge">john --employs (from: 1/2/2020, salary: 300000)--&gt; joe</code></p>
+
+<p>In practice, <strong>temporal scoping</strong> of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe’s relentless temporal march. It is almost as common to have relationships whose <strong>weight</strong> is effectively determined by some numeric property.</p>
+
+<p><code class="highlighter-rouge">john --shareholder (from: 1/2/2020, holding: 10%)--&gt; IBM</code></p>
+
+<p>In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place).</p>
+
+<p><strong>So how do we model such situations in graph databases?</strong></p>
+
+<p>In the case of property graphs, the situation is generally simple - edges are json documents that can have any number of properties which can be interpreted as qualifiers or scopings by the code that consumes them. Indeed, the simplicity of adding ‘relationship properties’ so is one of the main purported benefits of property graphs compared to RDF graphs, the other main variant.</p>
+
+<p><strong>With RDF, the situation is a little more complicated.</strong></p>
+
+<p>In RDF, the entire structure of the data is a graph, every property, even those with simple integer value, is represented as just another edge in the graph - we cannot speak of properties without using relationships as each property is itself an edge of the graph. The edges are, by definition, uniquely defined by their labels and there is no facility for adding properties to them.  The triple - two nodes and an edge - is the atomic unit.</p>
+
+<p>There are 2 principle solutions to this apparent conundrum which we might call ‘boxes’ and ‘stars’</p>
+
+<p>##Stars - RDF*</p>
+
+<p>The extension to RDF known as <a href="https://github.com/w3c/rdf-star/">RDF*</a> is explicitly an effort to overcome the lack of relationship properties in RDF by changing the syntax and semantics of the underlying language.</p>
+
+<p>In RDF, traditionally, the subject of a triple is the IRI representing the thing that the triple is a property of. RDF* extends this by allowing triples themselves to by the subjects of other triples. So, we can write:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;john --employs--&gt;joe&gt; --from--&gt; 1/2/2020``&lt;john --employs--&gt;joe&gt; --salary--&gt; 30000
+</code></pre></div></div>
+
+<p>These <em>star properties</em> are considered to be properties of the specific <code class="highlighter-rouge">john --employs--&gt;joe</code> edge, providing scoping, qualifiers and other types of relationship properties on top of the basic RDF labelled edges.</p>
+
+<p>##Boxes - Reified Relationships</p>
+
+<p>The second approach is quite different and builds on top of RDF rather than changing it. In this approach, we model the relationship itself as a thing with its own properties including properties wich link the relationship thing to the things being related. This approach is formally known as <em>reification</em> but informally known as <em>boxing</em> - we create an object as a box around the relationship properties and add the qualifier properties to the box. For example, we might create an object to represent an employment relationship as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>employment --type--&gt; Employment Relationship
+employment --employer--&gt; john
+employment --employee--&gt; joe
+employment --from--&gt; 1/2/2020
+</code></pre></div></div>
+
+<p>In this approach, there is no fundamental difference between a thing representing a relationship and any other type of thing except that these <em>reified relationships</em> have, by definition, properties that point at other things. Otherwise they’re just another type of a thing in the graph.</p>
+
+<p>The only important thing we need for this approach is that we really need a way of defining <em>object types</em> or <em>classes of data objects</em> with <em>strongly typed properties</em> to define what types of things can be related through the different types of relationship. If we want to use algorithms that treat such objects are relationships in traversals, we need to ensure regularity of representation and semantic validity or else we will need to include error checking code in all subsequent traversals. With strongly typed properties and object type hierarchies we can trivially write generic traversal code and implement whatever rich algorithms on top without worrying about the low-level RDF representation.</p>
+
+<p>##Comparing and contrasting the two approaches</p>
+
+<p>The downside of the box approach is that it introduces a layer of indirection into the graph.Rather than being able to see the employs relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:</p>
+
+<p><code class="highlighter-rouge">john --employs--&gt; joe</code></p>
+
+<p>becomes:</p>
+
+<p><code class="highlighter-rouge">john &lt;-- employer -- employment -- employee --&gt; joe</code></p>
+
+<p>However, such indirection is <em>unavoidable</em> given the fact that <code class="highlighter-rouge">employs</code> is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the <code class="highlighter-rouge">-- employs --&gt;</code> relationship is illusory.</p>
+
+<p>So, from this point of view, the indirection is not really a downside, it is an unavoidable consequence of wanting to use relationships with properties other than their endpoints. Or, to put it more strongly, from a purely data-modelling perspective, the boxing approach is the correct solution.</p>
+
+<p>The problems with the RDF* approach are many and profound.</p>
+
+<p>Firstly, from a conceptual point of view, it misunderstands the basic concept of an RDF graph - triples are the lowest level unit for structuring data in RDF, the basic idea is to assemble structure and create representations of complex real world entities from patterns of triples and this works perfectly well for modelling complex relationships. The human-level graph of things and their relationships emerges from the use of consistent patterns of groups of triples and should not be confused. The whole point of RDF is that it allows you to create arbitrary structures of interlinked entities to represent whatever complex real world entity you want, not that the internal structure is a direct expression of a specific high-level conceptualisation of the world.</p>
+
+<p>Secondly, from a language structure point of view, it fundamentally shatters the simplicity and regularity of the RDF triple form - it’s strongest point - and complicates each and every subsequent action. Henceforth, you must distinguish between subjects that represent triples and those that represent ordinary entities and change your process accordingly.</p>
+
+<p>Thirdly, from a logical soundness point of view, it introduces nth-order expressivity into the language (e.g. <code class="highlighter-rouge">&lt;&lt;&lt;joe type Person&gt; from 1/2/2020&gt; status: incactive&gt;</code>) and all the well known problems of impredicativity that come with that, not to mention the impact on the computational complexity of traversing the graph for inference and reasoning - one of the benefits of RDF is that a large amount of research effort has been devoted to understanding the computational complexity of different classes of reasoning axioms. As soon as you introduce meta-triples, we’re back into an unknown world of unbounded complexity.</p>
+
+<p>Fourthly, and finally, in practice it avoids the problem - when we want to add things like temporal scoping, security classifications, weightings and such properties to relationships, we generally want the scoping and properties to apply to the object as an object rather than a set of structurally unrelated triples - the whole point of data management technologies is that they should help with providing useful abstractions to which we can apply such properties, not that it should kick the problem back to the user.</p>
+
+<p>If I have to write:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;&lt;john employs joe&gt; from 1/2/2020&gt;
+&lt;&lt;john employs joe&gt; salary 30000&gt;
+</code></pre></div></div>
+
+<p>then I have to maintain the coordination of both statements for the future and for any future changes - if the high level relationship changes, I have to map this to a collection of low level triples and the system provides no help.</p>
+
+<p>Using a boxed class to represent a relationship avoids all of these problems completely and is semantically correct and consistent.</p>
+
+<p>So why have people bothered with RDF* and all of the complexities that come with it?</p>
+
+<p>In some ways it stems from theoretical confusion over the nature of RDF graphs and a misguided desire to apply the much simpler model of adding properties to edges from property graphs.</p>
+
+<p>But more importantly, it stems from a failure of the RDF research world to provide a good and simple way of defining strongly typed objects with strongly typed properties - class definitions which ensure that data conforms to the required shape.</p>
+
+<p>To define a useful relationship type, we need to be able to specify certain things:</p>
+
+<ol>
+  <li>the types of the endpoints of the relationship (e.g. employs is a relationship between a Person and a Person)</li>
+  <li>cardinalities of the relationship edges (e.g. the Employment Relationship has exactly one employer and one employee)</li>
+</ol>
+
+<p>To build a graph that we can easily query and traverse from these components, imposing such constraints on the data is particularly important because it allows us to build reliable patterns which abstract away the underlying triples, and we don’t have to deal with situations where we find an employee relationship without an employee, or which links to a Address object rather than a Person object.</p>
+
+<p>In TerminusDB this is achieved by using standard OWL classes and properties to describe the data-objects and applying a closed world region regime to its interpretation. Other approaches involve complex combinations of RDFS, OWL and SHACL to achieve similar goals, but are far less sound and simple than just extending OWL to support a close world regime, as we have done in TerminusDB. This gives us not only the ability to describe complex relationship types and have strong guarantees as to the shape of the data, but it also provide a sound framework for multiple inheritance, which allows us to very efficiently apply general purpose regular scopings across many different object types.</p>
+
+<p>So for example, we can define a “Temporally Scoped” object type and give it start and end properties. Then we make any of our temporally scoped entities or relationships subclasses of this class - suddenly everything has the same temporal scoping properties and can be uniformly processed by temporally aware processes.</p>
+
+        </div>
+
+        
+
+<ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Boxes and Stars - Modelling Relationships in RDF Graphs+https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/+by+" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Boxes and Stars - Modelling Relationships in RDF Graphs&summary=Modelling complex relationships in RDF graphs&url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Modelling complex relationships in RDF graphs&media=https://terminusdb.com/blog/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg&url=https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid p-author h-card">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+
+            
+              <span class="post__author">Posted by
+            
+
+            <a href="https://github.com/kevinchekovfeeney" class="p-name u-url">Kevin Feeney</a></span>
+            <p class="post__bio p-note">Computer Scientist, Cliodynamicist and all round Data Obsessive - CEO of Data Chemist Ltd</p>
+
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/';
+        this.page.identifier = 'https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title">Related</h2>
+      <div class="related__container">
+      
+        
+        
+        
+        
+      
+      
+      
+      <div class="related__text">There are no related posts.</div>
+      
+      </div>
+    </div>
+  </section>
+
+
+    
+  </main>
+
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="footer__container">
+     <!-- <ul class="footer__tags"><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/database">Database</a></li><li><a class="footer__link" href="/tag/data">Data</a></li><li><a class="footer__link" href="/tag/graph">Graph</a></li><li><a class="footer__link" href="/tag/data">Data</a></li></ul> -->
+
+      
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/TerminusDB" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://github.com/terminusdb" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://discord.gg/Gvdqw97" target="_blank"><i class="fa fa-Discord"></i></a></li>
+    
+      <li><a href="https://www.youtube.com/channel/UC5kZt8pP-FM0u-R0BQr78YA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="/blog/assets/js/app.min.js"></script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+<script>
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="https://terminusdb.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
