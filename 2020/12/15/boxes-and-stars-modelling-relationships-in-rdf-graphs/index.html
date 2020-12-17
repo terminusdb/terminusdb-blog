@@ -87,17 +87,20 @@
         <div id="markdown" itemprop="articleBody" class="e-content">
           <p>Graph databases make it easy to create relationships between things. The nodes in the graph represent the things and the edges represent the relationships .</p>
 
-<p><code class="highlighter-rouge">john --employs--&gt; joe</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john --employs--&gt; joe
+</code></pre></div></div>
 
 <p>Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.</p>
 
 <p>So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.</p>
 
-<p><code class="highlighter-rouge">john --employs (from: 1/2/2020, salary: 300000)--&gt; joe</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john --employs (from: 1/2/2020, salary: 300000)--&gt; joe
+</code></pre></div></div>
 
 <p>In practice, <strong>temporal scoping</strong> of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe’s relentless temporal march. It is almost as common to have relationships whose <strong>weight</strong> is effectively determined by some numeric property.</p>
 
-<p><code class="highlighter-rouge">john --shareholder (from: 1/2/2020, holding: 10%)--&gt; IBM</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john --shareholder (from: 1/2/2020, holding: 10%)--&gt; IBM
+</code></pre></div></div>
 
 <p>In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place).</p>
 
@@ -140,13 +143,15 @@ employment --from--&gt; 1/2/2020
 
 <p>The downside of the box approach is that it introduces a layer of indirection into the graph.Rather than being able to see the employs relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:</p>
 
-<p><code class="highlighter-rouge">john --employs--&gt; joe</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john --employs--&gt; joe
+</code></pre></div></div>
 
 <p>becomes:</p>
 
-<p><code class="highlighter-rouge">john &lt;-- employer -- employment -- employee --&gt; joe</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john &lt;-- employer -- employment -- employee --&gt; joe
+</code></pre></div></div>
 
-<p>However, such indirection is <em>unavoidable</em> given the fact that <code class="highlighter-rouge">employs</code> is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the <code class="highlighter-rouge">-- employs --&gt;</code> relationship is illusory.</p>
+<p>However, such indirection is <em>unavoidable</em> given the fact that <em>employs</em> is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the <code class="highlighter-rouge">-- employs --&gt;</code> relationship is illusory.</p>
 
 <p>So, from this point of view, the indirection is not really a downside, it is an unavoidable consequence of wanting to use relationships with properties other than their endpoints. Or, to put it more strongly, from a purely data-modelling perspective, the boxing approach is the correct solution.</p>
 

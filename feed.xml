@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2020 10:40:33 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2020 10:40:33 +0000</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2020 10:45:54 +0000</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2020 10:45:54 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -17,7 +17,7 @@
         
         <description>
         &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/il_340x270.2566973017_pg5p.jpg&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;Graph databases make it easy to create relationships between things. The nodes in the graph represent the things and the edges represent the relationships .&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;john --employs--&amp;gt; joe&lt;/code&gt;&lt;/p&gt; &lt;p&gt;Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.&lt;/p&gt; &lt;p&gt;So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;john --employs (from: 1/2/2020, salary: 300000)--&amp;gt; joe&lt;/code&gt;&lt;/p&gt; &lt;p&gt;In practice, &lt;strong&gt;temporal scoping&lt;/strong&gt; of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe’s relentless temporal march. It is almost as common to have relationships whose...
+        &lt;p&gt;Graph databases make it easy to create relationships between things. The nodes in the graph represent the things and the edges represent the relationships .&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;john --employs--&amp;gt; joe &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.&lt;/p&gt; &lt;p&gt;So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;john --employs (from: 1/2/2020, salary: 300000)--&amp;gt; joe &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;In practice, &lt;strong&gt;temporal scoping&lt;/strong&gt; of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe’s relentless temporal march. It is almost...
         &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2020/12/15/boxes-and-stars-modelling-relationships-in-rdf-graphs/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
         </description>
         <pubDate>Tue, 15 Dec 2020 12:52:59 +0000</pubDate>
