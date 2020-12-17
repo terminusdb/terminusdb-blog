@@ -32,17 +32,17 @@ john --shareholder (from: 1/2/2020, holding: 10%)--> IBM
 
 In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place). 
 
-**So how do we model such situations in graph databases?**
+### So how do we model such situations in graph databases?
 
-In the case of property graphs, the situation is generally simple - edges are json documents that can have any number of properties which can be interpreted as qualifiers or scopings by the code that consumes them. Indeed, the simplicity of adding 'relationship properties' so is one of the main purported benefits of property graphs compared to RDF graphs, the other main variant.  
+In the case of property graphs, the situation is generally simple - edges are JSON documents that can have any number of properties which can be interpreted as qualifiers or scopings by the code that consumes them. Indeed, the simplicity of adding 'relationship properties' so is one of the main purported benefits of property graphs compared to RDF graphs, the other main variant.  
 
-**With RDF, the situation is a little more complicated.**
+## With RDF, the situation is a little more complicated.
 
 In RDF, the entire structure of the data is a graph, every property, even those with simple integer value, is represented as just another edge in the graph - we cannot speak of properties without using relationships as each property is itself an edge of the graph. The edges are, by definition, uniquely defined by their labels and there is no facility for adding properties to them.  The triple - two nodes and an edge - is the atomic unit. 
 
 There are 2 principle solutions to this apparent conundrum which we might call 'boxes' and 'stars'
 
-##Stars - RDF*
+### Stars - RDF*
 
 The extension to RDF known as [RDF*](https://github.com/w3c/rdf-star/) is explicitly an effort to overcome the lack of relationship properties in RDF by changing the syntax and semantics of the underlying language.
 
@@ -52,11 +52,11 @@ In RDF, traditionally, the subject of a triple is the IRI representing the thing
 <john --employs-->joe> --from--> 1/2/2020``<john --employs-->joe> --salary--> 30000
 ```
 
-These _star properties_ are considered to be properties of the specific `john --employs-->joe` edge, providing scoping, qualifiers and other types of relationship properties on top of the basic RDF labelled edges.
+These *star properties* are considered to be properties of the specific `john --employs-->joe` edge, providing scoping, qualifiers and other types of relationship properties on top of the basic RDF labelled edges.
 
-##Boxes - Reified Relationships
+### Boxes - Reified Relationships
 
-The second approach is quite different and builds on top of RDF rather than changing it. In this approach, we model the relationship itself as a thing with its own properties including properties wich link the relationship thing to the things being related. This approach is formally known as _reification_ but informally known as _boxing_ - we create an object as a box around the relationship properties and add the qualifier properties to the box. For example, we might create an object to represent an employment relationship as follows:
+The second approach is quite different and builds on top of RDF rather than changing it. In this approach, we model the relationship itself as a thing with its own properties including properties which link the relationship thing to the things being related. This approach is formally known as *reification* but informally known as *boxing* - we create an object as a box around the relationship properties and add the qualifier properties to the box. For example, we might create an object to represent an employment relationship as follows:
 
 ```
 employment --type--> Employment Relationship
@@ -69,7 +69,7 @@ In this approach, there is no fundamental difference between a thing representin
 
 The only important thing we need for this approach is that we really need a way of defining *object types* or *classes of data objects* with *strongly typed properties* to define what types of things can be related through the different types of relationship. If we want to use algorithms that treat such objects are relationships in traversals, we need to ensure regularity of representation and semantic validity or else we will need to include error checking code in all subsequent traversals. With strongly typed properties and object type hierarchies we can trivially write generic traversal code and implement whatever rich algorithms on top without worrying about the low-level RDF representation.  
 
-##Comparing and contrasting the two approaches
+### Comparing and contrasting the two approaches
 
 The downside of the box approach is that it introduces a layer of indirection into the graph.Rather than being able to see the employs relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:
 
@@ -83,11 +83,11 @@ becomes:
 john <-- employer -- employment -- employee --> joe
 ```
 
-However, such indirection is *unavoidable* given the fact that _employs_ is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the `-- employs -->` relationship is illusory.
+However, such indirection is *unavoidable* given the fact that *employs* is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the `-- employs -->` relationship is illusory.
 
 So, from this point of view, the indirection is not really a downside, it is an unavoidable consequence of wanting to use relationships with properties other than their endpoints. Or, to put it more strongly, from a purely data-modelling perspective, the boxing approach is the correct solution. 
 
-The problems with the RDF* approach are many and profound.
+### The problems with the RDF* approach are many and profound.
 
 Firstly, from a conceptual point of view, it misunderstands the basic concept of an RDF graph - triples are the lowest level unit for structuring data in RDF, the basic idea is to assemble structure and create representations of complex real world entities from patterns of triples and this works perfectly well for modelling complex relationships. The human-level graph of things and their relationships emerges from the use of consistent patterns of groups of triples and should not be confused. The whole point of RDF is that it allows you to create arbitrary structures of interlinked entities to represent whatever complex real world entity you want, not that the internal structure is a direct expression of a specific high-level conceptualisation of the world.
 
@@ -108,7 +108,7 @@ then I have to maintain the coordination of both statements for the future and f
 
 Using a boxed class to represent a relationship avoids all of these problems completely and is semantically correct and consistent. 
 
-So why have people bothered with RDF* and all of the complexities that come with it?
+### So why have people bothered with RDF* and all of the complexities that come with it?
 
 In some ways it stems from theoretical confusion over the nature of RDF graphs and a misguided desire to apply the much simpler model of adding properties to edges from property graphs.
 
