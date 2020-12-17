@@ -72,7 +72,7 @@ The only important thing we need for this approach is that we really need a way 
 
 ### Comparing and contrasting the two approaches
 
-The downside of the box approach is that it introduces a layer of indirection into the graph.Rather than being able to see the employs relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:
+The downside of the box approach is that it introduces a layer of indirection into the graph. Rather than being able to see the employment relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:
 
 ```
 john --employs--> joe
