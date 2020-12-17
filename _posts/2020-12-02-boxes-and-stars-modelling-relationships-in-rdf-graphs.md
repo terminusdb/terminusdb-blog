@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Boxes and Stars - Modelling Relationships in RDF Graphs
-date: 2020-12-15T12:52:59.956Z
+date: 2020-12-17T10:50:01.836Z
 description: Modelling complex relationships in RDF graphs
 image: /blog/assets/uploads/il_340x270.2566973017_pg5p.jpg
 author:
