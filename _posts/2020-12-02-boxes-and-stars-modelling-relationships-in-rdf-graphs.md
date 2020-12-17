@@ -49,7 +49,8 @@ The extension to RDF known as [RDF*](https://github.com/w3c/rdf-star/) is explic
 In RDF, traditionally, the subject of a triple is the IRI representing the thing that the triple is a property of. RDF* extends this by allowing triples themselves to by the subjects of other triples. So, we can write:
 
 ```
-<john --employs-->joe> --from--> 1/2/2020``<john --employs-->joe> --salary--> 30000
+<john --employs-->joe> --from--> 1/2/2020
+<john --employs-->joe> --salary--> 30000
 ```
 
 These *star properties* are considered to be properties of the specific `john --employs-->joe` edge, providing scoping, qualifiers and other types of relationship properties on top of the basic RDF labelled edges.
@@ -122,5 +123,7 @@ To define a useful relationship type, we need to be able to specify certain thin
 To build a graph that we can easily query and traverse from these components, imposing such constraints on the data is particularly important because it allows us to build reliable patterns which abstract away the underlying triples, and we don't have to deal with situations where we find an employee relationship without an employee, or which links to a Address object rather than a Person object.
 
 In TerminusDB this is achieved by using standard OWL classes and properties to describe the data-objects and applying a closed world region regime to its interpretation. Other approaches involve complex combinations of RDFS, OWL and SHACL to achieve similar goals, but are far less sound and simple than just extending OWL to support a close world regime, as we have done in TerminusDB. This gives us not only the ability to describe complex relationship types and have strong guarantees as to the shape of the data, but it also provide a sound framework for multiple inheritance, which allows us to very efficiently apply general purpose regular scopings across many different object types.
+
+![](/blog/assets/uploads/relationship_classes.png "A TerminusDB hierarchy of relationship classes, all of which inherit temporal scoping and use the same universal predicate")
 
 So for example, we can define a "Temporally Scoped" object type and give it start and end properties. Then we make any of our temporally scoped entities or relationships subclasses of this class - suddenly everything has the same temporal scoping properties and can be uniformly processed by temporally aware processes.
