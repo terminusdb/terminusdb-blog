@@ -12,17 +12,23 @@ tags:
 ---
 Graph databases make it easy to create relationships between things. The nodes in the graph represent the things and the edges represent the relationships .
 
-`john --employs--> joe`
+```
+john --employs--> joe
+```
 
 Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.
 
 So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.
 
-`john --employs (from: 1/2/2020, salary: 300000)--> joe`
+```
+john --employs (from: 1/2/2020, salary: 300000)--> joe
+```
 
 In practice, **temporal scoping** of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe's relentless temporal march. It is almost as common to have relationships whose **weight** is effectively determined by some numeric property.
 
-`john --shareholder (from: 1/2/2020, holding: 10%)--> IBM`
+```
+john --shareholder (from: 1/2/2020, holding: 10%)--> IBM
+```
 
 In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place). 
 
@@ -67,13 +73,17 @@ The only important thing we need for this approach is that we really need a way 
 
 The downside of the box approach is that it introduces a layer of indirection into the graph.Rather than being able to see the employs relationship directly between joe and john, we have to construct it from 2 properties passing through the reified relationship object:
 
-```john --employs--> joe```
+```
+john --employs--> joe
+```
 
 becomes:
 
-```john <-- employer -- employment -- employee --> joe```
+```
+john <-- employer -- employment -- employee --> joe
+```
 
-However, such indirection is *unavoidable* given the fact that ```employs``` is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the `-- employs -->` relationship is illusory.
+However, such indirection is *unavoidable* given the fact that _employs_ is no longer actually a simple relationship - it has properties and its endpoints are just some of those properties - the lack of indirection in the `-- employs -->` relationship is illusory.
 
 So, from this point of view, the indirection is not really a downside, it is an unavoidable consequence of wanting to use relationships with properties other than their endpoints. Or, to put it more strongly, from a purely data-modelling perspective, the boxing approach is the correct solution. 
 
