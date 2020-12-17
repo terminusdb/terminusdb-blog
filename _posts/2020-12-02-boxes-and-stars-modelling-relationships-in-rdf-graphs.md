@@ -14,19 +14,17 @@ Graph databases make it easy to create relationships between things. The nodes i
 
 `john --employs--> joe`
 
-\
-Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.\
-\
-So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.\
-\
-`john --employs (from: 1/2/2020, salary: 300000)--> joe`\
-\
-In practice, **temporal scoping** of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe's relentless temporal march. It is almost as common to have relationships whose **weight** is effectively determined by some numeric property.\
-\
-`john --shareholder (from: 1/2/2020, holding: 10%)--> IBM`\
-\
-In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place). 
+Labelled edges allow us to model different types of relationships between things. However, in practice, relationships are complex entities - simple labelled edges are insufficient - relationships often need their own properties or parameters.
 
+So, for example, if we are modelling an employment relationship between two people, we might want to record, the date at which the relationship started and ended, the job-title, the salary or any other number of details which are considered significant.
+
+`john --employs (from: 1/2/2020, salary: 300000)--> joe`
+
+In practice, **temporal scoping** of relationships is a very common requirement to the point of ubiquity - real world relationships are rendered ephemeral by the universe's relentless temporal march. It is almost as common to have relationships whose **weight** is effectively determined by some numeric property.
+
+`john --shareholder (from: 1/2/2020, holding: 10%)--> IBM`
+
+In these and in many similar cases, it is not just the type or label of the relationship that is important, but other properties (date, quantity) are important in the interpretation of the system including the interpretation of whether the relationship is considered to exist (temporal and geographic scoping is interpreted to mean that the existence of the relationship is bounded to a particular time or place). 
 
 **So how do we model such situations in graph databases?**
 
@@ -44,7 +42,9 @@ The extension to RDF known as [RDF*](https://github.com/w3c/rdf-star/) is explic
 
 In RDF, traditionally, the subject of a triple is the IRI representing the thing that the triple is a property of. RDF* extends this by allowing triples themselves to by the subjects of other triples. So, we can write:
 
-```<john --employs-->joe> --from--> 1/2/2020``<john --employs-->joe> --salary--> 30000```
+```
+<john --employs-->joe> --from--> 1/2/2020``<john --employs-->joe> --salary--> 30000
+```
 
 These _star properties_ are considered to be properties of the specific `john --employs-->joe` edge, providing scoping, qualifiers and other types of relationship properties on top of the basic RDF labelled edges.
 
@@ -83,14 +83,16 @@ Firstly, from a conceptual point of view, it misunderstands the basic concept of
 
 Secondly, from a language structure point of view, it fundamentally shatters the simplicity and regularity of the RDF triple form - it's strongest point - and complicates each and every subsequent action. Henceforth, you must distinguish between subjects that represent triples and those that represent ordinary entities and change your process accordingly.
 
-Thirdly, from a logical soundness point of view, it introduces nth-order expressivity into the language (e.g. <<<joe type Person> from 1/2/2020> status: incactive>) and all the well known problems of impredicativity that come with that, not to mention the impact on the computational complexity of traversing the graph for inference and reasoning - one of the benefits of RDF is that a large amount of research effort has been devoted to understanding the computational complexity of different classes of reasoning axioms. As soon as you introduce meta-triples, we're back into an unknown world of unbounded complexity.  
-
+Thirdly, from a logical soundness point of view, it introduces nth-order expressivity into the language (e.g. `<<<joe type Person> from 1/2/2020> status: incactive>`) and all the well known problems of impredicativity that come with that, not to mention the impact on the computational complexity of traversing the graph for inference and reasoning - one of the benefits of RDF is that a large amount of research effort has been devoted to understanding the computational complexity of different classes of reasoning axioms. As soon as you introduce meta-triples, we're back into an unknown world of unbounded complexity.  
 
 Fourthly, and finally, in practice it avoids the problem - when we want to add things like temporal scoping, security classifications, weightings and such properties to relationships, we generally want the scoping and properties to apply to the object as an object rather than a set of structurally unrelated triples - the whole point of data management technologies is that they should help with providing useful abstractions to which we can apply such properties, not that it should kick the problem back to the user.
 
 If I have to write:
-```<<john employs joe> from 1/2/2020>
-<<john employs joe> salary 30000>```
+
+```
+<<john employs joe> from 1/2/2020>
+<<john employs joe> salary 30000>
+```
 
 then I have to maintain the coordination of both statements for the future and for any future changes - if the high level relationship changes, I have to map this to a collection of low level triples and the system provides no help.
 
