@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Why Graph Will Win"
-date: 2020-03-02
-description:
+title: Why Graph Will Win
+date: 2020-03-02T00:00:00.000Z
+description: Graph Winning
 image: https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png
 author: Kevin Feeney
 tags:
@@ -11,9 +11,8 @@ tags:
   - RDF
   - Database
   - Data Modeling
-
 ---
-I recently published a warts-and-all 4 part introduction (covering [RDF](/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](/2020/02/25/graph-fundamentals-part-4-linked-data/) and [Linked Data](/2020/02/25/graph-fundamentals-part-4-linked-data/)). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).
+I recently published a warts-and-all 4 part introduction (covering [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/) and [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).
 
 It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they *will* find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s. Once bitten twice shy.
 
