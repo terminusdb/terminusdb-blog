@@ -11,7 +11,7 @@ tags:
   - Linked Data
   - Rdf
 ---
-This is a 5 part warts-and-all introduction to graph technologies. It covers [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/), [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/), and concludes with an article called [Why Graph Will Win](https://terminusdb.com/blog/2020/03/02/why-graph-will-win/). It should give you a solid introduction to the world of graph and associated challenges, while also offering a firm view that *graph is the correct way to approach these complex problems*. Enjoy! 
+This is a 5 part warts-and-all introduction to graph technologies. It covers [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/), [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/), and concludes with an article called [Why Graph Will Win](https://terminusdb.com/blog/2020/03/02/why-graph-will-win/). It should give you a solid introduction to the world of graph and associated challenges, while also offering a firm view that *graph is the correct way to approach these complex problems*. Enjoy!
 
 - - -
 
