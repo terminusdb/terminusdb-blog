@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "Graph Fundamentals — Part 3: Graph Schema Languages"
-date: 2019-10-03
-description:
-cover_image: https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg
+date: 2019-10-03T00:00:00.000Z
 author: Kevin Feeney
+cover_image: https://miro.medium.com/max/1080/0*FeAlvSzhtGFnp3sX.jpg
+title: "Graph Fundamentals — Part 3: Graph Schema Languages"
+description: Graph
+image: /blog/assets/uploads/whatisanativegraphdatabase.png
 tags:
   - Graph Database
   - Database
   - Semanticweb
   - Rdf
-
 ---
-This is the third part of a four part series of a warts-and-all descriptions of graph database technologies —the first two covered the two fundamental flavors: [RDF](/2019/09/20/graph-fundamentals-part-1-rdf/) & [Labelled Property Graphs](/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/)
+This is a 5 part warts-and-all introduction to graph technologies. It covers [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/), [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/), and concludes with an article called [Why Graph Will Win](https://terminusdb.com/blog/2020/03/02/why-graph-will-win/). It should give you a solid introduction to the world of graph and associated challenges, while also offering a firm view that *graph is the correct way to approach these complex problems*. Enjoy! 
 
------------------------
+- - -
 
 The third part of this series will cover the features and attempts to support the definition of schemata — rules defining the shape of the graph. Almost all of this work has been confined to the world of RDF — property graphs, by contrast, with their pragmatic focus on simplicity, took the approach of delegating the schema to code rather than imposing it in the data layer, only supporting primitive, low-level constraints on the basic node-edge structure.
 
