@@ -12,13 +12,13 @@ tags:
   - Database
   - Data Modeling
 ---
-I recently published a warts-and-all 4 part introduction (covering [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/) and [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).
+I recently published a warts-and-all 4 part introduction covering [RDF](https://terminusdb.com/blog/2019/09/20/graph-fundamentals-part-1-rdf/), [Property Graphs](https://terminusdb.com/blog/2019/09/25/graph-fundamentals-part-2-labelled-property-graphs/), [Graph Schemas](https://terminusdb.com/blog/2019/10/03/graph-fundamentals-part-3-graph-schema-languages/) and [Linked Data](https://terminusdb.com/blog/2020/02/25/graph-fundamentals-part-4-linked-data/). You would be forgiven for concluding that I am not a fan of Graph databases or RDF. One reader on Twitter even accused me of “shitting on RDF”(!).
 
 It’s important to be frank about the problems of graphs and RDF and not just whistle the marketing tune because as soon as the technology is out there in the hands of developers, they *will* find the problems and will be inclined to reject the technology as pure hype if all they have heard are songs of breathless wonder. In the last couple of years, while trying to sell graph databases into bricks and mortar companies, by far the most hostile reactions I’ve come across have been from technologists who got bitten by the Semantic Web bug in the early 2000s. Once bitten twice shy.
 
 However, if you were to assume that I’m a critic of graph databases, you would be very wrong. I’ve spent most of the last decade building graph database management systems because to me it’s incredibly obvious that in the long run graph is going to win and here’s why.
 
------------------------
+- - -
 
 The point of all databases is to provide as accurate a representation of some aspect of external reality as possible.
 
@@ -38,8 +38,7 @@ In this respect, even the simplest graph database such as Neo4j — which models
 
 The diagram below shows how different database technologies rank in terms of their data-modelling power — the extent to which they allow you to create naturalistic models of the world. To briefly explain the categories:
 
-![comparing databases](https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png)
-Databases ranked by data modelling power with leading open source examples of each type (in database land, if you are not open source, you have no long term future )
+![comparing databases](https://miro.medium.com/max/2540/1*qa--bW5-ntB1BRuCcigiYQ.png) Databases ranked by data modelling power with leading open source examples of each type (in database land, if you are not open source, you have no long term future )
 
 ## Key Value Stores and Wide Column Stores
 
@@ -65,6 +64,6 @@ RDF graphs have all of the features of the database models to the left, the thin
 
 Graph databases that use the Web Ontology Language (OWL) to describe their data model are by far the most powerful in terms of data modelling capabilities, although OWL must be used with care as it can easily lead to an incomprehensibly complex data model (and in practice we need to choose a computable fragment of the language). Nevertheless, the really important aspects can be boiled down to 3 simple predicates that enable relationships between object types to be defined — *rdfs:domain* and *rdfs:range* support strongly typed relationships between objects, not just simple relationships, while *rdfs:subClassOf* supports type inheritance — and hence proper taxonomies — these combine to provide a fully featured type system, the holy grail of data modelling.
 
-----------------------------------
+- - -
 
 So, while some people may feel that recent interest in graph databases is just another fad, I’m putting my money on graph — 20 years from now, non-graph databases will be niche and legacy applications.
