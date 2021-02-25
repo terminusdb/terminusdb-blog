@@ -3,7 +3,7 @@ layout: post
 title: TerminusDB 4.2 - Encyclopaedia Galactica Release
 date: 2021-02-25T15:20:01.405Z
 description: ‘This one will take us to Titan’
-image: /blog/assets/uploads/4.2.png
+image: /blog/assets/uploads/4.2_edited.png
 author:
   - value: luke
     label: Luke Feeney
