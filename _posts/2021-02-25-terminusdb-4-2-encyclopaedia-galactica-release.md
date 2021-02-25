@@ -12,6 +12,8 @@ tags:
   - release
   - knowledge graph
 ---
+*‘This one will take us to Titan’*
+
 Today we’re excited to announce the release of TerminusDB 4.2!
 
 For those who aren’t familiar with TerminusDB, it’s an open-source graph database and document store. With TerminusDB and TerminusHub you can collaboratively build data-intensive applications and knowledge graphs. It’s a distributed immutable data store with a powerful query language. You should use TerminusDB if you want to get your knowledge graph up and running fast; if you’re working with complex data; if time-travel, immutability, data lineage, or collaboration are important to your project; or if you need easy & powerful query. To learn more about TerminusDB you can [visit our website](https://terminusdb.com/) or our [github repo](https://github.com/terminusdb/terminusdb). We’re biased, but we think there is no better knowledge graph or knowledge collaboration technology anywhere in the world. And unlike most of the competition, we’re open source.
