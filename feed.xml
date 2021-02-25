@@ -6,9 +6,32 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Feb 2021 11:48:29 +0000</pubDate>
-    <lastBuildDate>Mon, 08 Feb 2021 11:48:29 +0000</lastBuildDate>
+    <pubDate>Thu, 25 Feb 2021 15:30:48 +0000</pubDate>
+    <lastBuildDate>Thu, 25 Feb 2021 15:30:48 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB 4.2 - Encyclopaedia Galactica Release</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/4.2.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;Today we’re excited to announce the release of TerminusDB 4.2!&lt;/p&gt; &lt;p&gt;For those who aren’t familiar with TerminusDB, it’s an open-source graph database and document store. With TerminusDB and TerminusHub you can collaboratively build data-intensive applications and knowledge graphs. It’s a distributed immutable data store with a powerful query language. You should use TerminusDB if you want to get your knowledge graph up and running fast; if you’re working with complex data; if time-travel, immutability, data lineage, or collaboration are important to your project; or if you need easy &amp;amp; powerful query. To learn more about TerminusDB you can &lt;a href=&quot;https://terminusdb.com/&quot;&gt;visit our website&lt;/a&gt; or our &lt;a href=&quot;https://github.com/terminusdb/terminusdb&quot;&gt;github repo&lt;/a&gt;. We’re biased, but we think there is no better knowledge graph or knowledge collaboration technology anywhere in the world. And unlike most of the competition, we’re open source.&lt;/p&gt; &lt;h2 id=&quot;encyclopaedia-galactica&quot;&gt;Encyclopaedia Galactica&lt;/h2&gt; &lt;p&gt;Based on the number of new features in TerminusDB 4.2, this could...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2021/02/25/terminusdb-4-2-encyclopaedia-galactica-release/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Thu, 25 Feb 2021 15:20:01 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2021/02/25/terminusdb-4-2-encyclopaedia-galactica-release/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2021/02/25/terminusdb-4-2-encyclopaedia-galactica-release/</guid>
+        
+        <category>database</category>
+        
+        <category>release</category>
+        
+        <category>knowledge graph</category>
+        
+        
+      </item>
     
       <item>
         <title>Boxes and Stars - Modelling Relationships in RDF Graphs</title>
