@@ -107,7 +107,7 @@
 
 <h2 id="large-files-with-tus">Large Files with Tus</h2>
 
-<p>TerminusHub is about collaborative data integration. It allows you to share, build and integrate knowledge graphs with your team and the wider world. Under the hood, we use succinct data structures to enable sparing use of main memory resources. Even with prudent use of memory and sharing just database deltas on TerminusHub, we still ran into problems when handling uploads of large files. The connections were sometimes dropped or interrupted, and users were forced to start again.</p>
+<p>TerminusHub is about collaborative data integration. It allows you to share, build and integrate knowledge graphs with your team and the wider world. Under the hood, we use <a href="https://terminusdb.com/t/papers/terminusdb-git.pdf">succinct data structures</a> to enable sparing use of main memory resources. Even with prudent use of memory and sharing just database deltas on TerminusHub, we still ran into problems when handling uploads of large files. The connections were sometimes dropped or interrupted, and users were forced to start again.</p>
 
 <p>TerminusDB 4.2 <a href="https://github.com/terminusdb/tus">implements Tus</a>– a project that makes resumable file uploads easy. With Tus, TerminusHub can deal with large uploads even if those are from unreliable connections. In traditional uploading implementations progress would be lost in such situations but Tus enables you to recover from these interruptions and continue where the upload was stopped. We can now start to think about providing the ability to pause an upload. Best of all, we are growing an open-source standard and not relying on proprietary upload solutions. TerminusDB is committed to open source and open standards!</p>
 
@@ -121,7 +121,7 @@
 
 <h2 id="why-encyclopaedia-galactica">Why Encyclopaedia Galactica</h2>
 
-<p>TerminusDB is named after the home planet of the <a href="https://en.wikipedia.org/wiki/Foundation_series">Foundation in the Asimov series</a>, so what better name than Encyclopaedia Galactica for this release. TerminusDB is a knowledge graph and that’s what those Encyclopaedists were building on Terminus. A compendium of all knowledge then available in the Galactic Empire, intended to preserve that knowledge in a remote region of the galaxy in the event of a foreseen galactic catastrophe. No need to wait for the Galactic Empire, TerminusDB 4.2 can be that for you today.</p>
+<p>TerminusDB is named for the home planet of the <a href="https://en.wikipedia.org/wiki/Foundation_series">Foundation in the Asimov series</a>, so what better name than Encyclopaedia Galactica for this release. TerminusDB is a knowledge graph and that’s what those Encyclopaedists were building on Terminus. A compendium of all knowledge then available in the Galactic Empire, intended to preserve that knowledge in a remote region of the galaxy in the event of a foreseen galactic catastrophe. No need to wait for the Galactic Empire, TerminusDB 4.2 can be that for you today.</p>
 
         </div>
 
