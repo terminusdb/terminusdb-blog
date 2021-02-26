@@ -22,7 +22,7 @@ For those who aren’t familiar with TerminusDB, it’s an open-source graph dat
 
 Based on the number of new features in TerminusDB 4.2, this could almost be a 5.0.
 
-We’ll focus on the three big developments, but there are a bunch of smaller improvements that you can read about in [the release notes](https://github.com/terminusdb/terminusdb/blob/master/RELEASE_NOTES.md).
+We’ll focus on the three big developments, but there are a bunch of smaller improvements that you can read about in [the release notes](https://github.com/terminusdb/terminusdb/blob/master/docs/RELEASE_NOTES.md).
 
 ## Optimize!
 
