@@ -6,9 +6,34 @@
 </description>
     <link>/bloghttps://terminusdb.com</link>
     <atom:link href="https://terminusdb.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Mar 2021 14:09:43 +0000</pubDate>
-    <lastBuildDate>Thu, 11 Mar 2021 14:09:43 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Mar 2021 17:21:16 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Mar 2021 17:21:16 +0000</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>TerminusDB closes a EUR 3.6 million seed round</title>
+        <author>[{&quot;value&quot;=&gt;&quot;luke&quot;, &quot;label&quot;=&gt;&quot;Luke Feeney&quot;}]</author>
+        
+        
+        <description>
+        &lt;p&gt;&lt;img src=&quot;/blog/assets/uploads/paddys_day.png&quot; width=&quot;1270&quot;&gt;&lt;/p&gt;
+        &lt;h2 id=&quot;terminusdb-closes-a-eur-36-million-seed-round-to-build-knowledge-collaboration-infrastructure-for-the-internet&quot;&gt;TerminusDB closes a EUR 3.6 million seed round to build knowledge collaboration infrastructure for the internet&lt;/h2&gt; &lt;h3 id=&quot;the-open-source-solution-allows-everybody-to-become-a-data-engineer&quot;&gt;&lt;em&gt;The open-source solution allows&lt;/em&gt; everybody &lt;em&gt;to become a data engineer&lt;/em&gt;&lt;/h3&gt; &lt;p&gt;&lt;em&gt;Dublin, Ireland, March, 2021&lt;/em&gt; - TerminusDB today announced that it has raised seed financing of EUR3.6 million to accelerate development of its knowledge graph technology. The round was led by Volta Ventures with participation by Acequia Capital. Existing investors Atlantic Bridge University Bridge Fund and Enterprise Ireland also participated in the round. Sander Vonk of Volta Ventures will join the TerminusDB board. The funds will be used to hire new staff to help TerminusDB grow its user base and launch new products.&lt;/p&gt; &lt;p&gt;Today TerminusDB has two main products: TerminusDB and TerminusHub. TerminusDB is an open-source solution which has seen rapid adoption since it launched in early 2020. It is being used by a wide variety of customers to power the next generation...
+        &lt;p&gt;&lt;a href=&quot;https://terminusdb.com/blog/2021/03/15/terminusdb-closes-a-eur-3-6-million-seed-round/&quot;&gt;...Continue reading in our blog.&lt;/a&gt;&lt;/p&gt;
+        </description>
+        <pubDate>Mon, 15 Mar 2021 17:14:51 +0000</pubDate>
+        <link>https://terminusdb.com/blog/2021/03/15/terminusdb-closes-a-eur-3-6-million-seed-round/</link>
+        <guid isPermaLink="true">https://terminusdb.com/blog/2021/03/15/terminusdb-closes-a-eur-3-6-million-seed-round/</guid>
+        
+        <category>database</category>
+        
+        <category>funding</category>
+        
+        <category>money</category>
+        
+        <category></category>
+        
+        
+      </item>
     
       <item>
         <title>TerminusDB joins the AI Infrastructure Alliance as a founding member</title>
